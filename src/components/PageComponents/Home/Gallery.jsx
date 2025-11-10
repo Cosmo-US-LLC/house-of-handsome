@@ -76,7 +76,7 @@ const galleryImages = [
 
 function Gallery() {
   return (
-    <section className="py-16 w-full bg-white h-[1000px]">
+    <section className="py-16 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title and Arrow Buttons */}
@@ -148,12 +148,12 @@ function Gallery() {
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="overflow-hidden rounded-lg break-inside-avoid"
+              className="overflow-hidden mb-4 rounded-lg break-inside-avoid"
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`${image.height} w-full object-cover transition-transform duration-300 hover:scale-105 grayscale`}
+                className="object-cover w-full h-auto grayscale transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}
