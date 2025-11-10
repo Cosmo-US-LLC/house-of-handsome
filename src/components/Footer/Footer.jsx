@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/navbar/HOH_Logo.svg";
 
 function Footer() {
   return (
@@ -63,16 +64,10 @@ function Footer() {
             {/* Logo */}
             <Link to="/" className="flex gap-2 items-center">
               <img
-                src="https://www.figma.com/api/mcp/asset/eeebafd2-1c48-41f5-9125-bd751cadbd25"
+                src={logo}
                 alt="House of Handsome Logo"
-                className="h-[54px] w-[80px] shrink-0"
+                className="w-full h-full shrink-0"
               />
-              <div className="relative font-['Times_New_Roman'] leading-none text-black">
-                <div className="text-[52px] leading-none">Handsome</div>
-                <div className="absolute left-[38px] top-[14.5px] text-[16px] leading-none">
-                  House of
-                </div>
-              </div>
             </Link>
 
             {/* Description */}

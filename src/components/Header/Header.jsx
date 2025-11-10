@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useScrolled from "../../hooks/useScrolled";
 import SecondaryCTA from "../Buttons/SecondaryCTA";
+import logo from "../../assets/images/navbar/HOH_Logo.svg";
 
 // Navigation items configuration
 const NAV_ITEMS = [
@@ -37,8 +38,7 @@ function Header() {
   return (
     <header
       className={`sticky top-0 z-50 bg-white/90 backdrop-blur supports-backdrop-filter:bg-white/70 border-b border-neutral-200 transition-shadow duration-200 ${
-        scrolled ? "shadow-md" : ""
-      }`}
+        scrolled ? "shadow-md" : ""}`}
     >
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex items-center justify-between min-h-[64px]">
@@ -50,30 +50,10 @@ function Header() {
           >
             {/* Logo from Figma */}
             <img
-              src="https://www.figma.com/api/mcp/asset/987b355c-f4d4-4820-a3d4-fbf133704b55"
+              src={logo}
               alt="House of Handsome Logo"
-              className="object-contain w-12 h-8"
-              onError={(e) => {
-                // Fallback inline SVG if Figma image fails
-                e.target.style.display = "none";
-                const svg = document.createElementNS(
-                  "http://www.w3.org/2000/svg",
-                  "svg"
-                );
-                svg.setAttribute("width", "48");
-                svg.setAttribute("height", "32");
-                svg.setAttribute("viewBox", "0 0 48 32");
-                svg.setAttribute("fill", BRAND_RED);
-                svg.innerHTML = `<rect width="48" height="32" rx="4" fill="${BRAND_RED}"/>`;
-                e.target.parentNode.insertBefore(svg, e.target);
-              }}
+              className="object-contain w-full h-full"
             />
-            <span
-              className="font-serif text-2xl"
-              style={{ fontFamily: "Times New Roman, serif" }}
-            >
-              Handsome
-            </span>
           </Link>
 
           {/* Center: Desktop Navigation */}
