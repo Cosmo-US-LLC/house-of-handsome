@@ -15,7 +15,7 @@ function Hero() {
         {/* Grid Layout - 2 columns on desktop, stack on mobile */}
         <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
           {/* Left Column - Text Content */}
-          <div className="pt-16 space-y-6 text-left">
+          <div className="pt-4 space-y-6 text-left md:pt-16">
             {/* Main Headline - "The Ultimate Grooming Experience" */}
             <h1 className="font-['Cairo'] text-[40px] font-bold leading-tight text-neutral-900 md:text-[56px] md:leading-[67px] lg:text-[68px]">
               The Ultimate Grooming Experience
@@ -35,18 +35,18 @@ function Hero() {
             </p>
 
             {/* CTA Button */}
-            <div className="flex gap-8">
+            <div className="flex flex-col gap-8 md:flex-row">
               <div className="mt-6">
                 <PrimaryCTA />
               </div>
 
               {/* Google Rating Row */}
-              <div className="inline-flex gap-4 items-center mt-2">
+              <div className="flex gap-4 items-center mt-2 md:mt-0">
                 {/* Google Logo */}
                 <img
                   src="https://www.figma.com/api/mcp/asset/48d8d238-7db5-44c8-9ed2-cbfd1603a8fc"
                   alt="Google"
-                  className="h-[42px] w-[41px]"
+                  className="h-[52px] w-[51px]"
                 />
 
                 {/* Rating Details */}
@@ -68,7 +68,7 @@ function Hero() {
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex order-first justify-center items-center h-full md:order-last md:justify-end">
+          <div className="flex justify-center items-center h-full md:justify-end">
             <img
               src={heroImage}
               alt="Two well-groomed male models in black clothing"
