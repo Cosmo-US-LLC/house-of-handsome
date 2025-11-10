@@ -20,8 +20,8 @@ function FoundersNote() {
               to create something lasting. A place where individuals feel
               valued, confident, and truly part of a community. Every chair,
               every barber, and every client's story is a reflection of that
-              vision. We believe a barbershop is more than just a place to get
-              a haircut, it's a culture of care, creativity, and confidence.
+              vision. We believe a barbershop is more than just a place to get a
+              haircut, it's a culture of care, creativity, and confidence.
             </p>
 
             {/* Paragraph 2 - Thank You Line */}
@@ -31,10 +31,10 @@ function FoundersNote() {
           </div>
 
           {/* Signature Section */}
-          <div className="mt-4 flex flex-col items-center">
+          <div className="flex flex-col items-center">
             {/* Signature Name - "Alex" in cursive */}
             <p
-              className="text-[60px] leading-normal text-[#d82028] md:text-[87px]"
+              className="text-[60px] leading-normal text-[#d82028] md:text-[107px]"
               style={{ fontFamily: "'Rouge Script', cursive" }}
             >
               Alex

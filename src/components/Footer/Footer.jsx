@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/navbar/HOH_Logo.svg";
+import findLocationIcon from "../../assets/images/footer/find-a-location.svg";
+import bookReservationIcon from "../../assets/images/footer/book-a-reservation.svg";
+import downloadAppIcon from "../../assets/images/footer/download-the-app.svg";
+import giftCardIcon from "../../assets/images/footer/buy-a-gift-card.svg";
 
 function Footer() {
   return (
@@ -11,7 +15,7 @@ function Footer() {
           {/* Find A Location */}
           <div className="flex gap-6 items-center">
             <img
-              src="https://www.figma.com/api/mcp/asset/98d18a58-33a3-46a6-b941-8ce7e512f6ab"
+              src={findLocationIcon}
               alt="Find Location Icon"
               className="h-[46px] w-[46px] shrink-0"
             />
@@ -23,7 +27,7 @@ function Footer() {
           {/* Book A Reservation */}
           <div className="flex gap-6 items-center">
             <img
-              src="https://www.figma.com/api/mcp/asset/ee2a2a0a-53a9-4aba-a92e-851cba457e9c"
+              src={bookReservationIcon}
               alt="Book Reservation Icon"
               className="h-[50px] w-[47px] shrink-0"
             />
@@ -35,7 +39,7 @@ function Footer() {
           {/* Download The App */}
           <div className="flex gap-6 items-center">
             <img
-              src="https://www.figma.com/api/mcp/asset/dc6c32f0-e370-44a4-b498-c549effa1f7c"
+              src={downloadAppIcon}
               alt="Download App Icon"
               className="h-[47px] w-[46px] shrink-0"
             />
@@ -47,7 +51,7 @@ function Footer() {
           {/* Buy A Gift Card */}
           <div className="flex gap-6 items-center">
             <img
-              src="https://www.figma.com/api/mcp/asset/9ae5ffc1-b577-46a3-8c95-5bb359f2e5de"
+              src={giftCardIcon}
               alt="Gift Card Icon"
               className="h-[47px] w-[47px] shrink-0"
             />
