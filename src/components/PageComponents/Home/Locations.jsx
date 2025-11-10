@@ -1,43 +1,43 @@
 import React from "react";
 import PrimaryCTA from "../../Buttons/PrimaryCTA";
+import locationsImage1 from "../../../assets/images/location/location_c1.webp";
+import locationsImage2 from "../../../assets/images/location/location_c2.webp";
+import locationsImage3 from "../../../assets/images/location/location_c3.webp";
+import locationsImage4 from "../../../assets/images/location/location_c4.webp";
+import locationsImage5 from "../../../assets/images/location/location_c5.webp";
+import locationsImage6 from "../../../assets/images/location/location_c6.webp";
 
 // Locations data
 const locationsData = [
   {
     id: 1,
     name: "Sherwood Park",
-    image:
-      "https://www.figma.com/api/mcp/asset/5543eeed-5b25-4846-9673-16a81722b76e",
+    image: locationsImage1,
   },
   {
     id: 2,
     name: "Spruce Grove",
-    image:
-      "https://www.figma.com/api/mcp/asset/2687e352-8ab9-42b8-92b5-b76d3ea986b3",
+    image: locationsImage2,
   },
   {
     id: 3,
     name: "Cameron Heights Edmonton",
-    image:
-      "https://www.figma.com/api/mcp/asset/3c826d34-85dc-4f9a-93bd-66ba9d75ee4e",
+    image: locationsImage3,
   },
   {
     id: 4,
     name: "Whyte Avenue Edmonton",
-    image:
-      "https://www.figma.com/api/mcp/asset/1a3d15ec-ca8b-4aa9-9b8d-26141119cfc5",
+    image: locationsImage4,
   },
   {
     id: 5,
     name: "South Common Edmonton",
-    image:
-      "https://www.figma.com/api/mcp/asset/9097df4b-7e1f-4536-81bc-235d3edd07b7",
+    image: locationsImage5,
   },
   {
     id: 6,
     name: "Edmonton Downtown",
-    image:
-      "https://www.figma.com/api/mcp/asset/8b9b3e11-1fd6-4874-bba4-d49b586bf7da",
+    image: locationsImage6,
   },
 ];
 

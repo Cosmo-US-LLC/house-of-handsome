@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import testimonialsImage1 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage2 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage3 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage4 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage5 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage6 from "../../../assets/images/testimonials/testimonials_p1.webp";
 
 // Testimonials data
 const testimonials = [
@@ -9,8 +15,7 @@ const testimonials = [
     reviewer: "Alex T.",
     role: "Entrepreneur",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage1,
   },
   {
     id: 2,
@@ -19,8 +24,7 @@ const testimonials = [
     reviewer: "David M.",
     role: "Entrepreneur",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage2,
   },
   {
     id: 3,
@@ -29,8 +33,7 @@ const testimonials = [
     reviewer: "Jordan R.",
     role: "Entrepreneur",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage3,
   },
   {
     id: 4,
@@ -39,8 +42,7 @@ const testimonials = [
     reviewer: "Michael K.",
     role: "Business Owner",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage4,
   },
   {
     id: 5,
@@ -49,8 +51,7 @@ const testimonials = [
     reviewer: "Ryan S.",
     role: "Creative Director",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage5,
   },
   {
     id: 6,
@@ -59,8 +60,7 @@ const testimonials = [
     reviewer: "Chris B.",
     role: "Marketing Manager",
     stars: 5,
-    avatar:
-      "https://www.figma.com/api/mcp/asset/166bf443-852f-4c2b-8d04-6440d85b98c3",
+    avatar: testimonialsImage6,
   },
 ];
 

@@ -1,5 +1,9 @@
 import React from "react";
 import PrimaryCTA from "../../Buttons/PrimaryCTA";
+import experienceImage1 from "../../../assets/images/experience/exp_c1.png";
+import experienceImage2 from "../../../assets/images/experience/exp_c2.png";
+import experienceImage3 from "../../../assets/images/experience/exp_c3.png";
+import experienceImage4 from "../../../assets/images/experience/exp_c4.png";
 
 function Experience() {
   return (
@@ -11,7 +15,7 @@ function Experience() {
           {/* Bottom Left Image */}
           <div className="absolute bottom-[-160px] left-0 h-[250px] w-[200px] md:h-[393px] md:w-[305px]">
             <img
-              src="https://www.figma.com/api/mcp/asset/398fca8c-d95d-4e0e-a4c8-d673d7e59374"
+              src={experienceImage1}
               alt="Barber styling client"
               className="h-full w-full rounded-[40px] object-cover "
             />
@@ -20,7 +24,7 @@ function Experience() {
           {/* Top Left Image */}
           <div className="absolute left-[15%] top-0 h-[200px] w-[250px]  md:top-[-33px] md:left-[16.43%] md:h-[312px] md:w-[403px]">
             <img
-              src="https://www.figma.com/api/mcp/asset/23c0a5b0-b2d1-4ad0-8845-3647a723219d"
+              src={experienceImage2}
               alt="Salon interior with barbers"
               className="h-full w-full rounded-[40px] object-cover"
             />
@@ -29,7 +33,7 @@ function Experience() {
           {/* Top Right Image */}
           <div className="absolute right-[15%] top-0 h-[200px] w-[250px] md:top-[-30px] md:right-[14.76%] md:h-[326px] md:w-[404px]">
             <img
-              src="https://www.figma.com/api/mcp/asset/3a05334b-d5ca-4bdc-9423-2037bdb4762b"
+              src={experienceImage3}
               alt="Man getting professional haircut"
               className="h-full w-full rounded-[40px] object-cover"
             />
@@ -38,7 +42,7 @@ function Experience() {
           {/* Bottom Right Image */}
           <div className="absolute bottom-[-170px] right-0 h-[250px] w-[190px] md:right-[8px] md:h-[380px] md:w-[300px]">
             <img
-              src="https://www.figma.com/api/mcp/asset/f50ad1cf-9df7-4142-8f03-0b2aeaea10bf"
+              src={experienceImage4}
               alt="Man getting beard shaved"
               className="h-full w-full rounded-[40px] object-cover "
             />

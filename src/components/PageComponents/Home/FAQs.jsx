@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import faqsImage from "../../../assets/images/faqs/faqs_image.webp";
 
 // FAQs data
 const faqsData = [
@@ -91,7 +92,7 @@ function FAQs() {
           <div className="order-first lg:order-last">
             <div className="h-[400px] w-full overflow-hidden rounded-lg lg:h-[642px] grayscale">
               <img
-                src="https://www.figma.com/api/mcp/asset/baa4c9a0-bc9b-4fd2-a993-b0678999eb21"
+                src={faqsImage}
                 alt="Man getting professional hair wash treatment"
                 className="object-cover w-full h-full"
               />

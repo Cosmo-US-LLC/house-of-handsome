@@ -1,64 +1,74 @@
 import React from "react";
+import galleryImage1 from "../../../assets/images/gallery/gallery_m1.webp";
+import galleryImage2 from "../../../assets/images/gallery/gallery_m2.webp";
+import galleryImage3 from "../../../assets/images/gallery/gallery_m3.webp";
+import galleryImage4 from "../../../assets/images/gallery/gallery_m4.webp";
+import galleryImage5 from "../../../assets/images/gallery/gallery_m5.webp";
+import galleryImage6 from "../../../assets/images/gallery/gallery_m6.webp";
+import galleryImage7 from "../../../assets/images/gallery/gallery_m7.webp";
+import galleryImage8 from "../../../assets/images/gallery/gallery_m8.webp";
+import galleryImage9 from "../../../assets/images/gallery/gallery_m9.webp";
+import galleryImage10 from "../../../assets/images/gallery/gallery_m10.webp";
 
 // Gallery images data with varying heights for masonry layout
 const galleryImages = [
   {
     id: 1,
-    src: "https://www.figma.com/api/mcp/asset/2dc9392b-3ea5-4b38-8be0-9ac557bf5b26",
+    src: galleryImage1,
     alt: "Bearded man with styled haircut",
     height: "h-[314px]",
   },
   {
     id: 2,
-    src: "https://www.figma.com/api/mcp/asset/e746ab9b-e180-42ef-baad-d97b1623537a",
+    src: galleryImage2,
     alt: "Man getting groomed with cape",
     height: "h-[402px]",
   },
   {
     id: 3,
-    src: "https://www.figma.com/api/mcp/asset/4b45d357-f236-4d46-88c7-2e74ce053651",
+    src: galleryImage3,
     alt: "Professional grooming portrait",
     height: "h-[266px]",
   },
   {
     id: 4,
-    src: "https://www.figma.com/api/mcp/asset/6fd65d85-63a4-4180-b985-212eb9c2f8e6",
+    src: galleryImage4,
     alt: "Man with styled mustache",
     height: "h-[416px]",
   },
   {
     id: 5,
-    src: "https://www.figma.com/api/mcp/asset/ffd9b82f-9684-40e5-8d07-7942241d401d",
+    src: galleryImage5,
     alt: "Barber working on client",
     height: "h-[432px]",
   },
   {
     id: 6,
-    src: "https://www.figma.com/api/mcp/asset/c1545df7-bbfa-4393-b5bc-e2fdc9188e76",
+    src: galleryImage6,
     alt: "Back view of styled haircut",
     height: "h-[263px]",
   },
   {
     id: 7,
-    src: "https://www.figma.com/api/mcp/asset/fd9337df-1232-48a0-b241-f6fa315f00e9",
+    src: galleryImage7,
     alt: "Barber using clippers",
     height: "h-[276px]",
   },
   {
     id: 8,
-    src: "https://www.figma.com/api/mcp/asset/f80a1ceb-789e-40d4-ace2-9156c47de27d",
+    src: galleryImage8,
     alt: "Modern haircut styling",
     height: "h-[416px]",
   },
   {
     id: 9,
-    src: "https://www.figma.com/api/mcp/asset/5b83cc0e-1a30-48f1-909a-809a36ec9c2f",
+    src: galleryImage9,
     alt: "Bearded man portrait",
     height: "h-[266px]",
   },
   {
     id: 10,
-    src: "https://www.figma.com/api/mcp/asset/a90b9367-70a4-49b1-bdfd-7766d1015e0e",
+    src: galleryImage10,
     alt: "Classic barber styling",
     height: "h-[249px]",
   },
@@ -84,7 +94,6 @@ function Gallery() {
             </p>
           </div>
 
-          {/* Right: Arrow Navigation Buttons */}
           <div className="flex gap-3 items-center">
             {/* Left Arrow Button */}
             <button

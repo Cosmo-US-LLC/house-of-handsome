@@ -1,5 +1,8 @@
 import React from "react";
 import { Plus } from "lucide-react";
+import servicesImage1 from "../../../assets/images/services/services_c1.webp";
+import servicesImage2 from "../../../assets/images/services/services_c2.webp";
+import servicesImage3 from "../../../assets/images/services/services_c3.webp";
 
 // Services data
 const servicesData = [
@@ -7,22 +10,19 @@ const servicesData = [
     id: 1,
     title: "Cuts",
     description: "Masterful cuts tailored to your style and personality.",
-    image:
-      "https://www.figma.com/api/mcp/asset/b8be9e80-1570-4d59-b317-e6de1331b39b",
+    image: servicesImage1,
   },
   {
     id: 2,
     title: "Style",
     description: "Elevating your beard to perfection with precision and care.",
-    image:
-      "https://www.figma.com/api/mcp/asset/ffe28408-b826-46c9-acda-226c88a8f8ca",
+    image: servicesImage2,
   },
   {
     id: 3,
     title: "Care",
     description: "A holistic approach to rejuvenation for the modern man.",
-    image:
-      "https://www.figma.com/api/mcp/asset/748de226-5e6e-4a53-83cd-5ffd59884d13",
+    image: servicesImage3,
   },
 ];
 
