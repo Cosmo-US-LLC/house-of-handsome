@@ -9,10 +9,10 @@ import giftCardIcon from "../../assets/images/footer/buy-a-gift-card.svg";
 
 function Footer() {
   return (
-    <footer className="w-full bg-[#f7f7f7] py-20 rounded-tl-[10px] rounded-tr-[10px]">
+    <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
-        <div className="grid grid-cols-1 gap-8 pb-12 mb-12 border-b border-black/50 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 pb-10 mb-10 border-b border-black/50 md:grid-cols-2 lg:grid-cols-4">
           {/* Find A Location */}
           <div className="flex gap-6 items-center">
             <img
@@ -63,7 +63,7 @@ function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-12 pb-8 mb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-20">
+        <div className="grid grid-cols-1 gap-6 pb-8 mb-2 md:gap-12 md:mb-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-20">
           {/* Column 1 - Brand */}
           <div className="flex flex-col gap-6">
             {/* Logo */}
@@ -71,7 +71,7 @@ function Footer() {
               <img
                 src={logo}
                 alt="House of Handsome Logo"
-                className="w-full h-full shrink-0"
+                className="w-[80%] h-full shrink-0"
               />
             </Link>
 

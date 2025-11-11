@@ -1,5 +1,12 @@
 import React from "react";
 import { Plus } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import servicesImage1 from "../../../assets/images/services/services_c1.webp";
 import servicesImage2 from "../../../assets/images/services/services_c2.webp";
 import servicesImage3 from "../../../assets/images/services/services_c3.webp";
@@ -28,11 +35,11 @@ const servicesData = [
 
 function Services() {
   return (
-    <section className="py-16 w-full bg-white md:py-24">
+    <section className="py-10 w-full bg-white md:py-20">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 mb-12">
+        <div className="flex flex-col gap-3 mb-6 md:mb-10">
           <h2 className="font-['Cairo'] text-4xl font-bold leading-tight text-[#181818] md:text-[48px] md:leading-[55px]">
             Our Services
           </h2>
@@ -43,43 +50,57 @@ function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {servicesData.map((service) => (
-            <div key={service.id} className="flex flex-col gap-[26px]">
-              {/* Title with Description */}
-              <div className="flex flex-col gap-[7px]">
-                <h3 className="font-['Cairo'] text-[38px] font-medium leading-[41.36px] tracking-[-0.752px] text-[#d82028]">
-                  {service.title}
-                </h3>
-                <p className="font-['Urbanist'] h-[40px] text-base font-normal leading-[24px] text-black">
-                  {service.description}
-                </p>
-              </div>
+        {/* Services Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-6">
+            {servicesData.map((service) => (
+              <CarouselItem
+                key={service.id}
+                className="pl-6 md:basis-1/2 lg:basis-1/3"
+              >
+                <div className="flex flex-col gap-[26px]">
+                  {/* Title with Description */}
+                  <div className="flex flex-col gap-[7px]">
+                    <h3 className="font-['Cairo'] text-[38px] font-medium leading-[41.36px] tracking-[-0.752px] text-[#d82028]">
+                      {service.title}
+                    </h3>
+                    <p className="font-['Urbanist'] h-[40px] text-base font-normal leading-[24px] text-black">
+                      {service.description}
+                    </p>
+                  </div>
 
-              {/* Image Card with Button */}
-              <div className="group relative h-[360px] w-full overflow-hidden rounded-[8px] md:h-[495px]">
-                {/* Image with zoom and position shift on hover */}
-                <div className="absolute left-[-80px] top-0 h-[517px] w-[775px] overflow-hidden transition-all duration-300 group-hover:left-[-125px] group-hover:top-[-30px] group-hover:h-[577px] group-hover:w-[866px]">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="object-cover object-center w-full h-full grayscale"
-                  />
+                  {/* Image Card with Button */}
+                  <div className="group relative h-[360px] w-full overflow-hidden rounded-[8px] md:h-[495px]">
+                    {/* Image with zoom and position shift on hover */}
+                    <div className="absolute left-[-80px] top-0 h-[517px] w-[475px] overflow-hidden ">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full grayscale"
+                      />
+                    </div>
+
+                    {/* Circular Button - Bottom Right */}
+                    <button
+                      className="absolute bottom-[29.52px] right-[19.52px] md:right-[39.96px] flex h-[49.48px] w-[49.48px] items-center justify-center overflow-hidden rounded-full bg-white transition-transform duration-200 hover:scale-110"
+                      aria-label={`View ${service.title} details`}
+                    >
+                      <Plus className="w-6 h-6 text-black" strokeWidth={2} />
+                    </button>
+                  </div>
                 </div>
-
-                {/* Circular Button - Bottom Right */}
-                <button
-                  className="absolute bottom-[29.52px] right-[39.96px] flex h-[49.48px] w-[49.48px] items-center justify-center overflow-hidden rounded-full bg-white transition-transform duration-200 hover:scale-110"
-                  aria-label={`View ${service.title} details`}
-                >
-                  {/* Plus Icon */}
-                  <Plus className="w-6 h-6 text-black" strokeWidth={2} />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="md:hidden left-[30px] top-[60%] -translate-x-1/2 -translate-y-1/2" />
+          <CarouselNext className="md:hidden right-[30px] top-[60%] translate-x-1/2 -translate-y-1/2" />
+        </Carousel>
       </div>
     </section>
   );

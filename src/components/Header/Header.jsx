@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
 import useScrolled from "../../hooks/useScrolled";
 import SecondaryCTA from "../Buttons/SecondaryCTA";
 import logo from "../../assets/images/navbar/HOH_Logo.svg";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 // Navigation items configuration
 const NAV_ITEMS = [
@@ -24,10 +32,6 @@ function Header() {
   const currentPath = location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrolled = useScrolled(4);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
@@ -92,81 +96,60 @@ function Header() {
             </SecondaryCTA>
           </div>
 
-          {/* Mobile: Hamburger Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="inline-flex justify-center items-center p-2 rounded-md lg:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2"
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label="Toggle navigation menu"
-          >
-            {mobileMenuOpen ? (
-              // Close Icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          {/* Mobile: Sheet Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="inline-flex justify-center items-center p-2 rounded-md hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 lg:hidden"
+                aria-label="Toggle navigation menu"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              // Hamburger Icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                <Menu className="w-6 h-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-full">
+              <SheetHeader>
+                <SheetTitle>
+                  <Link to="/" onClick={closeMobileMenu}>
+                    <img
+                      src={logo}
+                      alt="House of Handsome Logo"
+                      className="object-contain w-[80%] h-full"
+                    />
+                  </Link>
+                </SheetTitle>
+              </SheetHeader>
+              <nav
+                className="flex flex-col gap-1 mt-8"
+                aria-label="Mobile navigation"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
+                {NAV_ITEMS.map((item) => (
+                  <Link
+                    key={item.slug}
+                    to={item.href}
+                    onClick={closeMobileMenu}
+                    className={`rounded-md px-4 py-3 text-base capitalize transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-300 ${
+                      isActive(item.slug)
+                        ? "font-bold"
+                        : "font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
+                    }`}
+                    style={isActive(item.slug) ? { color: BRAND_RED } : {}}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                {/* Mobile Contact Button */}
+                <div className="pt-6 mt-6 border-t border-neutral-200">
+                  <SecondaryCTA
+                    className="justify-center w-full"
+                    onClick={closeMobileMenu}
+                  >
+                    Contact US
+                  </SecondaryCTA>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-
-        {/* Mobile Menu Panel */}
-        {mobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="py-4 border-t lg:hidden border-neutral-200"
-            role="menu"
-          >
-            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.slug}
-                  to={item.href}
-                  onClick={closeMobileMenu}
-                  role="menuitem"
-                  className={`px-4 py-3 text-base capitalize rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-300 ${
-                    isActive(item.slug)
-                      ? "font-bold"
-                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 font-medium"
-                  }`}
-                  style={isActive(item.slug) ? { color: BRAND_RED } : {}}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              {/* Mobile Contact Button */}
-              <div className="px-4 pt-4 mt-2 border-t border-neutral-200">
-                <SecondaryCTA className="justify-center w-full">
-                  Contact US
-                </SecondaryCTA>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );

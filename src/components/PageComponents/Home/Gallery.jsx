@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import galleryImage1 from "../../../assets/images/gallery/gallery_m1.webp";
 import galleryImage2 from "../../../assets/images/gallery/gallery_m2.webp";
 import galleryImage3 from "../../../assets/images/gallery/gallery_m3.webp";
@@ -72,6 +79,66 @@ const galleryImages = [
     alt: "Classic barber styling",
     height: "h-[249px]",
   },
+  {
+    id: 11,
+    src: galleryImage1,
+    alt: "Bearded man with styled haircut",
+    height: "h-[314px]",
+  },
+  {
+    id: 12,
+    src: galleryImage2,
+    alt: "Man getting groomed with cape",
+    height: "h-[402px]",
+  },
+  {
+    id: 13,
+    src: galleryImage3,
+    alt: "Professional grooming portrait",
+    height: "h-[266px]",
+  },
+  {
+    id: 14,
+    src: galleryImage4,
+    alt: "Man with styled mustache",
+    height: "h-[416px]",
+  },
+  {
+    id: 15,
+    src: galleryImage5,
+    alt: "Barber working on client",
+    height: "h-[432px]",
+  },
+  {
+    id: 16,
+    src: galleryImage6,
+    alt: "Back view of styled haircut",
+    height: "h-[263px]",
+  },
+  {
+    id: 17,
+    src: galleryImage7,
+    alt: "Barber using clippers",
+    height: "h-[276px]",
+  },
+  {
+    id: 18,
+    src: galleryImage8,
+    alt: "Modern haircut styling",
+    height: "h-[416px]",
+  },
+  {
+    id: 19,
+    src: galleryImage9,
+    alt: "Bearded man portrait",
+    height: "h-[266px]",
+  },
+  {
+    id: 20,
+    src: galleryImage10,
+    alt: "Classic barber styling",
+    height: "h-[249px]",
+  },
 ];
 
 function Gallery() {
@@ -93,71 +160,54 @@ function Gallery() {
               style, designed just for you.
             </p>
           </div>
-
-          <div className="flex gap-3 items-center">
-            {/* Left Arrow Button */}
-            <button
-              className="flex justify-center items-center w-12 h-12 rounded-full border transition-all duration-200 border-black/20 hover:border-black/40 hover:bg-neutral-50"
-              aria-label="Previous images"
-            >
-              <svg
-                width="24"
-                height="21"
-                viewBox="0 0 24 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-5"
-              >
-                <path
-                  d="M23 10.5H1M1 10.5L11 20.5M1 10.5L11 0.5"
-                  stroke="black"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            {/* Right Arrow Button */}
-            <button
-              className="flex justify-center items-center w-12 h-12 rounded-full border border-black transition-all duration-200 hover:bg-neutral-50"
-              aria-label="Next images"
-            >
-              <svg
-                width="24"
-                height="21"
-                viewBox="0 0 24 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-5"
-              >
-                <path
-                  d="M1 10.5H23M23 10.5L13 0.5M23 10.5L13 20.5"
-                  stroke="black"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
 
-        {/* Masonry Gallery Grid */}
-        <div className="gap-4 space-y-4 columns-2 sm:columns-3 md:columns-4 lg:columns-5">
-          {galleryImages.map((image) => (
-            <div
-              key={image.id}
-              className="overflow-hidden mb-4 rounded-lg break-inside-avoid"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="object-cover w-full h-auto grayscale transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Masonry Gallery with Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {/* Group images in pairs for masonry columns */}
+            {Array.from(
+              { length: Math.ceil(galleryImages.length / 2) },
+              (_, i) => i * 2
+            ).map((startIndex) => (
+              <CarouselItem
+                key={startIndex}
+                className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
+              >
+                <div className="flex flex-col gap-4">
+                  {/* First image in column */}
+                  {galleryImages[startIndex] && (
+                    <div className="overflow-hidden rounded-lg break-inside-avoid">
+                      <img
+                        src={galleryImages[startIndex].src}
+                        alt={galleryImages[startIndex].alt}
+                        className="object-cover w-full h-auto grayscale transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  {/* Second image in column */}
+                  {galleryImages[startIndex + 1] && (
+                    <div className="overflow-hidden rounded-lg break-inside-avoid">
+                      <img
+                        src={galleryImages[startIndex + 1].src}
+                        alt={galleryImages[startIndex + 1].alt}
+                        className="object-cover w-full h-auto grayscale transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                  )}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-100px] top-[-46px] translate-x-0 translate-y-0" />
+          <CarouselNext className="right-0 md:top-[-100px] top-[-46px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+        </Carousel>
       </div>
     </section>
   );

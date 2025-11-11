@@ -4,13 +4,13 @@ import ourStoryLeftImage from "../../../assets/images/our-story/our_story_left.w
 
 function OurStory() {
   return (
-    <section className="py-20 w-full bg-white">
+    <section className="py-10 w-full bg-white md:py-20">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Two-Column Layout */}
         <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Barber Tools Collage */}
-          <div className="order-first">
+          <div className="order-last md:order-first">
             <div className="relative h-[400px] w-full overflow-hidden md:h-full grayscale">
               {/* Barber Tools Collage Image - Full Width */}
               <img
