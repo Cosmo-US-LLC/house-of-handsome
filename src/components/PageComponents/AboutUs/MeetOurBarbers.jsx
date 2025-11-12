@@ -6,10 +6,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import barber1 from "../../../assets/images/about/meetOurBarbers/barber_1.webp";
-import barber2 from "../../../assets/images/about/meetOurBarbers/barber_2.webp";
-import barber3 from "../../../assets/images/about/meetOurBarbers/barber_3.webp";
-import barber4 from "../../../assets/images/about/meetOurBarbers/barber_4.webp";
+import barber1 from "../../../assets/images/about/meetOurBarbers/barber_c1.webp";
+import barber2 from "../../../assets/images/about/meetOurBarbers/barber_c2.webp";
+import barber3 from "../../../assets/images/about/meetOurBarbers/barber_c3.webp";
+import barber4 from "../../../assets/images/about/meetOurBarbers/barber_c4.webp";
 
 const barbers = [
   { id: 1, name: "Alex", role: "Owner", image: barber1 },
@@ -53,15 +53,17 @@ export default function MeetOurBarbers() {
           <CarouselContent className="">
             {barbers.map((barber) => (
               <CarouselItem key={barber.id} className="pl-4 basis-auto">
-                <div className="w-[392px] h-[457px] rounded-lg bg-[#f7f7f7] overflow-hidden relative">
+                <div className="w-[392px] h-[507px] rounded-lg bg-[#f7f7f7] overflow-hidden relative group cursor-pointer">
                   <img
                     src={barber.image}
                     alt={barber.name}
-                    className="object-cover w-full h-full grayscale"
+                    className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
                   />
-                  <div className="absolute top-[18px] left-[39px] font-['Cairo'] font-medium text-[16px] leading-[26.72px] tracking-[-0.356px] text-black">
-                    <p className="opacity-40">{barber.name}</p>
-                    <p>{barber.role}</p>
+                  <div className="absolute top-[18px] left-[39px] font-['Cairo'] font-medium text-[16px] leading-[26.72px] tracking-[-0.356px]">
+                    <p className="opacity-40 text-black group-hover:opacity-100 group-hover:text-[#d82028] transition-all duration-300">
+                      {barber.name}
+                    </p>
+                    <p className="text-black">{barber.role}</p>
                   </div>
                 </div>
               </CarouselItem>

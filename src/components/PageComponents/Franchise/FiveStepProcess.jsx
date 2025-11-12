@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/carousel";
 
 // Example images
-import step1 from "../../../assets/images/franchise/FiveStepProcess/step_1.webp";
-import step2 from "../../../assets/images/franchise/FiveStepProcess/step_2.webp";
-import step3 from "../../../assets/images/franchise/FiveStepProcess/step_3.webp";
-import step4 from "../../../assets/images/franchise/FiveStepProcess/step_4.webp";
+import step1 from "../../../assets/images/franchise/FiveStepProcess/step_c1.webp";
+import step2 from "../../../assets/images/franchise/FiveStepProcess/step_c2.webp";
+import step3 from "../../../assets/images/franchise/FiveStepProcess/step_c3.webp";
+import step4 from "../../../assets/images/franchise/FiveStepProcess/step_c4.webp";
 
 const defaultSteps = [
   {
@@ -63,13 +63,13 @@ export default function FiveStepProcess({
           <CarouselContent className="gap-2">
             {steps.map((step) => (
               <CarouselItem key={step.id} className="basis-auto">
-                <div className="w-[388px] flex flex-col overflow-hidden rounded-lg">
+                <div className="w-[388px] flex flex-col overflow-hidden rounded-lg group cursor-pointer">
                   {/* Image */}
                   <div className="h-[400px] w-full rounded-t-lg overflow-hidden">
                     <img
                       src={step.image}
                       alt={step.title}
-                      className="object-cover w-full h-full"
+                      className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
 

@@ -52,7 +52,7 @@ export default function FranchiseSupport({
           {supports.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col gap-[26px] w-[290px] h-[500px]"
+              className="flex flex-col gap-[26px] w-[290px] h-[500px] group cursor-pointer"
             >
               {/* Title and Description */}
               <div className="flex flex-col gap-2 h-[80px]">
@@ -69,7 +69,7 @@ export default function FranchiseSupport({
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full"
+                  className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
             </div>
