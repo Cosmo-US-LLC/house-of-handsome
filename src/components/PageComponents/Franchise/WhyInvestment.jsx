@@ -2,7 +2,7 @@ import React from "react";
 import investmentImage from "../../../assets/images/franchise/whyInvestment/why_investment.webp";
 
 export default function WhyInvestment({
-  title = "Why It’s Worth The Investment",
+  title = "Why It's Worth The Investment",
   subtitle = "Join a brand proven to perform, where systems, style, and service drive profitability.",
   image = investmentImage,
   benefits = [
@@ -14,37 +14,43 @@ export default function WhyInvestment({
   ],
 }) {
   return (
-    <section className="px-4 py-16 bg-white sm:px-8">
-      <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Left Column */}
-        <div className="w-full md:w-[50%]">
-          <h2 className="font-['Cairo'] text-[36px] md:text-[44px] font-bold text-[#181818] text-center md:text-left mb-2">
+    <section className="pt-10 pb-20 bg-white">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col gap-4 items-center mb-12 text-center">
+          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
             {title}
           </h2>
-          <p className="font-['Urbanist'] text-gray-600 text-[16px] md:text-[18px] leading-[28px] mb-8 text-center md:text-left">
+          <p className="font-['Urbanist'] font-medium text-[#181818] text-[16px] leading-[26px]">
             {subtitle}
           </p>
-
-          {/* Benefit List */}
-          <ul className="divide-y divide-gray-200">
-            {benefits.map((item, index) => (
-              <li
-                key={index}
-                className="py-3 text-[18px] font-semibold text-[#181818] hover:text-[#E10000] transition cursor-default"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
 
-        {/* Right Column - Image */}
-        <div className="w-full md:w-[50%]">
-          <img
-            src={image}
-            alt="Investment opportunity"
-            className="object-cover w-full h-auto rounded-md grayscale"
-          />
+        {/* Content Layout */}
+        <div className="flex flex-col gap-12 justify-between items-center md:flex-row">
+          {/* Left Column - Benefits List */}
+          <div className="flex flex-col gap-3 w-full md:w-[640px]">
+            {benefits.map((item, index) => (
+              <div key={index} className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
+                  <h3 className="font-['Cairo'] text-[24px] font-bold text-black leading-[32px] capitalize">
+                    {item}
+                  </h3>
+                </div>
+                {/* Divider line */}
+                <div className="h-px w-full bg-[rgba(0,0,0,0.1)]" />
+              </div>
+            ))}
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="w-full md:w-[623px] h-[430px] rounded-lg overflow-hidden">
+            <img
+              src={image}
+              alt="Investment opportunity"
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>

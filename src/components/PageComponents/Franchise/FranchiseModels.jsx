@@ -17,48 +17,53 @@ export default function FranchiseModels({
   image = modelImage,
 }) {
   return (
-    <section className="px-4 py-16 bg-white sm:px-8">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="pt-10 pb-20 bg-white">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Title */}
-        <h2 className="font-['Cairo'] text-[36px] md:text-[44px] font-bold text-[#181818] text-center mb-12">
-          {title}
-        </h2>
+        <div className="flex flex-col gap-4 items-center mb-10">
+          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] text-center leading-[55px] capitalize">
+            {title}
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2">
+        {/* Content Layout */}
+        <div className="flex flex-col gap-12 justify-between items-center md:flex-row">
           {/* Left Image */}
-          <div>
+          <div className="w-full md:w-[623px] h-[600px] rounded-lg overflow-hidden">
             <img
               src={image}
               alt={modelName}
-              className="rounded-lg w-full h-[360px] object-cover grayscale"
+              className="object-cover w-full h-full"
             />
           </div>
 
           {/* Right Text Column */}
-          <div className="space-y-6">
-            {/* Model Name */}
-            <h3 className="text-[#E10000] font-['Cairo'] text-[20px] font-semibold">
-              {modelName}
-            </h3>
+          <div className="flex flex-col gap-12 w-full md:w-[640px]">
+            {/* Model Name + What We Provide Section */}
+            <div className="flex flex-col gap-6">
+              <h3 className="text-[#d82028] font-['Cairo'] text-[24px] font-bold capitalize leading-[32px]">
+                {modelName}
+              </h3>
 
-            {/* What We Provide */}
-            <div>
-              <h4 className="font-['Cairo'] text-[18px] font-semibold text-[#181818] mb-2">
-                What We Provide
-              </h4>
-              <ul className="list-disc pl-5 space-y-2 font-['Urbanist'] text-[#181818] text-[16px] leading-[26px]">
-                {provides.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+              {/* What We Provide */}
+              <div className="flex flex-col gap-4">
+                <h4 className="font-['Cairo'] text-[24px] font-bold text-[#181818] capitalize leading-[32px]">
+                  What We Provide
+                </h4>
+                <ul className="list-disc pl-8 space-y-4 font-['Urbanist'] font-medium text-[#181818] text-[20px] leading-[24px]">
+                  {provides.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* Your Role */}
-            <div>
-              <h4 className="font-['Cairo'] text-[18px] font-semibold text-[#181818] mb-2">
+            {/* Your Role Section */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-['Cairo'] text-[24px] font-bold text-[#181818] capitalize leading-[32px]">
                 Your Role
               </h4>
-              <ul className="list-disc pl-5 space-y-2 font-['Urbanist'] text-[#181818] text-[16px] leading-[26px]">
+              <ul className="list-disc pl-8 space-y-4 font-['Urbanist'] font-medium text-[#181818] text-[20px] leading-[24px]">
                 {roles.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}

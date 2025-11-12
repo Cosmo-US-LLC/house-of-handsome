@@ -1,5 +1,5 @@
 import React from "react";
-import logoIcon from "../../../assets/images/footer/buy-a-gift-card.svg"; // replace with your actual logo
+import logoIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
 
 export default function BrandDifferentiators({
   title = "What Sets House of Handsome Apart",
@@ -11,26 +11,30 @@ export default function BrandDifferentiators({
   ],
 }) {
   return (
-    <section className="bg-[#F9F9F9] py-16 px-4 sm:px-8">
-      <div className="max-w-[1280px] mx-auto text-center">
+    <section className="bg-[#f4f4f4] py-20">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Section Title */}
-        <h2 className="font-['Cairo'] text-[28px] md:text-[36px] font-bold text-[#181818] mb-10">
-          {title}
-        </h2>
+        <div className="flex flex-col gap-4 items-center text-center mb-12 max-w-[800px] mx-auto">
+          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px]">
+            {title}
+          </h2>
+        </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="flex flex-wrap gap-4 justify-center items-start">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col justify-center items-center px-6 py-10 bg-white rounded-xl shadow-sm transition hover:shadow-md"
+              className="flex flex-col justify-center gap-3 items-center bg-white rounded-2xl w-[290px] h-[196px] overflow-hidden"
             >
-              <img
-                src={feature.icon}
-                alt={feature.label}
-                className="object-contain mb-4 w-14 h-14"
-              />
-              <p className="font-['Urbanist'] text-[16px] font-semibold text-[#181818] text-center">
+              <div className="flex justify-center items-center w-20 h-20">
+                <img
+                  src={feature.icon}
+                  alt={feature.label}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <p className="font-['Urbanist'] text-[20px] font-bold text-black text-center leading-[28px]">
                 {feature.label}
               </p>
             </div>

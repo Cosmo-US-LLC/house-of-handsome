@@ -8,6 +8,7 @@ import FranchiseModels from "../components/PageComponents/Franchise/FranchiseMod
 import BrandDifferentiators from "../components/PageComponents/Franchise/BrandDifferentiators";
 import FranchiseSupport from "../components/PageComponents/Franchise/FranchiseSupport";
 import StrategicExpansion from "../components/PageComponents/Franchise/StrategicExpansion";
+import TakeFirstStep from "../components/PageComponents/Franchise/TakeFirstStep";
 
 function Franchise() {
   return (
@@ -21,6 +22,7 @@ function Franchise() {
       <BrandDifferentiators />
       <FranchiseSupport />
       <StrategicExpansion />
+      <TakeFirstStep />
     </div>
   );
 }

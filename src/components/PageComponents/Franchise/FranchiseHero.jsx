@@ -12,7 +12,7 @@ export default function FranchiseHero({
   secondaryText = "Download Franchise Brochure",
 }) {
   return (
-    <section className="py-10 bg-white sm:px-8">
+    <section className="py-8 bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
         <h1 className="mb-12 text-[68px] font-['Cairo'] font-normal text-center text-[#000] leading-[67px] capitalize border-b border-gray-200 pb-10">

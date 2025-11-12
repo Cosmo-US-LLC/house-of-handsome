@@ -1,67 +1,77 @@
 import React from "react";
 import expansionImage from "../../../assets/images/franchise/strategicExpansion/strategic_expansion_img.webp";
 
-export default function StrategicExpansion({
-  title = "Strategic Expansion: Red Deer",
-  locationHighlight = "Red Deer",
-  population = "112,000 residents",
-  introParagraphs = [
-    "We’re expanding into Red Deer, a vibrant market with over 112,000 residents and rising demand for premium grooming.",
-    "We’re looking for an operational partner in Red Deer to help bring our brand’s signature style and service to life.",
-    "With our proven systems, local marketing support, and established reputation, you’ll have everything needed to build a profitable and sustainable business.",
-  ],
-  reasons = [
-    "Proven business model with strong ROI.",
-    "Local marketing and brand support to drive visibility.",
-    "Access to House of Handsome’s operational expertise and resources.",
-    "Exclusive opportunity to lead our expansion in a high-growth market.",
-  ],
-  closingText = "Be part of the next chapter in our story, let’s shape Red Deer’s grooming scene together.",
-  image = expansionImage,
-}) {
+export default function StrategicExpansion({ image = expansionImage }) {
   return (
-    <section className="px-4 py-16 bg-white sm:px-8">
-      <div className="max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 gap-12 items-center md:grid-cols-2">
+    <section className="py-20 bg-white">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+        <div className="flex flex-col gap-12 justify-between items-start md:flex-row">
           {/* Left Text Column */}
-          <div className="space-y-5">
-            <h2 className="font-['Cairo'] text-[32px] md:text-[42px] font-bold text-[#181818]">
-              {title}
-            </h2>
+          <div className="flex flex-col gap-12 w-full md:w-[640px]">
+            {/* Main Content */}
+            <div className="flex flex-col gap-6">
+              {/* Title and Description */}
+              <div className="flex flex-col gap-6">
+                <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
+                  Strategic Expansion: Red Deer
+                </h2>
 
-            {introParagraphs.map((p, i) => (
-              <p
-                key={i}
-                className="font-['Urbanist'] text-[16px] leading-[26px] text-[#181818]"
-              >
-                {p}
-              </p>
-            ))}
+                {/* Paragraphs with bold highlights */}
+                <div className="flex flex-col gap-0 font-['Urbanist'] font-medium text-[16px] text-[#181818] leading-[26px]">
+                  <p>
+                    We're expanding into{" "}
+                    <span className="font-bold">Red Deer</span>, a vibrant
+                    market with over{" "}
+                    <span className="font-bold">112,000 residents</span> and
+                    rising demand for premium grooming.
+                  </p>
+                  <p className="mt-6">
+                    We're looking for an operational partner in Red Deer to help
+                    bring our brand's signature style and service to life. With
+                    our proven systems, local marketing support, and established
+                    reputation, you'll have everything needed to build a{" "}
+                    <span className="font-bold">
+                      profitable and sustainable business.
+                    </span>
+                  </p>
+                </div>
+              </div>
 
-            {/* Why Partner Section */}
-            <div>
-              <h3 className="text-[#E10000] font-['Cairo'] text-[18px] font-semibold mb-3">
-                Why Partner With Us?
-              </h3>
-              <ul className="list-disc pl-5 space-y-2 font-['Urbanist'] text-[16px] leading-[26px] text-[#181818]">
-                {reasons.map((reason, index) => (
-                  <li key={index}>{reason}</li>
-                ))}
-              </ul>
+              {/* Why Partner Section */}
+              <div className="flex flex-col gap-4">
+                <h3 className="text-[#d82028] font-['Cairo'] text-[24px] font-bold capitalize leading-[32px]">
+                  Why Partner With Us?
+                </h3>
+                <ul className="list-disc pl-8 space-y-4 font-['Urbanist'] font-medium text-[20px] leading-[24px] text-[#181818]">
+                  <li>Proven business model with strong ROI.</li>
+                  <li>
+                    Local marketing and brand support to drive visibility.
+                  </li>
+                  <li>
+                    Access to House of Handsome's operational expertise and
+                    resources.
+                  </li>
+                  <li>
+                    Exclusive opportunity to lead our expansion in a high-growth
+                    market.
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Closing Line */}
-            <p className="font-['Urbanist'] text-[16px] font-semibold text-[#181818] pt-4">
-              {closingText}
+            <p className="font-['Cairo'] text-[20px] font-bold text-[#181818] leading-[28px]">
+              Be part of the next chapter in our story, let's shape Red Deer's
+              grooming scene together.
             </p>
           </div>
 
           {/* Right Image */}
-          <div>
+          <div className="w-full md:w-[623px] h-[680px] rounded-lg overflow-hidden">
             <img
               src={image}
-              alt={title}
-              className="rounded-lg w-full h-auto md:h-[400px] object-cover grayscale"
+              alt="Strategic Expansion Red Deer"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>
