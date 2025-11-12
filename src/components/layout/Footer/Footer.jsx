@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Facebook, Instagram } from "lucide-react";
-import logo from "../../assets/images/navbar/HOH_Logo.svg";
-import findLocationIcon from "../../assets/images/footer/find-a-location.svg";
-import bookReservationIcon from "../../assets/images/footer/book-a-reservation.svg";
-import downloadAppIcon from "../../assets/images/footer/download-the-app.svg";
-import giftCardIcon from "../../assets/images/footer/buy-a-gift-card.svg";
+import logo from "../../../assets/images/navbar/HOH_Logo.svg";
+import findLocationIcon from "../../../assets/images/footer/find-a-location.svg";
+import bookReservationIcon from "../../../assets/images/footer/book-a-reservation.svg";
+import downloadAppIcon from "../../../assets/images/footer/download-the-app.svg";
+import giftCardIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
 
 function Footer() {
   return (

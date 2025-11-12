@@ -1,5 +1,5 @@
 import React from "react";
-import PrimaryCTA from "../../Buttons/PrimaryCTA";
+import PrimaryCTA from "../../ui/PrimaryCTA";
 import experienceImage1 from "../../../assets/images/experience/exp_c1.png";
 import experienceImage2 from "../../../assets/images/experience/exp_c2.png";
 import experienceImage3 from "../../../assets/images/experience/exp_c3.png";

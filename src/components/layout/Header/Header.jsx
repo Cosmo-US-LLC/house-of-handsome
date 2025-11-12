@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
-import useScrolled from "../../hooks/useScrolled";
-import SecondaryCTA from "../Buttons/SecondaryCTA";
-import logo from "../../assets/images/navbar/HOH_Logo.svg";
+import useScrolled from "../../../hooks/useScrolled";
+import SecondaryCTA from "../../ui/SecondaryCTA";
+import logo from "../../../assets/images/navbar/HOH_Logo.svg";
 import {
   Sheet,
   SheetContent,
@@ -15,7 +15,7 @@ import {
 // Navigation items configuration
 const NAV_ITEMS = [
   { label: "Home", href: "/", slug: "/" },
-  { label: "About Us", href: "/about", slug: "/about" },
+  { label: "About Us", href: "/about-us", slug: "/about-us" },
   { label: "Adult", href: "/adult", slug: "/adult" },
   { label: "Teen", href: "/teen", slug: "/teen" },
   { label: "Kids", href: "/kids", slug: "/kids" },
