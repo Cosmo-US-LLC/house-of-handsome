@@ -49,19 +49,23 @@ function FAQs() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           {/* Left Column - FAQ Accordion List */}
           <div className="flex flex-col gap-5">
-            <Accordion type="single" collapsible className="space-y-5 w-full">
+            <Accordion
+              type="single"
+              collapsible
+              className="space-y-5 w-full cursor-pointer"
+            >
               {faqsData.map((faq) => (
                 <AccordionItem
                   key={faq.id}
                   value={faq.id}
-                  className="rounded-[8px] border border-gray-200 bg-white px-[24px] py-[40px] data-[state=open]:border-gray-200"
+                  className="rounded-[8px] cursor-pointer border border-gray-200 bg-white px-[24px] py-[40px] data-[state=open]:border-gray-200"
                 >
                   <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden">
-                    <p className="flex-1 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black transition-colors">
+                    <p className="flex-1 font-['Urbanist'] text-[24px] font-bold cursor-pointer leading-[32px] text-black transition-colors">
                       {faq.question}
                     </p>
                     {/* Custom Icon */}
-                    <div className="flex h-[32px] w-[32px] shrink-0 items-center justify-center">
+                    <div className="flex h-[32px] w-[32px] shrink-0 items-center justify-center cursor-pointer">
                       <svg
                         width="32"
                         height="32"

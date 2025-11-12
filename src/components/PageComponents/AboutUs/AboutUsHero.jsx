@@ -13,7 +13,7 @@ export default function AboutUsHero({
   buttonText = "Book An Appointment",
 }) {
   return (
-    <section className="py-10 bg-white sm:px-8">
+    <section className="pt-8 pb-20 bg-white sm:px-8">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <h1 className="mb-12 text-[68px] font-['Cairo'] font-normal text-center text-[#000] leading-[67px] capitalize border-b border-[#000] pb-10">
           {title}
@@ -31,7 +31,7 @@ export default function AboutUsHero({
             {paragraphs.map((text, i) => (
               <p
                 key={i}
-                className="mb-4 leading-relaxed font-['Urbanist'] text-[#181818] max-w-[500px]"
+                className="mb-4 text-[16px] font-['Urbanist'] leading-[26px] font-medium text-[#181818] max-w-[500px]"
               >
                 {text}
               </p>
