@@ -44,8 +44,8 @@ export default function FranchiseHero({
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <PrimaryCTA>{primaryText}</PrimaryCTA>
-              <button className="flex items-center gap-2 border border-black text-black px-5 py-3 rounded-md font-semibold text-[16px] hover:bg-black hover:text-white transition">
+              <PrimaryCTA className="">{primaryText}</PrimaryCTA>
+              <button className="flex items-center cursor-pointer gap-2 border border-black text-black px-5 py-3 rounded-md font-semibold text-[16px] hover:bg-black hover:text-white transition">
                 <Download className="w-4 h-4" />
                 {secondaryText}
               </button>

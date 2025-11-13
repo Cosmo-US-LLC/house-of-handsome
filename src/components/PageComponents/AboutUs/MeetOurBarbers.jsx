@@ -20,18 +20,18 @@ const barbers = [
 
 export default function MeetOurBarbers() {
   return (
-    <section className="pt-10 pb-20 bg-white">
+    <section className="pt-0 pb-10 bg-white md:pt-10 md:pb-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         <Carousel opts={{ align: "start", loop: false }} className="w-full">
           {/* Heading with Navigation */}
           <div className="flex flex-col gap-[13px] mb-12">
             <div className="flex justify-between items-center w-full">
-              <h2 className="font-['Cairo'] text-[48px] leading-[55px] capitalize font-bold text-[#181818]">
+              <h2 className="font-['Cairo'] md:text-[48px] text-[36px] md:leading-[55px] leading-[40px] capitalize font-bold text-[#181818]">
                 Meet Our Barbers
               </h2>
 
               {/* Navigation Buttons */}
-              <div className="flex gap-[11px] items-center absolute right-0 top-[150px]">
+              <div className="flex gap-[11px] items-center absolute right-0 top-[260px] md:top-[150px]">
                 <CarouselPrevious className="static w-12 h-12 rounded-full border-[1.5px] border-[#181818] bg-white hover:bg-gray-100 disabled:opacity-20 disabled:hover:bg-white" />
                 <CarouselNext className="static w-12 h-12 rounded-full border-[1.5px] border-[#181818] bg-white hover:bg-gray-100 disabled:opacity-20 disabled:hover:bg-white" />
               </div>
@@ -53,7 +53,7 @@ export default function MeetOurBarbers() {
           <CarouselContent className="">
             {barbers.map((barber) => (
               <CarouselItem key={barber.id} className="pl-4 basis-auto">
-                <div className="w-[392px] h-[507px] rounded-lg bg-[#f7f7f7] overflow-hidden relative group cursor-pointer">
+                <div className="w-full md:w-[392px] h-[440px] md:h-[507px] rounded-lg bg-[#f7f7f7] overflow-hidden relative group cursor-pointer">
                   <img
                     src={barber.image}
                     alt={barber.name}

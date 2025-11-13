@@ -31,11 +31,11 @@ export default function BrandDifferentiators({
   ],
 }) {
   return (
-    <section className="bg-[#f4f4f4] py-20">
+    <section className="bg-[#f4f4f4] md:py-20 py-10">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Section Title */}
         <div className="flex flex-col gap-4 items-center text-center mb-12 max-w-[800px] mx-auto">
-          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px]">
+          <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
             {title}
           </h2>
         </div>

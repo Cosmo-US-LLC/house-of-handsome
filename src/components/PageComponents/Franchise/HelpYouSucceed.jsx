@@ -32,11 +32,11 @@ export default function HelpYouSucceed({
   ],
 }) {
   return (
-    <section className="bg-[#f4f4f4] py-20">
+    <section className="bg-[#f4f4f4] md:py-20 py-10">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Section Heading */}
-        <div className="flex flex-col gap-4 items-center mb-12 text-center">
-          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
+        <div className="flex flex-col gap-4 items-center mb-6 text-left md:mb-12 md:text-center">
+          <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize">
             {title}
           </h2>
           <p className="font-['Urbanist'] font-medium text-[#181818] text-[16px] leading-[26px]">

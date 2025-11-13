@@ -3,7 +3,7 @@ import expansionImage from "../../../assets/images/franchise/strategicExpansion/
 
 export default function StrategicExpansion({ image = expansionImage }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         <div className="flex flex-col gap-12 justify-between items-start md:flex-row">
           {/* Left Text Column */}
@@ -12,7 +12,7 @@ export default function StrategicExpansion({ image = expansionImage }) {
             <div className="flex flex-col gap-6">
               {/* Title and Description */}
               <div className="flex flex-col gap-6">
-                <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
+                <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize">
                   Strategic Expansion: Red Deer
                 </h2>
 
@@ -67,7 +67,7 @@ export default function StrategicExpansion({ image = expansionImage }) {
           </div>
 
           {/* Right Image */}
-          <div className="w-full md:w-[623px] h-[680px] rounded-lg overflow-hidden">
+          <div className="w-full md:w-[623px] md:h-[680px] h-[400px] rounded-lg overflow-hidden">
             <img
               src={image}
               alt="Strategic Expansion Red Deer"

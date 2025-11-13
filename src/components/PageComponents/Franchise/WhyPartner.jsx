@@ -20,13 +20,13 @@ const stats = [
 
 export default function WhyPartner() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Top Info Row */}
-        <div className="flex flex-col gap-12 items-center mb-12 md:flex-row">
+        <div className="flex flex-col gap-6 items-center mb-12 md:gap-12 md:flex-row">
           {/* Left: Title */}
           <div className="w-full md:w-auto">
-            <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
+            <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize">
               Why Partner with
               <br />
               House of Handsome?

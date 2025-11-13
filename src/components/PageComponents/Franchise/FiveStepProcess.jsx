@@ -46,11 +46,11 @@ export default function FiveStepProcess({
   steps = defaultSteps,
 }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="flex flex-col gap-4 mb-12">
-          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px]">
+        <div className="flex flex-col gap-4 mb-6 md:mb-12">
+          <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
             {title}
           </h2>
           <p className="font-['Urbanist'] font-normal text-[18px] text-black leading-[26px]">
@@ -63,7 +63,7 @@ export default function FiveStepProcess({
           <CarouselContent className="gap-2">
             {steps.map((step) => (
               <CarouselItem key={step.id} className="basis-auto">
-                <div className="w-[388px] flex flex-col overflow-hidden rounded-lg group cursor-pointer">
+                <div className="md:w-[388px] w-[340px] flex flex-col overflow-hidden rounded-lg group cursor-pointer">
                   {/* Image */}
                   <div className="h-[400px] w-full rounded-t-lg overflow-hidden">
                     <img
@@ -95,9 +95,9 @@ export default function FiveStepProcess({
           </CarouselContent>
 
           {/* Navigation - Hidden on mobile, shown on larger screens */}
-          <div className="hidden absolute top-[-80px] right-0 gap-2 justify-end mt-6 md:flex">
-            <CarouselPrevious className="static w-14 h-14 rounded-full border border-gray-300 transform-none hover:bg-gray-100" />
-            <CarouselNext className="static w-14 h-14 rounded-full border border-gray-300 transform-none hover:bg-gray-100" />
+          <div className=" absolute md:top-[-80px] top-[-50px] right-0 md:gap-2 justify-end mt-6 md:flex">
+            <CarouselPrevious className="static mr-2 w-10 h-10 rounded-full border border-gray-300 transform-none md:h-14 md:w-14 hover:bg-gray-100" />
+            <CarouselNext className="static w-10 h-10 rounded-full border border-gray-300 transform-none md:h-14 md:w-14 hover:bg-gray-100" />
           </div>
         </Carousel>
       </div>

@@ -20,16 +20,16 @@ export default function FranchiseModels({
     <section className="pt-10 pb-20 bg-white">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Title */}
-        <div className="flex flex-col gap-4 items-center mb-10">
-          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] text-center leading-[55px] capitalize">
+        <div className="flex flex-col gap-4 items-start mb-6 md:mb-10 md:items-center">
+          <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:text-center md:leading-[55px] leading-[40px] capitalize">
             {title}
           </h2>
         </div>
 
         {/* Content Layout */}
-        <div className="flex flex-col gap-12 justify-between items-center md:flex-row">
+        <div className="flex flex-col gap-6 justify-between items-center md:gap-12 md:flex-row">
           {/* Left Image */}
-          <div className="w-full md:w-[623px] h-[600px] rounded-lg overflow-hidden">
+          <div className="w-full md:w-[623px] h-[400px] rounded-lg overflow-hidden">
             <img
               src={image}
               alt={modelName}

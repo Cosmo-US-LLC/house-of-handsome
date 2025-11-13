@@ -35,11 +35,11 @@ export default function FranchiseSupport({
   ],
 }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-4 items-center text-center mb-12 max-w-[800px] mx-auto">
-          <h2 className="font-['Cairo'] text-[48px] font-bold text-[#181818] leading-[55px] capitalize">
+        <div className="flex flex-col gap-4 md:items-center items-start md:text-center text-left mb-6 md:mb-12 max-w-[800px] mx-auto">
+          <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize">
             {title}
           </h2>
           <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818] leading-[26px] w-full">
@@ -52,7 +52,7 @@ export default function FranchiseSupport({
           {supports.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col gap-[26px] w-[290px] h-[500px] group cursor-pointer"
+              className="flex flex-col gap-[26px] md:w-[290px] w-full h-[500px] group cursor-pointer"
             >
               {/* Title and Description */}
               <div className="flex flex-col gap-2 h-[80px]">

@@ -70,11 +70,11 @@ const services = [
 export default function GroomingServices() {
   return (
     <section className="pt-20 pb-10 bg-white">
-      <div className="mx-auto max-w-[1280px] px-10">
+      <div className="mx-auto max-w-[1280px] md:px-10 px-4">
         {services.map((service, index) => (
           <div
             key={service.id}
-            className={`flex flex-col md:flex-row items-center gap-[83px] mb-20 last:mb-0 ${
+            className={`flex flex-col md:flex-row items-center md:gap-[83px] gap-6 md:mb-20 mb-14 last:mb-0 ${
               index % 2 === 1 ? "md:flex-row" : "md:flex-row"
             }`}
           >

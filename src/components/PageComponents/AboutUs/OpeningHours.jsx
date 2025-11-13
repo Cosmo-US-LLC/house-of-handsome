@@ -12,7 +12,7 @@ function OpeningHours() {
           </h2>
 
           {/* Hours Table */}
-          <div className="w-[401px] font-['Urbanist'] font-medium text-[16px] leading-[26px]">
+          <div className="w-full md:w-[401px] font-['Urbanist'] font-medium text-[16px] leading-[26px]">
             <div className="flex justify-between mb-8">
               <span className="text-[#181818]">Monday to Friday</span>
               <span className="text-[#d82028]">9:00am — 8:00pm</span>

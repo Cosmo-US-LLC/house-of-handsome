@@ -1,3 +1,4 @@
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
 import React, { useState } from "react";
 
 export default function TakeFirstStep() {
@@ -21,11 +22,10 @@ export default function TakeFirstStep() {
   };
 
   return (
-    <section className="bg-[#f4f4f4] py-20 px-4 md:px-8">
-      <div className="mx-auto max-w-[1280px]">
-        {/* Header */}
-        <div className="max-w-[800px] mx-auto text-center mb-12">
-          <h2 className="text-[48px] font-['Cairo'] font-bold text-[#181818] leading-[55px] capitalize mb-4">
+    <section className="bg-[#f4f4f4] md:py-20 py-10 ">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
+        <div className="max-w-[800px] mx-auto text-center mb-6 md:mb-12">
+          <h2 className="md:text-[48px] text-[36px] font-['Cairo'] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize mb-4">
             Take the First Step Today
           </h2>
           <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818] leading-[26px] mb-6">
@@ -33,8 +33,7 @@ export default function TakeFirstStep() {
             happen.
           </p>
 
-          {/* Contact Info */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap gap-6 justify-center items-center">
             <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818]">
               Call us at:{" "}
               <span className="font-bold text-[#d82028]">877-418-2541</span>
@@ -46,14 +45,12 @@ export default function TakeFirstStep() {
           </div>
         </div>
 
-        {/* Form Container */}
-        <div className="bg-white rounded-2xl p-8 max-w-[1080px] mx-auto shadow-sm">
-          <h3 className="text-[32px] font-['Cairo'] font-bold text-[#d82028] leading-[64px] text-center mb-8">
+        <div className="bg-white rounded-2xl md:p-8 p-4 max-w-[1080px] mx-auto shadow-sm">
+          <h3 className="md:text-[32px] text-[24px] font-['Cairo'] font-bold text-[#d82028] md:leading-[64px] leading-[40px] text-center md:mb-8 mb-6">
             Franchise Inquiry Form
           </h3>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Full Name */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
                 Full Name
@@ -69,7 +66,6 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            {/* Email Address */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
                 Email Address
@@ -85,7 +81,6 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            {/* Phone Number */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
                 Phone Number
@@ -101,7 +96,6 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            {/* Preferred Franchise Model */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
                 Preferred Franchise Model
@@ -116,13 +110,14 @@ export default function TakeFirstStep() {
                 <option value="" disabled>
                   Select a franchise model
                 </option>
-                <option value="shop-in-shop">Shop-in-Shop (Licensed Operator)</option>
+                <option value="shop-in-shop">
+                  Shop-in-Shop (Licensed Operator)
+                </option>
                 <option value="full-franchise">Full Franchise</option>
                 <option value="master-franchise">Master Franchise</option>
               </select>
             </div>
 
-            {/* Message */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
                 Message
@@ -138,17 +133,10 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="bg-[#d82028] hover:bg-[#b91219] text-white font-normal text-[16px] uppercase px-6 py-4 rounded-lg transition-colors duration-300 font-['Urbanist']"
-            >
-              Send Message
-            </button>
+            <PrimaryCTA>Send Message</PrimaryCTA>
           </form>
         </div>
       </div>
     </section>
   );
 }
-
