@@ -12,6 +12,7 @@ import step1 from "../../../assets/images/franchise/FiveStepProcess/step_c1.webp
 import step2 from "../../../assets/images/franchise/FiveStepProcess/step_c2.webp";
 import step3 from "../../../assets/images/franchise/FiveStepProcess/step_c3.webp";
 import step4 from "../../../assets/images/franchise/FiveStepProcess/step_c4.webp";
+import step5 from "../../../assets/images/franchise/FiveStepProcess/step_c5.webp";
 
 const defaultSteps = [
   {
@@ -37,6 +38,12 @@ const defaultSteps = [
     title: "Step Up",
     description: "We help you design, train, and launch.",
     image: step4,
+  },
+   {
+    id: 5,
+    title: "Scale",
+    description: "With ongoing marketing & CRM support",
+    image: step5,
   },
 ];
 
@@ -69,7 +76,7 @@ export default function FiveStepProcess({
                     <img
                       src={step.image}
                       alt={step.title}
-                      className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
+                      className="object-cover w-full h-full transition-all duration-300 grayscale group-hover:grayscale-0"
                     />
                   </div>
 
@@ -96,8 +103,8 @@ export default function FiveStepProcess({
 
           {/* Navigation - Hidden on mobile, shown on larger screens */}
           <div className=" absolute md:top-[-80px] top-[-50px] right-0 md:gap-2 justify-end mt-6 md:flex">
-            <CarouselPrevious className="static mr-2 w-10 h-10 rounded-full border border-gray-300 transform-none md:h-14 md:w-14 hover:bg-gray-100" />
-            <CarouselNext className="static w-10 h-10 rounded-full border border-gray-300 transform-none md:h-14 md:w-14 hover:bg-gray-100" />
+            <CarouselPrevious className="static w-10 h-10 mr-2 border border-gray-300 rounded-full transform-none md:h-14 md:w-14 hover:bg-gray-100" />
+            <CarouselNext className="static w-10 h-10 border border-gray-300 rounded-full transform-none md:h-14 md:w-14 hover:bg-gray-100" />
           </div>
         </Carousel>
       </div>
