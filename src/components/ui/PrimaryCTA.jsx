@@ -8,7 +8,7 @@ function PrimaryCTA({ children, onClick, className = "", ...props }) {
       style={{ fontFamily: "Urbanist, sans-serif" }}
       {...props}
     >
-      {children || "Book Appointments"}
+      {children || "Book An Appointment"}
     </button>
   );
 }

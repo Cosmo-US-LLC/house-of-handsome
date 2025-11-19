@@ -72,6 +72,18 @@ const testimonials = [
 ];
 
 function Testimonials() {
+  const [api, setApi] = React.useState();
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
   return (
     <section className="py-20 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
@@ -85,6 +97,7 @@ function Testimonials() {
 
         {/* Testimonials Carousel */}
         <Carousel
+        setApi={setApi}
           opts={{
             align: "start",
             loop: false,
@@ -157,6 +170,17 @@ function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
+           <div className="flex justify-center mt-6 gap-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                  current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                }`}
+              />
+            ))}
+          </div>
           <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
           <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
         </Carousel>

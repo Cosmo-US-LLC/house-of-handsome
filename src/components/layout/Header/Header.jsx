@@ -49,7 +49,7 @@ function Header() {
           {/* Left: Brand Logo */}
           <Link
             to="/"
-            className="flex gap-2 items-center font-medium rounded-md text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2"
+            className="flex gap-2 items-center font-medium rounded-md text-neutral-900 "
             aria-label="House of Handsome - Home"
           >
             {/* Logo from Figma */}
@@ -66,7 +66,7 @@ function Header() {
               <Link
                 key={item.slug}
                 to={item.href}
-                className={`text-sm capitalize transition-colors relative py-2 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 rounded ${
+                className={`text-sm capitalize transition-colors relative py-2  rounded ${
                   isActive(item.slug)
                     ? "font-bold after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:rounded-full"
                     : "text-neutral-600 hover:text-neutral-900 font-medium"

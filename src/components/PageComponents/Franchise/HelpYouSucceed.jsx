@@ -1,5 +1,9 @@
 import React from "react";
-import logoIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
+import logoIcon1 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (3).svg";
+import logoIcon2 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (5).svg";
+import logoIcon3 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (1).svg";
+import logoIcon4 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (4).svg";
+import logoIcon5 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (2).svg";
 
 export default function HelpYouSucceed({
   title = "How We Help You Succeed",
@@ -9,25 +13,31 @@ export default function HelpYouSucceed({
       title: "Site Selection",
       description:
         "6 profitable Alberta locations operating under a tested model.",
+        icon: logoIcon1,
     },
     {
       title: "Interior Design",
       description:
         "Our team ensures every salon reflects the brand's luxury standard.",
+        icon: logoIcon2,
+
     },
     {
       title: "Training & Support",
       description: "We provide onboarding, operations, and marketing training",
+      icon: logoIcon3,
     },
     {
       title: "CRM & Marketing",
       description:
         "Centralized booking, CRM tools, and automated campaigns make client management effortless.",
+        icon: logoIcon4,
     },
     {
       title: "Launch & Growth",
       description:
         "Continuous marketing and influencer collaborations to build visibility and loyalty.",
+        icon: logoIcon5,
     },
   ],
 }) {
@@ -56,7 +66,7 @@ export default function HelpYouSucceed({
                 {/* Icon */}
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[rgba(216,32,40,0.1)]">
                   <img
-                    src={logoIcon}
+                    src={feature.icon}
                     alt={feature.title}
                     className="object-contain w-10 h-10"
                   />
@@ -85,7 +95,7 @@ export default function HelpYouSucceed({
                 {/* Icon */}
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[rgba(216,32,40,0.1)]">
                   <img
-                    src={logoIcon}
+                    src={feature.icon}
                     alt={feature.title}
                     className="object-contain w-10 h-10"
                   />

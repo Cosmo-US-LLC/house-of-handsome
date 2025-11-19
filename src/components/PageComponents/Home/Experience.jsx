@@ -55,7 +55,7 @@ function Experience() {
         {/* Text Content - Centered */}
         <div className="mx-auto  flex max-w-[500px] -mt-40 flex-col items-center gap-3 text-center">
           {/* Title */}
-          <h2 className="font-['Cairo'] text-2xl font-normal leading-[80px] text-[#181818] md:text-[32px]">
+          <h2 className="font-['Cairo'] font-bold text-2xl  leading-[80px] text-[#181818] md:text-[32px]">
             House of Handsome Experience
           </h2>
 

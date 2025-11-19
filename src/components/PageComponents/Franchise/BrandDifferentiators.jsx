@@ -1,30 +1,33 @@
 import React from "react";
-import logoIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
+import logoIcon1 from "../../../assets/images/franchise/whatSets/what_sets (4).svg";
+import logoIcon2 from "../../../assets/images/franchise/whatSets/what_sets (3).svg";
+import logoIcon3 from "../../../assets/images/franchise/whatSets/what_sets (2).svg";
+import logoIcon4 from "../../../assets/images/franchise/whatSets/what_sets (1).svg";
 
 export default function BrandDifferentiators({
   title = "What Sets House of Handsome Apart",
   features = [
     {
       id: 1,
-      icon: logoIcon,
+      icon: logoIcon1,
       label: "Luxury Aesthetic",
       description: "Every salon embodies sophistication and style.",
     },
     {
       id: 2,
-      icon: logoIcon,
+      icon: logoIcon2,
       label: "Built-In Demand",
       description: "Established brand with loyal customer base.",
     },
     {
       id: 3,
-      icon: logoIcon,
+      icon: logoIcon3,
       label: "Marketing Power",
       description: "Comprehensive campaigns that drive results.",
     },
     {
       id: 4,
-      icon: logoIcon,
+      icon: logoIcon4,
       label: "Tech Efficiency",
       description: "Modern tools for seamless operations.",
     },

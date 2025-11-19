@@ -79,7 +79,7 @@ export default function GroomingServices() {
             }`}
           >
             {/* Image */}
-            <div className="w-full md:w-[603px] md:h-[500px] rounded-lg overflow-hidden shrink-0">
+            <div className="w-full md:w-[603px] md:h-[430px] rounded-lg overflow-hidden shrink-0">
               <img
                 src={service.image}
                 alt={service.title}

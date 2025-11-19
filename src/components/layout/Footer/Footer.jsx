@@ -63,9 +63,9 @@ function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-6 pb-8 mb-2 md:gap-12 md:mb-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-20">
+        <div className="flex justify-between max-md:gap-10 pb-8 wrap max-md:grid max-md:grid-cols-1">
           {/* Column 1 - Brand */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col max-w-[440px] gap-6">
             {/* Logo */}
             <Link to="/" className="flex gap-2 items-center">
               <img
@@ -116,7 +116,7 @@ function Footer() {
           </div>
 
           {/* Column 2 - Quick Links */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col  gap-6">
             <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Quick Links
             </h3>
@@ -154,7 +154,7 @@ function Footer() {
           </div>
 
           {/* Column 3 - Services */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col  gap-6">
             <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Services
             </h3>
@@ -187,7 +187,7 @@ function Footer() {
           </div>
 
           {/* Column 4 - Our Locations */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col  gap-6">
             <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Our Locations
             </h3>

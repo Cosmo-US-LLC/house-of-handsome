@@ -69,8 +69,8 @@ export default function FiveStepProcess({
         <Carousel opts={{ align: "start", loop: false }}>
           <CarouselContent className="gap-2">
             {steps.map((step) => (
-              <CarouselItem key={step.id} className="basis-auto">
-                <div className="md:w-[388px] w-[340px] flex flex-col overflow-hidden rounded-lg group cursor-pointer">
+              <CarouselItem key={step.id} className="md:basis-auto">
+                <div className="md:w-[388px] md:w-[340px] flex flex-col overflow-hidden rounded-lg group cursor-pointer">
                   {/* Image */}
                   <div className="h-[400px] w-full rounded-t-lg overflow-hidden">
                     <img
