@@ -58,9 +58,9 @@ function FAQs() {
                 <AccordionItem
                   key={faq.id}
                   value={faq.id}
-                  className="rounded-[8px] cursor-pointer border border-gray-200 bg-white px-[24px] py-[40px] data-[state=open]:border-gray-200"
+                  className="rounded-[8px] cursor-pointer border border-gray-200 bg-white px-[24px] py-[34px] data-[state=open]:border-gray-200"
                 >
-                  <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden">
+                  <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline outline-none [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden">
                     <p className="flex-1 font-['Urbanist'] text-[24px] font-bold cursor-pointer leading-[32px] text-black transition-colors">
                       {faq.question}
                     </p>

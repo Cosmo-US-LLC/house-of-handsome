@@ -29,7 +29,7 @@ export default function FranchiseModels({
         {/* Content Layout */}
         <div className="flex flex-col gap-6 justify-between items-center md:gap-12 md:flex-row">
           {/* Left Image */}
-          <div className="w-full md:w-[623px] h-[400px] rounded-lg overflow-hidden">
+          <div className="w-full md:w-[623px] md:h-[650px] rounded-lg overflow-hidden">
             <img
               src={image}
               alt={modelName}

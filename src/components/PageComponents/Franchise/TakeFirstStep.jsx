@@ -36,7 +36,9 @@ export default function TakeFirstStep() {
           <div className="flex flex-wrap gap-6 justify-center items-center">
             <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818]">
               Call us at:{" "}
-              <span className="font-bold text-[#d82028]">877-418-2541</span>
+              <a href="tel:8774182541" className="font-bold text-[#d82028]">
+                877-418-2541
+              </a>
             </p>
             <div className="text-gray-400">|</div>
             <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818]">

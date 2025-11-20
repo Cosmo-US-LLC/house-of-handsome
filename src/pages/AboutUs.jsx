@@ -16,7 +16,7 @@ function AboutUs() {
         titleLine1="Locations."
         titleLine2=""
         paragraphs={[
-          "At House of Handsome, we’re proud to offer our premium grooming services at multiple convenient locations.",
+          "At <strong>House of Handsome</strong>, we’re proud to offer our premium grooming services at multiple convenient locations.",
           "Visit us today and experience the exceptional style and service that has made us Canada’s top barbershop.",
           "Find the location nearest to you below and book your appointment today!",
         ]}

@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import barber1 from "../../../assets/images/about/meetOurBarbers/barber_c1.webp";
 import barber2 from "../../../assets/images/about/meetOurBarbers/barber_c2.webp";
 import barber3 from "../../../assets/images/about/meetOurBarbers/barber_c3.webp";
@@ -22,7 +23,19 @@ export default function MeetOurBarbers() {
   return (
     <section className="pt-0 pb-10 bg-white md:pt-10 md:pb-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
-        <Carousel opts={{ align: "start", loop: false }} className="w-full">
+        <Carousel 
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: false,
+            }),
+          ]}
+        className="w-full">
           {/* Heading with Navigation */}
           <div className="flex flex-col gap-[13px] mb-12">
             <div className="flex justify-between items-center w-full">

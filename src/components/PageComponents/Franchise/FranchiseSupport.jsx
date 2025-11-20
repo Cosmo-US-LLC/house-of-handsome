@@ -48,29 +48,26 @@ export default function FranchiseSupport({
         </div>
 
         {/* Support Cards */}
-        <div className="flex flex-wrap gap-4 justify-center items-start">
+        <div className="flex flex-wrap  gap-4 justify-center items-start">
           {supports.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col gap-[26px] md:w-[290px] w-full h-[500px] group cursor-pointer"
+              className="flex flex-col p-[8px] bg-[#F4F4F4] gap-[26px] md:w-[290px] w-full min-h-[510px] group cursor-pointer"
             >
-              {/* Title and Description */}
-              <div className="flex flex-col gap-2 h-[80px]">
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
+                />
+              </div>
+               <div className="flex flex-col gap-2 p-[8px] h-[80px]">
                 <h3 className="font-['Cairo'] text-[24px] font-medium text-[#d82028] leading-[32px]">
                   {item.title}
                 </h3>
                 <p className="font-['Urbanist'] font-normal text-[16px] text-black leading-[24px]">
                   {item.description}
                 </p>
-              </div>
-
-              {/* Image */}
-              <div className="overflow-hidden flex-1 rounded-lg">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
-                />
               </div>
             </div>
           ))}

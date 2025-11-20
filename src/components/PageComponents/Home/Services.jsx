@@ -34,6 +34,19 @@ const servicesData = [
 ];
 
 function Services() {
+  const [api, setApi] = React.useState(null);
+  const isMobile = window.innerWidth < 768;
+
+  React.useEffect(() => {
+    if (!api || !isMobile) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [api, isMobile]);
+
   return (
     <section className="py-10 w-full bg-white md:py-20">
       {/* Max Container Wrapper - 1280px */}
@@ -52,11 +65,12 @@ function Services() {
 
         {/* Services Carousel */}
         <Carousel
+          setApi={setApi}
           opts={{
             align: "start",
-            loop: false,
+            loop: isMobile,
           }}
-          className="w-full"
+          className="w-full !mt-[80px]"
         >
           <CarouselContent className="-ml-6">
             {servicesData.map((service) => (
@@ -98,8 +112,8 @@ function Services() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="md:hidden left-[30px] top-[60%] -translate-x-1/2 -translate-y-1/2" />
-          <CarouselNext className="md:hidden right-[30px] top-[60%] translate-x-1/2 -translate-y-1/2" />
+          <CarouselPrevious className="left-[74%]  h-[40px] md:w-[50px] w-[40px] top-[-46px] translate-x-0 translate-y-0" />
+          <CarouselNext className="right-0 md:hidden top-[-46px]  h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
         </Carousel>
       </div>
     </section>

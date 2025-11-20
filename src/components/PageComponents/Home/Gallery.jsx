@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import galleryImage1 from "../../../assets/images/gallery/gallery_m1.webp";
 import galleryImage2 from "../../../assets/images/gallery/gallery_m2.webp";
 import galleryImage3 from "../../../assets/images/gallery/gallery_m3.webp";
@@ -166,8 +167,15 @@ function Gallery() {
         <Carousel
           opts={{
             align: "start",
-            loop: false,
+            loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: false,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-4">

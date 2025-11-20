@@ -42,7 +42,7 @@ const contentData = {
 // -------------------------------
 const LocationCard = ({ location }) => (
   <div className="group relative h-[260px] w-full overflow-hidden rounded-[8px] bg-[#3f3f3f]">
-    <div className="absolute left-1/2 top-1/2 h-[260px] w-[194px] -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-300 group-hover:h-[300px] group-hover:w-[224px]">
+    <div className="absolute left-1/2 top-1/2 h-[260px] w-[194px] max-md:w-[100%] -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-300 group-hover:h-[300px] group-hover:w-[100%]">
       <img
         src={location.image}
         alt={location.name}
@@ -106,8 +106,8 @@ export default function Locations({
                 <p
                   key={i}
                   className="font-['Urbanist'] text-lg font-normal leading-[26px] text-black"
+                  dangerouslySetInnerHTML={{ __html: text }}
                 >
-                  {text}
                 </p>
               ))}
 
@@ -123,7 +123,7 @@ export default function Locations({
             <Carousel opts={{ align: "start", loop: false }} className="w-full">
               <CarouselContent className="-ml-5">
                 {locationsData.map((location) => (
-                  <CarouselItem key={location.id} className="pl-5 basis-3/5">
+                  <CarouselItem key={location.id} className="pl-5">
                     <LocationCard location={location} />
                   </CarouselItem>
                 ))}

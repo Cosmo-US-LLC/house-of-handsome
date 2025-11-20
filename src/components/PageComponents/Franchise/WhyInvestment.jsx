@@ -31,9 +31,9 @@ export default function WhyInvestment({
           {/* Left Column - Benefits List */}
           <div className="flex flex-col gap-3 w-full md:w-[640px]">
             {benefits.map((item, index) => (
-              <div key={index} className="flex flex-col gap-6">
+              <div key={index} className="flex flex-col gap-6 max-md:gap-4">
                 <div className="flex flex-col gap-4">
-                  <h3 className="font-['Cairo'] text-[24px] font-bold text-black leading-[32px] capitalize">
+                  <h3 className="font-['Cairo'] text-[24px] max-md:text-[18px] font-bold text-black leading-[32px] capitalize">
                     {item}
                   </h3>
                 </div>
