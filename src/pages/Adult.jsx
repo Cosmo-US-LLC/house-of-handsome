@@ -20,4 +20,3 @@ function Adult() {
 }
 
 export default Adult;
-
