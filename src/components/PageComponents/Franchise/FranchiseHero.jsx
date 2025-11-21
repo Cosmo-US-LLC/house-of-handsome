@@ -1,55 +1,38 @@
 import React from "react";
 import { Download } from "lucide-react";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
-import franchiseImage from "../../../assets/images/about/aboutHero/about_hero.webp"; // example placeholder
+import franchiseImage from "../../../assets/images/about/aboutHero/about_hero.webp";
 
 export default function FranchiseHero({
-  title = "Franchise",
-  mainTitle = "Franchise With House Of Handsome",
-  description = "A Premium Opportunity in Men's Grooming — join a fast-growing luxury brand.",
+  mainTitle = "Franchise with House of Handsome",
+  description = "A Premium Opportunity in Men's Grooming - join a fast-growing luxury brand",
   image = franchiseImage,
-  primaryText = "Become A Franchise Partner",
-  secondaryText = "Download Franchise Brochure",
 }) {
   return (
-    <section className="py-8 bg-white">
-      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        {/* Section Heading */}
-        <h1 className="mb-12 text-[68px] max-md:hidden font-['Cairo'] font-normal text-center text-[#000] leading-[67px] capitalize border-b border-[#000] pb-10">
-          {title}
-        </h1>
-
-        {/* Content Layout */}
-        <div className="flex flex-col gap-12 items-center md:flex-row">
-          {/* Left: Image/Video Placeholder */}
-          <div className="md:w-[50%] w-full">
-            <div className="w-full h-[280px] md:h-[360px] bg-black rounded-md overflow-hidden">
-              <img
-                src={image}
-                alt={title}
-                className="hidden object-cover w-full h-full rounded-md"
-              />
-              {/* If using video, replace this <img> with <video> or <iframe> */}
-            </div>
-          </div>
-
-          {/* Right: Text & CTAs */}
-          <div className="text-left md:w-[50%] w-full">
-            <h2 className="text-[36px] md:text-[44px] font-['Cairo'] font-bold text-[#181818] leading-tight mb-4">
+    <section className="bg-[#F2F2F2] !overflow-hidden">
+      <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
+       
+        <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
+          <div className="text-left md:w-[55%] w-full">
+            <h2 className="text-[36px] md:text-[48px] font-['Cairo'] font-[400] text-[#181818] leading-tight mb-4"
+             style={{
+              WebkitTextStrokeWidth:"1px",
+              WebkitTextStrokeColor:"#000"
+            }}
+            >
               {mainTitle}
             </h2>
-            <p className="font-['Urbanist'] text-[18px] text-gray-600 leading-[28px] mb-6 max-w-[500px]">
+            <p className="font-['Urbanist'] text-[16px] text-gray-600 font-[500] leading-[28px] mb-6 max-w-[550px]">
               {description}
             </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <PrimaryCTA className="">{primaryText}</PrimaryCTA>
-              <button className="flex items-center cursor-pointer gap-2 border border-black text-black px-5 py-3 rounded-md font-semibold text-[16px] hover:bg-black hover:text-white transition">
-                <Download className="w-4 h-4" />
-                {secondaryText}
-              </button>
-            </div>
+           <PrimaryCTA  className="mt-4" />
+          </div>
+             <div className="md:max-w-[769px] w-full md:bottom-[0%]  md:absolute md:-right-24">
+            <img
+              src={image}
+              alt={"Franchise With House Of Handsome"}
+              className="object-cover"
+            />
           </div>
         </div>
       </div>

@@ -5,13 +5,19 @@ import experienceImage2 from "../../../assets/images/experience/exp_c2.png";
 import experienceImage3 from "../../../assets/images/experience/exp_c3.png";
 import experienceImage4 from "../../../assets/images/experience/exp_c4.png";
 
+import experienceImage1mob from "../../../assets/images/experience/exp_c1.webp";
+import experienceImage2mob from "../../../assets/images/experience/exp_c2.webp";
+import experienceImage3mob from "../../../assets/images/experience/exp_c3.webp";
+import experienceImage4mob from "../../../assets/images/experience/exp_c4.webp";
+
+
 function Experience() {
   return (
     <section className="relative pt-14 pb-10 w-full bg-white md:pb-16 md:pt-30">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8 ">
         {/* Arc Images Container */}
-        <div className="relative mx-auto mb-12 h-[300px] w-full max-w-[1280px] md:h-[400px]">
+        <div className="relative mx-auto max-md:hidden mb-12 h-[320px] w-full max-w-[1280px] md:h-[400px]">
           {/* Bottom Left Image */}
           <div className="absolute md:bottom-[-160px] bottom-[120px] left-0 h-[124px] w-[94px] md:h-[393px] md:w-[305px]">
             <img
@@ -51,16 +57,64 @@ function Experience() {
             <PrimaryCTA />
           </div> */}
         </div>
+         <div className="relative mx-auto md:hidden max-w-[350px] mb-12 h-[320px] w-full ">
+          {/* Bottom Left Image */}
+          <div className="absolute md:bottom-[-160px] bottom-[120px] -left-2 ">
+            <img
+              src={experienceImage1mob}
+              alt="Barber styling client"
+              className="h-full w-full object-cover "
+            />
+          </div>
+
+          {/* Top Left Image */}
+          <div className="absolute left-[18.5%] top-[21px] ">
+            <img
+              src={experienceImage2mob}
+              alt="Salon interior with barbers"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Top Right Image */}
+          <div className="absolute right-[12.5%] top-[21px] ">
+            <img
+              src={experienceImage3mob}
+              alt="Man getting professional haircut"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Bottom Right Image */}
+          <div className="absolute md:bottom-[-170px] bottom-[120px] -right-2  ">
+            <img
+              src={experienceImage4mob}
+              alt="Man getting beard shaved"
+              className="h-full w-full object-cover "
+            />
+          </div>
+             <h2 className="font-['Cairo'] text-center top-[45%] absolute left-[23.5%] md:hidden font-[400] text-[18px]  leading-[122.222%] text-[#181818] uppercase"
+               style={{
+              WebkitTextStrokeWidth:"1px",
+              WebkitTextStrokeColor:"#000"
+            }}
+             >
+            House of <br /> Handsome Experience
+          </h2>
+          {/* <div className="absolute bottom-[100px] left-[50%] translate-x-[-50%] mt-4 md:hidden">
+            <PrimaryCTA />
+          </div> */}
+        </div>
 
         {/* Text Content - Centered */}
         <div className="mx-auto  flex max-w-[500px] -mt-40 flex-col items-center gap-3 text-center">
           {/* Title */}
-          <h2 className="font-['Cairo'] font-bold text-2xl  leading-[80px] text-[#181818] md:text-[32px]">
+          <h2 className="font-['Cairo'] max-md:hidden font-bold text-2xl  leading-[80px] text-[#181818] md:text-[32px]">
             House of Handsome Experience
           </h2>
 
           {/* Subtitle */}
-          <p className="font-['Urbanist'] text-base font-medium leading-[26px] text-[#181818]">
+          <p className="font-['Urbanist'] max-md:hidden  text-base font-medium leading-[26px] text-[#181818]">
             More than just a haircut, it's a transformation!
           </p>
 

@@ -4,11 +4,16 @@ import heroImage from "../../../assets/images/hero/hairdresser_barber_shop_styli
 
 function Hero() {
   return (
-    <section className="pt-4 w-full bg-[#F2F2F2]">
-      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <div className="flex flex-col gap-6 items-end w-full md:flex-row md:gap-8">
-          <div className="pt-4 pb-4 w-full md:w-[46%] space-y-4 text-left md:space-y-6 md:pt-16">
-            <h1 className="font-['Cairo'] font-bold text-neutral-900 leading-[36px] md:leading-[67px] text-[36px] md:text-[56px] lg:text-[68px]">
+    <section className="pt-4 w-full bg-[#F2F2F2] ">
+      <div className="mx-auto max-w-[1280px] relative px-4 md:px-8 ">
+        <div className="flex flex-col gap-6 items-center min-h-[620px] w-full md:flex-row md:gap-8">
+          <div className="pt-4 pb-4 w-full md:w-[60%] space-y-4 text-left md:space-y-6 md:pt-0">
+            <h1 className="font-['Cairo'] font-[400] text-neutral-900 leading-[36px] md:leading-[67px] text-[36px] md:text-[56px] lg:text-[68px]"
+            style={{
+              WebkitTextStrokeWidth:"1px",
+              WebkitTextStrokeColor:"#000"
+            }}
+            >
               The Ultimate Grooming Experience
             </h1>
 
@@ -80,11 +85,11 @@ function Hero() {
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex md:w-[54%] w-full justify-center items-end h-full md:justify-end">
+          <div className="flex  w-full md:!w-[734px] min-h-[560px] md:bottom-0  md:absolute md:right-0 justify-center items-end h-full md:justify-end">
             <img
               src={heroImage}
-              alt="Two well-groomed male models in black clothing"
-              className="w-full h-full md:w-full"
+              alt="Two well-groomed male models  in black clothing"
+              className="!w-full h-full md:w-full "
             />
           </div>
         </div>
