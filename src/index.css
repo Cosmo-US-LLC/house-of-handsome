@@ -144,3 +144,8 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+.accordion-content {
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  overflow: hidden;
+}

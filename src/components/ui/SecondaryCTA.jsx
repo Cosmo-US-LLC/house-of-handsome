@@ -8,7 +8,7 @@ function SecondaryCTA({ children, onClick, className = "", ...props }) {
       style={{ fontFamily: "Urbanist, sans-serif" }}
       {...props}
     >
-      {children || "Button Text"}
+      {children || "Book An Appointment"}
     </button>
   );
 }
