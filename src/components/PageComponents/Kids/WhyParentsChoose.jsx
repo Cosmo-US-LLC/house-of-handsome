@@ -1,8 +1,8 @@
 import React from "react";
-import whyParentsImage1 from "../../../assets/images/kids/whyParentsChoose/why_parents_c1.webp";
-import whyParentsImage2 from "../../../assets/images/kids/whyParentsChoose/why_parents_c2.webp";
-import whyParentsImage3 from "../../../assets/images/kids/whyParentsChoose/why_parents_c3.webp";
-import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/why_parents_c4.webp";
+import whyParentsImage1 from "../../../assets/images/kids/whyParentsChoose/why_teens_c1.webp";
+import whyParentsImage2 from "../../../assets/images/kids/whyParentsChoose/why_teens_c2.webp";
+import whyParentsImage3 from "../../../assets/images/kids/whyParentsChoose/why_teens_c3.webp";
+import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/why_teens_c4.webp";
 
 const reasons = [
   {
@@ -29,7 +29,7 @@ const reasons = [
 
 function WhyParentsChoose() {
   return (
-    <section className="bg-white py-20">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
         <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px] capitalize mb-12">
@@ -37,7 +37,7 @@ function WhyParentsChoose() {
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason) => (
             <div
               key={reason.id}
@@ -47,14 +47,14 @@ function WhyParentsChoose() {
               <img
                 src={reason.image}
                 alt={reason.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="object-cover absolute inset-0 w-full h-full"
               />
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[57%] to-[rgba(0,0,0,0.35)] to-[67%]" />
 
               {/* Text Content */}
-              <div className="absolute bottom-4 left-4 right-4">
+              <div className="absolute right-4 bottom-4 left-4">
                 <h3 className="font-['Urbanist'] font-bold text-[20px] leading-[28px] text-white">
                   {reason.title}
                 </h3>

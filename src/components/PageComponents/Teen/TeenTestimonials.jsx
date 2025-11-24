@@ -37,33 +37,6 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage1,
   },
-  {
-    id: 4,
-    title: "Professional Service Every Time",
-    quote: "Always leaving satisfied with my fresh look.",
-    reviewer: "Michael K.",
-    role: "Highschooler",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 5,
-    title: "Excellence in Every Detail",
-    quote: "The attention to detail is unmatched.",
-    reviewer: "Ryan S.",
-    role: "Highschooler",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 6,
-    title: "My Go-To Grooming Spot",
-    quote: "Consistent quality, every single visit.",
-    reviewer: "Chris B.",
-    role: "Highschooler",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
 ];
 
 function TeenTestimonials() {
@@ -86,7 +59,7 @@ function TeenTestimonials() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}
         <div className="mb-12">
-          <h2 className="font-['Cairo'] text-3xl font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
+          <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
             Teen Testimonials
           </h2>
         </div>
@@ -186,4 +159,3 @@ function TeenTestimonials() {
 }
 
 export default TeenTestimonials;
-

@@ -3,7 +3,7 @@ import PrimaryCTA from "../../ui/PrimaryCTA";
 
 function ReadyForFreshLook() {
   return (
-    <section className="py-6 bg-black ">
+    <section className="py-6 bg-black">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         {/* CTA Container */}
         <div className="relative bg-black rounded-2xl min-h-[200px] md:h-[200px] overflow-hidden">
@@ -11,9 +11,9 @@ function ReadyForFreshLook() {
           <div className="absolute inset-[10px] border border-dashed border-white opacity-60 rounded-2xl pointer-events-none" />
 
           {/* Content - Stack on mobile, side-by-side on desktop */}
-          <div className="relative flex flex-col md:flex-row items-center justify-between h-full gap-6 md:gap-8 px-6 py-8 md:px-16 md:py-0">
+          <div className="flex relative flex-col gap-6 justify-between items-center px-6 py-8 h-full md:flex-row md:gap-8 md:px-16 md:py-0">
             {/* Left - Text */}
-            <div className="space-y-3 md:space-y-5 text-white text-center md:text-left">
+            <div className="space-y-3 text-center text-white md:space-y-5 md:text-left">
               <h2 className="font-['Cairo'] font-bold text-[28px] md:text-[36px] lg:text-[48px] leading-tight md:leading-[55px]">
                 Ready for a Fresh Look?
               </h2>
@@ -24,7 +24,7 @@ function ReadyForFreshLook() {
 
             {/* Right - CTA Button */}
             <div className="shrink-0">
-              <PrimaryCTA>Book Appointments</PrimaryCTA>
+              <PrimaryCTA>Book An Appointment</PrimaryCTA>
             </div>
           </div>
         </div>

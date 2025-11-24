@@ -7,7 +7,7 @@ import whyAdultsImage4 from "../../../assets/images/adult/whyAdultsChoose/why_ad
 const reasons = [
   {
     id: 1,
-    title: "Skilled barbers who understand men's style",
+    title: "Skilled barbers who understand men’s style",
     image: whyAdultsImage1,
   },
   {

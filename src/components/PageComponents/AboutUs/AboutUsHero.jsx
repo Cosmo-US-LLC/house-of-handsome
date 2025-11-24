@@ -15,14 +15,15 @@ export default function AboutUsHero({
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left md:w-[45%] w-full">
-            <h2 className="mb-4 text-[48px] font-['Cairo'] font-[400]  text-[#000] leading-[67px] capitalize "
-            style={{
-              WebkitTextStrokeWidth:"1px",
-              WebkitTextStrokeColor:"#000"
-            }}
+            <h2
+              className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[400]  text-[#000] md:leading-[67px] leading-[42px] capitalize "
+              style={{
+                WebkitTextStrokeWidth: "1px",
+                WebkitTextStrokeColor: "#000",
+              }}
             >
-          At House of Handsome, we redefine grooming.
-        </h2>
+              At House of Handsome, we redefine grooming.
+            </h2>
             {paragraphs.map((text, i) => (
               <p
                 key={i}

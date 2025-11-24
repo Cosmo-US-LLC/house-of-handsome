@@ -13,7 +13,7 @@ export default function AdultHero({
         <div className="flex flex-col gap-12 items-center md:min-h-[510px] md:flex-row">
           <div className="text-left md:w-[45%] w-full">
             <h2
-              className="mb-4 text-[48px] font-['Cairo'] font-[400]  text-[#000] leading-[55px] capitalize "
+              className="mb-4 text-[36px] md:text-[48px] font-['Cairo'] font-[400]  text-[#000] md:leading-[55px] leading-[40px] capitalize "
               style={{
                 WebkitTextStrokeWidth: "1px",
                 WebkitTextStrokeColor: "#000",

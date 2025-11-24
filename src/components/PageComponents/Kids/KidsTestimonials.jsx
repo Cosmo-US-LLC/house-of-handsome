@@ -12,7 +12,8 @@ import testimonialsImage1 from "../../../assets/images/testimonials/testimonials
 const testimonials = [
   {
     id: 1,
-    title: "My child gets nervous with haircuts, but he barbers were so patient. He left happy!",
+    title:
+      "My child gets nervous with haircuts, but he barbers were so patient. He left happy!",
     quote: "He actually looks forward to his next haircut.",
     reviewer: "Samual K.",
     role: "Parent",
@@ -21,7 +22,8 @@ const testimonials = [
   },
   {
     id: 2,
-    title: "They made my son feel comfortable right away. Quick service but high-quality behind",
+    title:
+      "They made my son feel comfortable right away. Quick service but high-quality behind",
     quote: "Quick and professional every time.",
     reviewer: "Mike. T",
     role: "Parent",
@@ -30,36 +32,10 @@ const testimonials = [
   },
   {
     id: 3,
-    title: "The barbers were amazing with my daughter. Very friendly and to patient",
+    title:
+      "The barbers were amazing with my daughter. Very friendly and to patient",
     quote: "She loved the experience!",
     reviewer: "Glenn F",
-    role: "Parent",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 4,
-    title: "Professional Service Every Time",
-    quote: "Always leaving satisfied with my fresh look.",
-    reviewer: "Michael K.",
-    role: "Parent",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 5,
-    title: "Excellence in Every Detail",
-    quote: "The attention to detail is unmatched.",
-    reviewer: "Ryan S.",
-    role: "Parent",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 6,
-    title: "My Go-To Grooming Spot",
-    quote: "Consistent quality, every single visit.",
-    reviewer: "Chris B.",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage1,
@@ -186,4 +162,3 @@ function KidsTestimonials() {
 }
 
 export default KidsTestimonials;
-

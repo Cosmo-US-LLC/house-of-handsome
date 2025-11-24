@@ -4,7 +4,7 @@ import adultHeroImage from "../../../assets/images/adult/adultHero/adult_hero.we
 export default function AdultHero({
   image = adultHeroImage,
   paragraphs = [
-    " At House of Handsome, we deliver premium grooming for the modern man. Enjoy expert craftsmanship, a relaxed atmosphere, and a look that boosts your confidence every time.",
+    " At House of Handsome, we deliver premium grooming for the modern man. Enjoy expert craftsmanship, a relaxed atmosphere, and a look that boosts your confidence every time.",
   ],
 }) {
   return (
@@ -13,7 +13,7 @@ export default function AdultHero({
         <div className="flex flex-col gap-12 items-center md:min-h-[510px] md:flex-row">
           <div className="text-left md:w-[45%] w-full">
             <h2
-              className="mb-4 text-[48px] font-['Cairo'] font-[400]  text-[#000] leading-[55px] capitalize "
+              className="mb-4 md:text-[48px] text-[36px] leading-[42px] font-['Cairo'] font-[400]  text-[#000] md:leading-[55px] capitalize "
               style={{
                 WebkitTextStrokeWidth: "1px",
                 WebkitTextStrokeColor: "#000",

@@ -152,7 +152,7 @@ function TeenStyleGallery() {
           {/* Left: Heading with Description */}
           <div className="flex flex-col gap-4">
             {/* Title */}
-            <h2 className="font-['Cairo'] text-3xl font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
+            <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px] leading-[40px]">
               Your Style, Elevated
             </h2>
             {/* Subtitle */}

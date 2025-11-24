@@ -9,25 +9,25 @@ export default function FranchiseHero({
   image = franchiseImage,
 }) {
   return (
-    <section className="bg-[#F2F2F2] !overflow-hidden">
+    <section className="bg-[#F2F2F2] !overflow-hidden pt-4 md:pt-0">
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
-       
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left md:w-[55%] w-full">
-            <h2 className="text-[36px] md:text-[48px] font-['Cairo'] font-[400] text-[#181818] leading-tight mb-4"
-             style={{
-              WebkitTextStrokeWidth:"1px",
-              WebkitTextStrokeColor:"#000"
-            }}
+            <h2
+              className="text-[36px] md:text-[48px] font-['Cairo'] font-[400] text-[#181818] leading-tight mb-4"
+              style={{
+                WebkitTextStrokeWidth: "1px",
+                WebkitTextStrokeColor: "#000",
+              }}
             >
               {mainTitle}
             </h2>
             <p className="font-['Urbanist'] text-[16px] text-gray-600 font-[500] leading-[28px] mb-6 max-w-[550px]">
               {description}
             </p>
-           <PrimaryCTA  className="mt-4" />
+            <PrimaryCTA className="mt-4" />
           </div>
-             <div className="md:max-w-[769px] w-full md:bottom-[0%]  md:absolute md:-right-24">
+          <div className="md:max-w-[769px] w-full md:bottom-[0%]  md:absolute md:-right-24">
             <img
               src={image}
               alt={"Franchise With House Of Handsome"}

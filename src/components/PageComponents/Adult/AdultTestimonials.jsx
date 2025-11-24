@@ -17,7 +17,7 @@ import testimonialsImage6 from "../../../assets/images/testimonials/testimonials
 const testimonials = [
   {
     id: 1,
-    title: "Always walk out feeling sharp. The barbers here are top-notch",
+    title: "Always walk out feeling sharp. The barbers here are top-notch.",
     quote: "The cut that boosted my confidence.",
     reviewer: "Mark A.",
     role: "Entrepreneur",

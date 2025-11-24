@@ -1,5 +1,5 @@
 import React from "react";
-import whatToExpectImage from "../../../assets/images/teen/whatToExpect/what_to_expect.webp";
+import whatToExpectImage from "../../../assets/images/teen/whatToExpect/expect_image.webp";
 
 const expectations = [
   {
@@ -24,11 +24,11 @@ const expectations = [
 
 function TeenWhatToExpect() {
   return (
-    <section className="bg-white py-20">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col gap-12 items-center md:flex-row">
           {/* Left Side - Text Content */}
-          <div className="w-full md:w-1/2 space-y-4">
+          <div className="space-y-4 w-full md:w-1/2">
             {/* Heading */}
             <div className="space-y-3">
               <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px]">
@@ -67,7 +67,7 @@ function TeenWhatToExpect() {
             <img
               src={whatToExpectImage}
               alt="Teen grooming service"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>
