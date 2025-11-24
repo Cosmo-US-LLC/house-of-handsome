@@ -25,7 +25,7 @@ const expectations = [
 function KidsWhatToExpect() {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-[1440px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           {/* Left Side - Text Content */}
           <div className="w-full md:w-1/2 space-y-8">
@@ -41,10 +41,10 @@ function KidsWhatToExpect() {
             </div>
 
             {/* Expectations List */}
-            <div className="space-y-8">
+            <div className="">
               {expectations.map((item, index) => (
                 <div key={item.id}>
-                  <div className="space-y-4">
+                  <div className="">
                     <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] leading-[70px]">
                       {item.title}
                     </h3>
@@ -55,7 +55,7 @@ function KidsWhatToExpect() {
 
                   {/* Divider - don't show after last item */}
                   {index < expectations.length - 1 && (
-                    <div className="mt-8 border-t border-gray-300" />
+                    <div className="mt-4 border-t border-gray-300" />
                   )}
                 </div>
               ))}
@@ -77,4 +77,3 @@ function KidsWhatToExpect() {
 }
 
 export default KidsWhatToExpect;
-

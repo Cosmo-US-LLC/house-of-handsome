@@ -25,10 +25,10 @@ const expectations = [
 function TeenWhatToExpect() {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-[1440px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           {/* Left Side - Text Content */}
-          <div className="w-full md:w-1/2 space-y-8">
+          <div className="w-full md:w-1/2 space-y-4">
             {/* Heading */}
             <div className="space-y-3">
               <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px]">
@@ -41,10 +41,10 @@ function TeenWhatToExpect() {
             </div>
 
             {/* Expectations List */}
-            <div className="space-y-8">
+            <div className="">
               {expectations.map((item, index) => (
                 <div key={item.id}>
-                  <div className="space-y-4">
+                  <div className="">
                     <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] leading-[70px]">
                       {item.title}
                     </h3>
@@ -55,7 +55,7 @@ function TeenWhatToExpect() {
 
                   {/* Divider - don't show after last item */}
                   {index < expectations.length - 1 && (
-                    <div className="mt-8 border-t border-gray-300" />
+                    <div className="mt-4 border-t border-gray-300" />
                   )}
                 </div>
               ))}
@@ -63,7 +63,7 @@ function TeenWhatToExpect() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="w-full md:w-1/2 h-[480px] rounded-2xl overflow-hidden">
+          <div className="w-full md:w-1/2 h-[520px] rounded-2xl overflow-hidden">
             <img
               src={whatToExpectImage}
               alt="Teen grooming service"
@@ -77,4 +77,3 @@ function TeenWhatToExpect() {
 }
 
 export default TeenWhatToExpect;
-

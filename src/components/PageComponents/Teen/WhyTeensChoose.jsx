@@ -30,7 +30,7 @@ const reasons = [
 function WhyTeensChoose() {
   return (
     <section className="bg-white py-20">
-      <div className="mx-auto max-w-[1440px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
         <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px] capitalize mb-12">
           Why Teens Choose Us
@@ -68,4 +68,3 @@ function WhyTeensChoose() {
 }
 
 export default WhyTeensChoose;
-
