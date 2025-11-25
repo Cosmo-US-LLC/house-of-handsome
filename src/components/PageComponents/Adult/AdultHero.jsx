@@ -4,7 +4,7 @@ import adultHeroImage from "../../../assets/images/adult/adultHero/adult_hero.we
 export default function AdultHero({
   image = adultHeroImage,
   paragraphs = [
-    " At House of Handsome, we deliver premium grooming for the modern man. Enjoy expert craftsmanship, a relaxed atmosphere, and a look that boosts your confidence every time.",
+    "At House of Handsome, we deliver premium grooming for the modern man. Enjoy expert craftsmanship, a relaxed atmosphere, and a look that boosts your confidence every time.",
   ],
 }) {
   return (

@@ -54,14 +54,19 @@ export default function FiveStepProcess({
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
- const containerWidth = 1280; 
-const cardWidth = 0;
-const gap = 20; 
-const extraScroll = 2100;         
+      
 
 useEffect(() => {
   const cards = cardsRef.current;
 
+  const isMobile = window.innerWidth < 768;
+
+  const containerWidth = isMobile ? window.innerWidth : 1280;
+  const cardWidth = isMobile ? 0 : 0;
+  const gap = 20;
+  const extraScroll = isMobile ? 1780 : 840;
+
+  // Position cards
   cards.forEach((card, i) => {
     gsap.set(card, {
       x: containerWidth + i * (cardWidth + gap),
@@ -91,9 +96,9 @@ useEffect(() => {
 
   return (
     <section className="py-10 bg-white md:py-20   overflow-hidden relative" ref={sectionRef}>
-      <div className="max-w-[1280px] h-screen sticky top-0 mx-auto px-4 md:px-8 overflow-hidden relative">
+      <div className="max-w-[1240px] md:h-screen !h-[780px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
         {/* Header */}
-        <div className="flex flex-col gap-4 mb-6 md:mb-12">
+        <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
             {title}
           </h2>
@@ -102,13 +107,13 @@ useEffect(() => {
           </p>
         </div>
        
-         <div className="cards-wrapper flex max-md:mt-[3rem] !justify-start absolute top-1/2 left-0 -translate-y-1/2">
+         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:top-1/2 !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
       
   {defaultSteps.map((card, i) => (
     <div
       key={i}
       ref={(el) => (cardsRef.current[i] = el)}
-      className="card-inner-wrapper w-[420px] h-[508px] "
+      className="card-inner-wrapper w-[420px] md:w-[420px] h-[480px] md:h-[508px] "
     >
       <div className=" w-full overflow-hidden">
                 <img

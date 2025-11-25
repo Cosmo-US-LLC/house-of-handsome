@@ -32,7 +32,7 @@ function WhyTeensChoose() {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
-        <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px] capitalize mb-12">
+        <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[36px] leading-[55px] capitalize mb-12">
           Why Teens Choose Us
         </h2>
 
@@ -51,7 +51,7 @@ function WhyTeensChoose() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[57%] to-[rgba(0,0,0,0.35)] to-[67%]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[70%] to-[rgba(0,0,0,0.35)] to-[85%]" />
 
               {/* Text Content */}
               <div className="absolute bottom-4 left-4 right-4">

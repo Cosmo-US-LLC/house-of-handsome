@@ -32,7 +32,7 @@ function WhyParentsChoose() {
     <section className="py-20 bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
-        <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px] capitalize mb-12">
+        <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[36px] leading-[55px] capitalize mb-12">
           Why Parents Choose Us
         </h2>
 
