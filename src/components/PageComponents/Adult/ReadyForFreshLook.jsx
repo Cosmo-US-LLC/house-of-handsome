@@ -24,7 +24,7 @@ function ReadyForFreshLook() {
 
             {/* Right - CTA Button */}
             <div className="shrink-0">
-              <PrimaryCTA>Book An Appointment</PrimaryCTA>
+              <PrimaryCTA />
             </div>
           </div>
         </div>

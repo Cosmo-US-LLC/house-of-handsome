@@ -31,7 +31,7 @@ function WhatToExpect() {
           <div className="w-full md:w-1/2 space-y-4">
             {/* Heading */}
             <div className="space-y-3">
-              <h2 className="font-['Cairo'] font-bold text-[#181818] text-[36px] md:text-[48px] leading-[55px]">
+              <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[36px] leading-[55px]">
                 What to Expect
               </h2>
               <p className="font-['Urbanist'] font-normal text-[18px] leading-[26px] text-black max-w-[555px]">
