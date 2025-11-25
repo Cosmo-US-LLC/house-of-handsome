@@ -1,5 +1,5 @@
 import React from "react";
-import aboutUsImage from "../../../assets/images/about/aboutHero/about_hero.webp";
+import aboutUsImage from "../../../assets/images/about/aboutHero/about_img.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
 
 export default function AboutUsHero({

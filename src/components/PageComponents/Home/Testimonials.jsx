@@ -6,12 +6,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/testimonials/testimonials_p1.webp";
-import testimonialsImage2 from "../../../assets/images/testimonials/testimonials_p1.webp";
-import testimonialsImage3 from "../../../assets/images/testimonials/testimonials_p1.webp";
-import testimonialsImage4 from "../../../assets/images/testimonials/testimonials_p1.webp";
-import testimonialsImage5 from "../../../assets/images/testimonials/testimonials_p1.webp";
-import testimonialsImage6 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage1 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage2 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage3 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage4 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage5 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage6 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
 
 // Testimonials data
 const testimonials = [
@@ -97,7 +97,7 @@ function Testimonials() {
 
         {/* Testimonials Carousel */}
         <Carousel
-        setApi={setApi}
+          setApi={setApi}
           opts={{
             align: "start",
             loop: false,
@@ -170,7 +170,7 @@ function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-           <div className="flex justify-center mt-6 gap-2">
+          <div className="flex gap-2 justify-center mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}

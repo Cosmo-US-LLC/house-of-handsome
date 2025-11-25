@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
 import {
   Carousel,
@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-import locationsImage1 from "../../../assets/images/location/location_c1.webp";
-import locationsImage2 from "../../../assets/images/location/location_c2.webp";
-import locationsImage3 from "../../../assets/images/location/location_c3.webp";
-import locationsImage4 from "../../../assets/images/location/location_c4.webp";
-import locationsImage5 from "../../../assets/images/location/location_c5.webp";
-import locationsImage6 from "../../../assets/images/location/location_c6.webp";
+import locationsImage1 from "../../../assets/images/home/location/location_c1.webp";
+import locationsImage2 from "../../../assets/images/home/location/location_c2.webp";
+import locationsImage3 from "../../../assets/images/home/location/location_c3.webp";
+import locationsImage4 from "../../../assets/images/home/location/location_c4.webp";
+import locationsImage5 from "../../../assets/images/home/location/location_c5.webp";
+import locationsImage6 from "../../../assets/images/home/location/location_c6.webp";
 
 // -------------------------------
 // Dynamic Data
@@ -87,22 +87,19 @@ export default function Locations({
   titleLine2 = contentData.titleLine2,
   paragraphs = contentData.paragraphs,
   buttonText = contentData.buttonText,
-}) 
+}) {
+  const [api, setApi] = React.useState();
+  const [current, setCurrent] = React.useState(0);
 
-{
+  React.useEffect(() => {
+    if (!api) return;
 
-   const [api, setApi] = React.useState();
-    const [current, setCurrent] = React.useState(0);
-  
-    React.useEffect(() => {
-      if (!api) return;
-  
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
-  
-      api.on("select", () => {
-        setCurrent(api.selectedScrollSnap());
-      });
-    }, [api]);
+    });
+  }, [api]);
   return (
     <section className="py-10 w-full bg-white md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
@@ -123,8 +120,7 @@ export default function Locations({
                   key={i}
                   className="font-['Urbanist'] text-lg font-normal leading-[26px] text-black"
                   dangerouslySetInnerHTML={{ __html: text }}
-                >
-                </p>
+                ></p>
               ))}
 
               {/* CTA Button */}
@@ -136,36 +132,41 @@ export default function Locations({
 
           {/* RIGHT COLUMN - Mobile Carousel */}
           <div className="md:hidden">
-            <Carousel 
-             setApi={setApi}
+            <Carousel
+              setApi={setApi}
               plugins={[
-                         Autoplay({
-                           delay: 2000,
-                           stopOnInteraction: false,
-                           stopOnMouseEnter: false,
-                         }),
-                       ]}
-            opts={{ align: "start", loop: false }} className="w-full">
+                Autoplay({
+                  delay: 2000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: false,
+                }),
+              ]}
+              opts={{ align: "start", loop: false }}
+              className="w-full"
+            >
               <CarouselContent className="-ml-5">
                 {locationsData.map((location) => (
-                  <CarouselItem key={location.id} className="pl-5 basis-[83.3333%]">
+                  <CarouselItem
+                    key={location.id}
+                    className="pl-5 basis-[83.3333%]"
+                  >
                     <LocationCard location={location} />
                   </CarouselItem>
                 ))}
               </CarouselContent>
               {/* <CarouselPrevious className="left-[30px] top-[50%] -translate-x-1/2 -translate-y-1/2 md:top-[60%]" />
               <CarouselNext className="right-[30px] top-[50%] translate-x-1/2 -translate-y-1/2 md:top-[60%]" /> */}
-                <div className="flex justify-center mt-6 gap-2">
-            {locationsData.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                  current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
-                }`}
-              />
-            ))}
-          </div>
+              <div className="flex gap-2 justify-center mt-6">
+                {locationsData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                      current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                    }`}
+                  />
+                ))}
+              </div>
             </Carousel>
           </div>
 

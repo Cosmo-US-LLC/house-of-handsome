@@ -7,16 +7,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import galleryImage1 from "../../../assets/images/gallery/gallery_m1.webp";
-import galleryImage2 from "../../../assets/images/gallery/gallery_m2.webp";
-import galleryImage3 from "../../../assets/images/gallery/gallery_m3.webp";
-import galleryImage4 from "../../../assets/images/gallery/gallery_m4.webp";
-import galleryImage5 from "../../../assets/images/gallery/gallery_m5.webp";
-import galleryImage6 from "../../../assets/images/gallery/gallery_m6.webp";
-import galleryImage7 from "../../../assets/images/gallery/gallery_m7.webp";
-import galleryImage8 from "../../../assets/images/gallery/gallery_m8.webp";
-import galleryImage9 from "../../../assets/images/gallery/gallery_m9.webp";
-import galleryImage10 from "../../../assets/images/gallery/gallery_m10.webp";
+import galleryImage1 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_1.webp";
+import galleryImage2 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_2.webp";
+import galleryImage3 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_3.webp";
+import galleryImage4 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_4.webp";
+import galleryImage5 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_5.webp";
+import galleryImage6 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_6.webp";
+import galleryImage7 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_7.webp";
+import galleryImage8 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_8.webp";
+import galleryImage9 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_6.webp";
+import galleryImage10 from "../../../assets/images/kids/kidsStyleGallery/kids_gallery_4.webp";
 
 // Gallery images data with varying heights for masonry layout
 const galleryImages = [
@@ -222,4 +222,3 @@ function KidsStyleGallery() {
 }
 
 export default KidsStyleGallery;
-

@@ -1,6 +1,6 @@
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
-import heroImage from "../../../assets/images/hero/hairdresser_barber_shop_styling_hair_client.webp";
+import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
 
 function Hero() {
   return (

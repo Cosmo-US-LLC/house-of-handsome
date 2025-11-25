@@ -1,6 +1,6 @@
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
-import ourStoryLeftImage from "../../../assets/images/our-story/our_story_left.webp";
+import ourStoryLeftImage from "../../../assets/images/home/our-story/our_story_left.webp";
 
 function OurStory() {
   return (

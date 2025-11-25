@@ -7,9 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import servicesImage1 from "../../../assets/images/services/services_c1.webp";
-import servicesImage2 from "../../../assets/images/services/services_c2.webp";
-import servicesImage3 from "../../../assets/images/services/services_c3.webp";
+import servicesImage1 from "../../../assets/images/home/our_services/services_c1.webp";
+import servicesImage2 from "../../../assets/images/home/our_services/services_c2.webp";
+import servicesImage3 from "../../../assets/images/home/our_services/services_c3.webp";
 
 // Services data
 const servicesData = [

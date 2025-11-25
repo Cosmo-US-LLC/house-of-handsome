@@ -1,15 +1,14 @@
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
-import experienceImage1 from "../../../assets/images/experience/exp_c1.png";
-import experienceImage2 from "../../../assets/images/experience/exp_c2.png";
-import experienceImage3 from "../../../assets/images/experience/exp_c3.png";
-import experienceImage4 from "../../../assets/images/experience/exp_c4.png";
+import experienceImage1 from "../../../assets/images/home/experience/exp_c1.png";
+import experienceImage2 from "../../../assets/images/home/experience/exp_c2.png";
+import experienceImage3 from "../../../assets/images/home/experience/exp_c3.png";
+import experienceImage4 from "../../../assets/images/home/experience/exp_c4.png";
 
-import experienceImage1mob from "../../../assets/images/experience/exp_c1.webp";
-import experienceImage2mob from "../../../assets/images/experience/exp_c2.webp";
-import experienceImage3mob from "../../../assets/images/experience/exp_c3.webp";
-import experienceImage4mob from "../../../assets/images/experience/exp_c4.webp";
-
+import experienceImage1mob from "../../../assets/images/home/experience/exp_c1.webp";
+import experienceImage2mob from "../../../assets/images/home/experience/exp_c2.webp";
+import experienceImage3mob from "../../../assets/images/home/experience/exp_c3.webp";
+import experienceImage4mob from "../../../assets/images/home/experience/exp_c4.webp";
 
 function Experience() {
   return (
@@ -57,13 +56,13 @@ function Experience() {
             <PrimaryCTA />
           </div> */}
         </div>
-         <div className="relative mx-auto md:hidden max-w-[350px] mb-12 h-[320px] w-full ">
+        <div className="relative mx-auto md:hidden max-w-[350px] mb-12 h-[320px] w-full ">
           {/* Bottom Left Image */}
           <div className="absolute md:bottom-[-160px] bottom-[120px] -left-2 ">
             <img
               src={experienceImage1mob}
               alt="Barber styling client"
-              className="h-full w-full object-cover "
+              className="object-cover w-full h-full"
             />
           </div>
 
@@ -72,7 +71,7 @@ function Experience() {
             <img
               src={experienceImage2mob}
               alt="Salon interior with barbers"
-              className="h-full w-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
 
@@ -81,7 +80,7 @@ function Experience() {
             <img
               src={experienceImage3mob}
               alt="Man getting professional haircut"
-              className="h-full w-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
 
@@ -90,15 +89,16 @@ function Experience() {
             <img
               src={experienceImage4mob}
               alt="Man getting beard shaved"
-              className="h-full w-full object-cover "
+              className="object-cover w-full h-full"
             />
           </div>
-             <h2 className="font-['Cairo'] text-center top-[45%] absolute left-[23.5%] md:hidden font-[400] text-[18px]  leading-[122.222%] text-[#181818] uppercase"
-               style={{
-              WebkitTextStrokeWidth:"1px",
-              WebkitTextStrokeColor:"#000"
+          <h2
+            className="font-['Cairo'] text-center top-[45%] absolute left-[23.5%] md:hidden font-[400] text-[18px]  leading-[122.222%] text-[#181818] uppercase"
+            style={{
+              WebkitTextStrokeWidth: "1px",
+              WebkitTextStrokeColor: "#000",
             }}
-             >
+          >
             House of <br /> Handsome Experience
           </h2>
           {/* <div className="absolute bottom-[100px] left-[50%] translate-x-[-50%] mt-4 md:hidden">
