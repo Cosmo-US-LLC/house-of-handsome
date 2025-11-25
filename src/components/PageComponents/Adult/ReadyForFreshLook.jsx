@@ -15,10 +15,10 @@ function ReadyForFreshLook() {
             {/* Left - Text */}
             <div className="space-y-3 text-center text-white md:space-y-5 md:text-left">
               <h2 className="font-['Cairo'] font-bold text-[28px] md:text-[36px] lg:text-[48px] leading-tight md:leading-[55px]">
-                Ready for a Fresh Look?
+                Ready for a fresh look?
               </h2>
               <p className="font-['Urbanist'] font-normal text-[16px] md:text-[18px] leading-[24px] md:leading-[26px]">
-                Book your appointment and experience grooming made for you
+               Book your appointment and experience grooming made for you.
               </p>
             </div>
 

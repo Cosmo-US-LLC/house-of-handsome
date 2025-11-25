@@ -152,13 +152,12 @@ function StyleGallery() {
           {/* Left: Heading with Description */}
           <div className="flex flex-col gap-4">
             {/* Title */}
-            <h2 className="font-['Cairo'] text-3xl font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
+            <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
               Your Style, Elevated
             </h2>
             {/* Subtitle */}
             <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
-              At House of Handsome, every cut is a statement. Precision and
-              style, designed just for you.
+              Pictures of different kinds of haircuts
             </p>
           </div>
         </div>

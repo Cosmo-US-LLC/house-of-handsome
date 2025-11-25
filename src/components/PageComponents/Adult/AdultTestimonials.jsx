@@ -35,7 +35,7 @@ const testimonials = [
   },
   {
     id: 3,
-    title: "Exactly the style I wanted. Great experience.",
+    title: "Exactly the style I wanted. Great experience",
     quote: "The cut that boosted my confidence.",
     reviewer: " Mathew A.",
     role: "Entrepreneur",
@@ -58,7 +58,7 @@ function AdultTestimonials() {
     });
   }, [api]);
   return (
-    <section className="py-20 w-full bg-white">
+    <section className="md:py-12 py-4  w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}

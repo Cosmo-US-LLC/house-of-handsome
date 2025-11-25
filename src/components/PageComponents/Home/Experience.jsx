@@ -12,7 +12,7 @@ import experienceImage4mob from "../../../assets/images/home/experience/exp_c4.w
 
 function Experience() {
   return (
-    <section className="relative pt-14 pb-10 w-full bg-white md:pb-16 md:pt-30">
+    <section className="relative pt-14 pb-10 w-full bg-white md:pb-12 md:pt-30">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8 ">
         {/* Arc Images Container */}

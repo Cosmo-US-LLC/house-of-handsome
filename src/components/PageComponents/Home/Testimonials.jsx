@@ -85,12 +85,12 @@ function Testimonials() {
     });
   }, [api]);
   return (
-    <section className="py-20 w-full bg-white">
+    <section className="py-8 md:py-12 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}
         <div className="mb-12">
-          <h2 className="font-['Cairo'] text-3xl font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
+          <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-[48px] lg:leading-[55px]">
             Our Testimonials
           </h2>
         </div>

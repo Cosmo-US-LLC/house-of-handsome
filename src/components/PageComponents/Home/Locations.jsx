@@ -101,7 +101,7 @@ export default function Locations({
     });
   }, [api]);
   return (
-    <section className="py-10 w-full bg-white md:py-20">
+    <section className="py-10 w-full bg-white md:py-12">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="grid grid-cols-1 gap-6 items-center md:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* LEFT COLUMN - Text Content */}

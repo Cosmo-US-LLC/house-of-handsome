@@ -95,8 +95,8 @@ useEffect(() => {
 
 
   return (
-    <section className="py-10 bg-white md:py-20   overflow-hidden relative" ref={sectionRef}>
-      <div className="max-w-[1240px] md:h-screen !h-[780px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
+    <section className="!pt-10 bg-white md:!pt-20   overflow-hidden relative" ref={sectionRef}>
+      <div className="max-w-[1240px] md:h-[780px] !h-[700px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
         {/* Header */}
         <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
@@ -107,7 +107,7 @@ useEffect(() => {
           </p>
         </div>
        
-         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:top-1/2 !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
+         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!bottom-[-26%] !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
       
   {defaultSteps.map((card, i) => (
     <div

@@ -48,7 +48,7 @@ function Services() {
   }, [api, isMobile]);
 
   return (
-    <section className="py-10 w-full bg-white md:py-20">
+    <section className="py-10 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Header */}
@@ -81,7 +81,7 @@ function Services() {
                 <div className="flex flex-col gap-[26px]">
                   {/* Title with Description */}
                   <div className="flex flex-col gap-[7px]">
-                    <h3 className="font-['Cairo'] text-[38px] font-medium leading-[41.36px] tracking-[-0.752px] text-[#d82028]">
+                    <h3 className="font-['Cairo'] text-[36px] font-medium leading-[41.36px] tracking-[-0.752px] text-[#d82028]">
                       {service.title}
                     </h3>
                     <p className="font-['Urbanist'] h-[40px] text-base font-normal leading-[24px] text-black">

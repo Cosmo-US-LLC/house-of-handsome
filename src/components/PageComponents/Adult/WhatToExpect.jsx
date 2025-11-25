@@ -4,19 +4,19 @@ import whatToExpectImage from "../../../assets/images/adult/whatToExpect/what_to
 const expectations = [
   {
     id: 1,
-    title: "Personalized Styling",
+    title: "Personalized styling",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit,tempor incit ut labore et dolore magna",
   },
   {
     id: 2,
-    title: "Attention to Detail",
+    title: "Attention to detail",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, tempor incidit ut labore et dolore magna",
   },
   {
     id: 3,
-    title: "Comfortable Experience",
+    title: "Comfortable experience",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, tempor dunt ut labore et dolore magn",
   },

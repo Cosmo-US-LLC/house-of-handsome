@@ -41,7 +41,7 @@ function FAQs() {
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Title */}
-        <h2 className="mb-12 font-['Cairo'] text-3xl font-bold capitalize text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px]">
+        <h2 className="mb-12 font-['Cairo'] text-[36px] font-bold capitalize text-[#181818] md:text-[48px] lg:leading-[55px]">
           Frequently asked questions
         </h2>
 
