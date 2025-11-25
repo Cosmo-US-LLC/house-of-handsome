@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/testimonials/testimonials_p1.webp";
+import testimonialsImage1 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
 
 // Testimonials data
 const testimonials = [
