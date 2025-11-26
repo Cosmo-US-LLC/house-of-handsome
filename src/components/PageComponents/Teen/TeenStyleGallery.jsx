@@ -156,9 +156,9 @@ function TeenStyleGallery() {
               Style Made for Today
             </h2>
             {/* Subtitle */}
-            <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
+            {/* <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
              Add pictures of trendy fades, textured tops, clean trims.
-            </p>
+            </p> */}
           </div>
         </div>
 

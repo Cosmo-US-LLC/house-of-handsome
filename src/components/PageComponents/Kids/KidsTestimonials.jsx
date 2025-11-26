@@ -13,7 +13,7 @@ const testimonials = [
   {
     id: 1,
     title:
-      "My child gets nervous with haircuts, but the barbers were so patient. He left smiling",
+      "My child gets nervous with haircuts, but the barbers were so patient. He left smiling.",
     quote: "He actually looks forward to his next haircut.",
     reviewer: "Samuel K.",
     role: "Parent",

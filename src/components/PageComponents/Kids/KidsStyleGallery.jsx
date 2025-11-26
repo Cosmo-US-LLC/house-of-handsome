@@ -156,9 +156,9 @@ function KidsStyleGallery() {
               Cute, Clean, and Confident
             </h2>
             {/* Subtitle */}
-            <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
+            {/* <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
              Attach kids haircuts
-            </p>
+            </p> */}
           </div>
         </div>
 

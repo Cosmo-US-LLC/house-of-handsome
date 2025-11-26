@@ -13,7 +13,7 @@ function AboutUs() {
       <OpeningHours />
       <GroomingServices />
       <Locations
-        titleLine1="Locations."
+        titleLine1="Locations"
         titleLine2=""
         paragraphs={[
           "At <strong>House of Handsome</strong>, we’re proud to offer our premium grooming services at multiple convenient locations.",

@@ -35,7 +35,7 @@ const testimonials = [
   },
   {
     id: 3,
-    title: "Exactly the style I wanted. Great experience",
+    title: "Exactly the style I wanted. Great experience.",
     quote: "The cut that boosted my confidence.",
     reviewer: " Mathew A.",
     role: "Entrepreneur",

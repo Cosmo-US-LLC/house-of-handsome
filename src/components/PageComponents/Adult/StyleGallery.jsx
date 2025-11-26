@@ -156,9 +156,9 @@ function StyleGallery() {
               Your Style, Elevated
             </h2>
             {/* Subtitle */}
-            <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
+            {/* <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
               Pictures of different kinds of haircuts
-            </p>
+            </p> */}
           </div>
         </div>
 
