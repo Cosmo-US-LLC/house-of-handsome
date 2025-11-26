@@ -55,44 +55,41 @@ export default function FiveStepProcess({
   const cardsRef = useRef([]);
 
       
-
 useEffect(() => {
-  const cards = cardsRef.current;
+  const ctx = gsap.context(() => {
+    const cards = cardsRef.current;
+    const isMobile = window.innerWidth < 768;
 
-  const isMobile = window.innerWidth < 768;
+    const containerWidth = isMobile ? window.innerWidth : 1280;
+    const gap = 20;
+    const extraScroll = isMobile ? 1780 : 840;
 
-  const containerWidth = isMobile ? window.innerWidth : 1280;
-  const cardWidth = isMobile ? 0 : 0;
-  const gap = 20;
-  const extraScroll = isMobile ? 1780 : 840;
-
-  // Position cards
-  cards.forEach((card, i) => {
-    gsap.set(card, {
-      x: containerWidth + i * (cardWidth + gap),
+    // Initial positions
+    cards.forEach((card, i) => {
+      gsap.set(card, {
+        x: containerWidth + i * (gap),
+      });
     });
-  });
 
-  const totalWidth = (cardWidth + gap) * cards.length;
+    const totalWidth = cards.length * gap;
 
-  const scrollDistance = totalWidth + containerWidth + extraScroll;
+    // GSAP horizontal animation
+    gsap.to(cards, {
+      x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: `+=${totalWidth + containerWidth + extraScroll}`,
+        scrub: 1.5,
+        pin: true,
+         pinSpacing: true, 
+      },
+    });
+  }, sectionRef);
 
-  gsap.to(cards, {
-    x: (i) => `-${totalWidth - i * (cardWidth + gap) + extraScroll}px`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top top",
-      end: `+=${scrollDistance}`,
-      scrub: 1.5,
-      pin: true,
-      markers: false,
-    },
-  });
-
-  return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  return () => ctx.revert();
 }, []);
-
 
   return (
     <section className="!pt-10 bg-white md:!pt-20   overflow-hidden relative" ref={sectionRef}>

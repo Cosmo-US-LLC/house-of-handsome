@@ -42,21 +42,24 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage3,
   },
+  
 ];
 
 function AdultTestimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
+  const [snapPoints, setSnapPoints] = React.useState([]);
 
-  React.useEffect(() => {
-    if (!api) return;
+ React.useEffect(() => {
+  if (!api) return;
 
+  setSnapPoints(api.scrollSnapList());        // this detects actual slides
+  setCurrent(api.selectedScrollSnap());
+
+  api.on("select", () => {
     setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
+  });
+}, [api]);
   return (
     <section className="md:py-12 py-4  w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
@@ -144,18 +147,26 @@ function AdultTestimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                  current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
-                }`}
-              />
-            ))}
+            {snapPoints.length > 1 && (
+              <div className="flex gap-2 justify-center mt-6">
+                {snapPoints.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                      current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
-          <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
-          <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+          {snapPoints.length > 1 && (
+            <>
+              <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
+              <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+            </>
+          )}
         </Carousel>
       </div>
     </section>

@@ -74,16 +74,33 @@ const testimonials = [
 function Testimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
+  const [snapPoints, setSnapPoints] = React.useState([]);
 
   React.useEffect(() => {
     if (!api) return;
 
+    setSnapPoints(api.scrollSnapList()); 
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
+
+  const getSlidesPerView = () => {
+    if (window.innerWidth >= 1024) return 2;
+    if (window.innerWidth >= 768) return 1;
+    return 1;
+  };
+
+  const [slidesPerView, setSlidesPerView] = React.useState(getSlidesPerView());
+  const pageCount = Math.ceil(testimonials.length / slidesPerView);
+
+  React.useEffect(() => {
+    const handleResize = () => setSlidesPerView(getSlidesPerView());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section className="py-8 md:py-12 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
@@ -171,11 +188,11 @@ function Testimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {testimonials.map((_, index) => (
+            {snapPoints.map((_, index) => (
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                className={`h-2 w-2 rounded-full transition-all ${
                   current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
                 }`}
               />
