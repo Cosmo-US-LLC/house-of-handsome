@@ -4,7 +4,7 @@ import ourStoryLeftImage from "../../../assets/images/home/our-story/our_story_l
 
 function OurStory() {
   return (
-    <section className="py-10 w-full bg-white md:py-20">
+    <section className="py-10 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Two-Column Layout */}

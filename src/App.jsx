@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Layout from "./components/layout";
@@ -10,22 +11,40 @@ import Adult from "./pages/Adult";
 import Teen from "./pages/Teen";
 import Kids from "./pages/Kids";
 
-function App() {
-  const ScrollToTop = () => {
-    const { pathname } = useLocation();
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-    return null;
+ useEffect(() => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+    ScrollTrigger.refresh();
   };
 
+  ScrollTrigger.getAll().forEach((t) => t.kill());
+  ScrollTrigger.clearScrollMemory && ScrollTrigger.clearScrollMemory();
+
+  // Scroll after small delay
+  const timer = setTimeout(scrollToTop, 100);
+
+  // Also scroll after page load to catch dynamic content
+  window.addEventListener('load', scrollToTop);
+
+  return () => {
+    clearTimeout(timer);
+    window.removeEventListener('load', scrollToTop);
+  };
+}, [pathname]);
+
+  return null;
+}
+
+function App() {
+  
   return (
     <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
-          Franchise
           <Route index element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/franchise" element={<Franchise />} />

@@ -89,7 +89,7 @@ export default function GroomingServices() {
 
             {/* Text Block */}
             <div className="flex flex-col w-full md:w-[600px] pt-0">
-              <h3 className="mb-6 font-['Cairo'] text-[48px] font-bold leading-[55px] capitalize text-[#181818]">
+              <h3 className="mb-6 font-['Cairo'] text-[36px] md:text-[48px] font-bold leading-[55px] capitalize text-[#181818]">
                 {service.title}
               </h3>
 

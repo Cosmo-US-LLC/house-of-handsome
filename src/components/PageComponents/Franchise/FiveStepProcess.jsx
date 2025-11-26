@@ -55,48 +55,45 @@ export default function FiveStepProcess({
   const cardsRef = useRef([]);
 
       
-
 useEffect(() => {
-  const cards = cardsRef.current;
+  const ctx = gsap.context(() => {
+    const cards = cardsRef.current;
+    const isMobile = window.innerWidth < 768;
 
-  const isMobile = window.innerWidth < 768;
+    const containerWidth = isMobile ? window.innerWidth : 1280;
+    const gap = 20;
+    const extraScroll = isMobile ? 1780 : 840;
 
-  const containerWidth = isMobile ? window.innerWidth : 1280;
-  const cardWidth = isMobile ? 0 : 0;
-  const gap = 20;
-  const extraScroll = isMobile ? 1780 : 840;
-
-  // Position cards
-  cards.forEach((card, i) => {
-    gsap.set(card, {
-      x: containerWidth + i * (cardWidth + gap),
+    // Initial positions
+    cards.forEach((card, i) => {
+      gsap.set(card, {
+        x: containerWidth + i * (gap),
+      });
     });
-  });
 
-  const totalWidth = (cardWidth + gap) * cards.length;
+    const totalWidth = cards.length * gap;
 
-  const scrollDistance = totalWidth + containerWidth + extraScroll;
+    // GSAP horizontal animation
+    gsap.to(cards, {
+      x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: `+=${totalWidth + containerWidth + extraScroll}`,
+        scrub: 1.5,
+        pin: true,
+         pinSpacing: true, 
+      },
+    });
+  }, sectionRef);
 
-  gsap.to(cards, {
-    x: (i) => `-${totalWidth - i * (cardWidth + gap) + extraScroll}px`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top top",
-      end: `+=${scrollDistance}`,
-      scrub: 1.5,
-      pin: true,
-      markers: false,
-    },
-  });
-
-  return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+  return () => ctx.revert();
 }, []);
 
-
   return (
-    <section className="py-10 bg-white md:py-20   overflow-hidden relative" ref={sectionRef}>
-      <div className="max-w-[1240px] md:h-screen !h-[780px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
+    <section className="!pt-10 bg-white md:!pt-20   overflow-hidden relative" ref={sectionRef}>
+      <div className="max-w-[1240px] md:h-[780px] !h-[700px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
         {/* Header */}
         <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
@@ -107,7 +104,7 @@ useEffect(() => {
           </p>
         </div>
        
-         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:top-1/2 !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
+         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!bottom-[-26%] !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
       
   {defaultSteps.map((card, i) => (
     <div

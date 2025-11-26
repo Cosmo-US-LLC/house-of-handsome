@@ -7,7 +7,7 @@ function OpeningHours() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex flex-col gap-6 items-center justify-between h-[266px] w-full text-center">
           {/* Title */}
-          <h2 className="text-[48px] font-['Cairo'] font-bold leading-[55px] capitalize text-[#181818]">
+          <h2 className="text-[36px] md:text-[48px] font-['Cairo'] font-bold leading-[55px] capitalize text-[#181818]">
             Opening Hours
           </h2>
 

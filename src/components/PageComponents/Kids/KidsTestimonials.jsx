@@ -45,10 +45,12 @@ const testimonials = [
 function KidsTestimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
+const [snapPoints, setSnapPoints] = React.useState([]);
 
   React.useEffect(() => {
     if (!api) return;
 
+    setSnapPoints(api.scrollSnapList()); // REAL SLIDES COUNT
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
@@ -57,7 +59,7 @@ function KidsTestimonials() {
   }, [api]);
 
   return (
-    <section className="py-20 w-full bg-white">
+    <section className="md:py-12 py-4 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}
@@ -82,7 +84,7 @@ function KidsTestimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
+                <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] md:min-h-[395px] px-[26px] py-[48px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -143,18 +145,27 @@ function KidsTestimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                  current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
-                }`}
-              />
-            ))}
+           {snapPoints.length > 1 && (
+            <div className="flex gap-2 justify-center mt-6">
+              {snapPoints.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                    current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
           </div>
-          <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
-          <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+          {/* Arrows - ONLY show if more than 1 slide */}
+          {snapPoints.length > 1 && (
+            <>
+              <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
+              <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+            </>
+          )}
         </Carousel>
       </div>
     </section>
