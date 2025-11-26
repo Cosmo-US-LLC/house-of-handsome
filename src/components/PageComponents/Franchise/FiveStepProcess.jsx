@@ -103,7 +103,7 @@ export default function FiveStepProcess({
           </p>
         </div>
 
-        <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!bottom-[-26%] !top-[450px] left-0 -translate-y-1/2 pl-3">
+        <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!top-[370px] !top-[450px] left-0 -translate-y-1/2 pl-3">
           {defaultSteps.map((card, i) => (
             <div
               key={i}
