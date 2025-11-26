@@ -14,7 +14,10 @@ function Teen() {
       <TeenTestimonials />
       <TeenStyleGallery />
       <TeenWhatToExpect />
-      <ReadyForFreshLook />
+      <ReadyForFreshLook 
+      title={"Ready for a fresh new look?"}
+      description={"Book your trendy cut today."}
+      />
     </div>
   );
 }

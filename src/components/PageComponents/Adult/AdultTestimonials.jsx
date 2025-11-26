@@ -86,7 +86,7 @@ function AdultTestimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
+                <div className="flex flex-col gap-[40px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -117,9 +117,9 @@ function AdultTestimonials() {
                       </div>
 
                       {/* Quote */}
-                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
                         "{testimonial.quote}"
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 

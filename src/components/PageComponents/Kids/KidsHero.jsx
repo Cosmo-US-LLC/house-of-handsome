@@ -4,7 +4,7 @@ import kidsHeroImage from "../../../assets/images/kids/kidsHero/kids_hero.webp";
 export default function AdultHero({
   image = kidsHeroImage,
   paragraphs = [
-    "At House of Handsome, we help teens express their style with modern cuts, clean finishes, and looks that boost confidence.",
+    "At House of Handsome, we make haircuts easy for kids. Our barbers are patient, gentle, and experienced in creating a calm, positive experience for every child.",
   ],
 }) {
   return (

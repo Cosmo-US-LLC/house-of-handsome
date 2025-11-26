@@ -96,7 +96,7 @@ export default function GroomingServices() {
               {service.content}
 
               <PrimaryCTA className=" max-w-[200px]">
-                Book An Appointments
+                Book An Appointment
               </PrimaryCTA>
             </div>
           </div>

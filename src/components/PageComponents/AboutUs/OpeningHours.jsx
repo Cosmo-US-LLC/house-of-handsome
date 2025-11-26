@@ -28,7 +28,7 @@ function OpeningHours() {
           </div>
 
           {/* CTA Button */}
-          <PrimaryCTA>Book An Appointments</PrimaryCTA>
+          <PrimaryCTA>Book An Appointment</PrimaryCTA>
         </div>
       </div>
     </section>

@@ -13,9 +13,9 @@ const testimonials = [
   {
     id: 1,
     title:
-      "My child gets nervous with haircuts, but he barbers were so patient. He left happy!",
+      "My child gets nervous with haircuts, but the barbers were so patient. He left smiling",
     quote: "He actually looks forward to his next haircut.",
-    reviewer: "Samual K.",
+    reviewer: "Samuel K.",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage1,
@@ -23,9 +23,9 @@ const testimonials = [
   {
     id: 2,
     title:
-      "They made my son feel comfortable right away. Quick service but high-quality behind",
+      "They made my son feel comfortable right away. Quick, kind, and the haircut looked great.",
     quote: "Quick and professional every time.",
-    reviewer: "Mike. T",
+    reviewer: "Mike T.",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage1,
@@ -33,9 +33,9 @@ const testimonials = [
   {
     id: 3,
     title:
-      "The barbers were amazing with my daughter. Very friendly and to patient",
+      "The barbers were amazing with my daughter, calm, friendly, and so patient.",
     quote: "She loved the experience!",
-    reviewer: "Glenn F",
+    reviewer: "Elena F.",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage1,
@@ -84,7 +84,7 @@ const [snapPoints, setSnapPoints] = React.useState([]);
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] md:min-h-[395px] px-[26px] py-[48px]">
+                <div className="flex flex-col gap-[40px] rounded-[8px] bg-[#f7f7f7] md:min-h-[295px] px-[26px] py-[48px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -115,9 +115,9 @@ const [snapPoints, setSnapPoints] = React.useState([]);
                       </div>
 
                       {/* Quote */}
-                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
                         "{testimonial.quote}"
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 

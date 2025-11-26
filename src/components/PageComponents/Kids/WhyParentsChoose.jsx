@@ -7,22 +7,22 @@ import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/why_t
 const reasons = [
   {
     id: 1,
-    title: "Kid-Friendly experts",
+    title: "Kid-friendly, patient barbers",
     image: whyParentsImage1,
   },
   {
     id: 2,
-    title: "Quick and Distraction-Free",
+    title: "Calm and welcoming environment",
     image: whyParentsImage2,
   },
   {
     id: 3,
-    title: "Gentle Approach for Nervous or First-Time Visitors",
+    title: "Gentle approach for nervous or first-time haircuts",
     image: whyParentsImage3,
   },
   {
     id: 4,
-    title: "Quality Cuts with Playful Style",
+    title: "Clean, cute, and stylish results",
     image: whyParentsImage4,
   },
 ];
