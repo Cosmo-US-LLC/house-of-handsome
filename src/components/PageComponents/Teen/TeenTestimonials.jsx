@@ -12,27 +12,27 @@ import testimonialsImage1 from "../../../assets/images/home/testimonials/testimo
 const testimonials = [
   {
     id: 1,
-    title: "They nailed the exact haircut I wanted",
+    title: "They nailed the exact haircut I wanted. Best cut I’ve had in a long time.",
     quote: "Best cut I've had in a long time.",
-    reviewer: "Ethan M.",
+    reviewer: "Ethan, 16",
     role: "Highschooler",
     stars: 5,
     avatar: testimonialsImage1,
   },
   {
     id: 2,
-    title: "Showed them a picture and they made it happen — super cool!",
+    title: "Showed them a picture and they made it look even better. Super chill place.",
     quote: "Exactly what I imagined!",
-    reviewer: "Hayden H.",
+    reviewer: "Jayden, 15",
     role: "Highschooler",
     stars: 5,
     avatar: testimonialsImage1,
   },
   {
     id: 3,
-    title: "I was a bit hesitant about my new style, but I love it!",
+    title: "I was a bit hesitant about my son’s choice to get a skin fade, but the barbers made both of us feel confident. They understood exactly what he wanted, kept him comfortable, and the result looked amazing. I’m glad I trusted their expertise.",
     quote: "They really listened to what I wanted.",
-    reviewer: "Sanih J.",
+    reviewer: "Smith J. (Parent)",
     role: "Highschooler",
     stars: 5,
     avatar: testimonialsImage1,
@@ -81,7 +81,7 @@ function TeenTestimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
+                <div className="flex flex-col gap-[40px] min-h-[440px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -112,9 +112,9 @@ function TeenTestimonials() {
                       </div>
 
                       {/* Quote */}
-                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
                         "{testimonial.quote}"
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 

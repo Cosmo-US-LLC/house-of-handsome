@@ -14,7 +14,10 @@ function Kids() {
       <KidsTestimonials />
       <KidsStyleGallery />
       <KidsWhatToExpect />
-      <ReadyForFreshLook />
+      <ReadyForFreshLook
+      title={"Ready for an easy, happy haircut?"}
+      description={"Book your child’s appointment today."}
+      />
     </div>
   );
 }

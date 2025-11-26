@@ -153,12 +153,11 @@ function KidsStyleGallery() {
           <div className="flex flex-col gap-4">
             {/* Title */}
             <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818]  lg:leading-[55px]">
-              Your Style, Elevated
+              Cute, Clean, and Confident
             </h2>
             {/* Subtitle */}
             <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
-              At House of Handsome, every cut is a statement. Precision and
-              style, designed just for you.
+             Attach kids haircuts
             </p>
           </div>
         </div>

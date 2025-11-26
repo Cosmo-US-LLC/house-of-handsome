@@ -20,7 +20,7 @@ function AboutUs() {
           "Visit us today and experience the exceptional style and service that has made us Canada’s top barbershop.",
           "Find the location nearest to you below and book your appointment today!",
         ]}
-        buttonText="Book An Appointments"
+        buttonText="Book An Appointment"
       />
     </div>
   );

@@ -153,12 +153,11 @@ function TeenStyleGallery() {
           <div className="flex flex-col gap-4">
             {/* Title */}
             <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-4xl lg:text-[48px] lg:leading-[55px] leading-[40px]">
-              Your Style, Elevated
+              Style Made for Today
             </h2>
             {/* Subtitle */}
             <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
-              At House of Handsome, every cut is a statement. Precision and
-              style, designed just for you.
+             Add pictures of trendy fades, textured tops, clean trims.
             </p>
           </div>
         </div>

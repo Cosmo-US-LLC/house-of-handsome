@@ -14,7 +14,10 @@ function Adult() {
       <AdultTestimonials />
       <StyleGallery />
       <WhatToExpect />
-      <ReadyForFreshLook />
+      <ReadyForFreshLook 
+      title={"Ready for a fresh look?"}
+      description={"Book your appointment and experience grooming made for you."}
+      />
     </div>
   );
 }

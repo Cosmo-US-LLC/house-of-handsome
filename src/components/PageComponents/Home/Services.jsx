@@ -112,7 +112,7 @@ function Services() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[74%]  h-[40px] md:w-[50px] w-[40px] top-[-46px] translate-x-0 translate-y-0" />
+          <CarouselPrevious className="left-[74%] md:hidden h-[40px] md:w-[50px] w-[40px] top-[-46px] translate-x-0 translate-y-0" />
           <CarouselNext className="right-0 md:hidden top-[-46px]  h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
         </Carousel>
       </div>

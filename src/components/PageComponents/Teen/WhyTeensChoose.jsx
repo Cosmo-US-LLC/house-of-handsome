@@ -7,22 +7,22 @@ import whyTeensImage4 from "../../../assets/images/teen/whyTeensChoose/why_teens
 const reasons = [
   {
     id: 1,
-    title: "Trendy cuts tailored for teens",
+    title: "Barbers who know the latest trends",
     image: whyTeensImage1,
   },
   {
     id: 2,
-    title: "Laid-back, teen-friendly vibe",
+    title: "Comfortable, teen-friendly atmosphere",
     image: whyTeensImage2,
   },
   {
     id: 3,
-    title: "Affordable style",
+    title: "Personalized style guidance",
     image: whyTeensImage3,
   },
   {
     id: 4,
-    title: "Confidence with every cut",
+    title: "Looks that reflect personality and confidence",
     image: whyTeensImage4,
   },
 ];
