@@ -4,8 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 import step1 from "../../../assets/images/franchise/FiveStepProcess/step_c1.webp";
 import step2 from "../../../assets/images/franchise/FiveStepProcess/step_c2.webp";
 import step3 from "../../../assets/images/franchise/FiveStepProcess/step_c3.webp";
@@ -37,7 +35,7 @@ const defaultSteps = [
     description: "We help you design, train, and launch.",
     image: step4,
   },
-   {
+  {
     id: 5,
     title: "Scale",
     description: "With ongoing marketing & CRM support",
@@ -50,50 +48,51 @@ export default function FiveStepProcess({
   subtitle = "We've simplified franchise ownership, no guesswork, no stress.",
   steps = defaultSteps,
 }) {
-
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
-      
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    const cards = cardsRef.current;
-    const isMobile = window.innerWidth < 768;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = cardsRef.current;
+      const isMobile = window.innerWidth < 768;
 
-    const containerWidth = isMobile ? window.innerWidth : 1280;
-    const gap = 20;
-    const extraScroll = isMobile ? 1780 : 840;
+      const containerWidth = isMobile ? window.innerWidth : 1280;
+      const gap = 20;
+      const extraScroll = isMobile ? 1680 : 840;
 
-    // Initial positions
-    cards.forEach((card, i) => {
-      gsap.set(card, {
-        x: containerWidth + i * (gap),
+      // Initial positions
+      cards.forEach((card, i) => {
+        gsap.set(card, {
+          x: containerWidth + i * gap,
+        });
       });
-    });
 
-    const totalWidth = cards.length * gap;
+      const totalWidth = cards.length * gap;
 
-    // GSAP horizontal animation
-    gsap.to(cards, {
-      x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: `+=${totalWidth + containerWidth + extraScroll}`,
-        scrub: 1.5,
-        pin: true,
-         pinSpacing: true, 
-      },
-    });
-  }, sectionRef);
+      // GSAP horizontal animation
+      gsap.to(cards, {
+        x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${totalWidth + containerWidth + extraScroll}`,
+          scrub: 1.5,
+          pin: true,
+          pinSpacing: true,
+        },
+      });
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="!pt-10 bg-white md:!pt-20   overflow-hidden relative" ref={sectionRef}>
-      <div className="max-w-[1240px] md:h-[780px] !h-[700px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
+    <section
+      className="!pt-10 bg-white md:!pt-20   overflow-hidden relative"
+      ref={sectionRef}
+    >
+      <div className="max-w-[1240px] md:h-[780px] !h-[800px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
         {/* Header */}
         <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
@@ -103,16 +102,15 @@ useEffect(() => {
             {subtitle}
           </p>
         </div>
-       
-         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!bottom-[-26%] !bottom-[-22%] left-0 -translate-y-1/2 pl-3">
-      
-  {defaultSteps.map((card, i) => (
-    <div
-      key={i}
-      ref={(el) => (cardsRef.current[i] = el)}
-      className="card-inner-wrapper w-[420px] md:w-[420px] h-[480px] md:h-[508px] "
-    >
-      <div className=" w-full overflow-hidden">
+
+        <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!bottom-[-26%] !top-[450px] left-0 -translate-y-1/2 pl-3">
+          {defaultSteps.map((card, i) => (
+            <div
+              key={i}
+              ref={(el) => (cardsRef.current[i] = el)}
+              className="card-inner-wrapper w-[420px] md:w-[420px] h-[480px] md:h-[508px] "
+            >
+              <div className=" w-full overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -127,17 +125,18 @@ useEffect(() => {
                 </div>
 
                 <div>
-                  <h3 className="font-['Urbanist'] font-bold text-[20px]">{card.title}</h3>
+                  <h3 className="font-['Urbanist'] font-bold text-[20px]">
+                    {card.title}
+                  </h3>
                   <p className="font-['Urbanist'] text-[16px] leading-[22px]">
                     {card.description}
                   </p>
                 </div>
               </div>
-    </div>
-  ))}
-</div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  );  
+  );
 }
-
