@@ -6,12 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage2 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage3 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage4 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage5 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage6 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage1 from "../../../assets/images/home/testimonials/our_testimonials_img1.webp";
+import testimonialsImage2 from "../../../assets/images/home/testimonials/our_testimonials_img2.webp";
+import testimonialsImage3 from "../../../assets/images/home/testimonials/our_testimonials_img3.webp";
 
 // Testimonials data
 const testimonials = [
@@ -42,67 +39,23 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage3,
   },
-  {
-    id: 4,
-    title: "Professional Service Every Time",
-    quote: "Always leaving satisfied with my fresh look.",
-    reviewer: "Michael K.",
-    role: "Business Owner",
-    stars: 5,
-    avatar: testimonialsImage4,
-  },
-  {
-    id: 5,
-    title: "Excellence in Every Detail",
-    quote: "The attention to detail is unmatched.",
-    reviewer: "Ryan S.",
-    role: "Creative Director",
-    stars: 5,
-    avatar: testimonialsImage5,
-  },
-  {
-    id: 6,
-    title: "My Go-To Grooming Spot",
-    quote: "Consistent quality, every single visit.",
-    reviewer: "Chris B.",
-    role: "Marketing Manager",
-    stars: 5,
-    avatar: testimonialsImage6,
-  },
 ];
 
 function Testimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
-  const [snapPoints, setSnapPoints] = React.useState([]);
 
   React.useEffect(() => {
     if (!api) return;
 
-    setSnapPoints(api.scrollSnapList()); 
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
-
-  const getSlidesPerView = () => {
-    if (window.innerWidth >= 1024) return 2;
-    if (window.innerWidth >= 768) return 1;
-    return 1;
-  };
-
-  const [slidesPerView, setSlidesPerView] = React.useState(getSlidesPerView());
-  const pageCount = Math.ceil(testimonials.length / slidesPerView);
-
-  React.useEffect(() => {
-    const handleResize = () => setSlidesPerView(getSlidesPerView());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
-    <section className="py-8 md:py-12 w-full bg-white">
+    <section className="py-8 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}
@@ -118,6 +71,7 @@ function Testimonials() {
           opts={{
             align: "start",
             loop: false,
+            slidesToScroll: 1,
           }}
           className="w-full"
         >
@@ -125,7 +79,7 @@ function Testimonials() {
             {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.id}
-                className="pl-4 md:basis-1/2 lg:basis-1/3"
+                className="pl-4 md:basis-1/3 lg:basis-1/3"
               >
                 <div className="flex flex-col gap-[80px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
                   {/* Top Content */}
@@ -188,13 +142,14 @@ function Testimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {snapPoints.map((_, index) => (
+            {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => api?.scrollTo(index)}
                 className={`h-2 w-2 rounded-full transition-all ${
                   current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
                 }`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>

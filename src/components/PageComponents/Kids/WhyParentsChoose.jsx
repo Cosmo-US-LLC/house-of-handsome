@@ -1,8 +1,8 @@
 import React from "react";
-import whyParentsImage1 from "../../../assets/images/kids/whyParentsChoose/why_teens_c1.webp";
-import whyParentsImage2 from "../../../assets/images/kids/whyParentsChoose/why_teens_c2.webp";
-import whyParentsImage3 from "../../../assets/images/kids/whyParentsChoose/why_teens_c3.webp";
-import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/why_teens_c4.webp";
+import whyParentsImage1 from "../../../assets/images/kids/whyParentsChoose/kids_choose_us_img1.webp";
+import whyParentsImage2 from "../../../assets/images/kids/whyParentsChoose/kids_choose_us_img2.webp";
+import whyParentsImage3 from "../../../assets/images/kids/whyParentsChoose/kids_choose_us_img3.webp";
+import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/kids_choose_us_img4.webp";
 
 const reasons = [
   {

@@ -1,5 +1,5 @@
 import React from "react";
-import modelImage from "../../../assets/images/franchise/franchiseModels/franchise_models.webp";
+import modelImage from "../../../assets/images/franchise/franchiseModels/franchise_collage.webp";
 
 export default function FranchiseModels({
   title = "Franchise Models",

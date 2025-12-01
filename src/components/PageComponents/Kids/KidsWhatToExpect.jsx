@@ -1,5 +1,5 @@
 import React from "react";
-import whatToExpectImage from "../../../assets/images/kids/whatToExpect/what_to_expect.webp";
+import whatToExpectImage from "../../../assets/images/kids/whatToExpect/kids_what_to_expect.webp";
 
 const expectations = [
   {
@@ -24,11 +24,11 @@ const expectations = [
 
 function KidsWhatToExpect() {
   return (
-    <section className="bg-white py-20">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col gap-12 items-center md:flex-row">
           {/* Left Side - Text Content */}
-             <div className="w-full md:w-1/2 space-y-6">
+          <div className="space-y-6 w-full md:w-1/2">
             {/* Heading */}
             <div className="space-y-3">
               <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[36px] leading-[55px]">
@@ -45,11 +45,14 @@ function KidsWhatToExpect() {
               {expectations.map((item, index) => (
                 <div key={item.id}>
                   <div className="">
-                   <ul className="pl-5">
-                    <li className=" list-disc"> <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] leading-[70px]">
-                       {item.title}
-                    </h3></li>
-                   </ul>
+                    <ul className="pl-5">
+                      <li className="list-disc">
+                        {" "}
+                        <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] leading-[70px]">
+                          {item.title}
+                        </h3>
+                      </li>
+                    </ul>
                     {/* <p className="font-['Urbanist'] font-normal text-[16px] leading-[23px] text-[#252525] max-w-[488px]">
                       {item.description}
                     </p> */}
@@ -69,7 +72,7 @@ function KidsWhatToExpect() {
             <img
               src={whatToExpectImage}
               alt="Kids grooming service"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>

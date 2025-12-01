@@ -6,12 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage2 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage3 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage4 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage5 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
-import testimonialsImage6 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage1 from "../../../assets/images/adult/adultTestimonials/adult_img1.webp";
+import testimonialsImage2 from "../../../assets/images/adult/adultTestimonials/adult_img2.webp";
+import testimonialsImage3 from "../../../assets/images/adult/adultTestimonials/adult_img3.webp";
 
 // Testimonials data
 const testimonials = [
@@ -42,7 +39,6 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage3,
   },
-  
 ];
 
 function AdultTestimonials() {
@@ -50,18 +46,18 @@ function AdultTestimonials() {
   const [current, setCurrent] = React.useState(0);
   const [snapPoints, setSnapPoints] = React.useState([]);
 
- React.useEffect(() => {
-  if (!api) return;
+  React.useEffect(() => {
+    if (!api) return;
 
-  setSnapPoints(api.scrollSnapList());        // this detects actual slides
-  setCurrent(api.selectedScrollSnap());
-
-  api.on("select", () => {
+    setSnapPoints(api.scrollSnapList()); // this detects actual slides
     setCurrent(api.selectedScrollSnap());
-  });
-}, [api]);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
   return (
-    <section className="md:py-12 py-4  w-full bg-white">
+    <section className="py-4 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}

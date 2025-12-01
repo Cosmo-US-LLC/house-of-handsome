@@ -1,8 +1,8 @@
 import React from "react";
-import whyAdultsImage1 from "../../../assets/images/adult/whyAdultsChoose/why_teens_c2.webp";
-import whyAdultsImage2 from "../../../assets/images/adult/whyAdultsChoose/why_teens_c1.webp";
-import whyAdultsImage3 from "../../../assets/images/adult/whyAdultsChoose/why_teens_c3.webp";
-import whyAdultsImage4 from "../../../assets/images/adult/whyAdultsChoose/why_teens_c4.webp";
+import whyAdultsImage1 from "../../../assets/images/adult/whyAdultsChoose/adult_choose_us_img1.webp";
+import whyAdultsImage2 from "../../../assets/images/adult/whyAdultsChoose/adult_choose_us_img2.webp";
+import whyAdultsImage3 from "../../../assets/images/adult/whyAdultsChoose/adult_choose_us_img3.webp";
+import whyAdultsImage4 from "../../../assets/images/adult/whyAdultsChoose/adult_choose_us_img4.webp";
 
 const reasons = [
   {
@@ -33,7 +33,7 @@ function WhyAdultsChoose() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
         <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[36px] leading-[55px] capitalize mb-12">
-         Why Adults Choose Us
+          Why Adults Choose Us
         </h2>
 
         {/* Cards Grid */}

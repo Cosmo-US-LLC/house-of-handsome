@@ -14,32 +14,32 @@ import Kids from "./pages/Kids";
 function ScrollToTop() {
   const { pathname } = useLocation();
 
- useEffect(() => {
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-    ScrollTrigger.refresh();
-  };
+  useEffect(() => {
+    // Scroll to top IMMEDIATELY when route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Use 'instant' to jump immediately, not smooth scroll
+    });
 
-  ScrollTrigger.getAll().forEach((t) => t.kill());
-  ScrollTrigger.clearScrollMemory && ScrollTrigger.clearScrollMemory();
+    // Kill all existing ScrollTrigger instances
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+    ScrollTrigger.clearScrollMemory && ScrollTrigger.clearScrollMemory();
 
-  // Scroll after small delay
-  const timer = setTimeout(scrollToTop, 100);
+    // Refresh ScrollTrigger after a small delay to recalculate positions
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1000);
 
-  // Also scroll after page load to catch dynamic content
-  window.addEventListener('load', scrollToTop);
-
-  return () => {
-    clearTimeout(timer);
-    window.removeEventListener('load', scrollToTop);
-  };
-}, [pathname]);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [pathname]);
 
   return null;
 }
 
 function App() {
-  
   return (
     <>
       <ScrollToTop />

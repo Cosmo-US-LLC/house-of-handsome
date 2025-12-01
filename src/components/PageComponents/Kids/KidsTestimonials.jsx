@@ -6,7 +6,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/home/testimonials/testimonials_p1.webp";
+import testimonialsImage1 from "../../../assets/images/kids/kidsTestimonials/kids_img1.webp";
+import testimonialsImage2 from "../../../assets/images/kids/kidsTestimonials/kids_img2.webp";
+import testimonialsImage3 from "../../../assets/images/kids/kidsTestimonials/kids_img3.webp";
 
 // Testimonials data
 const testimonials = [
@@ -28,7 +30,7 @@ const testimonials = [
     reviewer: "Mike T.",
     role: "Parent",
     stars: 5,
-    avatar: testimonialsImage1,
+    avatar: testimonialsImage2,
   },
   {
     id: 3,
@@ -38,14 +40,14 @@ const testimonials = [
     reviewer: "Elena F.",
     role: "Parent",
     stars: 5,
-    avatar: testimonialsImage1,
+    avatar: testimonialsImage3,
   },
 ];
 
 function KidsTestimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
-const [snapPoints, setSnapPoints] = React.useState([]);
+  const [snapPoints, setSnapPoints] = React.useState([]);
 
   React.useEffect(() => {
     if (!api) return;
@@ -59,7 +61,7 @@ const [snapPoints, setSnapPoints] = React.useState([]);
   }, [api]);
 
   return (
-    <section className="md:py-12 py-4 w-full bg-white">
+    <section className="py-4 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}
@@ -145,19 +147,19 @@ const [snapPoints, setSnapPoints] = React.useState([]);
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-           {snapPoints.length > 1 && (
-            <div className="flex gap-2 justify-center mt-6">
-              {snapPoints.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => api?.scrollTo(index)}
-                  className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                    current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
+            {snapPoints.length > 1 && (
+              <div className="flex gap-2 justify-center mt-6">
+                {snapPoints.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                      current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
           {/* Arrows - ONLY show if more than 1 slide */}
           {snapPoints.length > 1 && (

@@ -92,7 +92,7 @@ export default function FiveStepProcess({
       className="!pt-10 bg-white md:!pt-20   overflow-hidden relative"
       ref={sectionRef}
     >
-      <div className="max-w-[1240px] md:h-[780px] !h-[800px] sticky top-0 mx-auto px-4 md:px-0 overflow-hidden relative">
+      <div className="max-w-[1280px] md:h-[780px] !h-[800px] sticky top-0 mx-auto px-4 md:px-8 overflow-hidden relative">
         {/* Header */}
         <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">
@@ -103,18 +103,18 @@ export default function FiveStepProcess({
           </p>
         </div>
 
-        <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!top-[370px] !top-[450px] left-0 -translate-y-1/2 pl-3">
+        <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start absolute md:!top-[370px] !top-[450px] left-0 -translate-y-1/2 pl-2">
           {defaultSteps.map((card, i) => (
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
               className="card-inner-wrapper w-[420px] md:w-[420px] h-[480px] md:h-[508px] "
             >
-              <div className=" w-full overflow-hidden">
+              <div className="overflow-hidden w-full">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
 

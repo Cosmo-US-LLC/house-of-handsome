@@ -1,7 +1,7 @@
 import React from "react";
 import { Download } from "lucide-react";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
-import franchiseImage from "../../../assets/images/about/aboutHero/about_hero.webp";
+import franchiseImage from "../../../assets/images/franchise/franchise_hero/franchise_hero.webp";
 
 export default function FranchiseHero({
   mainTitle = "Franchise with House of Handsome",
