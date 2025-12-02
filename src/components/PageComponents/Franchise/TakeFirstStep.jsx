@@ -135,7 +135,7 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            <PrimaryCTA>Book An Appointment</PrimaryCTA>
+            <PrimaryCTA>Submit</PrimaryCTA>
           </form>
         </div>
       </div>
