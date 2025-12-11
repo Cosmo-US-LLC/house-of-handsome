@@ -16,8 +16,8 @@ import {
 const NAV_ITEMS = [
   { label: "Home", href: "/", slug: "/" },
   { label: "About Us", href: "/about-us", slug: "/about-us" },
-  { label: "Adult", href: "/adult", slug: "/adult" },
-  { label: "Teen", href: "/teen", slug: "/teen" },
+  { label: "Adults", href: "/adults", slug: "/adults" },
+  { label: "Teens", href: "/teens", slug: "/teens" },
   { label: "Kids", href: "/kids", slug: "/kids" },
   { label: "Services", href: "/services", slug: "/services" },
   { label: "Franchise", href: "/franchise", slug: "/franchise" },

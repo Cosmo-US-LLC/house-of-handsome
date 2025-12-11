@@ -6,15 +6,20 @@ import findLocationIcon from "../../../assets/images/footer/find-a-location.svg"
 import bookReservationIcon from "../../../assets/images/footer/book-a-reservation.svg";
 import downloadAppIcon from "../../../assets/images/footer/download-the-app.svg";
 import giftCardIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
+import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
+import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
 
 function Footer() {
+
   return (
     <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
-        <div className="grid grid-cols-1 gap-8 pb-10 mb-10 border-b border-black/50 md:grid-cols-2 lg:grid-cols-4">
+        <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
           {/* Find A Location */}
-          <div className="flex gap-6 items-center">
+         
+          <Link to="/locations">
+           <div className="flex gap-6 items-center max-md:mb-8">
             <img
               src={findLocationIcon}
               alt="Find Location Icon"
@@ -24,9 +29,10 @@ function Footer() {
               Find A Location
             </span>
           </div>
-
+          </Link>
           {/* Book A Reservation */}
-          <div className="flex gap-6 items-center">
+         <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations?_gl=1*12yeoq4*_gcl_au*MTI1MDk3MTA0Ny4xNzU5NDg0MzA3*_ga*OTM1MjMyNDI4LjE3NTE1MzkzNjk.*_ga_2NK6J237BJ*czE3NjQ4MzU2NjYkbzM0JGcxJHQxNzY0ODM1NzYwJGo1OSRsMCRoNDQzODg1MTY" target="_blank">
+          <div className="flex gap-6 items-center max-md:mb-8">
             <img
               src={bookReservationIcon}
               alt="Book Reservation Icon"
@@ -36,9 +42,11 @@ function Footer() {
               Book a reservation
             </span>
           </div>
+         </Link>
 
           {/* Download The App */}
-          <div className="flex gap-6 items-center">
+          {/* <Link to={downloadLink} target="_blank">
+          <div className="flex gap-6 items-center max-md:mb-8">
             <img
               src={downloadAppIcon}
               alt="Download App Icon"
@@ -48,9 +56,11 @@ function Footer() {
               Download the app
             </span>
           </div>
+          </Link> */}
 
           {/* Buy A Gift Card */}
-          <div className="flex gap-6 items-center">
+          <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
+          <div className="flex gap-6 items-center max-md:mb-0">
             <img
               src={giftCardIcon}
               alt="Gift Card Icon"
@@ -60,12 +70,26 @@ function Footer() {
               Buy a Gift card
             </span>
           </div>
+          </Link>
         </div>
 
         {/* Main Footer Content */}
         <div className="flex justify-between pb-8 max-md:gap-10 wrap max-md:grid max-md:grid-cols-1">
           {/* Column 1 - Brand */}
           <div className="flex flex-col max-w-[440px] gap-6">
+            <div>
+                <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
+              Download Our App
+            </h3>
+            <div className="flex gap-2 mt-6">
+              <a href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"  target="_blank" rel="noopener noreferrer">
+              <img src={app_dow1} alt="" />
+              </a>
+              <a href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1527747808" target="_blank" rel="noopener noreferrer">
+              <img src={app_dow2} alt="" />
+              </a>
+            </div>
+            </div>
             {/* Logo */}
             <Link to="/" className="flex gap-2 items-center">
               <img
