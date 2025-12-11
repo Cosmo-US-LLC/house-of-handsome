@@ -51,7 +51,7 @@ function WhyParentsChoose() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[57%] to-[rgba(0,0,0,0.35)] to-[67%]" />
+              {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[57%] to-[rgba(0,0,0,0.35)] to-[67%]" /> */}
 
               {/* Text Content */}
               <div className="absolute right-4 bottom-4 left-4">

@@ -11,7 +11,7 @@ export default function AdultHero({
     <section className="max-md:pt-8 max-md:pb-20 bg-[#F2F2F2] sm:px-8 overflow-hidden">
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
-          <div className="text-left md:w-[45%] w-full">
+          <div className="text-left md:w-[55%] w-full">
             <h2
               className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[400]  text-[#000] leading-[55px] capitalize "
               style={{
@@ -19,7 +19,7 @@ export default function AdultHero({
                 WebkitTextStrokeColor: "#000",
               }}
             >
-              Fun. Friendly <br /> Comfortable.
+              Fun. Friendly  Comfortable.
             </h2>
             {paragraphs.map((text, i) => (
               <p
@@ -30,7 +30,7 @@ export default function AdultHero({
               </p>
             ))}
           </div>
-          <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
+          <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-30">
             <img
               src={image}
               alt={"At House of Handsome"}
