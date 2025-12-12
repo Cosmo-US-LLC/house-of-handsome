@@ -19,7 +19,7 @@ export default function AdultHero({
                 WebkitTextStrokeColor: "#000",
               }}
             >
-              Fun. Friendly  Comfortable.
+              Fun. Friendly. Comfortable.
             </h2>
             {paragraphs.map((text, i) => (
               <p

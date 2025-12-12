@@ -52,7 +52,7 @@ export default function FranchiseSupport({
           {supports.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col p-[8px] bg-[#F4F4F4] gap-[26px] md:w-[290px] w-full min-h-[510px] group cursor-pointer"
+              className="flex flex-col hover:shadow-md p-[8px] bg-[#F4F4F4] gap-[26px] md:w-[290px] w-full min-h-[510px] group cursor-pointer"
             >
               <div className="overflow-hidden rounded-lg">
                 <img
