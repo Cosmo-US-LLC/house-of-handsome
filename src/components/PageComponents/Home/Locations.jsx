@@ -100,6 +100,11 @@ export default function Locations({
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
+
+     const handleOnClick = () => {
+  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+  window.open(url, '_blank'); 
+};
   return (
     <section className="py-10 w-full bg-white md:py-12">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
@@ -125,7 +130,7 @@ export default function Locations({
 
               {/* CTA Button */}
               <div className="mt-0">
-                <PrimaryCTA>{buttonText}</PrimaryCTA>
+                <PrimaryCTA onClick={handleOnClick}>{buttonText}</PrimaryCTA>
               </div>
             </div>
           </div>

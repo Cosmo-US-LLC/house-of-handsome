@@ -3,6 +3,10 @@ import PrimaryCTA from "../../ui/PrimaryCTA";
 import ourStoryLeftImage from "../../../assets/images/home/our-story/our_story_left.webp";
 
 function OurStory() {
+    const handleOnClick = () => {
+  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+  window.open(url, '_blank'); 
+};
   return (
     <section className="py-10 w-full bg-white md:py-12">
       {/* Max Container Wrapper - 1280px */}
@@ -50,7 +54,7 @@ function OurStory() {
 
             {/* CTA Button */}
             <div>
-              <PrimaryCTA />
+              <PrimaryCTA onClick={handleOnClick} />
             </div>
           </div>
         </div>
