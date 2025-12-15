@@ -3,6 +3,10 @@ import PrimaryCTA from "../../ui/PrimaryCTA";
 import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
 
 function Hero() {
+  const handleOnClick = () => {
+  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+  window.open(url, '_blank'); 
+};
   return (
     <section className="pt-4 w-full bg-[#F2F2F2] ">
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8 ">
@@ -31,7 +35,7 @@ function Hero() {
 
             <div className="flex flex-row gap-4 md:gap-8 md:flex-row">
               <div className="mt-4 md:mt-4">
-                <PrimaryCTA />
+                <PrimaryCTA onClick={handleOnClick} />
               </div>
 
               <div className="flex gap-2 items-center mt-2 md:gap-4 md:mt-3">

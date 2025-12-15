@@ -11,6 +11,10 @@ import experienceImage3mob from "../../../assets/images/home/experience/exp_c3.w
 import experienceImage4mob from "../../../assets/images/home/experience/exp_c4.webp";
 
 function Experience() {
+    const handleOnClick = () => {
+  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+  window.open(url, '_blank'); 
+};
   return (
     <section className="relative pt-14 pb-10 w-full bg-white md:pb-12 md:pt-30">
       {/* Max Container Wrapper - 1280px */}
@@ -128,7 +132,7 @@ function Experience() {
 
           {/* CTA Button */}
           <div className="mt-4">
-            <PrimaryCTA />
+            <PrimaryCTA onClick={handleOnClick} />
           </div>
         </div>
       </div>
