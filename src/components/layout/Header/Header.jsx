@@ -92,7 +92,7 @@ function Header() {
           {/* Right: Contact Button (Desktop) */}
           <div className="hidden lg:block">
             <SecondaryCTA className="px-6 py-3 text-sm">
-              Contact US
+              Contact Us
             </SecondaryCTA>
           </div>
 
@@ -143,7 +143,7 @@ function Header() {
                     className="justify-center w-full"
                     onClick={closeMobileMenu}
                   >
-                    Contact US
+                    Contact Us
                   </SecondaryCTA>
                 </div>
               </nav>

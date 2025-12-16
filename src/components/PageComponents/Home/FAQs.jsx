@@ -38,16 +38,12 @@ const faqsData = [
 function FAQs() {
   return (
     <section className="py-20 w-full bg-white">
-      {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        {/* Section Title */}
         <h2 className="mb-12 font-['Cairo'] text-[36px] font-bold capitalize text-[#181818] md:text-[48px] lg:leading-[55px]">
           Frequently asked questions
         </h2>
 
-        {/* Two Column Layout */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-          {/* Left Column - FAQ Accordion List */}
           <div className="flex flex-col gap-5">
             <Accordion
               type="single"
@@ -60,22 +56,41 @@ function FAQs() {
                   value={faq.id}
                   className="rounded-[8px] cursor-pointer border border-gray-200 bg-white px-[24px] py-[34px] data-[state=open]:border-gray-200"
                 >
-                  <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline outline-none [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden">
+                  <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline outline-none [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden [&[data-state=open]_.plus-icon]:hidden   
+    [&[data-state=open]_.minus-icon]:block">
                     <p className="flex-1 font-['Urbanist'] text-[24px] font-bold cursor-pointer leading-[32px] text-black transition-colors">
                       {faq.question}
                     </p>
-                    {/* Custom Icon */}
-                    <div className="flex h-[32px] w-[32px] shrink-0 items-center justify-center cursor-pointer">
+                    <div className="flex h-[32px] w-[32px] shrink-0 items-center justify-center cursor-pointer relative">
                       <svg
                         width="32"
                         height="32"
                         viewBox="0 0 32 32"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 transition-transform data-[state=closed]:rotate-0 data-[state=open]:rotate-45"
+                        className="absolute h-8 w-8 plus-icon"
+                        data-state="closed" 
                       >
                         <path
-                          d="M16 8V24M8 16H24"
+                          d="M16 8V24M8 16H24" 
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="absolute minus-icon h-8 w-8 "
+                        data-state="open" 
+                      >
+                        <path
+                          d="M8 16H24"
                           stroke="black"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -92,7 +107,6 @@ function FAQs() {
             </Accordion>
           </div>
 
-          {/* Right Column - Image */}
           <div className="order-first lg:order-last">
             <div className="h-[400px] w-full overflow-hidden rounded-lg lg:h-[642px] grayscale">
               <img
