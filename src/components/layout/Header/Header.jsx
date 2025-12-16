@@ -21,7 +21,7 @@ const NAV_ITEMS = [
   { label: "Kids", href: "/kids", slug: "/kids" },
   { label: "Services", href: "/services", slug: "/services" },
   { label: "Franchise", href: "/franchise", slug: "/franchise" },
-  { label: "Locations", href: "/locations", slug: "/locations" },
+  { label: "Locations", href: "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations", slug: "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" },
 ];
 
 // Brand red color from Figma design

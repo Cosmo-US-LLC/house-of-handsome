@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import image1 from "../../../assets/images/services/services_c1.webp";
 import image2 from "../../../assets/images/services/services_c2.webp";
 import image3 from "../../../assets/images/services/services_c3.webp";
 
+const slugify = (text) => {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
 const services = [
   {
-    title: "Cuts",
+    title: "cuts",
     description:
       "Looking for a fresh, clean cut? Our barbers specialize in all styles from classic trims to modern fades and everything in between. Each cut is tailored to suit your personality and lifestyle, ensuring you leave feeling confident and looking sharp.",
     image: image1,
@@ -16,7 +25,7 @@ const services = [
     ],
   },
   {
-    title: "Style",
+    title: "style",
     description:
       "Your hair, your way. Our stylists are skilled in crafting the perfect look, whether it’s a slick back, textured layers, or a completely new style. We take the time to understand your vision, making sure you get a personalized style that fits your personality and lifestyle.",
     image: image2,
@@ -27,7 +36,7 @@ const services = [
     ],
   },
   {
-    title: "Care",
+    title: "care",
     description:
       "Healthy hair starts with the right care. Our care services are designed to promote hair health and keep your scalp in top condition. Regular maintenance keeps your hair looking great and feeling refreshed.",
     image: image3,
@@ -40,11 +49,27 @@ const services = [
 ];
 
 export default function ServicesTypes() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    
+    if (hash && hash !== '#') {
+      const timeout = setTimeout(() => {
+        const element = document.getElementById(hash.substring(1));
+        
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100); 
+      return () => clearTimeout(timeout);
+    }
+  }, []); 
+
   return (
     <section className="bg-white md:py-16">
       <div className="mx-auto max-w-[1280px] space-y-[25px] md:space-y-[60px]">
         {services.map((service, index) => (
           <div
+            id={slugify(service.title)}
             key={index}
             className="relative flex flex-col md:flex-row max-md:flex-col-reverse gap-[20px] md:gap-[43px] items-center overflow-hidden "
           >

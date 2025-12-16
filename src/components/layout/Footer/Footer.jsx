@@ -160,7 +160,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" 
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Store Locator
@@ -185,7 +186,7 @@ function Footer() {
             <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
               <li>
                 <Link
-                  to="/services"
+                  to="/services#cuts"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Cuts
@@ -193,7 +194,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="/services#style"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Style
@@ -201,7 +202,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="/services#care"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Care
@@ -218,7 +219,8 @@ function Footer() {
             <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershop"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Sherwood Park
@@ -226,7 +228,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershop1"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Spruce Grove
@@ -234,7 +237,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershop2"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Cameron Heights
@@ -242,7 +246,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershopwhyte"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Whyte Avenue
@@ -250,7 +255,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomedowntown"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Edmonton Downtown
@@ -258,7 +264,8 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/locations"
+                  to="https://www.phorest.com/salon/houseofhandsomebarbershopsouth"
+                  target="_blank"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   South Common Edmonton
