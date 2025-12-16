@@ -39,11 +39,14 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage3,
   },
+  
 ];
 
 function Testimonials() {
   const [api, setApi] = React.useState();
   const [current, setCurrent] = React.useState(0);
+  const itemCount = testimonials.length;
+  const showDesktopArrows = itemCount > 3;
 
   React.useEffect(() => {
     if (!api) return;
@@ -153,8 +156,29 @@ function Testimonials() {
               />
             ))}
           </div>
-          <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
-          <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+          <CarouselPrevious
+            className={`
+              md:left-[91%] left-[74%] 
+              md:h-[50px] h-[40px] 
+              md:w-[50px] w-[40px] 
+              md:top-[-80px] top-[-50px] 
+              translate-x-0 translate-y-0
+              // Add a class to hide it on desktop if showDesktopArrows is false
+              ${!showDesktopArrows ? "md:hidden" : ""} 
+            `}
+          />
+
+          <CarouselNext
+            className={`
+              right-0 
+              md:top-[-80px] top-[-50px] 
+              md:h-[50px] h-[40px] 
+              md:w-[50px] w-[40px] 
+              translate-x-0 translate-y-0
+              // Add a class to hide it on desktop if showDesktopArrows is false
+              ${!showDesktopArrows ? "md:hidden" : ""}
+            `}
+          />
         </Carousel>
       </div>
     </section>
