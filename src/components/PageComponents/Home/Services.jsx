@@ -101,12 +101,12 @@ function Services() {
                     </div>
 
                     {/* Circular Button - Bottom Right */}
-                    <button
+                    {/* <button
                       className="absolute bottom-[29.52px] right-[19.52px] md:right-[39.96px] flex h-[49.48px] w-[49.48px] items-center justify-center overflow-hidden rounded-full bg-white transition-transform duration-200 hover:scale-110"
                       aria-label={`View ${service.title} details`}
                     >
                       <Plus className="w-6 h-6 text-black" strokeWidth={2} />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </CarouselItem>

@@ -13,11 +13,7 @@ function Hero() {
         <div className="flex flex-col gap-6 items-center min-h-[620px] w-full md:flex-row md:gap-8">
           <div className="pt-4 pb-4 w-full md:w-[60%] space-y-4 text-left md:space-y-6 md:pt-0">
             <h1
-              className="font-['Cairo'] font-[400] text-neutral-900 leading-[36px] md:leading-[67px] text-[36px] md:text-[48px]"
-              style={{
-                WebkitTextStrokeWidth: "1px",
-                WebkitTextStrokeColor: "#000",
-              }}
+              className="font-['Cairo'] font-[700] text-neutral-900 leading-[114.583%] md:leading-[114.583%] text-[36px] md:text-[48px] text-[#181818] max-w-[531px]"
             >
               The Ultimate Grooming Experience
             </h1>
