@@ -93,7 +93,7 @@ function Footer() {
             {/* Social Media */}
             <div className="flex gap-2 items-center">
               <a
-                href="mailto:info@houseofhandsome.com"
+                href="mailto:info@houseofhandsome.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
@@ -102,7 +102,7 @@ function Footer() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/HouseofHandsomeCanada"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
@@ -111,7 +111,7 @@ function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.facebook.com/HouseofHandsomeCanada"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"

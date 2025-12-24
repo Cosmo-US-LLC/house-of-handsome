@@ -1,5 +1,6 @@
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function FreshLook() {
   return (
@@ -65,7 +66,9 @@ export default function FreshLook() {
             </p>
           </div>
           <div className="">
+            <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
             <PrimaryCTA />
+                          </Link>
           </div>
         </div>
       </div>
