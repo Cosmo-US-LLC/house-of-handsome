@@ -15,9 +15,8 @@ function Footer() {
     <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
-        <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
-          {/* Find A Location */}
-         
+        {/* <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
+        
           <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" target="_blank">
            <div className="flex gap-6 items-center max-md:mb-8">
             <img
@@ -30,7 +29,6 @@ function Footer() {
             </span>
           </div>
           </Link>
-          {/* Book A Reservation */}
          <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations?_gl=1*12yeoq4*_gcl_au*MTI1MDk3MTA0Ny4xNzU5NDg0MzA3*_ga*OTM1MjMyNDI4LjE3NTE1MzkzNjk.*_ga_2NK6J237BJ*czE3NjQ4MzU2NjYkbzM0JGcxJHQxNzY0ODM1NzYwJGo1OSRsMCRoNDQzODg1MTY" target="_blank">
           <div className="flex gap-6 items-center max-md:mb-8">
             <img
@@ -44,21 +42,6 @@ function Footer() {
           </div>
          </Link>
 
-          {/* Download The App */}
-          {/* <Link to={downloadLink} target="_blank">
-          <div className="flex gap-6 items-center max-md:mb-8">
-            <img
-              src={downloadAppIcon}
-              alt="Download App Icon"
-              className="h-[47px] w-[46px] shrink-0"
-            />
-            <span className="font-['Urbanist'] text-xl font-extrabold capitalize leading-none text-black">
-              Download the app
-            </span>
-          </div>
-          </Link> */}
-
-          {/* Buy A Gift Card */}
           <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
           <div className="flex gap-6 items-center max-md:mb-0">
             <img
@@ -71,12 +54,12 @@ function Footer() {
             </span>
           </div>
           </Link>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="flex justify-between pb-8 max-md:gap-10 wrap max-md:grid max-md:grid-cols-1">
           {/* Column 1 - Brand */}
-          <div className="flex flex-col max-w-[440px] gap-6">
+          <div className="flex flex-col md:max-w-[440px] gap-6">
             <div>
                 <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Download Our App
@@ -95,7 +78,7 @@ function Footer() {
               <img
                 src={logo}
                 alt="House of Handsome Logo"
-                className="w-[80%] h-full shrink-0"
+                className="w-[80%] max-w-[300px] h-full shrink-0"
               />
             </Link>
 
@@ -110,7 +93,7 @@ function Footer() {
             {/* Social Media */}
             <div className="flex gap-2 items-center">
               <a
-                href="mailto:info@houseofhandsome.com"
+                href="mailto:info@houseofhandsome.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
@@ -119,7 +102,7 @@ function Footer() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/HouseofHandsomeCanada"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
@@ -128,7 +111,7 @@ function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.facebook.com/HouseofHandsomeCanada"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
@@ -140,7 +123,7 @@ function Footer() {
           </div>
 
           {/* Column 2 - Quick Links */}
-          <div className="flex flex-col gap-6">
+          {/* <div className="flex flex-col gap-6">
             <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Quick Links
             </h3>
@@ -176,10 +159,10 @@ function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 3 - Services */}
-          <div className="flex flex-col gap-6">
+          {/* <div className="flex flex-col gap-6">
             <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
               Services
             </h3>
@@ -209,7 +192,7 @@ function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 4 - Our Locations */}
           <div className="flex flex-col gap-6">

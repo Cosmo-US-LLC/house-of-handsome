@@ -16,11 +16,8 @@ export default function ServicesHero({
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left md:w-[45%] w-full">
             <h2
-              className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[400]  text-[#000] md:leading-[67px] leading-[40px] capitalize "
-              style={{
-                WebkitTextStrokeWidth: "1px",
-                WebkitTextStrokeColor: "#000",
-              }}
+              className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[700]  text-[#000] md:leading-[67px] leading-[40px] capitalize "
+            
             >
               Our Services
             </h2>

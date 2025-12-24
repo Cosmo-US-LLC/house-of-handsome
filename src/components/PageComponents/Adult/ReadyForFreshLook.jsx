@@ -1,5 +1,6 @@
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
+import { Link } from "react-router-dom";
 
 function ReadyForFreshLook({ title, description }) {
   return (
@@ -24,7 +25,9 @@ function ReadyForFreshLook({ title, description }) {
 
             {/* Right - CTA Button */}
             <div className="shrink-0">
+              <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
               <PrimaryCTA />
+              </Link>
             </div>
           </div>
         </div>

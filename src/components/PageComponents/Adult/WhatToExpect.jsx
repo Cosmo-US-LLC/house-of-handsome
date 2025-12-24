@@ -46,7 +46,7 @@ function WhatToExpect() {
                 <div key={item.id}>
                   <div className="">
                    <ul className="pl-5">
-                    <li className=" list-disc"> <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] leading-[70px]">
+                    <li className="py-5 list-disc"> <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] ">
                        {item.title}
                     </h3></li>
                    </ul>
@@ -57,7 +57,7 @@ function WhatToExpect() {
 
                   {/* Divider - don't show after last item */}
                   {index < expectations.length - 1 && (
-                    <div className="mt-4 border-t border-gray-300" />
+                    <div className="border-t border-gray-300" />
                   )}
                 </div>
               ))}
