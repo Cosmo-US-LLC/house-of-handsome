@@ -15,7 +15,7 @@ function Footer() {
     <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
-        {/* <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
+        <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
         
           <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" target="_blank">
            <div className="flex gap-6 items-center max-md:mb-8">
@@ -42,7 +42,7 @@ function Footer() {
           </div>
          </Link>
 
-          <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
+          {/* <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
           <div className="flex gap-6 items-center max-md:mb-0">
             <img
               src={giftCardIcon}
@@ -53,8 +53,8 @@ function Footer() {
               Buy a Gift card
             </span>
           </div>
-          </Link>
-        </div> */}
+          </Link> */}
+        </div>
 
         {/* Main Footer Content */}
         <div className="flex justify-between pb-8 max-md:gap-10 wrap max-md:grid max-md:grid-cols-1">
@@ -111,7 +111,7 @@ function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.facebook.com/HouseofHandsomeCanada"
+                href="https://www.instagram.com/house.of.handsome.barbershop?igsh=dXBrZWV4eTlnNHp0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
