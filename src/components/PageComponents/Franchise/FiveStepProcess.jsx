@@ -58,30 +58,53 @@ export default function FiveStepProcess({
 
       const containerWidth = isMobile ? window.innerWidth : 1280;
       const gap = 20;
-      const extraScroll = isMobile ? 1680 : 840;
+      const cardWidth = 420;
 
-      // Initial positions
       cards.forEach((card, i) => {
         gsap.set(card, {
           x: containerWidth + i * gap,
         });
       });
 
-      const totalWidth = cards.length * gap;
+      if (isMobile) {
+        const extraScroll = 1680;
+        const totalWidth = cards.length * gap;
 
-      // GSAP horizontal animation
-      gsap.to(cards, {
-        x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: `+=${totalWidth + containerWidth + extraScroll}`,
-          scrub: 1.5,
-          pin: true,
-          pinSpacing: true,
-        },
-      });
+        gsap.to(cards, {
+          x: (i) => `-${totalWidth - i * gap + extraScroll}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: `+=${totalWidth + containerWidth + extraScroll}`,
+            scrub: 1.5,
+            pin: true,
+            pinSpacing: true,
+          },
+        });
+      } else {
+        const lastCardIndex = cards.length - 1;
+        const lastCardStartX = containerWidth + lastCardIndex * gap;
+        const lastCardEndX = 0; 
+        const totalScrollDistance = lastCardStartX - lastCardEndX;
+
+        gsap.to(cards, {
+          x: (i) => {
+            const cardStartX = containerWidth + i * gap;
+            const cardEndX = cardStartX - totalScrollDistance;
+            return `${cardEndX}px`;
+          },
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: `+=${totalScrollDistance}`,
+            scrub: 1.5,
+            pin: true,
+            pinSpacing: true,
+          },
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -110,7 +133,7 @@ export default function FiveStepProcess({
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="card-inner-wrapper w-[420px] md:w-[420px] h-[480px] md:h-[508px] "
+              className="card-inner-wrapper max-w-[420px] mx-auto max-md:min-w-[350px] md:w-[420px] !h-[480px] md:h-[508px] "
             >
               <div className="overflow-hidden w-full">
                 <img
@@ -121,12 +144,12 @@ export default function FiveStepProcess({
               </div>
 
               {/* Text */}
-              <div className="bg-[#f4f4f4] px-4 py-6 flex gap-4 rounded-b-[8px]">
-                <div className="w-10 h-10 rounded-full bg-[#d82028] text-white flex items-center justify-center font-bold text-xl">
+              <div className="bg-[#f4f4f4] max-md:min-h-[125px] px-4 py-6 flex gap-4 rounded-b-[8px]">
+                <div className="!w-10 !h-10 rounded-full bg-[#d82028] text-white flex items-center justify-center font-bold text-xl">
                   {card.id}
                 </div>
 
-                <div>
+                <div className="w-[86%]">
                   <h3 className="font-['Urbanist'] font-bold text-[20px]">
                     {card.title}
                   </h3>

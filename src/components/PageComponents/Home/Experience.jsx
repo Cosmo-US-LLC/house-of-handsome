@@ -16,7 +16,7 @@ function Experience() {
   window.open(url, '_blank'); 
 };
   return (
-    <section className="relative pt-14 pb-10 w-full bg-white md:pb-12 md:pt-30">
+    <section className="relative pt-14 pb-10 w-full bg-white md:pb-12 md:pt-38">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8 ">
         {/* Arc Images Container */}

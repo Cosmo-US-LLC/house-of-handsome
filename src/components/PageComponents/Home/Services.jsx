@@ -48,11 +48,11 @@ function Services() {
   }, [api, isMobile]);
 
   return (
-    <section className="py-10 w-full bg-white md:py-12">
+    <section className="py-10 w-full bg-white md:py-[45px]">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 mb-6 md:mb-10">
+        <div className="flex flex-col gap-3 mb-6 md:mb-6">
           <h2 className="font-['Cairo'] text-4xl font-bold leading-tight text-[#181818] md:text-[48px] md:leading-[55px]">
             Our Services
           </h2>
@@ -70,7 +70,7 @@ function Services() {
             align: "start",
             loop: isMobile,
           }}
-          className="w-full !mt-[80px]"
+          className="w-full !mt-[20px]"
         >
           <CarouselContent className="-ml-6">
             {servicesData.map((service) => (

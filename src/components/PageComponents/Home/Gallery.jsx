@@ -144,7 +144,7 @@ const galleryImages = [
 
 function Gallery() {
   return (
-    <section className="md:py-12 py-8 w-full bg-white">
+    <section className="md:py-[45px] py-8 w-full bg-white">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title and Arrow Buttons */}
