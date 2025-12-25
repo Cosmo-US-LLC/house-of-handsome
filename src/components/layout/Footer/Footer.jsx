@@ -202,8 +202,7 @@ function Footer() {
             <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomebarbershop"
-                  target="_blank"
+                  to="/locations?location=1"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Sherwood Park
@@ -211,8 +210,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomebarbershop1"
-                  target="_blank"
+                  to="/locations?location=2"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Spruce Grove
@@ -220,8 +218,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomebarbershop2"
-                  target="_blank"
+                  to="/locations?location=3"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Cameron Heights
@@ -229,8 +226,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomebarbershopwhyte"
-                  target="_blank"
+                  to="/locations?location=4"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Whyte Avenue
@@ -238,8 +234,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomedowntown"
-                  target="_blank"
+                  to="/locations?location=6"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Edmonton Downtown
@@ -247,8 +242,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="https://www.phorest.com/salon/houseofhandsomebarbershopsouth"
-                  target="_blank"
+                  to="/locations?location=5"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   South Common Edmonton

@@ -13,17 +13,17 @@ function OpeningHours() {
 
           {/* Hours Table */}
           <div className="w-full md:w-[401px] font-['Urbanist'] font-medium text-[16px] leading-[26px]">
-            <div className="flex justify-between mb-8">
-              <span className="text-[#181818]">Monday to Friday</span>
-              <span className="text-[#d82028]">9:00am — 8:00pm</span>
+            <div className="flex justify-between mb-[6px] ">
+              <span className="text-[#181818] leading-[162.5%]">Monday to Friday</span>
+              <span className="text-[#d82028] leading-[162.5%]">9:00am — 8:00pm</span>
             </div>
-            <div className="flex justify-between mb-8">
-              <span className="text-[#181818]">Saturday</span>
-              <span className="text-[#d82028]">9:00am — 7:00pm</span>
+            <div className="flex justify-between mb-[6px] ">
+              <span className="text-[#181818] leading-[162.5%]">Saturday</span>
+              <span className="text-[#d82028] leading-[162.5%]">9:00am — 7:00pm</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#181818]">Sunday</span>
-              <span className="text-[#d82028]">10:00am — 6:00pm</span>
+              <span className="text-[#181818] leading-[162.5%]">Sunday</span>
+              <span className="text-[#d82028] leading-[162.5%]">10:00am — 6:00pm</span>
             </div>
           </div>
 

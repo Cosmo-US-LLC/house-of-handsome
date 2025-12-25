@@ -2,7 +2,8 @@ import InstaGramSng from "@/assets/images/location/Svgs/InstaGramSng";
 import LocationSvg from "@/assets/images/location/Svgs/Location";
 import MailSvg from "@/assets/images/location/Svgs/MailSvg";
 import PhoneSvg from "@/assets/images/location/Svgs/PhoneSvg";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
@@ -60,36 +61,82 @@ const LOCATIONS = [
   },
 ];
 
+// Mapping from home page location IDs to LOCATIONS array indices
+const LOCATION_ID_MAP = {
+  1: 2, // Sherwood Park -> House Of Handsome Sherwood Park
+  2: 4, // Spruce Grove -> House Of Handsome Spruce Grove
+  3: 0, // Cameron Heights Edmonton -> House Of Handsome Cameron Heights
+  4: 5, // Whyte Avenue Edmonton -> House Of Handsome Whyte Ave
+  5: 3, // South Common Edmonton -> House Of Handsome South Common
+  6: 1, // Edmonton Downtown -> House Of Handsome Downtown
+};
+
 const Location = () => {
-  const [selectedLocation, setSelectedLocation] = useState(LOCATIONS[0]);
+  const [searchParams] = useSearchParams();
+  const locationId = searchParams.get("location");
+  
+  // Get initial location from URL parameter or default to first
+  const getInitialLocation = () => {
+    if (locationId) {
+      const locationIndex = LOCATION_ID_MAP[parseInt(locationId)];
+      if (locationIndex !== undefined && LOCATIONS[locationIndex]) {
+        return LOCATIONS[locationIndex];
+      }
+    }
+    return LOCATIONS[0];
+  };
+
+  const [selectedLocation, setSelectedLocation] = useState(getInitialLocation());
+  const locationRefs = useRef({});
+
+  // Update selected location when URL parameter changes
+  useEffect(() => {
+    if (locationId) {
+      const locationIndex = LOCATION_ID_MAP[parseInt(locationId)];
+      if (locationIndex !== undefined && LOCATIONS[locationIndex]) {
+        setSelectedLocation(LOCATIONS[locationIndex]);
+        
+        // Scroll to selected location after a short delay to ensure DOM is ready
+        setTimeout(() => {
+          const locationRef = locationRefs.current[locationIndex];
+          if (locationRef) {
+            locationRef.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      }
+    }
+  }, [locationId]);
   return (
-    <section className="pt-0 pb-20 bg-[#F1F1F1]">
+    <section className="pt-0 pb-20 bg-[#F1F1F1] pt-16">
       <div className="max-w-[1280px] mx-auto px-4 ">
         <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
           <h3 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#d82028]">
             Our Locations
           </h3>
-          <p className="font-['Urbanist'] h-10 text-base font-medium leading-[26px] text-[#181818]">
+          <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818]">
             Discover our vibrant locations where style meets comfort. Each shop
             is designed to provide a relaxing atmosphere, complete with expert
             barbers ready to craft your perfect look.
           </p>
         </div>
         <div className="md:grid md:grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12 max-md:space-y-2">
-          <div className="mapdiv rounded-xl overflow-hidden md:h-full h-[500px] md:min-h-[500px] min-h-[500px]">
+          <div className="mapdiv rounded-xl overflow-hidden md:h-full md:h-[500px] h-[300px] md:min-h-[500px] ">
             <iframe
               key={selectedLocation.mapQuery}
               src={`https://www.google.com/maps?q=${encodeURIComponent(
                 selectedLocation.mapQuery
               )}&output=embed`}
-              className="w-full h-full border-0"
+              className="w-full h-full max-md:max-h-[400px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="space-y-4 max-h-[800px] overflow-y-auto md:px-2">
+          <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2">
             {LOCATIONS.map((location, index) => (
-              <div key={index}>
+              <div 
+                key={index}
+                ref={(el) => (locationRefs.current[index] = el)}
+              >
                 <div
                   className={`flex md:flex-row flex-col gap-4 px-4 py-4 rounded-xl cursor-pointer transition ${
                     selectedLocation.name === location.name

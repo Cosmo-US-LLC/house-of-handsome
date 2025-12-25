@@ -126,7 +126,7 @@ export default function ServicesTypes() {
             className="relative flex flex-col md:flex-row max-md:flex-col-reverse gap-[20px] md:gap-[43px] items-center overflow-hidden "
           >
             {/* Left Image */}
-            <div className="w-full md:w-[45%] max-md:p-4 max-w-[680px] h-full relative">
+            <div className="w-full md:w-[45%] md:block hidden max-md:p-4 max-w-[680px] h-full relative">
               <img
                 src={service.image}
                 alt={service.title}
@@ -142,6 +142,13 @@ export default function ServicesTypes() {
               <p className="text-[#181818] text-[16px] font-[500] font-[Urbanist] leading-[162.5%]">
                 {service.description}
               </p>
+                <div className="w-full md:w-[100%] block md:hidden  h-full relative">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="object-cover w-full h-[328px] rounded-lg"
+              />
+            </div>
               
               {/* Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">

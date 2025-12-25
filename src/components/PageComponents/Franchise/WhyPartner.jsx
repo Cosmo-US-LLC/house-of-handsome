@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const stats = [
   {
@@ -19,6 +19,37 @@ const stats = [
 ];
 
 export default function WhyPartner() {
+  const [counts, setCounts] = useState(
+    stats.map(() => 0)
+  );
+
+  useEffect(() => {
+    const duration = 2000;
+    const incrementTime = 20;
+
+    const intervals = stats.map((item, index) => {
+      const numericValue = parseFloat(item.value);
+      let current = 0;
+      const step = numericValue / (duration / incrementTime);
+
+      return setInterval(() => {
+        current += step;
+
+        setCounts((prev) => {
+          const updated = [...prev];
+          updated[index] =
+            current >= numericValue ? numericValue : current;
+          return updated;
+        });
+
+        if (current >= numericValue) {
+          clearInterval(intervals[index]);
+        }
+      }, incrementTime);
+    });
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
   return (
     <section className="py-10 bg-white md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
@@ -52,24 +83,34 @@ export default function WhyPartner() {
 
         {/* Stats Grid */}
         <div className="flex flex-wrap gap-6 items-start">
-          {stats.map((item, index) => (
-            <div
-              key={index}
-              className="bg-[#f4f4f4] rounded-lg px-6 py-8 w-full md:w-[389px] flex flex-col gap-16"
-            >
-              <div className="font-['Cairo'] text-[80px] font-bold text-[#d82028] leading-[80px]">
-                {item.value}
-              </div>
-              <div className="flex flex-col gap-2 h-[60px]">
-                <h4 className="font-['Urbanist'] text-[20px] font-bold text-black leading-[28px]">
-                  {item.label}
-                </h4>
-                <p className="font-['Urbanist'] font-normal text-[16px] text-black leading-[24px]">
-                  {item.detail}
-                </p>
-              </div>
-            </div>
-          ))}
+       {stats.map((item, index) => {
+  const numericValue = parseFloat(item.value);
+  const suffix = item.value.replace(/[0-9.]/g, "");
+
+  return (
+    <div
+      key={index}
+      className="bg-[#f4f4f4] rounded-lg px-6 py-8 w-full md:w-[389px] flex flex-col gap-16"
+    >
+      <div className="font-['Cairo'] text-[80px] font-bold text-[#d82028] leading-[80px]">
+        {Number.isInteger(numericValue)
+          ? Math.round(counts[index])
+          : counts[index].toFixed(1)}
+        {suffix}
+      </div>
+
+      <div className="flex flex-col gap-2 h-[60px]">
+        <h4 className="font-['Urbanist'] text-[20px] font-bold text-black leading-[28px]">
+          {item.label}
+        </h4>
+        <p className="font-['Urbanist'] font-normal text-[16px] text-black leading-[24px]">
+          {item.detail}
+        </p>
+      </div>
+    </div>
+  );
+})}
+
         </div>
       </div>
     </section>

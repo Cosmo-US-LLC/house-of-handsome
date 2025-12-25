@@ -15,6 +15,7 @@ import locationsImage3 from "../../../assets/images/home/location/location_c3.we
 import locationsImage4 from "../../../assets/images/home/location/location_c4.webp";
 import locationsImage5 from "../../../assets/images/home/location/location_c5.webp";
 import locationsImage6 from "../../../assets/images/home/location/location_c6.webp";
+import { Link } from "react-router-dom";
 
 // -------------------------------
 // Dynamic Data
@@ -43,7 +44,7 @@ const contentData = {
 // -------------------------------
 const LocationCard = ({ location }) => (
   <div className="group relative h-[260px] w-full overflow-hidden rounded-[8px] bg-[#3f3f3f]">
-    <div className="absolute left-1/2 top-1/2 h-[260px] w-[194px] max-md:w-[100%] -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-300 group-hover:h-[300px] group-hover:w-[100%]">
+    <div className="absolute left-1/2 top-1/2 h-[260px] w-[194px] max-md:w-[100%] -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-300 ">
       <img
         src={location.image}
         alt={location.name}
@@ -56,7 +57,7 @@ const LocationCard = ({ location }) => (
     </h3>
 
     <button
-      className="absolute bottom-[calc(50%-94.02px)] right-[14.7px] flex h-[32.5px] w-[32.5px] -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-solid border-white transition-all duration-300 group-hover:rotate-0"
+      className="absolute cursor-pointer bottom-[calc(50%-94.02px)] right-[14.7px] flex h-[32.5px] w-[32.5px] -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-solid border-white transition-all duration-300 group-hover:rotate-0"
       aria-label={`View ${location.name} location`}
     >
       <svg
@@ -106,7 +107,7 @@ export default function Locations({
   window.open(url, '_blank'); 
 };
   return (
-    <section className="py-10 w-full bg-white md:py-12">
+    <section className="py-10 w-full bg-white md:py-[45px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="grid grid-cols-1 gap-6 items-center md:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* LEFT COLUMN - Text Content */}
@@ -155,7 +156,9 @@ export default function Locations({
                     key={location.id}
                     className="pl-5 basis-[83.3333%]"
                   >
-                    <LocationCard location={location} />
+                    <Link to={`/locations?location=${location.id}`}>
+                      <LocationCard location={location} />
+                    </Link>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -178,7 +181,9 @@ export default function Locations({
           {/* RIGHT COLUMN - Desktop Grid */}
           <div className="hidden grid-cols-2 gap-5 md:grid lg:grid-cols-3">
             {locationsData.map((location) => (
-              <LocationCard key={location.id} location={location} />
+              <Link key={location.id} to={`/locations?location=${location.id}`}>
+                 <LocationCard location={location} />
+              </Link>
             ))}
           </div>
         </div>

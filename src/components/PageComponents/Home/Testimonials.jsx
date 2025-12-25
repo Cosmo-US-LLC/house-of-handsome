@@ -58,7 +58,7 @@ function Testimonials() {
     });
   }, [api]);
   return (
-    <section className="py-8 w-full bg-white md:py-12">
+    <section className="py-8 w-full bg-white md:py-[45px]">
       {/* Max Container Wrapper - 1280px */}
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Header with Title */}

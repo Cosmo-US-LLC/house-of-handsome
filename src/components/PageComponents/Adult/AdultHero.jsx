@@ -16,7 +16,7 @@ export default function AdultHero({
               className="mb-4 md:text-[48px] text-[36px] leading-[42px] font-['Cairo'] font-[700]  text-[#000] md:leading-[55px] capitalize "
             
             >
-              Sharp. Professional. Confident.
+              Sharp. Professional. <br className="max-md:hidden" /> Confident.
             </h2>
             {paragraphs.map((text, i) => (
               <p
@@ -27,7 +27,7 @@ export default function AdultHero({
               </p>
             ))}
           </div>
-          <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-40">
+          <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
             <img
               src={image}
               alt={"At House of Handsome"}

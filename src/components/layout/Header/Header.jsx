@@ -21,7 +21,7 @@ const NAV_ITEMS = [
   { label: "Kids", href: "/kids", slug: "/kids" },
   { label: "Services", href: "/services", slug: "/services" },
   { label: "Franchise", href: "/franchise", slug: "/franchise" },
-  { label: "Locations", href: "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations", slug: "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" },
+  { label: "Locations", href: "/locations", slug: "/locations" },
 ];
 
 // Brand red color from Figma design
@@ -49,7 +49,7 @@ function Header() {
           {/* Left: Brand Logo */}
           <Link
             to="/"
-            className="flex gap-2 items-center font-medium rounded-md text-neutral-900 "
+            className="flex gap-2 items-center max-h-[31px] max-w-[178px] font-medium rounded-md text-neutral-900 "
             aria-label="House of Handsome - Home"
           >
             {/* Logo from Figma */}
@@ -91,7 +91,7 @@ function Header() {
 
           {/* Right: Contact Button (Desktop) */}
           <div className="hidden lg:block">
-            <SecondaryCTA className="px-6 py-3 text-sm">
+            <SecondaryCTA className="rounded-[6px] px-6 py-3 text-sm">
               Contact Us
             </SecondaryCTA>
           </div>
@@ -100,7 +100,7 @@ function Header() {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button
-                className="inline-flex justify-center items-center p-2 rounded-md hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 lg:hidden"
+                className="inline-flex justify-center items-center p-2 rounded-md hover:bg-neutral-100 outline-none lg:hidden"
                 aria-label="Toggle navigation menu"
               >
                 <Menu className="w-6 h-6" />
@@ -138,7 +138,7 @@ function Header() {
                   </Link>
                 ))}
                 {/* Mobile Contact Button */}
-                <div className="pt-6 mt-6 border-t border-neutral-200">
+                <div className="pt-6 mt-6 border-t  border-neutral-200">
                   <SecondaryCTA
                     className="justify-center w-full"
                     onClick={closeMobileMenu}
