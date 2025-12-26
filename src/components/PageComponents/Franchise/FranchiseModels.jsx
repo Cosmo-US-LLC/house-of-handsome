@@ -39,7 +39,6 @@ export default function FranchiseModels({
 
           {/* Right Text Column */}
           <div className="flex flex-col gap-12 w-full md:w-[640px]">
-            {/* Model Name + What We Provide Section */}
             <div className="flex flex-col gap-6">
               <h3 className="text-[#d82028] font-['Cairo'] text-[24px] font-bold capitalize leading-[32px]">
                 {modelName}

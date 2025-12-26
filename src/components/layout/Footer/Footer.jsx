@@ -68,7 +68,7 @@ function Footer() {
               <a href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"  target="_blank" rel="noopener noreferrer">
               <img src={app_dow1} alt="" />
               </a>
-              <a href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1527747808" target="_blank" rel="noopener noreferrer">
+              <a href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951" target="_blank" rel="noopener noreferrer">
               <img src={app_dow2} alt="" />
               </a>
             </div>
