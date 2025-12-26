@@ -67,7 +67,6 @@ function AdultTestimonials() {
           </h2>
         </div>
 
-        {/* Testimonials Carousel */}
         <Carousel
           setApi={setApi}
           opts={{
