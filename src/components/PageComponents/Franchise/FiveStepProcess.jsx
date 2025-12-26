@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-import step1 from "../../../assets/images/franchise/FiveStepProcess/step_c1.webp";
-import step2 from "../../../assets/images/franchise/FiveStepProcess/step_c2.webp";
-import step3 from "../../../assets/images/franchise/FiveStepProcess/step_c3.webp";
-import step4 from "../../../assets/images/franchise/FiveStepProcess/step_c4.webp";
-import step5 from "../../../assets/images/franchise/FiveStepProcess/step_c5.webp";
+import step1 from "../../../assets/images/franchise/FiveStepProcess/step_c (5).webp";
+import step2 from "../../../assets/images/franchise/FiveStepProcess/step_c (4).webp";
+import step3 from "../../../assets/images/franchise/FiveStepProcess/step_c (3).webp";
+import step4 from "../../../assets/images/franchise/FiveStepProcess/step_c (2).webp";
+import step5 from "../../../assets/images/franchise/FiveStepProcess/step_c (1).webp";
 
 const defaultSteps = [
   {
@@ -133,13 +133,13 @@ export default function FiveStepProcess({
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className="card-inner-wrapper max-w-[420px] mx-auto max-md:min-w-[350px] md:w-[420px] !h-[480px] md:h-[508px] "
+              className="card-inner-wrapper group max-w-[420px] mx-auto max-md:min-w-[350px] md:w-[420px] !h-[480px] md:h-[508px] "
             >
               <div className="overflow-hidden w-full">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="object-cover w-full h-full"
+                  className="object-cover grayscale transition-all duration-300 group-hover:grayscale-0 w-full h-full"
                 />
               </div>
 
