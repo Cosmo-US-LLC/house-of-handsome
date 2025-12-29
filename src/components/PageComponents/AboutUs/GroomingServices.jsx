@@ -3,6 +3,7 @@ import adultsImage from "../../../assets/images/about/groomingServices/grooming_
 import teensImage from "../../../assets/images/about/groomingServices/grooming_services_c2.webp";
 import kidsImage from "../../../assets/images/about/groomingServices/grooming_services_c3.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 
 const services = [
   {
@@ -95,7 +96,7 @@ export default function GroomingServices() {
 
               {service.content}
 
-              <PrimaryCTA className=" max-w-[200px]">
+              <PrimaryCTA onClick={handleRedirectOfBookAppontment} className=" max-w-[200px]">
                 Book An Appointment
               </PrimaryCTA>
             </div>
