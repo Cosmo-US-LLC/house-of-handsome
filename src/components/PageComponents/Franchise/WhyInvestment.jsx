@@ -1,34 +1,42 @@
 import React, { useState } from "react";
 import investmentImage from "../../../assets/images/franchise/whyInvestment/why_investment.webp";
+import investmentImage2 from "../../../assets/images/franchise/whyInvestment/why_investment2.webp";
+import investmentImage3 from "../../../assets/images/franchise/whyInvestment/why_investment3.webp";
+import investmentImage4 from "../../../assets/images/franchise/whyInvestment/why_investment4.webp";
+import investmentImage5 from "../../../assets/images/franchise/whyInvestment/why_investment5.webp";
 
 export default function WhyInvestment({
   title = "Why It's Worth The Investment",
   subtitle = "Join a brand proven to perform, where systems, style, and service drive profitability.",
-  image = investmentImage,
   benefits = [
     {
       title: "Established Performance",
       content: "6 profitable Alberta locations operating under a tested model.",
+      image: investmentImage,
     },
     {
       title: "Loyal Client Base",
       content: "Thousands of customers, 4.9★ exceptional rating, and growing brand trust.",
+      image: investmentImage2,
     },
     {
       title: "Built-In Marketing",
       content: "Automated digital campaigns and referral programs that fill chairs year-round.",
+      image: investmentImage3,
     },
     {
       title: "Technology-Driven",
       content: "Centralized CRM, booking, and SMS systems to simplify operations.",
+      image: investmentImage4,
     },
     {
       title: "Fast Growth Market",
       content: "The Canadian men’s grooming industry now exceeds $1.6 billion and continues to rise.",
+      image: investmentImage5,
     },
   ],
 }) {
-  const [openIndex, setOpenIndex] = useState(0); // first is open
+  const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(index === openIndex ? null : index);
@@ -53,16 +61,16 @@ export default function WhyInvestment({
 
           {/* Accordion */}
           <div className="flex flex-col w-full md:w-[640px]">
-
             {benefits.map((item, index) => {
-              const isOpen = openIndex === index; // moved INSIDE map
+              const isOpen = openIndex === index;
 
               return (
-                <div key={index}   className={` py-4 border-b ${
-    isOpen ? "border-black" : "border-[rgba(0,0,0,0.10)]"
-  }`}>
-
-                  {/* Header */}
+                <div
+                  key={index}
+                  className={`py-4 border-b ${
+                    isOpen ? "border-black" : "border-[rgba(0,0,0,0.10)]"
+                  }`}
+                >
                   <button
                     className="w-full cursor-pointer flex justify-between items-center"
                     onClick={() => toggleAccordion(index)}
@@ -77,31 +85,27 @@ export default function WhyInvestment({
                   </button>
 
                   <div
-                    className="accordion-content"
+                    className="accordion-content transition-all duration-300 overflow-hidden"
                     style={{
                       maxHeight: isOpen ? "200px" : "0px",
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
-                    {item.content && (
-                      <p className="mt-3 text-[16px] text-[#181818] pr-4">
-                        {item.content}
-                      </p>
-                    )}
+                    <p className="mt-3 text-[16px] text-[#181818] pr-4">
+                      {item.content}
+                    </p>
                   </div>
-
                 </div>
               );
             })}
-
           </div>
 
-          {/* Image */}
+          {/* Dynamic Image */}
           <div className="w-full md:w-[623px] h-[430px] rounded-lg overflow-hidden">
             <img
-              src={image}
+              src={benefits[openIndex]?.image}
               alt="Investment opportunity"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full transition-all duration-500"
             />
           </div>
 
