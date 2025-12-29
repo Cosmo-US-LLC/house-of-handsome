@@ -1,5 +1,5 @@
 import React from 'react'
-import ServiceUsImage from "../../../assets/images/ContactUs/image_2.webp";
+import ServiceUsImage from "../../../assets/images/contactUs/image_2.webp";
 
 const ContactUsHero = ({
   image = ServiceUsImage,
