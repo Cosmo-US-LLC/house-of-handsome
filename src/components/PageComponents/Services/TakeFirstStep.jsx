@@ -1,4 +1,5 @@
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 import React, { useState } from "react";
 
 export default function TakeFirstStep() {
@@ -135,7 +136,7 @@ export default function TakeFirstStep() {
               />
             </div>
 
-            <PrimaryCTA>Book An Appointment</PrimaryCTA>
+            <PrimaryCTA onClick={handleRedirectOfBookAppontment}>Book An Appointment</PrimaryCTA>
           </form>
         </div>
       </div>

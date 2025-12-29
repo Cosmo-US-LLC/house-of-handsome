@@ -1,3 +1,4 @@
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
 import React from "react";
 
@@ -28,7 +29,7 @@ function OpeningHours() {
           </div>
 
           {/* CTA Button */}
-          <PrimaryCTA>Book An Appointment</PrimaryCTA>
+          <PrimaryCTA onClick={handleRedirectOfBookAppontment}>Book An Appointment</PrimaryCTA>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React from "react";
 import aboutUsImage from "../../../assets/images/about/aboutHero/about_us_hero.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 
 export default function AboutUsHero({
   image = aboutUsImage,
@@ -29,7 +30,7 @@ export default function AboutUsHero({
                 {text}
               </p>
             ))}
-            <PrimaryCTA children={buttonText} className="mt-4" />
+            <PrimaryCTA onClick={handleRedirectOfBookAppontment} children={buttonText} className="mt-4" />
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
             <img
