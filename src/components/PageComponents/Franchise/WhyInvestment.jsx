@@ -57,10 +57,11 @@ export default function WhyInvestment({
         </div>
 
         {/* Layout */}
-        <div className="flex flex-col gap-16 md:flex-row justify-between items-center">
+        <div className="flex flex-col gap-16 md:flex-row justify-between items-start">
 
           {/* Accordion */}
           <div className="flex flex-col w-full md:w-[640px]">
+
             {benefits.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -71,6 +72,7 @@ export default function WhyInvestment({
                     isOpen ? "border-black" : "border-[rgba(0,0,0,0.10)]"
                   }`}
                 >
+                  {/* Header */}
                   <button
                     className="w-full cursor-pointer flex justify-between items-center"
                     onClick={() => toggleAccordion(index)}
@@ -84,27 +86,39 @@ export default function WhyInvestment({
                     </h3>
                   </button>
 
+                  {/* Content */}
                   <div
-                    className="accordion-content transition-all duration-300 overflow-hidden"
+                    className="transition-all duration-300 overflow-hidden"
                     style={{
-                      maxHeight: isOpen ? "200px" : "0px",
+                      maxHeight: isOpen ? "350px" : "0px",
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
                     <p className="mt-3 text-[16px] text-[#181818] pr-4">
                       {item.content}
                     </p>
+
+                    {/* Mobile Image */}
+                    {isOpen && (
+                      <div className="mt-4 md:hidden w-full h-[240px] rounded-lg overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-all duration-500"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Dynamic Image */}
-          <div className="w-full md:w-[623px] h-[430px] rounded-lg overflow-hidden">
+          {/* Desktop Image */}
+          <div className="hidden md:block w-full md:w-[623px] h-[430px] rounded-lg overflow-hidden">
             <img
               src={benefits[openIndex]?.image}
-              alt="Investment opportunity"
+              alt="Investment visual"
               className="object-cover w-full h-full transition-all duration-500"
             />
           </div>
