@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "lucide-react";
 import useScrolled from "../../../hooks/useScrolled";
 import SecondaryCTA from "../../ui/SecondaryCTA";
@@ -32,8 +32,10 @@ function Header() {
   const currentPath = location.pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrolled = useScrolled(4);
+  const navigate = useNavigate();
 
   const closeMobileMenu = () => {
+    navigate("/contactUs");
     setMobileMenuOpen(false);
   };
 
@@ -91,7 +93,7 @@ function Header() {
 
           {/* Right: Contact Button (Desktop) */}
           <div className="hidden lg:block">
-            <SecondaryCTA className="rounded-[6px] px-6 py-3 text-sm">
+            <SecondaryCTA onClick={() => navigate("/contactUs")} className="rounded-[6px] px-6 py-3 text-sm">
               Contact Us
             </SecondaryCTA>
           </div>

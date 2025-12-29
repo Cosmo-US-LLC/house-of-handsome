@@ -11,6 +11,7 @@ import Adult from "./pages/Adult";
 import Teen from "./pages/Teen";
 import Kids from "./pages/Kids";
 import Location from "./pages/Location";
+import ContactUs from "./pages/ContactUs";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -54,6 +55,7 @@ function App() {
           <Route path="/teens" element={<Teen />} />
           <Route path="/kids" element={<Kids />} />
           <Route path="/locations" element={<Location />} />
+          <Route path="/contactUs" element={<ContactUs />} />
         </Route>
       </Routes>
     </>
