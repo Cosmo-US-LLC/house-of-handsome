@@ -11,7 +11,7 @@ export default function AdultHero({
     <section className="max-md:pt-8 max-md:pb-20 bg-[#F2F2F2] sm:px-8 overflow-hidden">
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
-          <div className="text-left md:w-[55%] w-full">
+          <div className="text-left 2xl:w-[55%] md:w-[40%] w-full">
             <h2
               className="mb-4 md:text-[48px] text-[36px] leading-[42px] font-['Cairo'] font-[700]  text-[#000] md:leading-[55px] capitalize "
             

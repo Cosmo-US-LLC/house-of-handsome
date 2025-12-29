@@ -12,7 +12,7 @@ export default function FranchiseHero({
     <section className="bg-[#F2F2F2] !overflow-hidden pt-4 md:pt-0">
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
-          <div className="text-left md:w-[55%] w-full">
+          <div className="text-left 2xl:w-[55%] md:w-[40%] w-full">
             <h2
               className="text-[36px] md:text-[48px] font-['Cairo'] font-[700] text-[#181818] leading-tight mb-4"
              
