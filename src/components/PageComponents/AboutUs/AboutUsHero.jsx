@@ -13,7 +13,7 @@ export default function AboutUsHero({
 }) {
   return (
     <section className="max-md:pt-8 max-md:pb-20 bg-[#F2F2F2] sm:px-8 overflow-hidden">
-      <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
+      <div className="mx-auto max-w-[1280px] relative px-4 2xl:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left md:w-[45%] w-full">
             <h2
