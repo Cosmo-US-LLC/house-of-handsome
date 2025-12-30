@@ -215,7 +215,7 @@ function Footer() {
               <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
                 <li>
                   <Link
-                    to="/privacy"
+                    to="/privacy-policy"
                     className="transition-colors hover:text-[#d82028]"
                   >
                     Privacy Policy
@@ -294,9 +294,9 @@ function Footer() {
           <p className="font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
             Copyright © 2025 House of handsome
           </p>
-          <div className="flex gap-6 font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
+          {/* <div className="flex gap-6 font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
             <Link
-              to="/privacy"
+              to="/privacy-policy"
               className="transition-colors hover:text-[#d82028]"
             >
               Privacy Policy
@@ -307,7 +307,7 @@ function Footer() {
             >
               Terms of Service
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
