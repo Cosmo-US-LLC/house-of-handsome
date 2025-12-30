@@ -7,7 +7,7 @@ function TermsAndConditions() {
   return (
     <div>
       <TermsAndConditionsText/>
-      <FreshLook />
+      {/* <FreshLook /> */}
     </div>
   );
 }

@@ -7,7 +7,7 @@ function PrivacyPolicy() {
   return (
     <div>
       <PrivacyPolicyText/>
-      <FreshLook />
+      {/* <FreshLook /> */}
     </div>
   );
 }
