@@ -266,7 +266,7 @@ const Location = () => {
                         <span className="">Working Hours</span>
                         <DownArrowSvg
                           className={` transition-transform duration-300 ${
-                            openHoursIndex === index ? "rotate-180" : ""
+                            openHoursIndex === index ? "" : "rotate-180"
                           }`}
                         />
                       </button>
