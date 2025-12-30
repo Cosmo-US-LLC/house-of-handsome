@@ -4,6 +4,8 @@ import logoIcon2 from "../../../assets/images/franchise/HelpYouSucceed/card_icon
 import logoIcon3 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (1).svg";
 import logoIcon4 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (4).svg";
 import logoIcon5 from "../../../assets/images/franchise/HelpYouSucceed/card_icon (2).svg";
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import { ScrolldownToFranchiseForm } from "@/utils/BookAnAppontemtREdirection";
 
 export default function HelpYouSucceed({
   title = "How We Help You Succeed",
@@ -84,6 +86,7 @@ export default function HelpYouSucceed({
               </div>
             ))}
           </div>
+        
 
           {/* Second Row - 2 cards centered */}
           <div className="flex flex-wrap gap-6 justify-center w-full">
@@ -113,6 +116,9 @@ export default function HelpYouSucceed({
               </div>
             ))}
           </div>
+        </div>
+             <div className="flex justify-center">
+           <PrimaryCTA onClick={ScrolldownToFranchiseForm} children={"Explore Franchise Opportunities"} className="mt-8" />
         </div>
       </div>
     </section>

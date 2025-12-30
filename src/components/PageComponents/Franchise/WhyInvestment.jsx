@@ -4,6 +4,8 @@ import investmentImage2 from "../../../assets/images/franchise/whyInvestment/why
 import investmentImage3 from "../../../assets/images/franchise/whyInvestment/why_investment3.webp";
 import investmentImage4 from "../../../assets/images/franchise/whyInvestment/why_investment4.webp";
 import investmentImage5 from "../../../assets/images/franchise/whyInvestment/why_investment5.webp";
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import { ScrolldownToFranchiseForm } from "@/utils/BookAnAppontemtREdirection";
 
 export default function WhyInvestment({
   title = "Why It's Worth The Investment",
@@ -16,22 +18,26 @@ export default function WhyInvestment({
     },
     {
       title: "Loyal Client Base",
-      content: "Thousands of customers, 4.9★ exceptional rating, and growing brand trust.",
+      content:
+        "Thousands of customers, 4.9★ exceptional rating, and growing brand trust.",
       image: investmentImage2,
     },
     {
       title: "Built-In Marketing",
-      content: "Automated digital campaigns and referral programs that fill chairs year-round.",
+      content:
+        "Automated digital campaigns and referral programs that fill chairs year-round.",
       image: investmentImage3,
     },
     {
       title: "Technology-Driven",
-      content: "Centralized CRM, booking, and SMS systems to simplify operations.",
+      content:
+        "Centralized CRM, booking, and SMS systems to simplify operations.",
       image: investmentImage4,
     },
     {
       title: "Fast Growth Market",
-      content: "The Canadian men’s grooming industry now exceeds $1.6 billion and continues to rise.",
+      content:
+        "The Canadian men’s grooming industry now exceeds $1.6 billion and continues to rise.",
       image: investmentImage5,
     },
   ],
@@ -39,11 +45,11 @@ export default function WhyInvestment({
   const [openIndex, setOpenIndex] = useState(0);
 
   useEffect(() => {
-  benefits.forEach((item) => {
-    const img = new Image();
-    img.src = item.image;
-  });
-}, [benefits]);
+    benefits.forEach((item) => {
+      const img = new Image();
+      img.src = item.image;
+    });
+  }, [benefits]);
 
   const toggleAccordion = (index) => {
     setOpenIndex(index);
@@ -52,7 +58,6 @@ export default function WhyInvestment({
   return (
     <section className="pt-5 pb-10 bg-white md:pb-20 md:pt-10">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
-
         {/* Header */}
         <div className="flex flex-col gap-4 items-center mb-6 md:mb-12 text-center">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818]">
@@ -64,11 +69,9 @@ export default function WhyInvestment({
         </div>
 
         {/* Layout */}
-        <div className="flex flex-col gap-16 md:flex-row justify-between items-start">
-
+        <div className="flex flex-col gap-16 md:flex-row justify-between items-center">
           {/* Accordion */}
           <div className="flex flex-col w-full md:w-[640px]">
-
             {benefits.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -119,6 +122,13 @@ export default function WhyInvestment({
                 </div>
               );
             })}
+            <div className="">
+              <PrimaryCTA
+                onClick={ScrolldownToFranchiseForm}
+                children={"Explore Franchise Opportunities"}
+                className="mt-8"
+              />
+            </div>
           </div>
 
           {/* Desktop Image */}
@@ -130,7 +140,6 @@ export default function WhyInvestment({
               className="object-cover w-full h-full transition-all duration-500"
             />
           </div>
-
         </div>
       </div>
     </section>

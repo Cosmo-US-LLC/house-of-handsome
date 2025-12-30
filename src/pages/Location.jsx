@@ -9,6 +9,7 @@ import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
 import shopImage3 from "@/assets/images/location/shop_image/shop_image3.webp";
 import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
+import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
 
 const LOCATIONS = [
   {
@@ -18,22 +19,49 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     image: shopImage1,
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
   {
     name: "House Of Handsome Downtown",
-    address: "12328 102 Ave NW unit 301, Edmonton, Alberta, T5N 0L9, Canada",
+    address: "12328 102 Ave NW, Edmonton, Alberta, T5N 0L9, Canada",
     phone: "(825) 480-2461",
     email: "info@houseofhandsome.ca",
     image: shopImage2,
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
   {
     name: "House Of Handsome Sherwood Park",
-    address: "99 Wye Rd, Unit 11, Sherwood Park, Alberta, T8B 1C9, Canada",
+    address: "99 Wye Rd, Sherwood Park, Alberta, T8B 1C9, Canada",
     phone: "(587) 269-1037",
     email: "info@houseofhandsome.ca",
     image: shopImage3,
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
   {
     name: "House Of Handsome South Common",
@@ -42,6 +70,15 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     image: shopImage4,
     mapQuery: "1923 98 St NW Edmonton Alberta",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
   {
     name: "House Of Handsome Spruce Grove",
@@ -50,17 +87,35 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     image: shopImage4,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
   {
     name: "House Of Handsome Whyte Ave",
     address: "10369 78 Ave NW, Edmonton, Alberta, T6E 6T3, Canada",
     phone: "(587) 415-9581",
     email: "info@houseofhandsome.ca",
-    image: shopImage4, 
+    image: shopImage4,
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
+    hours: {
+      monday: "9 am – 8 pm",
+      tuesday: "9 am – 8 pm",
+      wednesday: "9 am – 6 pm",
+      thursday: "Closed",
+      friday: "9 am – 8 pm",
+      saturday: "9 am – 7 pm",
+      sunday: "10 am – 6 pm",
+    },
   },
 ];
-
+        
 // Mapping from home page location IDs to LOCATIONS array indices
 const LOCATION_ID_MAP = {
   1: 2, // Sherwood Park -> House Of Handsome Sherwood Park
@@ -74,7 +129,7 @@ const LOCATION_ID_MAP = {
 const Location = () => {
   const [searchParams] = useSearchParams();
   const locationId = searchParams.get("location");
-  
+
   // Get initial location from URL parameter or default to first
   const getInitialLocation = () => {
     if (locationId) {
@@ -86,7 +141,9 @@ const Location = () => {
     return LOCATIONS[0];
   };
 
-  const [selectedLocation, setSelectedLocation] = useState(getInitialLocation());
+  const [selectedLocation, setSelectedLocation] = useState(
+    getInitialLocation()
+  );
   const locationRefs = useRef({});
 
   // Update selected location when URL parameter changes
@@ -95,12 +152,12 @@ const Location = () => {
       const locationIndex = LOCATION_ID_MAP[parseInt(locationId)];
       if (locationIndex !== undefined && LOCATIONS[locationIndex]) {
         setSelectedLocation(LOCATIONS[locationIndex]);
-        
+
         // Scroll to selected location after a short delay to ensure DOM is ready
         setTimeout(() => {
           const locationRef = locationRefs.current[locationIndex];
           if (locationRef) {
-            locationRef.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            locationRef.scrollIntoView({ behavior: "smooth", block: "center" });
           }
         }, 100);
       }
@@ -133,10 +190,7 @@ const Location = () => {
           </div>
           <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2">
             {LOCATIONS.map((location, index) => (
-              <div 
-                key={index}
-                ref={(el) => (locationRefs.current[index] = el)}
-              >
+              <div key={index} ref={(el) => (locationRefs.current[index] = el)}>
                 <div
                   className={`flex md:flex-row flex-col gap-4 px-4 py-4 rounded-xl cursor-pointer transition ${
                     selectedLocation.name === location.name
@@ -171,9 +225,19 @@ const Location = () => {
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                       <MailSvg /> {location.email}
                     </p>
-                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <InstaGramSng /> Sat-Sun: 10am - 6pm
-                    </p>
+
+                    {/* Opening Hours */}
+                    <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-start gap-2">
+                      <TimeSvg className="mt-[3px]" />
+
+                      <div className="flex flex-col">
+                        {Object.entries(location.hours).map(([day, time]) => (
+                          <p key={day}>
+                            <span className="capitalize">{day}:</span> {time}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
