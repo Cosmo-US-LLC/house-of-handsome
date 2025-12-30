@@ -16,11 +16,17 @@ const schema = yup.object().shape({
     .email("Enter a valid email address")
     .required("Email is required"),
 
+  // phone: yup
+  //   .string()
+  //   .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
+  //   .min(7, "Phone number is too short")
+  //   .required("Phone number is required"),
+
   phone: yup
-    .string()
-    .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
-    .min(7, "Phone number is too short")
-    .required("Phone number is required"),
+  .string()
+  .required("Enter phone number")
+  .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
+  .min(7, "Phone number is too short"),
 
   franchiseModel: yup
     .string()
@@ -85,7 +91,7 @@ export default function TakeFirstStep() {
             {/* Full Name */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
-                Full Name
+                Full Name <span className="text-red-500">*</span>
               </label>
               <input
                 {...register("fullName")}
@@ -103,7 +109,7 @@ export default function TakeFirstStep() {
             {/* Email */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
-                Email Address
+                Email Address <span className="text-red-500">*</span>
               </label>
               <input
                 {...register("email")}
@@ -121,7 +127,7 @@ export default function TakeFirstStep() {
             {/* Phone */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
-                Phone Number
+                Phone Number <span className="text-red-500">*</span>
               </label>
               <input
                 {...register("phone")}
@@ -139,7 +145,7 @@ export default function TakeFirstStep() {
             {/* Franchise Model */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
-                Preferred Franchise Model
+                Preferred Franchise Model <span className="text-red-500">*</span>
               </label>
               <select
                 {...register("franchiseModel")}
@@ -161,7 +167,7 @@ export default function TakeFirstStep() {
             {/* Message */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
-                Message
+                Message <span className="text-red-500">*</span>
               </label>
               <textarea
                 {...register("message")}

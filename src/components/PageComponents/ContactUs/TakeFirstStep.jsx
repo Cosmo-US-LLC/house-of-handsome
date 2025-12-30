@@ -16,11 +16,17 @@ const schema = yup.object().shape({
     .email("Please enter a valid email")
     .required("Email is required"),
 
+  // phone: yup
+  //   .string()
+  //   .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
+  //   .min(7, "Phone number is too short")
+  //   .required("Phone number is required"),
+
   phone: yup
     .string()
+    .required("Enter phone number")
     .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
-    .min(7, "Phone number is too short")
-    .required("Phone number is required"),
+    .min(7, "Phone number is too short"),
 
   message: yup
     .string()
@@ -81,13 +87,17 @@ const TakeFirstStepContactUs = () => {
               {/* Full Name */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
-                  Full Name
+                  Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register("fullName")}
                   placeholder="Enter full name"
                   className={`w-full px-4 py-3 border rounded-lg text-[16px] focus:outline-none transition-all
-                    ${errors.fullName ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
+                    ${
+                      errors.fullName
+                        ? "border-red-500"
+                        : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"
+                    }`}
                 />
                 {errors.fullName && (
                   <p className="text-red-500 text-sm mt-1">
@@ -99,13 +109,17 @@ const TakeFirstStepContactUs = () => {
               {/* Email */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
-                  Email Address
+                  Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register("email")}
                   placeholder="Enter email address"
                   className={`w-full px-4 py-3 border rounded-lg text-[16px] focus:outline-none transition-all
-                    ${errors.email ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
+                    ${
+                      errors.email
+                        ? "border-red-500"
+                        : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"
+                    }`}
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">
@@ -117,13 +131,17 @@ const TakeFirstStepContactUs = () => {
               {/* Phone */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
-                  Phone Number
+                  Phone Number <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register("phone")}
                   placeholder="Enter phone number"
                   className={`w-full px-4 py-3 border rounded-lg text-[16px] focus:outline-none transition-all
-                    ${errors.phone ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
+                    ${
+                      errors.phone
+                        ? "border-red-500"
+                        : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"
+                    }`}
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-sm mt-1">
@@ -135,14 +153,18 @@ const TakeFirstStepContactUs = () => {
               {/* Message */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   {...register("message")}
                   rows={8}
                   placeholder="Send your message..."
                   className={`w-full px-4 py-3 border rounded-lg text-[16px] resize-none focus:outline-none transition-all
-                    ${errors.message ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
+                    ${
+                      errors.message
+                        ? "border-red-500"
+                        : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"
+                    }`}
                 />
                 {errors.message && (
                   <p className="text-red-500 text-sm mt-1">
@@ -162,9 +184,7 @@ const TakeFirstStepContactUs = () => {
           </div>
 
           {/* Locations */}
-          <ContactUsLocations
-            classname="bg-[#d82028] rounded-2xl md:p-8 p-6 text-white md:max-w-[400px] text-center"
-          />
+          <ContactUsLocations classname="bg-[#d82028] rounded-2xl md:p-8 p-6 text-white md:max-w-[400px] text-center" />
         </div>
       </div>
     </section>
