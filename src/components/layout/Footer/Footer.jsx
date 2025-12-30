@@ -10,37 +10,41 @@ import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
 import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
 
 function Footer() {
-
   return (
     <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
         <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
-        
-          <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations" target="_blank">
-           <div className="flex gap-6 items-center max-md:mb-8">
-            <img
-              src={findLocationIcon}
-              alt="Find Location Icon"
-              className="h-[46px] w-[46px] shrink-0"
-            />
-            <span className="font-['Urbanist'] text-xl font-extrabold capitalize leading-none text-black">
-              Find A Location
-            </span>
-          </div>
+          <Link
+            to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations"
+            target="_blank"
+          >
+            <div className="flex gap-6 items-center max-md:mb-8">
+              <img
+                src={findLocationIcon}
+                alt="Find Location Icon"
+                className="h-[46px] w-[46px] shrink-0"
+              />
+              <span className="font-['Urbanist'] text-xl font-extrabold capitalize leading-none text-black">
+                Find A Location
+              </span>
+            </div>
           </Link>
-         <Link to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations?_gl=1*12yeoq4*_gcl_au*MTI1MDk3MTA0Ny4xNzU5NDg0MzA3*_ga*OTM1MjMyNDI4LjE3NTE1MzkzNjk.*_ga_2NK6J237BJ*czE3NjQ4MzU2NjYkbzM0JGcxJHQxNzY0ODM1NzYwJGo1OSRsMCRoNDQzODg1MTY" target="_blank">
-          <div className="flex gap-6 items-center max-md:mb-8">
-            <img
-              src={bookReservationIcon}
-              alt="Book Reservation Icon"
-              className="h-[50px] w-[47px] shrink-0"
-            />
-            <span className="font-['Urbanist'] text-xl font-extrabold capitalize leading-none text-black">
-              Book a reservation
-            </span>
-          </div>
-         </Link>
+          <Link
+            to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations?_gl=1*12yeoq4*_gcl_au*MTI1MDk3MTA0Ny4xNzU5NDg0MzA3*_ga*OTM1MjMyNDI4LjE3NTE1MzkzNjk.*_ga_2NK6J237BJ*czE3NjQ4MzU2NjYkbzM0JGcxJHQxNzY0ODM1NzYwJGo1OSRsMCRoNDQzODg1MTY"
+            target="_blank"
+          >
+            <div className="flex gap-6 items-center max-md:mb-8">
+              <img
+                src={bookReservationIcon}
+                alt="Book Reservation Icon"
+                className="h-[50px] w-[47px] shrink-0"
+              />
+              <span className="font-['Urbanist'] text-xl font-extrabold capitalize leading-none text-black">
+                Book a reservation
+              </span>
+            </div>
+          </Link>
 
           {/* <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
           <div className="flex gap-6 items-center max-md:mb-0">
@@ -61,17 +65,25 @@ function Footer() {
           {/* Column 1 - Brand */}
           <div className="flex flex-col md:max-w-[440px] gap-6">
             <div>
-                <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
-              Download Our App
-            </h3>
-            <div className="flex gap-2 mt-6">
-              <a href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"  target="_blank" rel="noopener noreferrer">
-              <img src={app_dow1} alt="" />
-              </a>
-              <a href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951" target="_blank" rel="noopener noreferrer">
-              <img src={app_dow2} alt="" />
-              </a>
-            </div>
+              <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
+                Download Our App
+              </h3>
+              <div className="flex gap-2 mt-6">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow1} alt="" />
+                </a>
+                <a
+                  href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow2} alt="" />
+                </a>
+              </div>
             </div>
             {/* Logo */}
             <Link to="/" className="flex gap-2 items-center">
@@ -195,60 +207,85 @@ function Footer() {
           </div> */}
 
           {/* Column 4 - Our Locations */}
-          <div className="flex flex-col gap-6">
-            <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
-              Our Locations
-            </h3>
-            <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
-              <li>
-                <Link
-                  to="/locations?location=1"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  Sherwood Park
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/locations?location=2"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  Spruce Grove
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/locations?location=3"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  Cameron Heights
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/locations?location=4"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  Whyte Avenue
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/locations?location=6"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  Edmonton Downtown
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/locations?location=5"
-                  className="transition-colors hover:text-[#d82028]"
-                >
-                  South Common Edmonton
-                </Link>
-              </li>
-            </ul>
+          <div className="flex md:flex-row flex-col md:gap-20 gap-8">
+            <div className="flex flex-col gap-6">
+              <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
+                Quick Links
+              </h3>
+              <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-6">
+              <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
+                Our Locations
+              </h3>
+              <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
+                <li>
+                  <Link
+                    to="/locations?location=1"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Sherwood Park
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations?location=2"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Spruce Grove
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations?location=3"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Cameron Heights
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations?location=4"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Whyte Avenue
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations?location=6"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Edmonton Downtown
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations?location=5"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    South Common Edmonton
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
