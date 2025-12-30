@@ -64,7 +64,7 @@ export default function FranchiseModels({
                           fill="#D82028"
                         />
                       </svg>{" "}
-                      {item}
+                       <span className="flex-1">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -91,7 +91,7 @@ export default function FranchiseModels({
                         fill="#D82028"
                       />
                     </svg>
-                    {item}
+                    <span className="flex-1">{item}</span>
                   </li>
                 ))}
               </ul>
