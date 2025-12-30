@@ -13,7 +13,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
       {/* Page Title */}
       <h2 className={`${sectionTitle} mb-4`}>Terms & Conditions</h2>
 
-      <div className="space-y-8 max-w-[1000px] mx-auto px-4">
+      <div className="space-y-8 max-w-[1280px] px-4 md:px-8 mx-auto ">
 
         {/* Intro */}
         <p className={"font-['Urbanist'] text-[14px] md:text-[16px] max-w-[760px] mx-auto leading-[22px] text-center mt-2 mb-10"}>
