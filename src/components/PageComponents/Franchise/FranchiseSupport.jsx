@@ -61,7 +61,7 @@ export default function FranchiseSupport({
                   className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
-               <div className="flex flex-col gap-2 p-[8px] h-[80px]">
+               <div className="flex flex-col gap-2 p-[8px] md:h-[80px]">
                 <h3 className="font-['Cairo'] text-[24px] font-medium text-[#d82028] leading-[32px]">
                   {item.title}
                 </h3>
