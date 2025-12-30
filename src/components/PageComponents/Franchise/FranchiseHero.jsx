@@ -23,7 +23,7 @@ export default function FranchiseHero({
             <p className="font-['Urbanist'] text-[16px] text-gray-600 font-[500] leading-[28px] mb-6 max-w-[550px]">
               {description}
             </p>
-            <PrimaryCTA onClick={ScrolldownToFranchiseForm} children={"Start your franchise today!"}  className="mt-4" />
+            <PrimaryCTA onClick={ScrolldownToFranchiseForm} children={"Start your franchise today"}  className="mt-4" />
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-[0%]  md:absolute md:-right-24">
             <img
