@@ -1,5 +1,7 @@
 import React from "react";
 import adultHeroImage from "../../../assets/images/adult/adultHero/adult_hero.webp";
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 
 export default function AdultHero({
   image = adultHeroImage,
@@ -26,6 +28,7 @@ export default function AdultHero({
                 {text}
               </p>
             ))}
+            <PrimaryCTA onClick={handleRedirectOfBookAppontment} children={""} className="mt-4" />
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
             <img

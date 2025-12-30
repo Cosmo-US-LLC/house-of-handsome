@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceUsImage from "../../../assets/images/services/ServicesHero/home_img.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 
 export default function ServicesHero({
   image = ServiceUsImage,
@@ -29,6 +30,7 @@ export default function ServicesHero({
                 {text}
               </p>
             ))}
+            <PrimaryCTA onClick={handleRedirectOfBookAppontment} children={buttonText} className="mt-4" />
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
             <img

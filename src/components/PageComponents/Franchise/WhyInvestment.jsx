@@ -4,6 +4,8 @@ import investmentImage2 from "../../../assets/images/franchise/whyInvestment/why
 import investmentImage3 from "../../../assets/images/franchise/whyInvestment/why_investment3.webp";
 import investmentImage4 from "../../../assets/images/franchise/whyInvestment/why_investment4.webp";
 import investmentImage5 from "../../../assets/images/franchise/whyInvestment/why_investment5.webp";
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import { ScrolldownToFranchiseForm } from "@/utils/BookAnAppontemtREdirection";
 
 export default function WhyInvestment({
   title = "Why It's Worth The Investment",
@@ -67,7 +69,7 @@ export default function WhyInvestment({
         </div>
 
         {/* Layout */}
-        <div className="flex flex-col gap-16 md:flex-row justify-between items-start">
+        <div className="flex flex-col gap-16 md:flex-row justify-between items-center">
           {/* Accordion */}
           <div className="flex flex-col w-full md:w-[640px]">
             {benefits.map((item, index) => {
@@ -120,6 +122,13 @@ export default function WhyInvestment({
                 </div>
               );
             })}
+            <div className="">
+              <PrimaryCTA
+                onClick={ScrolldownToFranchiseForm}
+                children={"Explore Franchise Opportunities"}
+                className="mt-8"
+              />
+            </div>
           </div>
 
           {/* Desktop Image */}
