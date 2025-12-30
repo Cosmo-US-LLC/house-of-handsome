@@ -1,31 +1,57 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
-import React, { useState } from "react";
+
+// Validation Schema
+const schema = yup.object().shape({
+  fullName: yup
+    .string()
+    .min(3, "Full name must be at least 3 characters")
+    .required("Full name is required"),
+
+  email: yup
+    .string()
+    .email("Enter a valid email address")
+    .required("Email is required"),
+
+  phone: yup
+    .string()
+    .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
+    .min(7, "Phone number is too short")
+    .required("Phone number is required"),
+
+  franchiseModel: yup
+    .string()
+    .required("Please select a franchise model"),
+
+  message: yup
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .required("Message is required"),
+});
 
 export default function TakeFirstStep() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    franchiseModel: "",
-    message: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
+  const onSubmit = (data) => {
+    console.log("Form submitted:", data);
+    reset();
   };
 
   return (
-    <section className="bg-[#f4f4f4] md:py-20 py-10 ">
+    <section className="bg-[#f4f4f4] md:py-20 py-10">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="max-w-[800px] mx-auto text-center mb-6 md:mb-12">
-          <h2 className="md:text-[48px] text-[36px] font-['Cairo'] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize mb-4">
+          <h2 className="md:text-[48px] text-[36px] font-['Cairo'] font-bold text-[#181818] md:leading-[55px] leading-[40px] mb-4">
             Take the First Step Today
           </h2>
           <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818] leading-[26px] mb-6">
@@ -33,9 +59,9 @@ export default function TakeFirstStep() {
             happen.
           </p>
 
-          <div className="flex flex-wrap gap-6 justify-center items-center" >
+          <div className="flex flex-wrap gap-6 justify-center items-center">
             <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818]">
-              Call us at:{" "}
+              Call us at{" "}
               <a href="tel:8774182541" className="font-bold text-[#d82028]">
                 877-418-2541
               </a>
@@ -47,95 +73,113 @@ export default function TakeFirstStep() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl md:p-8 p-4 max-w-[1080px] mx-auto shadow-sm" id="franchiseForm">
-          <h3 className="md:text-[32px] text-[24px] font-['Cairo'] font-bold text-[#d82028] md:leading-[64px] leading-[40px] text-center md:mb-8 mb-6">
+        <div
+          className="bg-white rounded-2xl md:p-8 p-4 max-w-[1080px] mx-auto shadow-sm"
+          id="franchiseForm"
+        >
+          <h3 className="md:text-[32px] text-[24px] font-['Cairo'] font-bold text-[#d82028] text-center mb-8">
             Franchise Inquiry Form
           </h3>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div >
-              <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {/* Full Name */}
+            <div>
+              <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Full Name
               </label>
               <input
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
+                {...register("fullName")}
                 placeholder="Enter full name"
-                className="w-full px-4 py-5 border border-gray-200 rounded-lg font-['Urbanist'] text-[16px] text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-[#d82028] transition-all"
-                required
+                className={`w-full px-4 py-5 border rounded-lg text-[16px] focus:outline-none transition-all
+                  ${errors.fullName ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
               />
+              {errors.fullName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.fullName.message}
+                </p>
+              )}
             </div>
 
+            {/* Email */}
             <div>
-              <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
+              <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Email Address
               </label>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
+                {...register("email")}
                 placeholder="Enter email address"
-                className="w-full px-4 py-5 border border-gray-200 rounded-lg font-['Urbanist'] text-[16px] text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-[#d82028] transition-all"
-                required
+                className={`w-full px-4 py-5 border rounded-lg text-[16px] focus:outline-none transition-all
+                  ${errors.email ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
+            {/* Phone */}
             <div>
-              <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
+              <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Phone Number
               </label>
               <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
+                {...register("phone")}
                 placeholder="Enter phone number"
-                className="w-full px-4 py-5 border border-gray-200 rounded-lg font-['Urbanist'] text-[16px] text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-[#d82028] transition-all"
-                required
+                className={`w-full px-4 py-5 border rounded-lg text-[16px] focus:outline-none transition-all
+                  ${errors.phone ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.phone.message}
+                </p>
+              )}
             </div>
 
+            {/* Franchise Model */}
             <div>
-              <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
+              <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Preferred Franchise Model
               </label>
               <select
-                name="franchiseModel"
-                value={formData.franchiseModel}
-                onChange={handleChange}
-                className="w-full px-4 py-5 border border-gray-200 rounded-lg font-['Urbanist'] text-[16px] text-black focus:outline-none focus:ring-2 focus:ring-[#d82028] transition-all appearance-none bg-white cursor-pointer"
-                required
+                {...register("franchiseModel")}
+                className={`w-full px-4 py-5 border rounded-lg text-[16px] bg-white focus:outline-none transition-all
+                  ${errors.franchiseModel ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
               >
-                <option value="" disabled>
-                  Select a franchise model
-                </option>
-                <option value="shop-in-shop">
-                  Shop-in-Shop (Licensed Operator)
-                </option>
+                <option value="">Select a franchise model</option>
+                <option value="shop-in-shop">Shop-in-Shop (Licensed Operator)</option>
                 <option value="full-franchise">Full Franchise</option>
                 <option value="master-franchise">Master Franchise</option>
               </select>
+              {errors.franchiseModel && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.franchiseModel.message}
+                </p>
+              )}
             </div>
 
+            {/* Message */}
             <div>
-              <label className="block font-['Urbanist'] font-medium text-[18px] text-black mb-2">
+              <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Message
               </label>
               <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about your interest in franchising with House of Handsome..."
+                {...register("message")}
                 rows={6}
-                className="w-full px-4 py-5 border border-gray-200 rounded-lg font-['Urbanist'] text-[16px] text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-[#d82028] transition-all resize-none"
-                required
+                placeholder="Tell us about your interest in franchising..."
+                className={`w-full px-4 py-5 border rounded-lg resize-none text-[16px] focus:outline-none transition-all
+                  ${errors.message ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
               />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
             </div>
 
-            <PrimaryCTA>Submit</PrimaryCTA>
+            <PrimaryCTA disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </PrimaryCTA>
           </form>
         </div>
       </div>
