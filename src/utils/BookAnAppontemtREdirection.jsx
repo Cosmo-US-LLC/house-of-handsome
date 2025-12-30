@@ -27,3 +27,15 @@ export const ScrolldownToFranchiseForm = () => {
   });
 };
 
+
+// export const ScrolldownToFranchiseForm = () => {
+//   const el = document.getElementById("franchiseForm");
+//   if (!el) return;
+
+//   requestAnimationFrame(() => {
+//     const y = el.getBoundingClientRect().top + window.pageYOffset;
+//     window.scrollTo({ top: y, behavior: "smooth" });
+//   });
+// };
+
+

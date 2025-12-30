@@ -12,6 +12,8 @@ import Teen from "./pages/Teen";
 import Kids from "./pages/Kids";
 import Location from "./pages/Location";
 import ContactUs from "./pages/ContactUs";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -56,6 +58,8 @@ function App() {
           <Route path="/kids" element={<Kids />} />
           <Route path="/locations" element={<Location />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </>
