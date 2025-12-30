@@ -10,6 +10,8 @@ import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
 import shopImage3 from "@/assets/images/location/shop_image/shop_image3.webp";
 import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
 import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
+import RatingSvg from "@/assets/images/location/Svgs/RatingSvg";
+import DownArrowSvg from "@/assets/images/location/Svgs/DownArrowSvg";
 
 const LOCATIONS = [
   {
@@ -17,6 +19,7 @@ const LOCATIONS = [
     address: "625 Cameron Heights Dr NW, Edmonton, Alberta, T6M 0J2, Canada",
     phone: "(780) 489-0329",
     email: "info@houseofhandsome.ca",
+    rating: "4.9 from 771 reviews",
     image: shopImage1,
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
     hours: {
@@ -34,6 +37,7 @@ const LOCATIONS = [
     address: "12328 102 Ave NW, Edmonton, Alberta, T5N 0L9, Canada",
     phone: "(825) 480-2461",
     email: "info@houseofhandsome.ca",
+    rating: "5.0 from 47 reviews",
     image: shopImage2,
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
     hours: {
@@ -51,6 +55,7 @@ const LOCATIONS = [
     address: "99 Wye Rd, Sherwood Park, Alberta, T8B 1C9, Canada",
     phone: "(587) 269-1037",
     email: "info@houseofhandsome.ca",
+    rating: "4.9 from 1,055 reviews",
     image: shopImage3,
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
     hours: {
@@ -68,6 +73,7 @@ const LOCATIONS = [
     address: "1923 98 St NW, Edmonton, Alberta, T6N 1L5, Canada",
     phone: "(825) 401-5517",
     email: "info@houseofhandsome.ca",
+    rating: "4.9 from 162 reviews",
     image: shopImage4,
     mapQuery: "1923 98 St NW Edmonton Alberta",
     hours: {
@@ -85,6 +91,7 @@ const LOCATIONS = [
     address: "205 Jennifer Heil Way, Spruce Grove, Alberta, T7X 0T3, Canada",
     phone: "(877) 572-0148",
     email: "info@houseofhandsome.ca",
+    rating: "4.9 from 599 reviews",
     image: shopImage4,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
     hours: {
@@ -102,6 +109,7 @@ const LOCATIONS = [
     address: "10369 78 Ave NW, Edmonton, Alberta, T6E 6T3, Canada",
     phone: "(587) 415-9581",
     email: "info@houseofhandsome.ca",
+    rating: "4.9 from 444 reviews",
     image: shopImage4,
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
     hours: {
@@ -115,7 +123,7 @@ const LOCATIONS = [
     },
   },
 ];
-        
+
 // Mapping from home page location IDs to LOCATIONS array indices
 const LOCATION_ID_MAP = {
   1: 2, // Sherwood Park -> House Of Handsome Sherwood Park
@@ -145,6 +153,7 @@ const Location = () => {
     getInitialLocation()
   );
   const locationRefs = useRef({});
+  const [openHoursIndex, setOpenHoursIndex] = useState(null);
 
   // Update selected location when URL parameter changes
   useEffect(() => {
@@ -222,20 +231,64 @@ const Location = () => {
                       <PhoneSvg /> {location.phone}
                     </p>
 
-                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                    {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                       <MailSvg /> {location.email}
+                    </p> */}
+                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                      <RatingSvg /> {location.rating}
                     </p>
 
                     {/* Opening Hours */}
-                    <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-start gap-2">
-                      <TimeSvg className="mt-[3px]" />
-
+                    {/* <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
+                      <p className="flex gap-2">
+                        <TimeSvg className="mt-[3px]" />
+                        Working Hours <DownArrowSvg className="mt-[3px]" />
+                      </p>
                       <div className="flex flex-col">
                         {Object.entries(location.hours).map(([day, time]) => (
-                          <p key={day}>
-                            <span className="capitalize">{day}:</span> {time}
+                          <p key={day} className="flex">
+                            <span className="capitalize font-medium block w-[100px]">{day}:</span> {time}
                           </p>
                         ))}
+                      </div>
+                    </div> */}
+                    <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation(); // prevent selecting card
+                          setOpenHoursIndex(
+                            openHoursIndex === index ? null : index
+                          );
+                        }}
+                        className="flex items-center gap-2 w-full text-left"
+                      >
+                        <TimeSvg className="" />
+                        <span>Working Hours</span>
+                        <DownArrowSvg
+                          className={` transition-transform duration-300 ${
+                            openHoursIndex === index ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {/* Dropdown */}
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          openHoursIndex === index
+                            ? "max-h-[500px] opacity-100 mt-2"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <div className="flex flex-col gap-1">
+                          {Object.entries(location.hours).map(([day, time]) => (
+                            <p key={day} className="flex">
+                              <span className="capitalize font-medium block w-[100px]">
+                                {day}:
+                              </span>
+                              {time}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
