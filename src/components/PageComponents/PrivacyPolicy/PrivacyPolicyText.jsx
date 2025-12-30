@@ -98,8 +98,8 @@ const PrivacyPolicyText = ({ className = "" }) => {
         </div>
 
         {/* Contact */}
-        <div>
-          <h3 className={sectionHeading}>Contact Us</h3>
+        <div className="my-14">
+          <h3 className={`${sectionHeading} text-black text-3xl! mb-3!`}>Contact Us</h3>
           <p className={paragraph}>
             If you have any questions or concerns about this Privacy Policy,
             please contact us at{" "}
