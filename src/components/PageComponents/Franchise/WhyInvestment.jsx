@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import investmentImage from "../../../assets/images/franchise/whyInvestment/why_investment.webp";
 import investmentImage2 from "../../../assets/images/franchise/whyInvestment/why_investment2.webp";
 import investmentImage3 from "../../../assets/images/franchise/whyInvestment/why_investment3.webp";
@@ -38,8 +38,15 @@ export default function WhyInvestment({
 }) {
   const [openIndex, setOpenIndex] = useState(0);
 
+  useEffect(() => {
+  benefits.forEach((item) => {
+    const img = new Image();
+    img.src = item.image;
+  });
+}, [benefits]);
+
   const toggleAccordion = (index) => {
-    setOpenIndex(index === openIndex ? null : index);
+    setOpenIndex(index);
   };
 
   return (
@@ -118,6 +125,7 @@ export default function WhyInvestment({
           <div className="hidden md:block w-full md:w-[623px] h-[430px] rounded-lg overflow-hidden">
             <img
               src={benefits[openIndex]?.image}
+              loading="eager"
               alt="Investment visual"
               className="object-cover w-full h-full transition-all duration-500"
             />
