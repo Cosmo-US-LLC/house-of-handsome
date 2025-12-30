@@ -224,18 +224,18 @@ const Location = () => {
                     </h4>
 
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <LocationSvg /> {location.address}
+                      <LocationSvg /> <span className="flex-1">{location.address}</span>
                     </p>
 
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <PhoneSvg /> {location.phone}
+                      <PhoneSvg /> <span className="flex-1">{location.phone}</span>
                     </p>
 
                     {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <MailSvg /> {location.email}
+                      <MailSvg /> <span className="flex-1">{location.email}</span>
                     </p> */}
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <RatingSvg /> {location.rating}
+                      <RatingSvg /> <span className="flex-1">{location.rating}</span>
                     </p>
 
                     {/* Opening Hours */}
@@ -263,7 +263,7 @@ const Location = () => {
                         className="flex items-center gap-2 w-full text-left"
                       >
                         <TimeSvg className="" />
-                        <span>Working Hours</span>
+                        <span className="">Working Hours</span>
                         <DownArrowSvg
                           className={` transition-transform duration-300 ${
                             openHoursIndex === index ? "rotate-180" : ""
