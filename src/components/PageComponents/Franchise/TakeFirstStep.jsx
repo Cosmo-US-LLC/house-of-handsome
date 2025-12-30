@@ -33,7 +33,7 @@ export default function TakeFirstStep() {
             happen.
           </p>
 
-          <div className="flex flex-wrap gap-6 justify-center items-center" id="franchiseForm">
+          <div className="flex flex-wrap gap-6 justify-center items-center" >
             <p className="font-['Urbanist'] font-medium text-[16px] text-[#181818]">
               Call us at:{" "}
               <a href="tel:8774182541" className="font-bold text-[#d82028]">
@@ -47,7 +47,7 @@ export default function TakeFirstStep() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl md:p-8 p-4 max-w-[1080px] mx-auto shadow-sm" >
+        <div className="bg-white rounded-2xl md:p-8 p-4 max-w-[1080px] mx-auto shadow-sm" id="franchiseForm">
           <h3 className="md:text-[32px] text-[24px] font-['Cairo'] font-bold text-[#d82028] md:leading-[64px] leading-[40px] text-center md:mb-8 mb-6">
             Franchise Inquiry Form
           </h3>

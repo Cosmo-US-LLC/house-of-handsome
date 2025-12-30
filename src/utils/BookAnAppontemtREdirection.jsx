@@ -6,9 +6,24 @@ export const handleRedirectOfBookAppontment = () => {
   );
 };
 
+// export const ScrolldownToFranchiseForm = () => {
+//   const franchiseForm = document.getElementById("franchiseForm");
+//   if (franchiseForm) {
+//     franchiseForm.scrollIntoView({ behavior: "smooth" });
+//   }
+// };
+
 export const ScrolldownToFranchiseForm = () => {
-  const franchiseForm = document.getElementById("franchiseForm");
-  if (franchiseForm) {
-    franchiseForm.scrollIntoView({ behavior: "smooth" });
-  }
+  const element = document.getElementById("franchiseForm");
+  if (!element) return;
+
+  const yOffset = -80; // adjust if you have sticky header
+  const y =
+    element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
 };
+
