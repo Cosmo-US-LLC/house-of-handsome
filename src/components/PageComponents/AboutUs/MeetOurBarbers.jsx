@@ -23,19 +23,22 @@ export default function MeetOurBarbers() {
   return (
     <section className="pt-0 pb-10 bg-white md:pt-10 md:pb-20">
       <div className="max-w-[1460px] mx-auto md:!pl-0 lg:!pl-20 xl:!pl-30 px-4 md:px-8">
-        <Carousel 
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 2000,
-              stopOnInteraction: false,
-              stopOnMouseEnter: false,
-            }),
-          ]}
-        className="w-full">
+        <Carousel
+           opts={{
+              align: "start",
+              loop: true,
+              skipSnaps: false,
+              dragFree: false,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2500,
+                stopOnInteraction: false,
+                stopOnMouseEnter: false,
+              }),
+            ]}
+          className="w-full"
+        >
           {/* Heading with Navigation */}
           <div className="flex flex-col gap-[13px] mb-12">
             <div className="flex justify-between items-center w-full">
@@ -63,15 +66,17 @@ export default function MeetOurBarbers() {
           </div>
 
           {/* Carousel Content */}
-          <CarouselContent className="">
+          <CarouselContent OuterdivClassName="rounded-lg">
             {barbers.map((barber) => (
-              <CarouselItem key={barber.id} className="pl-4 basis-auto">
-                <div className="w-full md:w-[392px] h-[440px] md:h-[507px] rounded-lg bg-[#f7f7f7] overflow-hidden relative group cursor-pointer">
-                  <img
-                    src={barber.image}
-                    alt={barber.name}
-                    className="object-cover w-full h-full grayscale transition-all duration-300 group-hover:grayscale-0"
-                  />
+              <CarouselItem
+                key={barber.id}
+                className="px-2 basis-[392px] flex-shrink-0"
+              >
+                <div
+                  className="w-full h-[440px] md:h-[507px] rounded-lg overflow-hidden relative group cursor-pointer 
+                   bg-cover bg-center grayscale transition-all duration-300 hover:grayscale-0"
+                  style={{ backgroundImage: `url(${barber.image})` }}
+                >
                   <div className="absolute top-[18px] left-[39px] font-['Cairo'] font-medium text-[16px] leading-[26.72px] tracking-[-0.356px]">
                     <p className="opacity-40 text-black group-hover:opacity-100 group-hover:text-[#d82028] transition-all duration-300">
                       {barber.name}
