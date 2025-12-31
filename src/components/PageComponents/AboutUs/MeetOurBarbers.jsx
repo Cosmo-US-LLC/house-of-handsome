@@ -74,7 +74,7 @@ export default function MeetOurBarbers() {
               >
                 <div
                   className="w-full h-[440px] md:h-[507px] rounded-lg overflow-hidden relative group cursor-pointer 
-                   bg-cover bg-center grayscale transition-all duration-300 hover:grayscale-0"
+                   bg-cover  grayscale transition-all duration-300 hover:grayscale-0"
                   style={{ backgroundImage: `url(${barber.image})` }}
                 >
                   <div className="absolute top-[18px] left-[39px] font-['Cairo'] font-medium text-[16px] leading-[26.72px] tracking-[-0.356px]">
