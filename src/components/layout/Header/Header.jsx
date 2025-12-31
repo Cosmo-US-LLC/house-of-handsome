@@ -30,6 +30,7 @@ const BRAND_RED = "#d82028";
 function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
+  const isHome = location.pathname === "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrolled = useScrolled(4);
   const navigate = useNavigate();
@@ -43,8 +44,11 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/90 backdrop-blur supports-backdrop-filter:bg-white/70 border-b border-neutral-200 transition-shadow duration-200 ${
-        scrolled ? "shadow-md" : ""}`}
+      className={`sticky top-0 z-50 transition-shadow duration-200 backdrop-blur ${
+        !isHome
+          ? "bg-white/90  supports-backdrop-filter:bg-white/70 border-b border-neutral-200"
+          : scrolled ? "bg-[#F2F2F2] supports-backdrop-filter:bg-[#F2F2F2]/70" : "bg-[#F2F2F2] "
+      } ${scrolled ? "shadow-md" : ""}`}
     >
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex items-center justify-between min-h-[64px]">
@@ -68,10 +72,10 @@ function Header() {
               <Link
                 key={item.slug}
                 to={item.href}
-                className={`text-sm capitalize transition-colors relative py-2  rounded ${
+                className={`text-[16px] capitalize transition-colors relative py-2  rounded ${
                   isActive(item.slug)
                     ? "font-bold after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:rounded-full"
-                    : "text-neutral-600 hover:text-neutral-900 font-medium"
+                    : "text-black hover:text-neutral-700 font-medium"
                 }`}
                 style={
                   isActive(item.slug)
@@ -82,7 +86,7 @@ function Header() {
                 {item.label}
                 {isActive(item.slug) && (
                   <span
-                    className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full"
+                    className="absolute -bottom-0 left-0 h-[2px] w-full rounded-full"
                     style={{ backgroundColor: BRAND_RED }}
                     aria-hidden="true"
                   />
@@ -93,7 +97,10 @@ function Header() {
 
           {/* Right: Contact Button (Desktop) */}
           <div className="hidden lg:block">
-            <SecondaryCTA onClick={() => navigate("/contactUs")} className="rounded-[6px] px-6 py-3 text-sm">
+            <SecondaryCTA
+              onClick={() => navigate("/contactUs")}
+              className="rounded-[6px] px-6 py-3 text-[18px] font-medium!"
+            >
               Contact Us
             </SecondaryCTA>
           </div>
