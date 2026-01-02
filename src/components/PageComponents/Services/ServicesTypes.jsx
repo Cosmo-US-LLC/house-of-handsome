@@ -136,9 +136,9 @@ export default function ServicesTypes() {
 
             {/* Right Content */}
             <div className="w-full md:w-[55%] p-4 md:p-6 flex flex-col justify-center gap-4">
-              <h3 className="text-[36px] font-bold text-[#181818] font-[Cairo] capitalize">
+              <h2 className="text-[36px] font-bold text-[#181818] font-[Cairo] capitalize">
                 {service.title}
-              </h3>
+              </h2>
               <p className="text-[#181818] text-[16px] font-[500] font-[Urbanist] leading-[162.5%]">
                 {service.description}
               </p>

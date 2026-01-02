@@ -11,7 +11,7 @@ export default function FranchiseSupport({
     {
       id: 1,
       title: "Marketing Excellence",
-      description: "Masterful cuts tailored to your style and personality.",
+      description: "Strategic marketing solutions designed to elevate your brand.",
       image: img1,
     },
     {

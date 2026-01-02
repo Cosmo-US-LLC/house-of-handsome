@@ -14,11 +14,11 @@ export default function AdultHero({
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left 2xl:w-[55%] md:w-[40%] w-full">
-            <h2
+            <h1
               className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[700]  text-[#000] leading-[55px] capitalize "
             >
               Fun. Friendly. Comfortable.
-            </h2>
+            </h1>
             {paragraphs.map((text, i) => (
               <p
                 key={i}

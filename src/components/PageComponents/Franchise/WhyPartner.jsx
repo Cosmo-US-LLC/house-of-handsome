@@ -69,16 +69,13 @@ export default function WhyPartner() {
           {/* Right: Description */}
           <div className="flex-1 font-['Urbanist'] font-medium text-[16px] text-[#181818] leading-[26px]">
             <p className="mb-0">
-              Founded in Alberta, House of Handsome has grown from a single
-              barbershop into a network of six thriving locations (many more to
-              come) with over 3000 five-star reviews and a consistent rating of
-              4.9★.
+              Founded in Alberta, House of Handsome has grown from a single barbershop into a network 
+              of six thriving locations (many more to come)  with over 3000 five-star reviews.
             </p>
             <p className="mb-0">&nbsp;</p>
             <p>
-              Our focus on precision, consistency, and premium service has built
-              a loyal client base, with 70% repeat visits and one of the highest
-              retention rates in the industry.
+              Our focus on precision, consistency, and premium service has built 
+              a loyal client base, and one of the highest retention rates in the industry.
             </p>
           </div>
         </div>

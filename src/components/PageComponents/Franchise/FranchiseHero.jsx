@@ -14,9 +14,9 @@ export default function FranchiseHero({
       <div className="mx-auto max-w-[1280px] relative px-4 md:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left 2xl:w-[55%] md:w-[40%] w-full">
-            <h2 className="text-[36px] md:text-[48px] font-['Cairo'] font-[700] text-[#181818] leading-tight mb-4">
+            <h1 className="text-[36px] md:text-[48px] font-['Cairo'] font-[700] text-[#181818] leading-tight mb-4">
               {mainTitle}
-            </h2>
+            </h1>
             <p className="font-['Urbanist'] mt-4 text-[16px] text-gray-600 font-[500] leading-[28px] mb-6 max-w-[550px]">
               {description}
             </p>

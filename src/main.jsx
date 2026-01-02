@@ -1,13 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+// import { createHead, HeadProvider } from "@unhead/react";
+import { createHead, UnheadProvider } from '@unhead/react/client'
+import App from "./App";
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
+const head = createHead();
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-)
+    <UnheadProvider head={head}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </UnheadProvider>
+  </StrictMode>
+);

@@ -14,7 +14,7 @@ export default function HelpYouSucceed({
     {
       title: "Site Selection",
       description:
-        "6 profitable Alberta locations operating under a tested model.",
+        "6 profitable Scenic Alberta locations",
         icon: logoIcon1,
     },
     {
