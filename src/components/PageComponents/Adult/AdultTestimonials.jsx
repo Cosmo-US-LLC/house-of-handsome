@@ -9,13 +9,16 @@ import {
 import testimonialsImage1 from "../../../assets/images/adult/adultTestimonials/adult_img1.webp";
 import testimonialsImage2 from "../../../assets/images/adult/adultTestimonials/adult_img2.webp";
 import testimonialsImage3 from "../../../assets/images/adult/adultTestimonials/adult_img3.webp";
+import testimonialsImage4 from "../../../assets/images/adult/adultTestimonials/adult_img4.webp";
+import testimonialsImage5 from "../../../assets/images/adult/adultTestimonials/adult_img5.webp";
 
 // Testimonials data
 const testimonials = [
   {
     id: 1,
     title: "Great attention to detail.",
-    quote: "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again ",
+    quote:
+      "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again ",
     reviewer: "Garth Pother",
     role: "Client",
     stars: 5,
@@ -24,7 +27,8 @@ const testimonials = [
   {
     id: 2,
     title: "Professional, clean, and consistent every visit.",
-    quote: "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service",
+    quote:
+      "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service",
     reviewer: "Mona Khoshraftar Yazdi",
     role: "Client",
     stars: 5,
@@ -33,11 +37,32 @@ const testimonials = [
   {
     id: 3,
     title: "Exactly the style I wanted",
-    quote: "They’ve always  done an amazing job with my brothers hair & have shown a lot of patience and respect when it comes to him as well. 10/10 service! 100% recommend!",
+    quote:
+      "They’ve always  done an amazing job with my brothers hair & have shown a lot of patience and respect when it comes to him as well. 10/10 service! 100% recommend!",
     reviewer: "Aleesha Chaudry",
     role: "Client",
     stars: 5,
     avatar: testimonialsImage3,
+  },
+  {
+    id: 4,
+    title: "Recommend 10 out of 10",
+    quote:
+      "i had a amazing experience here, great enviroment, great people, would recommend 10/10. great price great service. i’ll definitely becoming back here from now for my future haircut. My barber was named Harvi, he didi a fantastic job with my hair, paid close attention to what he was doing, and is super professional!",
+    reviewer: "Hiram D.",
+    role: "Client",
+    stars: 5,
+    avatar: testimonialsImage4,
+  },
+  {         
+    id: 5,
+    title: "Exactly the style I wanted",
+    quote:
+      "Great, personal service from skilled staff. Excellent pricing and value",
+    reviewer: "Adrian Wagg",
+    role: "Client",
+    stars: 5,
+    avatar: testimonialsImage5,
   },
 ];
 
@@ -76,7 +101,7 @@ function AdultTestimonials() {
           className="w-full"
         >
           <CarouselContent className="-ml-4">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial , i) => (
               <CarouselItem
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
@@ -115,6 +140,7 @@ function AdultTestimonials() {
                       <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
                         {testimonial.quote}
                       </p>
+                      {i == 4 ? <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black"><b>Service:</b> Hair shape up</p> : ""}
                     </div>
                   </div>
 
@@ -143,24 +169,24 @@ function AdultTestimonials() {
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
             {/* {snapPoints.length > 1 && ( */}
-              <div className="flex gap-2 justify-center mt-6">
-                {snapPoints.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => api?.scrollTo(index)}
-                    className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
-                      current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
-                    }`}
-                  />
-                ))}
-              </div>
+            <div className="flex gap-2 justify-center mt-6">
+              {snapPoints.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`h-2 w-2 rounded-full cursor-pointer transition-all ${
+                    current === index ? "bg-[#d82028] w-4" : "bg-[#d1d1d1]"
+                  }`}
+                />
+              ))}
+            </div>
             {/* )} */}
           </div>
           {/* {snapPoints.length > 1 && ( */}
-            <>
-              <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
-              <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
-            </>
+          <>
+            <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
+            <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+          </>
           {/* )} */}
         </Carousel>
       </div>

@@ -9,6 +9,8 @@ import {
 import testimonialsImage1 from "../../../assets/images/teen/teenTestimonials/teen_img1.webp";
 import testimonialsImage2 from "../../../assets/images/teen/teenTestimonials/teen_img2.webp";
 import testimonialsImage3 from "../../../assets/images/teen/teenTestimonials/teen_img3.webp";
+import testimonialsImage4 from "../../../assets/images/teen/teenTestimonials/teen_img4.webp";
+import testimonialsImage5 from "../../../assets/images/teen/teenTestimonials/teen_img5.webp";
 
 // Testimonials data
 const testimonials = [
@@ -32,16 +34,36 @@ const testimonials = [
     stars: 5,
     avatar: testimonialsImage2,
   },
-  // {
-  //   id: 3,
-  //   title:
-  //     "I was a bit hesitant about my son’s choice to get a skin fade, but the barbers made both of us feel confident. They understood exactly what he wanted, kept him comfortable, and the result looked amazing. I’m glad I trusted their expertise.",
-  //   quote: "They really listened to what I wanted.",
-  //   reviewer: "Smith J.",
-  //   role: "Student",
-  //   stars: 5,
-  //   avatar: testimonialsImage3,
-  // },
+  {
+    id: 3,
+    title:
+      "Genuinely Care About Their Clients",
+    quote: "These guys are hands down the best! I've been coming here for nearly 7 years, and there's a reason why. They genuinely care about their clients, treat everyone with respect, and always look sharp. The quality is always on point, whether it's clean fades, beard trimming and upkeep, or details like ears, nose, and eyebrows. They do it all. Any negative reviews out there don't reflect the truth; from my experience, this is just competitors trying to tarnish a great business.",
+    reviewer: "Kristian R.",
+    role: "Student",
+    stars: 5,
+    avatar: testimonialsImage3,
+  },
+  {
+    id: 4,
+    title:
+      "Definitely Coming Back",
+    quote: "Best haircut I've gotten ina long time. Will be definitely coming back ",
+    reviewer: "Ethan DeCoursey",
+    role: "Student",
+    stars: 5,
+    avatar: testimonialsImage4,
+  },
+  {
+    id: 5,
+    title:
+      "Super Chill",
+    quote: "Harvin gave my brother a really clean cut fade was on point! Super chill and know what he’s doing. Definitely recommend!",
+    reviewer: "Tanisha",
+    role: "Student",
+    stars: 5,
+    avatar: testimonialsImage5,
+  },
 ];
 
 function TeenTestimonials() {
@@ -81,7 +103,7 @@ function TeenTestimonials() {
           className="w-full"
         >
           <CarouselContent className="-ml-4">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial , i) => (
               <CarouselItem
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
@@ -120,6 +142,7 @@ function TeenTestimonials() {
                       <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
                         {testimonial.quote}
                       </p>
+                      {i == 3 ? <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black"><b>Service:</b> Long haircut</p> : ""}
                     </div>
                   </div>
 

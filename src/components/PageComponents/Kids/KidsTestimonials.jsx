@@ -9,15 +9,17 @@ import {
 import testimonialsImage1 from "../../../assets/images/kids/kidsTestimonials/kids_img1.webp";
 import testimonialsImage2 from "../../../assets/images/kids/kidsTestimonials/kids_img2.webp";
 import testimonialsImage3 from "../../../assets/images/kids/kidsTestimonials/kids_img3.webp";
+import testimonialsImage4 from "../../../assets/images/kids/kidsTestimonials/kids_img4.webp";
+import testimonialsImage5 from "../../../assets/images/kids/kidsTestimonials/kids_img5.webp";
 
 // Testimonials data
 const testimonials = [
   {
     id: 1,
     title:
-      "My child gets nervous with haircuts, but the barbers were so patient. He left smiling.",
-    quote: "He actually looks forward to his next haircut.",
-    reviewer: "Samuel K.",
+      "Great Understanding",
+    quote: "Always great with kids and great cuts!",
+    reviewer: "Anita Patel",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage1,
@@ -25,22 +27,42 @@ const testimonials = [
   {
     id: 2,
     title:
-      "They made my son feel comfortable right away. Quick, kind, and the haircut looked great.",
-    quote: "Quick and professional every time.",
-    reviewer: "Mike T.",
-    role: "Parent",
+      "Happy with the Haircut",
+    quote: "Excellent haircut, My son and i are happy with the haircut by Zaza as always ",
+    reviewer: "Tatiana B",
+    role: "  ",              
     stars: 5,
     avatar: testimonialsImage2,
   },
   {
     id: 3,
     title:
-      "The barbers were amazing with my daughter, calm, friendly, and so patient.",
-    quote: "She loved the experience!",
-    reviewer: "Elena F.",
+      "Definitely Recommend",
+    quote: "Great haircut as always... loved the service, Harvi did a wonderful job. Loved it every bit, definitely recommend checking out",
+    reviewer: "Tanay Modh",
     role: "Parent",
     stars: 5,
     avatar: testimonialsImage3,
+  },
+  {
+    id: 4,
+    title:
+      "Loved it Every Bit",
+    quote: "The best guys in Alberta, Best barbershops ever, Highly Recommended",
+    reviewer: "Ahmad Gazal",
+    role: "Parent", 
+    stars: 5,
+    avatar: testimonialsImage4,
+  },
+  {
+    id: 5,
+    title:
+      "Incredible Experience",
+    quote: "Always an amazing experience. The staff are very friendly and professional. Definitely my favorite place to go.",
+    reviewer: "Kerry Crocker ",
+    role: "Parent",
+    stars: 5,
+    avatar: testimonialsImage5,
   },
 ];
 
@@ -81,12 +103,12 @@ function KidsTestimonials() {
           className="w-full"
         >
           <CarouselContent className="-ml-4">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial , i) => (
               <CarouselItem
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[40px] rounded-[8px] bg-[#f7f7f7] md:min-h-[295px] px-[26px] py-[48px]">
+                <div className="flex flex-col gap-[40px] rounded-[8px] bg-[#f7f7f7] h-full justify-between px-[26px] py-[48px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -117,9 +139,10 @@ function KidsTestimonials() {
                       </div>
 
                       {/* Quote */}
-                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
-                        "{testimonial.quote}"
-                      </p> */}
+                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                        {testimonial.quote}
+                      </p>
+                      {i == 4 ? <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">Once again, thank you guys for the incredible service.</p> : ""}
                     </div>
                   </div>
 
