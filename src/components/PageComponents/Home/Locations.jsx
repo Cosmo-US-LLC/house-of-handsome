@@ -124,7 +124,7 @@ export default function Locations({
               {paragraphs.map((text, i) => (
                 <p
                   key={i}
-                  className="font-['Urbanist'] text-lg font-normal leading-[26px] text-black"
+                  className="font-['Urbanist'] text-[16px] font-normal leading-[26px] text-black"
                   dangerouslySetInnerHTML={{ __html: text }}
                 ></p>
               ))}

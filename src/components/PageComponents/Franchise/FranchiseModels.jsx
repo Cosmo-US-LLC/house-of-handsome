@@ -2,7 +2,7 @@ import React from "react";
 import modelImage from "../../../assets/images/franchise/franchiseModels/franchise_collage.webp";
 
 export default function FranchiseModels({
-  title = "Franchise Models",
+  title = "Franchise Model",
   modelName = "Shop-in-Shop (Licensed Operator)",
   provides = [
     "Premium brand assets and marketing support",

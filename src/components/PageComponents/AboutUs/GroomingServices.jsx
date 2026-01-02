@@ -4,25 +4,26 @@ import teensImage from "../../../assets/images/about/groomingServices/grooming_s
 import kidsImage from "../../../assets/images/about/groomingServices/grooming_services_c3.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
 import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
     id: 1,
     title: "Adults",
     image: adultsImage,
+    link: "/adults",
     content: (
       <>
         <p className="mb-6 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
           At{" "}
           <span className="font-['Urbanist'] font-bold">House of Handsome</span>
           , we specialize in delivering premium grooming services tailored to
-          the modern man.{" "}
+          the modern man.
         </p>
         <p className="mb-8 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
           Whether you're after a classic cut, a fresh fade, or a clean shave,
           our expert barbers ensure every service is executed with precision and
-          care. Enjoy a relaxed, stylish environment where you can unwind and
-          leave looking sharp.
+          care.
         </p>
       </>
     ),
@@ -31,13 +32,13 @@ const services = [
     id: 2,
     title: "Teens",
     image: teensImage,
+    link: "/teens",
     content: (
       <>
         <p className="mb-6 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
           Youthful style meets expert craftsmanship at{" "}
           <span className="font-['Urbanist'] font-bold">House of Handsome</span>
-          . Our barbers are skilled in creating the latest trends and timeless
-          looks for teens, ensuring they leave with a fresh, confident style.{" "}
+          .
         </p>
         <p className="mb-8 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
           From edgy cuts to sleek fades, we provide a comfortable space for
@@ -50,18 +51,17 @@ const services = [
     id: 3,
     title: "Kids",
     image: kidsImage,
+    link: "/kids",
     content: (
       <>
         <p className="mb-6 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
           At{" "}
           <span className="font-['Urbanist'] font-bold">House of Handsome</span>
-          , we make sure your little one enjoys their grooming experience. Our
-          friendly barbers create fun, comfortable, and stylish cuts for kids of
-          all ages.{" "}
+          , we make sure your little one enjoys their grooming experience.
         </p>
         <p className="mb-8 font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#181818]">
-          With patience and care, we'll ensure your child leaves looking sharp
-          and feeling great.
+          With patience and care, we ensure your child leaves looking sharp and
+          feeling great.
         </p>
       </>
     ),
@@ -69,6 +69,7 @@ const services = [
 ];
 
 export default function GroomingServices() {
+  const navigate = useNavigate();
   return (
     <section className="pt-20 pb-10 bg-white">
       <div className="mx-auto max-w-[1280px] md:px-10 px-4">
@@ -96,8 +97,11 @@ export default function GroomingServices() {
 
               {service.content}
 
-              <PrimaryCTA onClick={handleRedirectOfBookAppontment} className=" max-w-[200px]">
-                Book An Appointment
+              <PrimaryCTA
+                onClick={() => navigate(service.link)}
+                className="max-w-[150px]"
+              >
+                Learn More
               </PrimaryCTA>
             </div>
           </div>

@@ -27,6 +27,20 @@ export const ScrolldownToFranchiseForm = () => {
   });
 };
 
+export const ScrolldownTostrategicExpansion= () => {
+  const element = document.getElementById("strategic-expansion");
+  if (!element) return;
+
+  const yOffset = -80; // adjust if you have sticky header
+  const y =
+    element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
+};
+
 
 // export const ScrolldownToFranchiseForm = () => {
 //   const el = document.getElementById("franchiseForm");
