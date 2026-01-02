@@ -1,6 +1,6 @@
 const PrivacyPolicyText = ({ className = "" }) => {
   const sectionTitle =
-    "text-[#000] text-center font-['Cairo'] text-[30px] font-normal leading-[28px] md:text-[48px] md:font-semibold md:leading-[44px]";
+    "text-[#000] text-center font-['Cairo'] text-[30px] font-semibold leading-[28px] md:text-[48px] md:font-bold md:leading-[44px]";
 
   const sectionHeading =
     "font-['Cairo'] text-[18px] md:text-[20px] font-semibold leading-[26px]  decoration-[1.62px] text-[#D82028]";
@@ -11,7 +11,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
   return (
     <div className={`w-full my-8 ${className}`}>
       {/* Page Title */}
-      <h2 className={`${sectionTitle} mb-4`}>Privacy Policy</h2>
+      <h1 className={`${sectionTitle} mb-4`}>Privacy Policy</h1>
 
       <div className="space-y-8 max-w-5xl px-4 md:px-8 mx-auto">
 
@@ -22,7 +22,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 1 */}
         <div>
-          <h3 className={sectionHeading}>1. Information Collection</h3>
+          <h2 className={sectionHeading}>1. Information Collection</h2>
           <p className={paragraph}>
             We collect personal information that you provide to us when you use our website, such as your name, email address, and phone number, when filling out forms or making inquiries.
           </p>
@@ -30,7 +30,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 2 */}
         <div>
-          <h3 className={sectionHeading}>2. Use of Information</h3>
+          <h2 className={sectionHeading}>2. Use of Information</h2>
           <p className={paragraph}>
             The information we collect is used to process inquiries, provide customer support, improve our services, and send promotional material related to House of Handsome. We do not sell or rent your personal information to third parties.
           </p>
@@ -38,7 +38,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 3 */}
         <div>
-          <h3 className={sectionHeading}>3. Cookies</h3>
+          <h2 className={sectionHeading}>3. Cookies</h2>
           <p className={paragraph}>
             Our website may use cookies to enhance your browsing experience. Cookies are small files stored on your device that help us remember your preferences and improve site functionality.
           </p>
@@ -46,7 +46,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 4 */}
         <div>
-          <h3 className={sectionHeading}>4. Data Security</h3>
+          <h2 className={sectionHeading}>4. Data Security</h2>
           <p className={paragraph}>
             We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of data transmission over the internet is completely secure, and we cannot guarantee absolute security.
           </p>
@@ -54,7 +54,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 5 */}
         <div>
-          <h3 className={sectionHeading}>5. Third-Party Links</h3>
+          <h2 className={sectionHeading}>5. Third-Party Links</h2>
           <p className={paragraph}>
             Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external sites.
           </p>
@@ -62,7 +62,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 6 */}
         <div>
-          <h3 className={sectionHeading}>6. Your Rights</h3>
+          <h2 className={sectionHeading}>6. Your Rights</h2>
           <p className={paragraph}>
             You have the right to access, update, or delete your personal information. If you have any concerns or requests regarding your personal data, please contact us directly.
           </p>
@@ -70,7 +70,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
 
         {/* Section 7 */}
         <div>
-          <h3 className={sectionHeading}>7. Changes to This Policy</h3>
+          <h2 className={sectionHeading}>7. Changes to This Policy</h2>
           <p className={paragraph}>
             We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date.
           </p>
@@ -78,7 +78,7 @@ const PrivacyPolicyText = ({ className = "" }) => {
         </div>
         {/* Contact */}
         <div className="my-14">
-          <h3 className={`${sectionHeading} text-black text-3xl! mb-3!`}>Contact Us</h3>
+          <h2 className={`${sectionHeading} text-black text-3xl! mb-3!`}>Contact Us</h2>
           <p className={paragraph}>
             If you have any questions or concerns about this Privacy Policy, please reach out to us at{" "}
             <a

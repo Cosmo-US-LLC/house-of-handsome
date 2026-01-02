@@ -1,6 +1,6 @@
 const TermsAndConditionsText = ({ className = "" }) => {
   const sectionTitle =
-    "text-[#000] text-center font-['Cairo'] text-[30px] font-normal leading-[28px] md:text-[48px] md:font-semibold md:leading-[44px]";
+    "text-[#000] text-center font-['Cairo'] text-[30px] font-semibold leading-[28px] md:text-[48px] md:font-bold md:leading-[44px]";
 
   const sectionHeading =
     "font-['Cairo'] text-[18px] md:text-[20px] font-semibold leading-[26px]  decoration-[1.62px] text-[#D82028]";
@@ -11,7 +11,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
   return (
     <div className={`w-full mb-12 mt-8 ${className}`}>
       {/* Page Title */}
-      <h2 className={`${sectionTitle} mb-4`}>Terms & Conditions</h2>
+      <h1 className={`${sectionTitle} mb-4`}>Terms & Conditions</h1>
 
       <div className="space-y-8 max-w-5xl px-4 md:px-8 mx-auto ">
         {/* Intro */}
@@ -28,7 +28,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 1 */}
         <div>
-          <h3 className={sectionHeading}>1. General Information</h3>
+          <h2 className={sectionHeading}>1. General Information</h2>
           <p className={paragraph}>
             House of Handsome provides high-quality grooming services, including
             haircuts, beard trims, and other personal care treatments. Our
@@ -39,7 +39,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 2 */}
         <div>
-          <h3 className={sectionHeading}>2. Booking and Payments</h3>
+          <h2 className={sectionHeading}>2. Booking and Payments</h2>
           <p className={paragraph}>
             All bookings can be made through our website, in-store, or by phone.
           </p>
@@ -59,7 +59,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 3 */}
         <div>
-          <h3 className={sectionHeading}>3. Appointments and Cancellations</h3>
+          <h2 className={sectionHeading}>3. Appointments and Cancellations</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
             <span className="font-bold"> Cancellation Policy:</span> If you need to cancel or reschedule, please provide at least 24 hours’ notice to avoid a cancellation fee.
           </li>
@@ -70,7 +70,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 4 */}
         <div>
-          <h3 className={sectionHeading}>4. Services</h3>
+          <h2 className={sectionHeading}>4. Services</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
             All grooming services are performed by experienced professionals. However, individual results may vary.
           </li>
@@ -84,7 +84,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 5 */}
         <div>
-          <h3 className={sectionHeading}>5. Customer Responsibilities</h3>
+          <h2 className={sectionHeading}>5. Customer Responsibilities</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
             <span className="font-bold"> Health and Safety:</span> Please inform your barber of any allergies, skin conditions, or health issues that may affect the services.
           </li>
@@ -98,7 +98,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 6 */}
         <div>
-          <h3 className={sectionHeading}>6. Privacy and Data Protection</h3>
+          <h2 className={sectionHeading}>6. Privacy and Data Protection</h2>
            <li className={` ${paragraph} list-disc ml-[18px]`}>
             We collect personal data to process bookings and payments and to improve our services. We will not share your information with third parties without your consent, except as required by law.
           </li>
@@ -109,7 +109,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 7 */}
         <div>
-          <h3 className={sectionHeading}>7. Intellectual Property</h3>
+          <h2 className={sectionHeading}>7. Intellectual Property</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
             All content on our website, including logos, images, and trademarks, is the property of House of Handsome and is protected by copyright law.
           </li>
@@ -120,7 +120,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 8 */}
         <div>
-          <h3 className={sectionHeading}>8. Liability</h3>
+          <h2 className={sectionHeading}>8. Liability</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
            House of Handsome is not responsible for any injuries, allergic reactions, or damage resulting from the use of our products or services unless due to negligence or fault on our part.
           </li>
@@ -131,7 +131,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 9 */}
         <div>
-          <h3 className={sectionHeading}>9. Changes to Terms</h3>
+          <h2 className={sectionHeading}>9. Changes to Terms</h2>
           <li className={` ${paragraph} list-disc ml-[18px]`}>
            We reserve the right to modify these terms at any time. Any changes will be posted on our website, and the updated terms will take effect as soon as they are published.
           </li>
@@ -139,7 +139,7 @@ const TermsAndConditionsText = ({ className = "" }) => {
 
         {/* Section 10 */}
         <div>
-          <h3 className={sectionHeading}>10. Governing Law</h3>
+          <h2 className={sectionHeading}>10. Governing Law</h2>
           <p className={paragraph}>
             These terms and conditions are governed by and construed in accordance with the laws.
           </p>

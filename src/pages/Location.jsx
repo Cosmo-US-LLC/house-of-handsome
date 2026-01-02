@@ -12,6 +12,7 @@ import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
 import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
 import RatingSvg from "@/assets/images/location/Svgs/RatingSvg";
 import DownArrowSvg from "@/assets/images/location/Svgs/DownArrowSvg";
+import SEO from "@/components/layout/SEO";
 
 const LOCATIONS = [
   {
@@ -179,76 +180,85 @@ const Location = () => {
     }
   }, [locationId]);
   return (
-    <section className="pt-0 pb-20 bg-[#F1F1F1] pt-16">
-      <div className="max-w-[1280px] mx-auto px-4 ">
-        <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
-          <h1 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
-            Our Locations
-          </h1>
-          <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818]">
-            Discover our vibrant locations where style meets comfort. Each shop
-            is designed to provide a relaxing atmosphere, complete with expert
-            barbers ready to craft your perfect look.
-          </p>
-        </div>
-        <div className="md:grid md:grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12 max-md:space-y-2">
-          <div className="mapdiv rounded-xl overflow-hidden md:h-full md:h-[500px] h-[300px] md:min-h-[500px] ">
-            <iframe
-              key={selectedLocation.mapQuery}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(
-                selectedLocation.mapQuery
-              )}&output=embed`}
-              className="w-full h-full max-md:max-h-[400px] border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+    <>
+      <SEO
+        title="Find a House of Handsome Location Near You"
+        description="Locate the nearest House of Handsome barber shop and book your appointment. Our convenient locations ensure you can access top-notch grooming services no matter where you are."
+      />
+
+      <section className="pt-0 pb-20 bg-[#F1F1F1] pt-16">
+        <div className="max-w-[1280px] mx-auto px-4 ">
+          <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
+            <h1 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
+              Our Locations
+            </h1>
+            <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818]">
+              Discover our vibrant locations where style meets comfort. Each
+              shop is designed to provide a relaxing atmosphere, complete with
+              expert barbers ready to craft your perfect look.
+            </p>
           </div>
-          <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2">
-            {LOCATIONS.map((location, index) => (
-              <div key={index} ref={(el) => (locationRefs.current[index] = el)}>
+          <div className="md:grid md:grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12 max-md:space-y-2">
+            <div className="mapdiv rounded-xl overflow-hidden md:h-full md:h-[500px] h-[300px] md:min-h-[500px] ">
+              <iframe
+                key={selectedLocation.mapQuery}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  selectedLocation.mapQuery
+                )}&output=embed`}
+                className="w-full h-full max-md:max-h-[400px] border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2">
+              {LOCATIONS.map((location, index) => (
                 <div
-                  className={`flex md:flex-row flex-col gap-4 px-4 py-4 rounded-xl cursor-pointer transition ${
-                    selectedLocation.name === location.name
-                      ? "bg-[#F6F6F6]"
-                      : "hover:bg-[#F6F6F6]"
-                  }`}
-                  onClick={() => setSelectedLocation(location)}
+                  key={index}
+                  ref={(el) => (locationRefs.current[index] = el)}
                 >
-                  {/* Image */}
-                  <div className="image">
-                    <img
-                      src={location.image}
-                      alt={location.name}
-                      className="md:w-[130px]"
-                    />
-                  </div>
+                  <div
+                    className={`flex md:flex-row flex-col gap-4 px-4 py-4 rounded-xl cursor-pointer transition ${
+                      selectedLocation.name === location.name
+                        ? "bg-[#F6F6F6]"
+                        : "hover:bg-[#F6F6F6]"
+                    }`}
+                    onClick={() => setSelectedLocation(location)}
+                  >
+                    {/* Image */}
+                    <div className="image">
+                      <img
+                        src={location.image}
+                        alt={location.name}
+                        className="md:w-[130px]"
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <div className="space-y-2 flex-1">
-                    <h4 className="font-['Urbanist'] text-[18px] font-bold leading-[26px] tracking-[-0.752px] text-[#000000]">
-                      {location.name}
-                    </h4>
+                    {/* Content */}
+                    <div className="space-y-2 flex-1">
+                      <h2 className="font-['Urbanist'] text-[18px] font-bold leading-[26px] tracking-[-0.752px] text-[#000000]">
+                        {location.name}
+                      </h2>
 
-                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <LocationSvg />{" "}
-                      <span className="flex-1">{location.address}</span>
-                    </p>
+                      <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                        <LocationSvg />{" "}
+                        <span className="flex-1">{location.address}</span>
+                      </p>
 
-                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <PhoneSvg />{" "}
-                      <span className="flex-1">{location.phone}</span>
-                    </p>
+                      <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                        <PhoneSvg />{" "}
+                        <span className="flex-1">{location.phone}</span>
+                      </p>
 
-                    {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                      {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                       <MailSvg /> <span className="flex-1">{location.email}</span>
                     </p> */}
-                    <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <RatingSvg />{" "}
-                      <span className="flex-1">{location.rating}</span>
-                    </p>
+                      <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
+                        <RatingSvg />{" "}
+                        <span className="flex-1">{location.rating}</span>
+                      </p>
 
-                    {/* Opening Hours */}
-                    {/* <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
+                      {/* Opening Hours */}
+                      {/* <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
                       <p className="flex gap-2">
                         <TimeSvg className="mt-[3px]" />
                         Working Hours <DownArrowSvg className="mt-[3px]" />
@@ -261,63 +271,66 @@ const Location = () => {
                         ))}
                       </div>
                     </div> */}
-                    <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
-                      <div className="flex md:flex-row flex-col gap-2 md:items-center">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation(); // prevent selecting card
-                            setOpenHoursIndex(
-                              openHoursIndex === index ? null : index
-                            );
-                          }}
-                          className="flex items-center gap-2 w-full text-left flex-1"
-                        >
-                          <TimeSvg className="" />
-                          <span className="">Working Hours</span>
-                          <DownArrowSvg
-                            className={` transition-transform duration-300 ${
-                              openHoursIndex === index ? "" : "rotate-180"
-                            }`}
-                          />
-                        </button>
-                        <a
-                          href={location.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-1 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
-                        >
-                          Book An Appointment
-                        </a>
-                      </div>
+                      <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
+                        <div className="flex md:flex-row flex-col gap-2 md:items-center">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation(); // prevent selecting card
+                              setOpenHoursIndex(
+                                openHoursIndex === index ? null : index
+                              );
+                            }}
+                            className="flex items-center gap-2 w-full text-left flex-1"
+                          >
+                            <TimeSvg className="" />
+                            <span className="">Working Hours</span>
+                            <DownArrowSvg
+                              className={` transition-transform duration-300 ${
+                                openHoursIndex === index ? "" : "rotate-180"
+                              }`}
+                            />
+                          </button>
+                          <a
+                            href={location.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-1 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
+                          >
+                            Book An Appointment
+                          </a>
+                        </div>
 
-                      {/* Dropdown */}
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                          openHoursIndex === index
-                            ? "max-h-[500px] opacity-100 mt-2"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <div className="flex flex-col gap-1">
-                          {Object.entries(location.hours).map(([day, time]) => (
-                            <p key={day} className="flex">
-                              <span className="capitalize font-medium block w-[100px]">
-                                {day}:
-                              </span>
-                              {time}
-                            </p>
-                          ))}
+                        {/* Dropdown */}
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                            openHoursIndex === index
+                              ? "max-h-[500px] opacity-100 mt-2"
+                              : "max-h-0 opacity-0"
+                          }`}
+                        >
+                          <div className="flex flex-col gap-1">
+                            {Object.entries(location.hours).map(
+                              ([day, time]) => (
+                                <p key={day} className="flex">
+                                  <span className="capitalize font-medium block w-[100px]">
+                                    {day}:
+                                  </span>
+                                  {time}
+                                </p>
+                              )
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

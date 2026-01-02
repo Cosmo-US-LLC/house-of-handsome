@@ -4,21 +4,21 @@ import whatToExpectImage from "../../../assets/images/teen/whatToExpect/expect_i
 const expectations = [
   {
     id: 1,
-    title: "Easy, comfortable experience",
+    title: "Personalized styling:",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,tempor incit ut labore et dolore magna",
+      "Custom cuts that match your style.",
   },
   {
     id: 2,
-    title: "Trend-focused style advice",
+    title: "Attention to detail:",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, tempor incidit ut labore et dolore magna",
+      "We focus on the finer details to perfect your look.",
   },
   {
     id: 3,
-    title: "Modern, clean results",
+    title: "Comfortable experience:",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, tempor dunt ut labore et dolore magn",
+      "A relaxing atmosphere for your grooming needs.",
   },
 ];
 
@@ -41,24 +41,17 @@ function TeenWhatToExpect() {
             </div>
 
             {/* Expectations List */}
-            <div className="">
+            <div className="space-y-4">
               {expectations.map((item, index) => (
                 <div key={item.id}>
-                  <div className="">
-                   <ul className="pl-5">
-                    <li className=" py-5 list-disc"> <h3 className="font-['Cairo'] font-bold text-[#252525] text-[24px] ">
-                       {item.title}
-                    </h3></li>
-                   </ul>
-                    {/* <p className="font-['Urbanist'] font-normal text-[16px] leading-[23px] text-[#252525] max-w-[488px]">
+                  <div className={`${index == 0 ?  "bg-[#D820280F] " : "bg-[#DEDEDE4D]"} p-5 rounded-[12px]`}>
+                    <h3 className={`font-['Cairo'] font-bold ${index == 0 ? "text-[#D82028]" : "text-[#252525]" }  text-[24px] `}>
+                       {item.title} 
+                    </h3>
+                    <p className="font-['Urbanist'] font-normal text-[16px] leading-[23px] text-[#252525] max-w-[488px]">
                       {item.description}
-                    </p> */}
+                    </p>
                   </div>
-
-                  {/* Divider - don't show after last item */}
-                  {index < expectations.length - 1 && (
-                    <div className="border-t border-gray-300" />
-                  )}
                 </div>
               ))}
             </div>
