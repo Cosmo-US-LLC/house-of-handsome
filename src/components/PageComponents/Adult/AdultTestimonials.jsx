@@ -14,28 +14,28 @@ import testimonialsImage3 from "../../../assets/images/adult/adultTestimonials/a
 const testimonials = [
   {
     id: 1,
-    title: "Always walk out feeling sharp. The barbers here are top-notch.",
-    quote: "The cut that boosted my confidence.",
-    reviewer: "Mark A.",
-    role: "Entrepreneur",
+    title: "Great attention to detail.",
+    quote: "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again ",
+    reviewer: "Garth Pother",
+    role: "Client",
     stars: 5,
     avatar: testimonialsImage1,
   },
   {
     id: 2,
     title: "Professional, clean, and consistent every visit.",
-    quote: "The cut that boosted my confidence.",
-    reviewer: "Aman R",
-    role: "Entrepreneur",
+    quote: "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service",
+    reviewer: "Mona Khoshraftar Yazdi",
+    role: "Client",
     stars: 5,
     avatar: testimonialsImage2,
   },
   {
     id: 3,
-    title: "Exactly the style I wanted. Great experience.",
-    quote: "The cut that boosted my confidence.",
-    reviewer: " Mathew A.",
-    role: "Entrepreneur",
+    title: "Exactly the style I wanted",
+    quote: "They’ve always  done an amazing job with my brothers hair & have shown a lot of patience and respect when it comes to him as well. 10/10 service! 100% recommend!",
+    reviewer: "Aleesha Chaudry",
+    role: "Client",
     stars: 5,
     avatar: testimonialsImage3,
   },
@@ -81,7 +81,7 @@ function AdultTestimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[40px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
+                <div className="flex flex-col justify-between gap-[40px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px] h-full">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
@@ -112,9 +112,9 @@ function AdultTestimonials() {
                       </div>
 
                       {/* Quote */}
-                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
-                        "{testimonial.quote}"
-                      </p> */}
+                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                        {testimonial.quote}
+                      </p>
                     </div>
                   </div>
 
@@ -142,7 +142,7 @@ function AdultTestimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {snapPoints.length > 1 && (
+            {/* {snapPoints.length > 1 && ( */}
               <div className="flex gap-2 justify-center mt-6">
                 {snapPoints.map((_, index) => (
                   <button
@@ -154,14 +154,14 @@ function AdultTestimonials() {
                   />
                 ))}
               </div>
-            )}
+            {/* )} */}
           </div>
-          {snapPoints.length > 1 && (
+          {/* {snapPoints.length > 1 && ( */}
             <>
               <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
               <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
             </>
-          )}
+          {/* )} */}
         </Carousel>
       </div>
     </section>

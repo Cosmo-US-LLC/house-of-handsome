@@ -11,7 +11,7 @@ export default function StrategicExpansion({ image = expansionImage }) {
             {/* Main Content */}
             <div className="flex flex-col gap-6">
               {/* Title and Description */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6" id="strategic-expansion">
                 <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px] capitalize">
                   Strategic Expansion: Red Deer
                 </h2>

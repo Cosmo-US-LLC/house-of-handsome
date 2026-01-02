@@ -3,7 +3,7 @@ import LocationSvg from "@/assets/images/location/Svgs/Location";
 import MailSvg from "@/assets/images/location/Svgs/MailSvg";
 import PhoneSvg from "@/assets/images/location/Svgs/PhoneSvg";
 import React, { useState, useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
@@ -22,6 +22,7 @@ const LOCATIONS = [
     rating: "4.9 from 771 reviews",
     image: shopImage1,
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
+    link: "https://www.phorest.com/salon/houseofhandsomebarbershop2",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -40,6 +41,7 @@ const LOCATIONS = [
     rating: "5.0 from 47 reviews",
     image: shopImage2,
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
+    link: "https://www.phorest.com/salon/houseofhandsomedowntown",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -58,6 +60,7 @@ const LOCATIONS = [
     rating: "4.9 from 1,055 reviews",
     image: shopImage3,
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
+    link: "https://www.phorest.com/salon/houseofhandsomebarbershop",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -76,6 +79,7 @@ const LOCATIONS = [
     rating: "4.9 from 162 reviews",
     image: shopImage4,
     mapQuery: "1923 98 St NW Edmonton Alberta",
+    link: "https://www.phorest.com/salon/houseofhandsomebarbershopsouth",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -94,6 +98,7 @@ const LOCATIONS = [
     rating: "4.9 from 599 reviews",
     image: shopImage4,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
+    link: "https://www.phorest.com/salon/houseofhandsomebarbershop1",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -112,6 +117,7 @@ const LOCATIONS = [
     rating: "4.9 from 444 reviews",
     image: shopImage4,
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
+    link: "https://www.phorest.com/salon/houseofhandsomebarbershopwhyte",
     hours: {
       monday: "9 am – 8 pm",
       tuesday: "9 am – 8 pm",
@@ -176,9 +182,9 @@ const Location = () => {
     <section className="pt-0 pb-20 bg-[#F1F1F1] pt-16">
       <div className="max-w-[1280px] mx-auto px-4 ">
         <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
-          <h3 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#d82028]">
+          <h1 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
             Our Locations
-          </h3>
+          </h1>
           <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818]">
             Discover our vibrant locations where style meets comfort. Each shop
             is designed to provide a relaxing atmosphere, complete with expert
@@ -224,18 +230,21 @@ const Location = () => {
                     </h4>
 
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <LocationSvg /> <span className="flex-1">{location.address}</span>
+                      <LocationSvg />{" "}
+                      <span className="flex-1">{location.address}</span>
                     </p>
 
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <PhoneSvg /> <span className="flex-1">{location.phone}</span>
+                      <PhoneSvg />{" "}
+                      <span className="flex-1">{location.phone}</span>
                     </p>
 
                     {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                       <MailSvg /> <span className="flex-1">{location.email}</span>
                     </p> */}
                     <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
-                      <RatingSvg /> <span className="flex-1">{location.rating}</span>
+                      <RatingSvg />{" "}
+                      <span className="flex-1">{location.rating}</span>
                     </p>
 
                     {/* Opening Hours */}
@@ -253,23 +262,33 @@ const Location = () => {
                       </div>
                     </div> */}
                     <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation(); // prevent selecting card
-                          setOpenHoursIndex(
-                            openHoursIndex === index ? null : index
-                          );
-                        }}
-                        className="flex items-center gap-2 w-full text-left"
-                      >
-                        <TimeSvg className="" />
-                        <span className="">Working Hours</span>
-                        <DownArrowSvg
-                          className={` transition-transform duration-300 ${
-                            openHoursIndex === index ? "" : "rotate-180"
-                          }`}
-                        />
-                      </button>
+                      <div className="flex md:flex-row flex-col gap-2 md:items-center">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation(); // prevent selecting card
+                            setOpenHoursIndex(
+                              openHoursIndex === index ? null : index
+                            );
+                          }}
+                          className="flex items-center gap-2 w-full text-left flex-1"
+                        >
+                          <TimeSvg className="" />
+                          <span className="">Working Hours</span>
+                          <DownArrowSvg
+                            className={` transition-transform duration-300 ${
+                              openHoursIndex === index ? "" : "rotate-180"
+                            }`}
+                          />
+                        </button>
+                        <a
+                          href={location.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-1 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
+                        >
+                          Book An Appointment
+                        </a>
+                      </div>
 
                       {/* Dropdown */}
                       <div

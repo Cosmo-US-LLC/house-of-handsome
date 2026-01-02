@@ -15,9 +15,9 @@ const testimonials = [
   {
     id: 1,
     title:
-      "They nailed the exact haircut I wanted. Best cut I’ve had in a long time.",
-    quote: "Best cut I've had in a long time.",
-    reviewer: "Ethan, 16",
+      "Reasonable Prices",
+    quote: "Very helpful and accommodating. The price was very good even with buying a product.",
+    reviewer: "Braden Letendre",
     role: "Student",
     stars: 5,
     avatar: testimonialsImage1,
@@ -25,23 +25,23 @@ const testimonials = [
   {
     id: 2,
     title:
-      "Showed them a picture and they made it look even better. Super chill place.",
-    quote: "Exactly what I imagined!",
-    reviewer: "Jayden, 15",
+      "Highly Recommended",
+    quote: "If i could give 6 stars, I would. Ehsan’s attention to detail and skill with the scissors and razor are exceptional!",
+    reviewer: "Jairus Shulman",
     role: "Student",
     stars: 5,
     avatar: testimonialsImage2,
   },
-  {
-    id: 3,
-    title:
-      "I was a bit hesitant about my son’s choice to get a skin fade, but the barbers made both of us feel confident. They understood exactly what he wanted, kept him comfortable, and the result looked amazing. I’m glad I trusted their expertise.",
-    quote: "They really listened to what I wanted.",
-    reviewer: "Smith J.",
-    role: "Student",
-    stars: 5,
-    avatar: testimonialsImage3,
-  },
+  // {
+  //   id: 3,
+  //   title:
+  //     "I was a bit hesitant about my son’s choice to get a skin fade, but the barbers made both of us feel confident. They understood exactly what he wanted, kept him comfortable, and the result looked amazing. I’m glad I trusted their expertise.",
+  //   quote: "They really listened to what I wanted.",
+  //   reviewer: "Smith J.",
+  //   role: "Student",
+  //   stars: 5,
+  //   avatar: testimonialsImage3,
+  // },
 ];
 
 function TeenTestimonials() {
@@ -86,7 +86,7 @@ function TeenTestimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[40px] min-h-[456px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[40px]">
+                <div className="flex flex-col gap-[40px] h-full justify-between rounded-[8px] bg-[#f7f7f7] px-[26px] py-[40px]">
                   {/* Top Content */}
                   <div className="flex flex-col gap-[24px] flex-1">
                     {/* Title */}
@@ -117,9 +117,9 @@ function TeenTestimonials() {
                       </div>
 
                       {/* Quote */}
-                      {/* <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
-                        "{testimonial.quote}"
-                      </p> */}
+                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
+                        {testimonial.quote}
+                      </p>
                     </div>
                   </div>
 
@@ -147,7 +147,7 @@ function TeenTestimonials() {
             ))}
           </CarouselContent>
           <div className="flex gap-2 justify-center mt-6">
-            {snapPoints.length > 1 && (
+            {/* {snapPoints.length > 1 && ( */}
               <div className="flex gap-2 justify-center mt-6">
                 {snapPoints.map((_, index) => (
                   <button
@@ -159,14 +159,14 @@ function TeenTestimonials() {
                   />
                 ))}
               </div>
-            )}
+            {/* )} */}
           </div>
-          {snapPoints.length > 1 && (
+          {/* {snapPoints.length > 1 && ( */}
             <>
               <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
               <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
             </>
-          )}
+          {/* )} */}
         </Carousel>
       </div>
     </section>

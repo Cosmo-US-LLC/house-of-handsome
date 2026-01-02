@@ -156,7 +156,7 @@ function Gallery() {
               Oh. So. Handsome.
             </h2>
             {/* Subtitle */}
-            <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-lg">
+            <p className="font-['Urbanist'] text-base leading-[26px] text-black md:text-[16px]">
               At House of Handsome, every cut is a statement. Precision and
               style, designed just for you.
             </p>
