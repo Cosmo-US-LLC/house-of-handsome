@@ -28,7 +28,7 @@ const testimonials = [
     id: 2,
     title:
       "Happy with the Haircut",
-    quote: "Excellent haircut, My son and i are happy with the haircut by Zaza as always ",
+    quote: "Excellent haircut, My son and i are happy with the haircut by Zaza as always.",
     reviewer: "Tatiana B",
     role: "  ",              
     stars: 5,
@@ -38,7 +38,7 @@ const testimonials = [
     id: 3,
     title:
       "Definitely Recommend",
-    quote: "Great haircut as always... loved the service, Harvi did a wonderful job. Loved it every bit, definitely recommend checking out",
+    quote: "Great haircut as always... loved the service, Harvi did a wonderful job. Loved it every bit, definitely recommend checking out.",
     reviewer: "Tanay Modh",
     role: "Parent",
     stars: 5,
@@ -48,7 +48,7 @@ const testimonials = [
     id: 4,
     title:
       "Loved it Every Bit",
-    quote: "The best guys in Alberta, Best barbershops ever, Highly Recommended",
+    quote: "The best guys in Alberta, Best barbershops ever, Highly Recommended.",
     reviewer: "Ahmad Gazal",
     role: "Parent", 
     stars: 5,

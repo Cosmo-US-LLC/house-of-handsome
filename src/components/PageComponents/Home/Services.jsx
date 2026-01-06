@@ -53,9 +53,9 @@ function Services() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Header */}
         <div className="flex flex-col gap-3 mb-6 md:mb-6">
-          <h1 className="font-['Cairo'] text-4xl font-bold leading-tight text-[#181818] md:text-[48px] md:leading-[55px]">
+          <h2 className="font-['Cairo'] text-4xl font-bold leading-tight text-[#181818] md:text-[48px] md:leading-[55px]">
             Our Services
-          </h1>
+          </h2>
           <p className="font-['Urbanist'] text-base font-medium leading-[26px] text-[#181818] md:max-w-[944px]">
             At House of Handsome, we specialize in offering more than just a
             haircut. Our services are crafted to elevate your look and

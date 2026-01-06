@@ -18,7 +18,7 @@ const testimonials = [
     id: 1,
     title: "Great attention to detail.",
     quote:
-      "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again ",
+      "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again.",
     reviewer: "Garth Pother",
     role: "Client",
     stars: 5,
@@ -28,7 +28,7 @@ const testimonials = [
     id: 2,
     title: "Professional, clean, and consistent every visit.",
     quote:
-      "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service",
+      "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service.",
     reviewer: "Mona Khoshraftar Yazdi",
     role: "Client",
     stars: 5,
@@ -48,7 +48,7 @@ const testimonials = [
     id: 4,
     title: "Recommend 10 out of 10",
     quote:
-      "i had a amazing experience here, great enviroment, great people, would recommend 10/10. great price great service. i’ll definitely becoming back here from now for my future haircut. My barber was named Harvi, he didi a fantastic job with my hair, paid close attention to what he was doing, and is super professional!",
+      "I had a amazing experience here, great enviroment, great people, would recommend 10/10. great price great service. i’ll definitely becoming back here from now for my future haircut. My barber was named Harvi, he didi a fantastic job with my hair, paid close attention to what he was doing, and is super professional!",
     reviewer: "Hiram D.",
     role: "Client",
     stars: 5,
@@ -58,7 +58,7 @@ const testimonials = [
     id: 5,
     title: "Exactly the style I wanted",
     quote:
-      "Great, personal service from skilled staff. Excellent pricing and value",
+      "Great, personal service from skilled staff. Excellent pricing and value.",
     reviewer: "Adrian Wagg",
     role: "Client",
     stars: 5,

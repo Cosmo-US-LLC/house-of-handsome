@@ -43,9 +43,9 @@ function WhatToExpect() {
             {/* Expectations List */}
             <div className="space-y-4">
               {expectations.map((item, index) => (
-                <div key={item.id}>
-                  <div className={`${index == 0 ?  "bg-[#D820280F] " : "bg-[#DEDEDE4D]"} p-5 rounded-[12px]`}>
-                    <h3 className={`font-['Cairo'] font-bold ${index == 0 ? "text-[#D82028]" : "text-[#252525]" }  text-[24px] `}>
+                <div key={item.id+"adutl-what-to-expect"} className="group">
+                  <div className={`group-hover:bg-[#D820280F] bg-[#DEDEDE4D] p-5 rounded-[12px] cursor-pointer`}>
+                    <h3 className={`font-['Cairo'] font-bold group-hover:text-[#D82028] text-[#252525]  text-[24px] `}>
                        {item.title} 
                     </h3>
                     <p className="font-['Urbanist'] font-normal text-[16px] leading-[23px] text-[#252525] max-w-[488px]">

@@ -294,7 +294,7 @@ const Location = () => {
                             href={location.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-1 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
+                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white max-md:hidden px-2 py-2 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
                           >
                             Book An Appointment
                           </a>
@@ -320,6 +320,16 @@ const Location = () => {
                               )
                             )}
                           </div>
+                        </div>
+                        <div>
+                         <a
+                            href={location.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-2 block rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center md:hidden"
+                          >
+                            Book An Appointment
+                          </a>
                         </div>
                       </div>
                     </div>

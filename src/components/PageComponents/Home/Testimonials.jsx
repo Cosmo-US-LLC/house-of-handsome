@@ -164,7 +164,7 @@ function Testimonials() {
               md:top-[-80px] top-[-50px] 
               translate-x-0 translate-y-0
               // Add a class to hide it on desktop if showDesktopArrows is false
-              ${!showDesktopArrows ? "md:hidden" : ""} 
+               
             `}
           />
 
@@ -176,7 +176,7 @@ function Testimonials() {
               md:w-[50px] w-[40px] 
               translate-x-0 translate-y-0
               // Add a class to hide it on desktop if showDesktopArrows is false
-              ${!showDesktopArrows ? "md:hidden" : ""}
+              
             `}
           />
         </Carousel>
