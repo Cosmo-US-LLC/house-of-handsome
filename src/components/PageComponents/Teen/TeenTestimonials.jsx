@@ -48,7 +48,7 @@ const testimonials = [
     id: 4,
     title:
       "Definitely Coming Back",
-    quote: "Best haircut I've gotten ina long time. Will be definitely coming back ",
+    quote: "Best haircut I've gotten ina long time. Will be definitely coming back.",
     reviewer: "Ethan DeCoursey",
     role: "Student",
     stars: 5,

@@ -20,7 +20,7 @@ export default function FranchiseHero({
             <p className="font-['Urbanist'] mt-4 text-[16px] text-gray-600 font-[500] leading-[28px] mb-6 max-w-[550px]">
               {description}
             </p>
-            <div className="flex  gap-4 md:items-center md:flex-row flex-col-reverse">
+            <div className="flex  gap-4 md:items-center md:flex-row flex-col">
               <PrimaryCTA
                 onClick={ScrolldownToFranchiseForm}
                 children={"Explore Franchise Opportunities"}

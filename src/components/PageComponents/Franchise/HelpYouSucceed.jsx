@@ -63,7 +63,7 @@ export default function HelpYouSucceed({
             {features.slice(0, 3).map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col transition-shadow duration-300 hover:shadow-[0_0_8px_0_rgba(0,0,0,0.15)]  gap-6 items-center text-center bg-white rounded-lg px-12 py-8 w-[389px]"
+                className="flex flex-col transition-shadow duration-300 hover:shadow-[0_0_8px_0_rgba(0,0,0,0.15)]    hover:outline-2 hover:outline-[#D82028]  hover:outline-inset hover:outline-solid   gap-6 items-center text-center bg-white rounded-lg px-12 py-8 w-[389px]"
               >
                 {/* Icon */}
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[rgba(216,32,40,0.1)]">
@@ -93,7 +93,7 @@ export default function HelpYouSucceed({
             {features.slice(3, 5).map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-6 transition-shadow duration-300 hover:shadow-[0_0_8px_0_rgba(0,0,0,0.15)] items-center text-center bg-white rounded-lg px-12 py-8 w-full sm:w-[437px]"
+                className="flex flex-col gap-6 transition-shadow duration-300 hover:shadow-[0_0_8px_0_rgba(0,0,0,0.15)] items-center text-center bg-white rounded-lg px-12 py-8 w-full sm:w-[437px] hover:outline-2 hover:outline-[#D82028]  hover:outline-inset hover:outline-solid "
               >
                 {/* Icon */}
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[rgba(216,32,40,0.1)]">

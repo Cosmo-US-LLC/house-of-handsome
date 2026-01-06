@@ -16,12 +16,12 @@ export default function ServicesHero({
       <div className="mx-auto max-w-[1280px] relative px-4 2xl:px-8">
         <div className="flex flex-col gap-12 items-center md:min-h-[535px] md:flex-row">
           <div className="text-left 2xl:w-[45%] md:w-[37%] w-full">
-            <h2
+            <h1
               className="mb-4 md:text-[48px] text-[36px] font-['Cairo'] font-[700]  text-[#000] md:leading-[67px] leading-[40px] capitalize "
             
             >
               Our Services
-            </h2>
+            </h1>
             {paragraphs.map((text, i) => (
               <p
                 key={i}

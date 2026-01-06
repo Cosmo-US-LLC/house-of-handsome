@@ -7,7 +7,7 @@ export default function StrategicExpansion({ image = expansionImage }) {
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         <div className="flex flex-col gap-12 justify-between items-start md:flex-row">
           {/* Left Text Column */}
-          <div className="flex flex-col gap-12 w-full md:w-[640px]">
+          <div className="flex flex-col gap-2 w-full md:w-[640px]">
             {/* Main Content */}
             <div className="flex flex-col gap-6">
               {/* Title and Description */}
@@ -204,7 +204,7 @@ export default function StrategicExpansion({ image = expansionImage }) {
 
             {/* Closing Line */}
             <p className="font-['Cairo'] text-[20px] font-medium text-[#181818] leading-[28px] bg-[#F7F7F7] border border-[#D3D3D3] py-[16px] px-5 rounded-xl">
-              Be part of the next chapter in our story, let's shape Red Deer's
+              Be part of the next chapter in our story, let's shape Red Deer's 
               grooming scene together.
             </p>
           </div>
