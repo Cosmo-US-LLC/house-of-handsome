@@ -13,6 +13,7 @@ import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
 import RatingSvg from "@/assets/images/location/Svgs/RatingSvg";
 import DownArrowSvg from "@/assets/images/location/Svgs/DownArrowSvg";
 import SEO from "@/components/layout/SEO";
+import Loactionsdrawer from "@/components/PageComponents/Location/Loactionsdrawer";
 
 const LOCATIONS = [
   {
@@ -186,10 +187,10 @@ const Location = () => {
         description="Locate the nearest House of Handsome barber shop and book your appointment. Our convenient locations ensure you can access top-notch grooming services no matter where you are."
       />
 
-      <section className="pt-0 pb-20 bg-[#F1F1F1] pt-16">
+      <section className="pb-20 bg-[#F1F1F1] md:pt-16 pt-[20px]">
         <div className="max-w-[1280px] mx-auto px-4 ">
           <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
-            <h1 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
+            <h1 className="font-['Cairo'] md:text-[48px] text-[32px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
               Our Locations
             </h1>
             <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818]">
@@ -198,8 +199,8 @@ const Location = () => {
               expert barbers ready to craft your perfect look.
             </p>
           </div>
-          <div className="md:grid md:grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12 max-md:space-y-2">
-            <div className="mapdiv rounded-xl overflow-hidden md:h-full md:h-[500px] h-[300px] md:min-h-[500px] ">
+          <div className="md:grid md:grid-cols-2 md:py-6 py-2 md:px-4 px-3 bg-white rounded-2xl md:mt-12 mt-8 max-md:space-y-2">
+            <div id="Map" className=" mapdiv rounded-xl overflow-hidden md:h-full md:h-[500px] h-[300px] md:min-h-[500px] ">
               <iframe
                 key={selectedLocation.mapQuery}
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -210,7 +211,7 @@ const Location = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-            <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2">
+            <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2 max-md:hidden">
               {LOCATIONS.map((location, index) => (
                 <div
                   key={index}
@@ -340,6 +341,13 @@ const Location = () => {
           </div>
         </div>
       </section>
+      <div className="md:hidden">
+  <Loactionsdrawer
+    locations={LOCATIONS}
+    setSelectedLocation={setSelectedLocation}
+    selectedLocation={selectedLocation}
+  />
+</div>
     </>
   );
 };
