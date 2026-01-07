@@ -184,8 +184,21 @@ function AdultTestimonials() {
           </div>
           {/* {snapPoints.length > 1 && ( */}
           <>
-            <CarouselPrevious className="md:left-[91%] left-[74%] md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" />
-            <CarouselNext className="right-0 md:top-[-80px] top-[-50px] md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
+            <CarouselPrevious className="md:left-[91%] left-[74%] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+              <path d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z" fill="black"/>
+              <path d="M2.83439 10.3167L3.74763 11.2287L9.21934 5.7557L8.30739 4.84375L2.83439 10.3167Z" fill="black"/>
+              <path d="M18.2428 10.9618V9.67188H4.05401V10.9618H18.2428Z" fill="black"/>
+            </svg>
+            </CarouselPrevious>
+            <CarouselNext className="right-0 md:top-[-80px] cursor-pointer top-[-50px]
+             md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+  <path d="M19.8402 9.40625L20.7521 10.3182L15.2791 15.7912L14.3672 14.8792L19.8402 9.40625Z" fill="black"/>
+  <path d="M20.7521 10.3167L19.8389 11.2287L14.3672 5.7557L15.2791 4.84375L20.7521 10.3167Z" fill="black"/>
+  <path d="M5.34375 10.9618V9.67188H19.5325V10.9618H5.34375Z" fill="black"/>
+</svg>
+            </CarouselNext>
           </>
           {/* )} */}
         </Carousel>

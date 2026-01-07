@@ -102,10 +102,10 @@ export default function Locations({
     });
   }, [api]);
 
-     const handleOnClick = () => {
-  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
-  window.open(url, '_blank'); 
-};
+  const handleOnClick = () => {
+    const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+    window.location.href = url; 
+  };
   return (
     <section className="py-10 w-full bg-white md:py-[45px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">

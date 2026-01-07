@@ -224,7 +224,7 @@ const LocationsDrawer = ({
                     }`}
                   >
                     {Object.entries(location.hours).map(([day, time]) => (
-                      <p key={day} className="text-sm">
+                      <p key={day} className="text-sm capitalize">
                         <strong>{day}:</strong> {time}
                       </p>
                     ))}
@@ -233,7 +233,7 @@ const LocationsDrawer = ({
                   <a
                     onClick={(e) => e.stopPropagation()}
                     href={location.link}
-                    target="_blank"
+                    target="_self"
                     rel="noopener noreferrer"
                     className="block border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-3 py-2 rounded-md text-center text-sm font-semibold transition"
                   >

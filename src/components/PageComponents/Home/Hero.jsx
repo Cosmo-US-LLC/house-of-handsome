@@ -5,7 +5,7 @@ import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_
 function Hero() {
   const handleOnClick = () => {
   const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
-  window.open(url, '_blank'); 
+  window.location.href = url; 
 };
   return (
     <section className="pt-4 w-full bg-[#F2F2F2] ">

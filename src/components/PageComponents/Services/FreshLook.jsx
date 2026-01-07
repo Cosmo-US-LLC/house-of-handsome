@@ -66,7 +66,7 @@ export default function FreshLook() {
             </p>
           </div>
           <div className="">
-            <Link target="_blank" to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
+            <Link target="" to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
             <PrimaryCTA />
                           </Link>
           </div>

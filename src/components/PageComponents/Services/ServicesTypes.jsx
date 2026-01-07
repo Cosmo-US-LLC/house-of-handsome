@@ -113,7 +113,7 @@ export default function ServicesTypes() {
 
     const handleOnClick = () => {
   const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
-  window.open(url, '_blank'); 
+  window.location.href = url; 
 };
 
   return (
