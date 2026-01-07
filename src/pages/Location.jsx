@@ -293,7 +293,7 @@ const Location = () => {
                           </button>
                           <a
                             href={location.link}
-                            target="_blank"
+                            target=""
                             rel="noopener noreferrer"
                             className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white max-md:hidden px-2 py-2 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
                           >
@@ -325,7 +325,7 @@ const Location = () => {
                         <div>
                          <a
                             href={location.link}
-                            target="_blank"
+                            target=""
                             rel="noopener noreferrer"
                             className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-2 block rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center md:hidden"
                           >

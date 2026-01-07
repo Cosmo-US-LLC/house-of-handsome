@@ -26,7 +26,7 @@ export default function HelpYouSucceed({
     },
     {
       title: "Training & Support",
-      description: "We provide onboarding, operations, and marketing training",
+      description: "We provide onboarding, operations, and marketing training.",
       icon: logoIcon3,
     },
     {

@@ -25,7 +25,7 @@ function ReadyForFreshLook({ title, description }) {
 
             {/* Right - CTA Button */}
             <div className="shrink-0">
-              <Link target="_blank" to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
+              <Link target="" to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations">
               <PrimaryCTA />
               </Link>
             </div>

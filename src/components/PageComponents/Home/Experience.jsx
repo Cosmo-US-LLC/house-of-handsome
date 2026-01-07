@@ -13,7 +13,7 @@ import experienceImage4mob from "../../../assets/images/home/experience/exp_c4.w
 function Experience() {
     const handleOnClick = () => {
   const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
-  window.open(url, '_blank'); 
+  window.location.href = url; 
 };
   return (
     <section className="relative pt-14 pb-10 w-full bg-white md:pb-12 md:pt-38">
