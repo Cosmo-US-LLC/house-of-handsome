@@ -118,12 +118,14 @@ function Services() {
           <CarouselPrevious className="left-[74%] md:hidden h-[40px] md:w-[50px] w-[40px] top-[-46px] translate-x-0 translate-y-0" />
           <CarouselNext className="right-0 md:hidden top-[-46px]  h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
         </Carousel>
-       <PrimaryCTA
-                      className="max-w-[200px] w-full mt-10  md:mx-0"
+       <div className="flex items-center justify-center">
+        <PrimaryCTA
+                      className="max-w-[200px] mx-auto w-full mt-10  md:mx-auto"
                       onClick={() => navigate("/services")}
                     >
                       Learn More
                     </PrimaryCTA>
+       </div>
       </div>
     </section>
   );
