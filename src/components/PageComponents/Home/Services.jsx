@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 import {
   Carousel,
@@ -10,6 +11,7 @@ import {
 import servicesImage1 from "../../../assets/images/home/our_services/services_c1.webp";
 import servicesImage2 from "../../../assets/images/home/our_services/services_c2.webp";
 import servicesImage3 from "../../../assets/images/home/our_services/services_c3.webp";
+import PrimaryCTA from "@/components/ui/PrimaryCTA";
 
 // Services data
 const servicesData = [
@@ -34,6 +36,7 @@ const servicesData = [
 ];
 
 function Services() {
+  const navigate = useNavigate();
   const [api, setApi] = React.useState(null);
   const isMobile = window.innerWidth < 768;
 
@@ -115,6 +118,12 @@ function Services() {
           <CarouselPrevious className="left-[74%] md:hidden h-[40px] md:w-[50px] w-[40px] top-[-46px] translate-x-0 translate-y-0" />
           <CarouselNext className="right-0 md:hidden top-[-46px]  h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0" />
         </Carousel>
+       <PrimaryCTA
+                      className="max-w-[200px] w-full mt-10  md:mx-0"
+                      onClick={() => navigate("/services")}
+                    >
+                      Learn More
+                    </PrimaryCTA>
       </div>
     </section>
   );

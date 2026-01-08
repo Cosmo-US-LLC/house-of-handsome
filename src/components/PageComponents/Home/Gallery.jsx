@@ -214,7 +214,7 @@ function Gallery() {
             ))}
           </CarouselContent>
           <CarouselPrevious
-           className="md:left-[91%] left-[74%] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-100px] top-[-46px] translate-x-0 translate-y-0"
+           className="md:left-[91%] left-[74%] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-100px] top-[-46px] translate-x-0 translate-y-0 border-[#000000] border"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
               <path d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z" fill="black"/>
@@ -224,7 +224,7 @@ function Gallery() {
           </CarouselPrevious>
 
           <CarouselNext
-           className="right-0 md:top-[-100px] top-[-46px] cursor-pointer md:h-[50px] h-[40px]
+           className="right-0 md:top-[-100px] top-[-46px] cursor-pointer md:h-[50px] h-[40px] border-[#000000] border
            md:w-[50px] w-[40px] translate-x-0 translate-y-0"
           >
            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">

@@ -16,8 +16,7 @@ function Footer() {
         {/* Top Action Items */}
         <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
           <Link
-            to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations"
-            target="_blank"
+            to="/locations"
           >
             <div className="flex gap-6 items-center max-md:mb-8">
               <img
