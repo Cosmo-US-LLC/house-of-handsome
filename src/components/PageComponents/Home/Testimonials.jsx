@@ -18,7 +18,7 @@ const testimonials = [
   {
     id: 1,
     title: "Professional, clean, and consistent every visit.",
-    quote: "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service",
+    quote: "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service.",
     reviewer: "Mona Khoshraftar Yazdi",
     role: "Client",
     stars: 5,
@@ -63,7 +63,7 @@ const testimonials = [
   {
     id: 6,
     title: "Happy with the Haircut",
-    quote: "Excellent haircut, My son and i are happy with the haircut by Zaza as always ",
+    quote: "Excellent haircut, My son and i are happy with the haircut by Zaza as always. ",
     reviewer: "Tatiana B",
     role: "Parent",
     stars: 5,
