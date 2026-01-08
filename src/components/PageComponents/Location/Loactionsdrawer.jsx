@@ -224,8 +224,8 @@ const LocationsDrawer = ({
                     }`}
                   >
                     {Object.entries(location.hours).map(([day, time]) => (
-                      <p key={day} className="text-sm capitalize">
-                        <strong>{day}:</strong> {time}
+                      <p key={day} className="text-sm ">
+                        <strong><span className="capitalize">{day}</span>:</strong> {time}
                       </p>
                     ))}
                   </div>

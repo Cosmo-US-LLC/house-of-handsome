@@ -45,7 +45,7 @@ const testimonials = [
   {
     id: 4,
     title: "Definitely Coming Back",
-    quote: "Best haircut I've gotten ina long time. Will be definitely coming back  Service: Long haircut",
+    quote: "Best haircut I've gotten ina long time. Will be definitely coming back. <br/><strong>Service:</strong> Long haircut",
     reviewer: "Ethan DeCoursey",
     role: "Student",
     stars: 5,
@@ -72,7 +72,7 @@ const testimonials = [
    {
     id: 7,
     title: "Incredible Experience",
-    quote: "Always an amazing experience. The staff are very friendly and professional. Definitely my favorite place to go.  Once again, thank you guys for the incredible service. ",
+    quote: "Always an amazing experience. The staff are very friendly and professional. Definitely my favorite place to go.<br/>Once again, thank you guys for the incredible service. ",
     reviewer: "Kerry Crocker",
     role: "Parent",
     stars: 5,
@@ -136,7 +136,7 @@ function Testimonials() {
                 key={testimonial.id}
                 className="pl-4 md:basis-1/3 lg:basis-1/3"
               >
-                <div className="flex flex-col justify-between gap-[80px] min-h-[420px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
+                <div className="flex flex-col justify-between gap-[20px] min-h-[400px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px]">
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
                     <h3 className="font-['Urbanist'] text-[20px] font-bold leading-[26px] text-black">
@@ -163,9 +163,11 @@ function Testimonials() {
                         ))}
                       </div>
 
-                      <p className="font-['Urbanist'] min-h-[70px] text-[16px] font-medium leading-[26px] text-black">
-                        "{testimonial.quote}"
-                      </p>
+                      <p 
+                        className="font-['Urbanist'] min-h-[20px] text-[16px] font-medium leading-[26px] text-black"
+                        dangerouslySetInnerHTML={{ __html: testimonial.quote }}
+                      />
+                      
                     </div>
                   </div>
 
