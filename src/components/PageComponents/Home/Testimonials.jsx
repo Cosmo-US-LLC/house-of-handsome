@@ -117,7 +117,7 @@ function Testimonials() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="mb-12">
           <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-[48px] lg:leading-[55px]">
-            Our Testimonials
+            Testimonials
           </h2>
         </div>
 

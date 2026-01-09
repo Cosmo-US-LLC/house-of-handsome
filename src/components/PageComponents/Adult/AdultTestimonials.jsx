@@ -88,7 +88,7 @@ function AdultTestimonials() {
         {/* Header with Title */}
         <div className="mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818]  lg:leading-[55px]">
-            Adult Testimonials
+            Testimonials
           </h2>
         </div>
 
