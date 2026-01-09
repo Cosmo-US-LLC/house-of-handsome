@@ -67,7 +67,7 @@ export default function FiveStepProcess({
       });
 
       if (isMobile) {
-        const extraScroll = 1680;
+        const extraScroll = 1020;
         const totalWidth = cards.length * gap;
 
         gsap.to(cards, {
@@ -127,7 +127,7 @@ export default function FiveStepProcess({
         </div>
 
         <div className="cards-wrapper flex max-md:mt-[0.5rem] max-md:h-[500px] !justify-start 
-        absolute md:!top-[370px] !top-[450px] md:left-[13%] left-0
+        absolute md:!top-[370px] !top-[450px] md:left-[13%] left-[-90%]
          -translate-y-1/2 md:-translate-x-1/2 pl-2">
           {defaultSteps.map((card, i) => (
             <div
