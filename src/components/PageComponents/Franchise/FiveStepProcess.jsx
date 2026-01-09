@@ -115,7 +115,7 @@ export default function FiveStepProcess({
       className="!pt-10 bg-white md:!pt-20   overflow-hidden relative"
       ref={sectionRef}
     >
-      <div className="max-w-[1280px] md:h-[780px] !h-[800px] sticky top-0 mx-auto px-4 md:px-8 overflow-hidden relative">
+      <div className="max-w-[1280px] md:h-[720px] !h-[800px] sticky top-0 mx-auto px-4 md:px-8 overflow-hidden relative">
         {/* Header */}
         <div className="flex flex-col max-md:pt-[2rem] gap-4 mb-6 md:mb-12">
           <h2 className="font-['Cairo'] md:text-[48px] text-[36px] font-bold text-[#181818] md:leading-[55px] leading-[40px]">

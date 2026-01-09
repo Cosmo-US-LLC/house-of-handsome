@@ -50,7 +50,7 @@ const TakeFirstStepContactUs = () => {
   };
 
   return (
-    <section className="bg-[#fff] md:py-20 py-10">
+    <section className="bg-[#fff] md:py-16 py-10">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="max-w-[800px] mx-auto text-center mb-6 md:mb-12">
           <h2 className="md:text-[48px] text-[36px] font-['Cairo'] font-bold text-[#181818] md:leading-[55px] leading-[40px] mb-4">

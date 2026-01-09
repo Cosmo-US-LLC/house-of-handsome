@@ -147,21 +147,13 @@ export default function TakeFirstStep() {
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
                 Preferred Franchise Model <span className="text-red-500">*</span>
               </label>
-              <select
+              <input
                 {...register("franchiseModel")}
-                className={`w-full px-4 py-5 border rounded-lg text-[16px] bg-white focus:outline-none transition-all
-                  ${errors.franchiseModel ? "border-red-500" : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"}`}
-              >
-                <option value="">Select a franchise model</option>
-                <option value="shop-in-shop">Shop-in-Shop (Licensed Operator)</option>
-                {/* <option value="full-franchise">Full Franchise</option>
-                <option value="master-franchise">Master Franchise</option> */}
-              </select>
-              {errors.franchiseModel && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.franchiseModel.message}
-                </p>
-              )}
+                type="text"
+                value="Shop-in-Shop (Licensed Operator)"
+                disabled
+                className="w-full px-4 py-5 border border-gray-200 rounded-lg text-[16px]  focus:outline-none"
+              />
             </div>
 
             {/* Message */}
