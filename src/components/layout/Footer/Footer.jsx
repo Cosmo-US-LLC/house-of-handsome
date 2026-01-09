@@ -63,27 +63,6 @@ function Footer() {
         <div className="flex justify-between pb-8 max-md:gap-10 wrap max-md:grid max-md:grid-cols-1">
           {/* Column 1 - Brand */}
           <div className="flex flex-col md:max-w-[440px] gap-6">
-            <div>
-              <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
-                Download Our App
-              </h3>
-              <div className="flex gap-2 mt-6">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={app_dow1} alt="" />
-                </a>
-                <a
-                  href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={app_dow2} alt="" />
-                </a>
-              </div>
-            </div>
             {/* Logo */}
             <Link to="/" className="flex gap-2 items-center">
               <img
@@ -92,16 +71,12 @@ function Footer() {
                 className="w-[80%] max-w-[300px] h-full shrink-0"
               />
             </Link>
-
-            {/* Description */}
             <p className="font-['Urbanist'] text-base font-medium leading-[26px] text-black">
               At House of Handsome, we aim to revive this sense of camaraderie
               and make it fashionable once again. Welcome to a space where
               tradition meets style, and where every customer becomes part of
               our community.
             </p>
-
-            {/* Social Media */}
             <div className="flex gap-2 items-center">
               <a
                 href="mailto:info@houseofhandsome.ca"
@@ -130,6 +105,27 @@ function Footer() {
               >
                 <Instagram className="w-5 h-5" />
               </a>
+            </div>
+               <div>
+              <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
+                Download Our App
+              </h3>
+              <div className="flex gap-2 mt-6">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow1} alt="" />
+                </a>
+                <a
+                  href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow2} alt="" />
+                </a>
+              </div>
             </div>
           </div>
 
