@@ -26,7 +26,7 @@ export default function FranchiseHero({
                 children={"Explore Franchise Opportunities"}
                 className="max-md:max-w-[270px]"
               />
-              <span className="flex items-center font-['Urbanist'] text-black font-bold cursor-pointer underline underline-offset-2" onClick={ScrolldownTostrategicExpansion}>
+              {/* <span className="flex items-center font-['Urbanist'] text-black font-bold cursor-pointer underline underline-offset-2" onClick={ScrolldownTostrategicExpansion}>
                 View Open Roles
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function FranchiseHero({
                     fill="black"
                   />
                 </svg>
-              </span>
+              </span> */}
             </div>
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-[0%]  md:absolute md:-right-24">
