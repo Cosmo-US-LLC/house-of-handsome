@@ -89,7 +89,7 @@ function TeenTestimonials() {
         {/* Header with Title */}
         <div className="mb-12">
           <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-[48px] lg:leading-[55px]">
-            Teen Testimonials
+            Testimonials
           </h2>
         </div>
 
