@@ -56,7 +56,7 @@ export default function FiveStepProcess({
       const cards = cardsRef.current;
       const isMobile = window.innerWidth < 768;
 
-      const containerWidth = isMobile ? window.innerWidth : 1280;
+      const containerWidth = isMobile ? window.innerWidth : 920;
       const gap = 20;
       const cardWidth = 420;
 

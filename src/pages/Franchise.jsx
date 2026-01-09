@@ -27,8 +27,8 @@ function Franchise() {
         <HelpYouSucceed />
         <FiveStepProcess />
         <FranchiseModels />
-        <FranchiseSupport />
-        <StrategicExpansion />
+        {/* <FranchiseSupport /> */}
+        {/* <StrategicExpansion /> */}
         <TakeFirstStep />
       </div>
     </>

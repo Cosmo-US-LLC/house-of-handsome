@@ -154,8 +154,8 @@ export default function TakeFirstStep() {
               >
                 <option value="">Select a franchise model</option>
                 <option value="shop-in-shop">Shop-in-Shop (Licensed Operator)</option>
-                <option value="full-franchise">Full Franchise</option>
-                <option value="master-franchise">Master Franchise</option>
+                {/* <option value="full-franchise">Full Franchise</option>
+                <option value="master-franchise">Master Franchise</option> */}
               </select>
               {errors.franchiseModel && (
                 <p className="text-red-500 text-sm mt-1">
