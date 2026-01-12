@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 import useScrolled from "../../../hooks/useScrolled";
 import SecondaryCTA from "../../ui/SecondaryCTA";
 import logo from "../../../assets/images/navbar/HOH_Logo.svg";
+import logoWhite from "../../../assets/images/navbar/HOH_Logo_white.svg";
 import {
   Sheet,
   SheetContent,
@@ -44,10 +45,10 @@ function Header() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-shadow duration-200 backdrop-blur ${
+      className={`${isHome ? "fixed" : "sticky"} w-full top-0 z-50 transition-shadow duration-200  ${
         !isHome
-          ? "bg-white/90  supports-backdrop-filter:bg-white/70 border-b border-neutral-200"
-          : scrolled ? "bg-[#F2F2F2] supports-backdrop-filter:bg-[#F2F2F2]/70" : "bg-[#F2F2F2] "
+          ? "bg-white/90  supports-backdrop-filter:bg-white/70 border-b border-neutral-200 backdrop-blur"
+          : scrolled ? "bg-transparent supports-backdrop-filter:bg-[#F2F2F2]/70 backdrop-blur" : "bg-transparent"
       } ${scrolled ? "shadow-md" : ""}`}
     >
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
@@ -60,7 +61,7 @@ function Header() {
           >
             {/* Logo from Figma */}
             <img
-              src={logo}
+              src={isHome && !scrolled ? logoWhite : logo}
               alt="House of Handsome Logo"
               className="object-contain w-full h-full"
             />
@@ -75,7 +76,7 @@ function Header() {
                 className={`text-[16px] capitalize transition-colors relative py-2  rounded ${
                   isActive(item.slug)
                     ? "font-bold after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:rounded-full"
-                    : "text-black hover:text-neutral-700 font-medium"
+                    : isHome && !scrolled ? "text-white hover:text-neutral-300 font-medium" : "text-black hover:text-neutral-700 font-medium"
                 }`}
                 style={
                   isActive(item.slug)
@@ -99,7 +100,7 @@ function Header() {
           <div className="hidden lg:block">
             <SecondaryCTA
               onClick={() => navigate("/contactUs")}
-              className="rounded-[6px] px-6 py-3 text-[18px] font-medium!"
+              className={`rounded-[6px] px-6 py-3 text-[18px] font-medium! ${isHome && !scrolled ? "text-white !border !border-white" : ""}`}
             >
               Contact Us
             </SecondaryCTA>
