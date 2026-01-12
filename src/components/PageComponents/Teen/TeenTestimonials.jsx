@@ -101,9 +101,11 @@ function TeenTestimonials() {
             {testimonials.map((testimonial, i) => (
               <CarouselItem
                 key={testimonial.id}
-                className="pl-4 md:basis-1/2 lg:basis-1/3"
+                className="pl-4 md:basis-1/2 py-6 lg:basis-1/3"
               >
-                <div className="flex flex-col gap-[40px] h-full justify-between rounded-[8px] bg-[#f7f7f7] px-[26px] py-[40px]">
+                <div className="flex flex-col gap-[40px] h-full justify-between rounded-[20px] bg-[#fff] px-[26px] py-[40px]"
+                  style={{border: "1px solid rgba(222, 222, 222, 0.50)", boxShadow: "0 15px 30px 0 rgba(0, 0, 0, 0.08)"}}
+                >
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
                     <div className="flex justify-between items-center">

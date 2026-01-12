@@ -85,7 +85,7 @@ export default function GroomingServices() {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-full"
+                className="min-w-[100%] h-full"
               />
             </div>
 
