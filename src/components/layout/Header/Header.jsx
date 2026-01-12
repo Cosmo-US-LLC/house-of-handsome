@@ -110,18 +110,18 @@ function Header() {
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button
-                className="inline-flex justify-center items-center p-2 rounded-md hover:bg-neutral-100 outline-none lg:hidden"
+                className={`inline-flex justify-center items-center p-2 rounded-md outline-none lg:hidden ${isHome && !scrolled ? "hover:bg-neutral-800 text-white" : "hover:bg-neutral-100 text-black"}`}
                 aria-label="Toggle navigation menu"
               >
-                <Menu className="w-6 h-6" />
+                <Menu className={`w-6 h-6 ${isHome && !scrolled ? "text-white" : "text-black"}`} />
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full">
+            <SheetContent side="left" className={`w-full ${isHome && !scrolled ? "bg-black" : "bg-white"}`}>
               <SheetHeader>
                 <SheetTitle>
                   <Link to="/" onClick={closeMobileMenu}>
                     <img
-                      src={logo}
+                      src={isHome && !scrolled ? logoWhite : logo}
                       alt="House of Handsome Logo"
                       className="object-contain w-[80%] h-full"
                     />
@@ -140,7 +140,7 @@ function Header() {
                     className={`rounded-md px-4 py-3 text-base capitalize transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-300 ${
                       isActive(item.slug)
                         ? "font-bold"
-                        : "font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
+                        : isHome && !scrolled ? "font-medium text-white hover:bg-neutral-800 hover:text-white" : "font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
                     }`}
                     style={isActive(item.slug) ? { color: BRAND_RED } : {}}
                   >
@@ -148,9 +148,9 @@ function Header() {
                   </Link>
                 ))}
                 {/* Mobile Contact Button */}
-                <div className="pt-6 mt-6 border-t  border-neutral-200">
+                <div className={`pt-6 mt-6 border-t border-neutral-200 ${isHome && !scrolled ? "border-[#fff]" : ""}`}>
                   <SecondaryCTA
-                    className="justify-center w-full"
+                    className={`justify-center w-full ${isHome && !scrolled ? "text-white !border !border-white" : ""}`}
                     onClick={closeMobileMenu}
                   >
                     Contact Us
