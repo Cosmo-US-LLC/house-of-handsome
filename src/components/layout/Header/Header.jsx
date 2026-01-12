@@ -44,7 +44,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-shadow duration-200 backdrop-blur ${
+      className={`fixed w-full top-0 z-50 transition-shadow duration-200 backdrop-blur ${
         !isHome
           ? "bg-white/90  supports-backdrop-filter:bg-white/70 border-b border-neutral-200"
           : scrolled ? "bg-[#F2F2F2] supports-backdrop-filter:bg-[#F2F2F2]/70" : "bg-[#F2F2F2] "

@@ -1,7 +1,7 @@
 import React from "react";
-import adultsImage from "../../../assets/images/about/groomingServices/grooming_services_c1.webp";
+import adultsImage from "../../../assets/images/about/groomingServices/grooming_services_c3.webp";
 import teensImage from "../../../assets/images/about/groomingServices/grooming_services_c2.webp";
-import kidsImage from "../../../assets/images/about/groomingServices/grooming_services_c3.webp";
+import kidsImage from "../../../assets/images/about/groomingServices/grooming_services_c1.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
 import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 import { useNavigate } from "react-router-dom";
