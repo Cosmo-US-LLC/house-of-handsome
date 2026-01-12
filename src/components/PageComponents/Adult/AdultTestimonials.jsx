@@ -6,64 +6,59 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import testimonialsImage1 from "../../../assets/images/adult/adultTestimonials/adult_img1.webp";
-import testimonialsImage2 from "../../../assets/images/adult/adultTestimonials/adult_img2.webp";
-import testimonialsImage3 from "../../../assets/images/adult/adultTestimonials/adult_img3.webp";
-import testimonialsImage4 from "../../../assets/images/adult/adultTestimonials/adult_img4.webp";
-import testimonialsImage5 from "../../../assets/images/adult/adultTestimonials/adult_img5.webp";
+import testimonialsImage1 from "../../../assets/images/adult/adultTestimonials/aduRiv (5).png";
+import testimonialsImage2 from "../../../assets/images/adult/adultTestimonials/aduRiv (4).png";
+import testimonialsImage3 from "../../../assets/images/adult/adultTestimonials/aduRiv (3).png";
+import testimonialsImage4 from "../../../assets/images/adult/adultTestimonials/aduRiv (2).png";
+import testimonialsImage5 from "../../../assets/images/adult/adultTestimonials/aduRiv (1).png";
+import googleIcon from "../../../assets/images/home/testimonials/icons (2).webp";
+import StarsIcon from "../../../assets/images/home/testimonials/icons (1).webp";
+import verIcon from "../../../assets/images/home/testimonials/icons (3).webp";
 
 // Testimonials data
 const testimonials = [
   {
-    id: 1,
-    title: "Great attention to detail.",
-    quote:
-      "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again.",
-    reviewer: "Garth Pother",
-    role: "Client",
-    stars: 5,
-    avatar: testimonialsImage1,
-  },
-  {
-    id: 2,
-    title: "Professional, clean, and consistent every visit.",
-    quote:
-      "My husband and i are regular customer at this barbershop and we’re always satisfied with the excellent service.",
-    reviewer: "Mona Khoshraftar Yazdi",
-    role: "Client",
-    stars: 5,
-    avatar: testimonialsImage2,
-  },
-  {
-    id: 3,
-    title: "Exactly the style I wanted",
-    quote:
-      "They’ve always  done an amazing job with my brothers hair & have shown a lot of patience and respect when it comes to him as well. 10/10 service! 100% recommend!",
-    reviewer: "Aleesha Chaudry",
-    role: "Client",
-    stars: 5,
-    avatar: testimonialsImage3,
-  },
-  {
-    id: 4,
-    title: "Recommend 10 out of 10",
-    quote:
-      "I had a amazing experience here, great enviroment, great people, would recommend 10/10. great price great service. i’ll definitely becoming back here from now for my future haircut. My barber was named Harvi, he didi a fantastic job with my hair, paid close attention to what he was doing, and is super professional!",
-    reviewer: "Hiram D.",
-    role: "Client",
-    stars: 5,
-    avatar: testimonialsImage4,
-  },
-  {         
-    id: 5,
-    title: "Exactly the style I wanted",
-    quote:
-      "Great, personal service from skilled staff. Excellent pricing and value.",
-    reviewer: "Adrian Wagg",
-    role: "Client",
-    stars: 5,
-    avatar: testimonialsImage5,
-  },
+     id: 1,
+     name:"Garth Potter",
+     title: "Great attention to detail",
+     quote:
+       "Great attention to detail, was attentive to request and engaged throughout the experience. Will definitely be back again ",
+     avatar: testimonialsImage1,
+   },
+   {
+     id: 2,
+     name:"Joseph Wagner",
+     title: "An amazing job",
+     quote:
+       "Ehsan did an amazing job at House of Handsome. Really appreciate his skills and this barbar shop. Recommend this place!",
+     avatar: testimonialsImage2,
+   },
+   {
+     id: 3,
+     name:"Aleesha Chaudry",
+     title: "Exactly the style I wanted",
+     quote:
+       "They’ve always  done an amazing job with my brothers hair & have shown a lot of patience and respect when it comes to him as well. 10/10 service! 100% recommend!",
+     avatar: testimonialsImage3,
+   },
+   {
+     id: 4,
+     name:"Hiram D.",
+     title: "Recommend 10 out of 10",
+     quote:
+       "i had a amazing experience here, great enviroment, great people, would recommend 10/10. great price great service. i’ll definitely becoming back here...",
+     avatar: testimonialsImage4,
+     readmore: true,
+   },
+   {
+     id: 5,
+     name:"Adrian Wagg",
+     title: "Exactly the style I wanted",
+     quote:
+       "Great, personal service from skilled staff. Excellent pricing and value <br/> <strong>Service:</strong> Hair shape up",
+ 
+     avatar: testimonialsImage5,
+   },
 ];
 
 function AdultTestimonials() {
@@ -108,61 +103,45 @@ function AdultTestimonials() {
               >
                 <div className="flex flex-col justify-between gap-[40px] rounded-[8px] bg-[#f7f7f7] px-[26px] py-[48px] h-full">
                   {/* Top Content */}
-                  <div className="flex flex-col gap-[24px]">
-                    {/* Title */}
-                    <h3 className="font-['Urbanist'] text-[20px] font-bold leading-[26px] text-black">
-                      {testimonial.title}
-                    </h3>
-
-                    {/* Review with Stars */}
-                    <div className="flex flex-col gap-[16px]">
-                      {/* Star Rating */}
-                      <div className="flex items-center">
-                        {[...Array(testimonial.stars)].map((_, index) => (
-                          <svg
-                            key={index}
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6"
-                          >
-                            <path
-                              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                              fill="#D82028"
-                            />
-                          </svg>
-                        ))}
-                      </div>
-
-                      {/* Quote */}
-                      <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black">
-                        {testimonial.quote}
-                      </p>
-                      {i == 4 ? <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-black"><b>Service:</b> Hair shape up</p> : ""}
-                    </div>
-                  </div>
-
-                  {/* Reviewer Info */}
-                  <div className="flex items-center gap-[16px]">
-                    {/* Avatar */}
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.reviewer}
-                      className="h-[48px] w-[48px] rounded-full object-cover"
-                    />
-
-                    {/* Name and Role */}
-                    <div className="flex flex-col">
-                      <p className="font-['Urbanist'] text-[20px] font-bold leading-[28px] text-black">
-                        {testimonial.reviewer}
-                      </p>
-                      <p className="font-['Urbanist'] text-[16px] font-normal leading-[22px] text-black">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
+                    <div className="flex flex-col gap-[24px]">
+                                     {/* Title */}
+                                     <div className="flex justify-between items-center">
+                                       <div className="flex items-center space-x-2">
+                                         <img
+                                           src={testimonial.avatar}
+                                           className="w-[50px] h-[50px]"
+                                           alt=""
+                                         />
+                                         <h3 className="font-['Urbanist'] text-[20px] font-bold leading-[26px] text-black">
+                                           {testimonial.name}
+                                         </h3>
+                                       </div>
+                                       <img
+                                         className="h-[40px] w-[40px]"
+                                         src={googleIcon}
+                                         alt=""
+                                       />
+                                     </div>
+                                     <div className="flex items-center space-x-2">
+                                       <img className="h-[22px]" src={StarsIcon} alt="" />
+                                       <img className="h-[22px]" src={verIcon} alt="" />
+                                     </div>
+                 
+                                     <div className="flex flex-col gap-[16px]">
+                                            <h3 className="font-['Urbanist'] text-[20px] font-bold leading-[26px] text-black">
+                                           {testimonial.title}
+                                         </h3>
+                                       <p
+                                         className="font-['Urbanist'] min-h-[20px] text-[16px] font-medium leading-[26px] text-black"
+                                         dangerouslySetInnerHTML={{ __html: testimonial.quote }}
+                                       />
+                                        {testimonial.readmore === true ? (
+                                         <p className="text-[#808080] text-[16px] font-[600] leading-[26px]">
+                                           Read more
+                                         </p>
+                                         ) : null}
+                                     </div>
+                                   </div>
                 </div>
               </CarouselItem>
             ))}

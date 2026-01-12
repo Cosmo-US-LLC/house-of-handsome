@@ -8,22 +8,22 @@ function Hero() {
   window.location.href = url; 
 };
   return (
-    <section className="pt-4 w-full bg-[#F2F2F2] ">
-      <div className="mx-auto max-w-[1280px] relative px-4 md:px-8 ">
-        <div className="flex flex-col gap-6 items-center min-h-[620px] w-full md:flex-row md:gap-8">
+    <section className="pt-4 w-full  relative">
+      <div className="mx-auto max-w-[1280px]  px-4 md:px-8 ">
+        <div className="flex flex-col gap-6 items-center max-md:justify-center min-h-[620px] w-full md:flex-row md:gap-8">
           <div className="pt-4 pb-4 w-full md:w-[60%] space-y-4 text-left md:space-y-6 md:pt-0">
             <h1
-              className="font-['Cairo'] font-[700] text-neutral-900 leading-[114.583%] md:leading-[114.583%] text-[36px] md:text-[48px] text-[#181818] max-w-[531px]"
+              className="font-['Cairo'] font-[700] text-neutral-900 leading-[114.583%] md:leading-[114.583%] text-[36px] md:text-[48px] !text-[#fff] max-w-[531px]"
             >
               The Ultimate Grooming Experience
             </h1>
 
-            <h2 className="font-['Cairo'] text-xl font-semibold md:text-2xl lg:text-[38px] lg:leading-[41.36px] lg:tracking-[-0.752px]">
+            <h2 className="font-['Cairo'] !text-[#fff] text-xl font-semibold md:text-2xl lg:text-[38px] lg:leading-[41.36px] lg:tracking-[-0.752px]">
               Precision. Style.{" "}
               <span className="text-[#d82028]">Confidence.</span>
             </h2>
 
-            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px] text-black md:mt-6">
+            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px]  md:mt-6 !text-[#fff]">
               At House of Handsome, we don't just style hair, we redefine your
               look. Our expert barbers craft looks that command attention and
               boost your confidence. Step in, stand out.
@@ -70,14 +70,14 @@ function Hero() {
                 </div>
                 <div className="flex flex-col leading-tight">
                   <div className="flex items-baseline">
-                    <span className="font-['Roboto_Slab'] md:text-[36px] text-[26px] font-bold text-black">
+                    <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[36px] text-[26px] font-bold ">
                       4.9
                     </span>
-                    <span className="font-['Roboto_Slab'] text-[16px] font-bold text-black">
+                    <span className="font-['Roboto_Slab'] text-[16px] font-bold !text-[#fff]">
                       /5
                     </span>
                   </div>
-                  <span className="font-['Onest'] text-[12px] font-normal text-black">
+                  <span className="font-['Onest'] text-[12px] font-normal !text-[#fff]">
                     Out of 3,000 Reviews
                   </span>
                 </div>
@@ -86,11 +86,11 @@ function Hero() {
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex  w-full md:!w-[734px] md:min-h-[560px] h-[300px] md:bottom-0  md:absolute md:right-0 justify-center items-end h-full md:justify-end">
+          <div className="flex  w-full  md:min-h-[725px] min-h-[725px] h-full object-cover md:top-0 z-[-1] absolute md:right-0 ">
             <img
               src={heroImage}
               alt="Two well-groomed male models  in black clothing"
-              className="!w-full h-full md:w-full "
+              className="!w-full h-full object-cover bg-center md:w-full "
             />
           </div>
         </div>
