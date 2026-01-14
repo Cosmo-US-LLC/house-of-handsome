@@ -1,6 +1,7 @@
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
 import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
+import mobileheroImage from "../../../assets/images/home/hero/mobile_hero.webp"
 
 function Hero() {
   const handleOnClick = () => {
@@ -86,11 +87,28 @@ function Hero() {
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex  w-full  md:min-h-[725px] min-h-[725px] h-full object-cover md:top-0 z-[-1] absolute md:right-0 ">
-            <img
+          <div className="flex w-full md:min-h-[725px] min-h-[725px] h-full object-cover md:top-0 z-[-1] absolute md:right-0 ">
+            {/* <img
               src={heroImage}
               alt="Two well-groomed male models  in black clothing"
               className="!w-full h-full object-cover bg-center md:w-full "
+            /> */}
+            <img
+              src={heroImage}
+              alt="Two well-groomed male models in black clothing"
+              className="hidden md:block w-full h-full object-cover bg-center"
+            />
+            <div
+              className="absolute inset-0 z-10 block md:hidden"
+              style={{
+                background:
+                  "linear-gradient(180deg, #000 11.41%, rgba(0, 0, 0, 0.22) 75.54%, rgba(0, 0, 0, 0.20) 100%)",
+              }}
+            />
+            <img
+              src={mobileheroImage}
+              alt="Two well-groomed male models in black clothing"
+              className="block md:hidden w-full h-full object-cover bg-center pt-20"
             />
           </div>
         </div>

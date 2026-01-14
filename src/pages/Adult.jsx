@@ -1,6 +1,7 @@
 import React from "react";
 import AdultHero from "../components/PageComponents/Adult/AdultHero";
 import WhyAdultsChoose from "../components/PageComponents/Adult/WhyAdultsChoose";
+import ServicesWeOffering from "../components/PageComponents/Adult/ServicesWeOffering"
 import AdultTestimonials from "../components/PageComponents/Adult/AdultTestimonials";
 import StyleGallery from "../components/PageComponents/Adult/StyleGallery";
 import WhatToExpect from "../components/PageComponents/Adult/WhatToExpect";
@@ -18,6 +19,7 @@ function Adult() {
       <div>
         <AdultHero />
         <WhyAdultsChoose />
+        <ServicesWeOffering />
         <AdultTestimonials />
         <StyleGallery />
         <WhatToExpect />

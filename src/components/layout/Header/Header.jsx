@@ -116,7 +116,8 @@ function Header() {
                 <Menu className={`w-6 h-6 ${isHome && !scrolled ? "text-white" : "text-black"}`} />
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className={`w-full ${isHome && !scrolled ? "bg-black" : "bg-white"}`}>
+            {/* <SheetContent side="left" className={`w-full ${isHome && !scrolled ? "bg-black" : "bg-white"}`}> */}
+            <SheetContent side="left" className={`w-full ${isHome && !scrolled ? "bg-black [&>button]:text-white" : "bg-white [&>button]:text-black"}`}>
               <SheetHeader>
                 <SheetTitle>
                   <Link to="/" onClick={closeMobileMenu}>

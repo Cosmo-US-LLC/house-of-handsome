@@ -287,7 +287,7 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col gap-4 justify-between items-center pt-8 border-t border-black/50 md:flex-row">
           <p className="font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
-            Copyright © 2025 House of handsome
+            Copyright © 2026 House of handsome
           </p>
           {/* <div className="flex gap-6 font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
             <Link
