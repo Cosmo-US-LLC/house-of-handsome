@@ -21,7 +21,7 @@ const NAV_ITEMS = [
   { label: "Teens", href: "/teens", slug: "/teens" },
   { label: "Kids", href: "/kids", slug: "/kids" },
   { label: "Services", href: "/services", slug: "/services" },
-  { label: "Franchise", href: "/franchise", slug: "/franchise" },
+  // { label: "Franchise", href: "/franchise", slug: "/franchise" },
   { label: "Locations", href: "/locations", slug: "/locations" },
 ];
 

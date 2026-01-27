@@ -208,6 +208,23 @@ function Footer() {
                 Quick Links
               </h3>
               <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
+                
+                 <li>
+                  <Link
+                    to="/franchise"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Franchise
+                  </Link>
+                </li>
+                  <li>
+                  <Link
+                    to="/contactUs"
+                    className="transition-colors hover:text-[#d82028]"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/privacy-policy"
