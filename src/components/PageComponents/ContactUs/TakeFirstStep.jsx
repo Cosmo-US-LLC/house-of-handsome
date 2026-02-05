@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import ContactUsLocations from "./ContactUsLocations";
+import SuccessDialog from "./SuccessDialog";
 
 // Validation Schema
 const schema = yup.object().shape({
@@ -35,6 +36,8 @@ const schema = yup.object().shape({
 });
 
 const TakeFirstStepContactUs = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  
   const {
     register,
     handleSubmit,
@@ -44,9 +47,21 @@ const TakeFirstStepContactUs = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
-    reset(); // clear form after submit
+  const onSubmit = async (data) => {
+    try {
+      console.log("Form submitted:", data);
+      // TODO: Add your form submission logic here (e.g., API call)
+      // await submitForm(data);
+      
+      // Clear form after successful submission
+      reset();
+      
+      // Open success dialog
+      setIsDialogOpen(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      // Handle error (you might want to show an error message)
+    }
   };
 
   return (
@@ -76,9 +91,9 @@ const TakeFirstStepContactUs = () => {
           </div>
         </div>
 
-        <div className="flex md:flex-row flex-col gap-6">
+        <div className="flex flex-col gap-6 md:flex-row">
           {/* Form */}
-          <div className="bg-white flex-1 rounded-2xl md:p-8 p-6 shadow-sm">
+          <div className="flex-1 p-6 bg-white rounded-2xl shadow-sm md:p-8">
             <h3 className="md:text-[32px] text-[24px] font-['Cairo'] font-bold text-[#d82028] mb-6">
               Contact Us
             </h3>
@@ -100,7 +115,7 @@ const TakeFirstStepContactUs = () => {
                     }`}
                 />
                 {errors.fullName && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.fullName.message}
                   </p>
                 )}
@@ -122,7 +137,7 @@ const TakeFirstStepContactUs = () => {
                     }`}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.email.message}
                   </p>
                 )}
@@ -144,7 +159,7 @@ const TakeFirstStepContactUs = () => {
                     }`}
                 />
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.phone.message}
                   </p>
                 )}
@@ -167,7 +182,7 @@ const TakeFirstStepContactUs = () => {
                     }`}
                 />
                 {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="mt-1 text-sm text-red-500">
                     {errors.message.message}
                   </p>
                 )}
@@ -187,6 +202,12 @@ const TakeFirstStepContactUs = () => {
           <ContactUsLocations classname="bg-[#d82028] rounded-2xl md:p-8 p-6 text-white md:max-w-[400px] text-center" />
         </div>
       </div>
+
+      {/* Success Dialog */}
+      <SuccessDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+      />
     </section>
   );
 };
