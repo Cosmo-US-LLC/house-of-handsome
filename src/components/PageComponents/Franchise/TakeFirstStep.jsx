@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
+import SuccessDialog from "../ContactUs/SuccessDialog";
 
-// Validation Schema
+const HUBSPOT_FORM_GUID = "071de1c4-c247-4787-aefc-e4cc90138c78";
+const HUBSPOT_PORTAL_ID = "244794377";
+
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : "";
+};
+
 const schema = yup.object().shape({
   fullName: yup
     .string()
@@ -16,11 +24,7 @@ const schema = yup.object().shape({
     .email("Enter a valid email address")
     .required("Email is required"),
 
-  // phone: yup
-  //   .string()
-  //   .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
-  //   .min(7, "Phone number is too short")
-  //   .required("Phone number is required"),
+
 
   phone: yup
   .string()
@@ -39,6 +43,9 @@ const schema = yup.object().shape({
 });
 
 export default function TakeFirstStep() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  
   const {
     register,
     handleSubmit,
@@ -48,9 +55,84 @@ export default function TakeFirstStep() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      setSubmitError("");
+
+      const payload = {
+        fields: [
+          { name: "lastname", value: data.fullName },
+          { name: "email", value: data.email },
+          { name: "mobilephone", value: data.phone },
+          { name: "preffered_franchise_model", value: data.franchiseModel },
+          { name: "message", value: data.message },
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+          hutk: getCookie("hubspotutk"),
+        },
+        legalConsentOptions: {
+          consent: {
+            consentToProcess: true,
+            text: "I agree to allow House of Handsome to store and process my personal data.",
+            communications: [
+              {
+                value: true,
+                subscriptionTypeId: 999,
+                text: "I agree to receive marketing communications from House of Handsome.",
+              },
+            ],
+          },
+        },
+      };
+
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const responseData = await res.json();
+      
+      console.log("HubSpot API Response:", {
+        status: res.status,
+        statusText: res.statusText,
+        data: responseData,
+        submittedFields: payload.fields,
+      });
+      
+      if (!res.ok) {
+        console.error("HubSpot API Error Details:", {
+          status: res.status,
+          response: responseData,
+          submittedPayload: payload,
+        });
+        
+        let msg = "Something went wrong. Please try again.";
+        if (responseData?.message) {
+          msg = responseData.message;
+        } else if (responseData?.errors && Array.isArray(responseData.errors)) {
+          msg = responseData.errors.map(e => e.message || e).join(", ");
+        } else if (responseData?.invalidFields && Array.isArray(responseData.invalidFields)) {
+          msg = `Invalid fields: ${responseData.invalidFields.map(f => f.name || f).join(", ")}`;
+        }
+        throw new Error(msg);
+      }
+      
+      console.log("HubSpot submission successful:", responseData);
+      
+      reset();
+      
+      setIsDialogOpen(true);
+    } catch (error) {
+      setSubmitError(error?.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -88,6 +170,11 @@ export default function TakeFirstStep() {
           </h3>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {submitError && (
+              <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                {submitError}
+              </div>
+            )}
             {/* Full Name */}
             <div>
               <label className="block font-['Urbanist'] font-medium text-[18px] mb-2">
@@ -181,6 +268,14 @@ export default function TakeFirstStep() {
           </form>
         </div>
       </div>
+
+      {/* Success Dialog */}
+      <SuccessDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        title="Thank you for your insterest in Franchising with us!"
+        description="Our team will review your submission and contact you within 1-2 businessdays"
+      />
     </section>
   );
 }

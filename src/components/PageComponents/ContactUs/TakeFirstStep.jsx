@@ -5,6 +5,14 @@ import * as yup from "yup";
 import ContactUsLocations from "./ContactUsLocations";
 import SuccessDialog from "./SuccessDialog";
 
+const HUBSPOT_FORM_GUID = "c90a6c17-c1d9-4304-907a-778073d646d1";
+const HUBSPOT_PORTAL_ID = "244794377";
+
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : "";
+};
+
 // Validation Schema
 const schema = yup.object().shape({
   fullName: yup
@@ -37,6 +45,7 @@ const schema = yup.object().shape({
 
 const TakeFirstStepContactUs = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   
   const {
     register,
@@ -49,18 +58,80 @@ const TakeFirstStepContactUs = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log("Form submitted:", data);
-      // TODO: Add your form submission logic here (e.g., API call)
-      // await submitForm(data);
+      setSubmitError("");
+
+      const payload = {
+        fields: [
+          { name: "lastname", value: data.fullName },
+          { name: "email", value: data.email },
+          { name: "mobilephone", value: data.phone },
+          { name: "message", value: data.message },
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+          hutk: getCookie("hubspotutk"),
+        },
+        legalConsentOptions: {
+          consent: {
+            consentToProcess: true,
+            text: "I agree to allow House of Handsome to store and process my personal data.",
+            communications: [
+              {
+                value: true,
+                subscriptionTypeId: 999,
+                text: "I agree to receive marketing communications from House of Handsome.",
+              },
+            ],
+          },
+        },
+      };
+
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const responseData = await res.json();
       
-      // Clear form after successful submission
+      console.log("HubSpot API Response:", {
+        status: res.status,
+        statusText: res.statusText,
+        data: responseData,
+        submittedFields: payload.fields,
+      });
+      
+      if (!res.ok) {
+        console.error("HubSpot API Error Details:", {
+          status: res.status,
+          response: responseData,
+          submittedPayload: payload,
+        });
+        
+        let msg = "Something went wrong. Please try again.";
+        if (responseData?.message) {
+          msg = responseData.message;
+        } else if (responseData?.errors && Array.isArray(responseData.errors)) {
+          msg = responseData.errors.map(e => e.message || e).join(", ");
+        } else if (responseData?.invalidFields && Array.isArray(responseData.invalidFields)) {
+          msg = `Invalid fields: ${responseData.invalidFields.map(f => f.name || f).join(", ")}`;
+        }
+        throw new Error(msg);
+      }
+      
+      console.log("HubSpot submission successful:", responseData);
+      
       reset();
       
-      // Open success dialog
       setIsDialogOpen(true);
     } catch (error) {
-      console.error("Form submission error:", error);
-      // Handle error (you might want to show an error message)
+      setSubmitError(error?.message || "Something went wrong. Please try again.");
     }
   };
 
@@ -99,6 +170,11 @@ const TakeFirstStepContactUs = () => {
             </h3>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              {submitError && (
+                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {submitError}
+                </div>
+              )}
               {/* Full Name */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
@@ -165,7 +241,6 @@ const TakeFirstStepContactUs = () => {
                 )}
               </div>
 
-              {/* Message */}
               <div>
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
                   Message <span className="text-red-500">*</span>
