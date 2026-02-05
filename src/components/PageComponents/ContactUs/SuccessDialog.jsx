@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
 import { X } from "lucide-react";
-import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
+import { useNavigate } from "react-router-dom";
 
 // Default image - TODO: Replace with local image asset
 // Import the image once it's saved: import successDialogImage from "../../../assets/images/contactUs/success-dialog-image.webp";
@@ -17,12 +17,22 @@ function SuccessDialog({
   onOpenChange,
   title = "Thank you for reaching out!",
   description = "We've received your message and our team will get back to you shortly.",
-  buttonText = "Book Appointments",
-  onButtonClick = handleRedirectOfBookAppontment,
+  buttonText = "Back to Home",
+  onButtonClick,
   image = DEFAULT_IMAGE,
   imageAlt = "Barbershop scene",
   className = "",
 }) {
+  const navigate = useNavigate();
+  
+  const handleButtonClick = () => {
+    if (onButtonClick) {
+      onButtonClick();
+    } else {
+      navigate("/");
+    }
+    onOpenChange(false);
+  };
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
@@ -47,7 +57,7 @@ function SuccessDialog({
                 {description}
               </p>
             </div>
-            <PrimaryCTA onClick={onButtonClick} className="!px-6 !py-4">
+            <PrimaryCTA onClick={handleButtonClick} className="!px-6 !py-4">
               {buttonText}
             </PrimaryCTA>
           </div>
