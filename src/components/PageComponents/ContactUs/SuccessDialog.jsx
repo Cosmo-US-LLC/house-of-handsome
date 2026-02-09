@@ -36,7 +36,7 @@ function SuccessDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
-        className={`overflow-hidden gap-0 p-0 border-0 md:w-full w-[90%] mx-auto max-w-[974px] min-h-[400px]
+        className={`overflow-hidden gap-0 p-0 !rounded-[8px] border-0 md:w-full w-[90%] mx-auto max-w-[974px] min-h-[400px]
            h-auto md:h-[600px] sm:rounded-lg ${className}`}
         hideCloseButton={true}
       >
@@ -51,10 +51,10 @@ function SuccessDialog({
           {/* Content section */}
           <div className="bg-white flex flex-col gap-4 md:gap-6 h-auto md:h-full items-start justify-center overflow-hidden px-6 py-8 md:px-10 md:py-20 shrink-0 w-full md:w-[487px] order-2 md:order-1">
             <div className="flex flex-col gap-3 md:gap-4 items-start text-[#181818] w-full">
-              <h2 className="capitalize font-['Cairo'] font-bold leading-[1.2] md:leading-[55px] text-[32px] md:text-[48px] text-left">
+              <h2 className="capitalize font-['Cairo'] max-md:text-center font-bold leading-[1.2] md:leading-[55px] text-[32px] md:text-[48px] text-left">
                 {title}
               </h2>
-              <p className="font-['Urbanist'] font-medium leading-[24px] md:leading-[26px] text-[14px] md:text-[16px] w-full md:w-[341px]">
+              <p className="font-['Urbanist'] font-medium leading-[24px] max-md:text-center md:leading-[26px] text-[14px] md:text-[16px] w-full md:w-[341px]">
                 {description}
               </p>
             </div>
