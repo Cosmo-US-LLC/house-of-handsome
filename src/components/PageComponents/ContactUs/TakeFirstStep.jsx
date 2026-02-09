@@ -72,19 +72,6 @@ const TakeFirstStepContactUs = () => {
           pageName: document.title,
           hutk: getCookie("hubspotutk"),
         },
-        legalConsentOptions: {
-          consent: {
-            consentToProcess: true,
-            text: "I agree to allow House of Handsome to store and process my personal data.",
-            communications: [
-              {
-                value: true,
-                subscriptionTypeId: 999,
-                text: "I agree to receive marketing communications from House of Handsome.",
-              },
-            ],
-          },
-        },
       };
 
       const res = await fetch(
@@ -108,19 +95,18 @@ const TakeFirstStepContactUs = () => {
       });
       
       if (!res.ok) {
-        console.error("HubSpot API Error Details:", {
-          status: res.status,
-          response: responseData,
-          submittedPayload: payload,
-        });
+        console.error("HubSpot API Error - Full Response:", JSON.stringify(responseData, null, 2));
+        console.error("HubSpot API Error - Submitted Payload:", JSON.stringify(payload, null, 2));
         
         let msg = "Something went wrong. Please try again.";
         if (responseData?.message) {
           msg = responseData.message;
         } else if (responseData?.errors && Array.isArray(responseData.errors)) {
-          msg = responseData.errors.map(e => e.message || e).join(", ");
+          msg = responseData.errors.map(e => e.message || JSON.stringify(e)).join(", ");
         } else if (responseData?.invalidFields && Array.isArray(responseData.invalidFields)) {
-          msg = `Invalid fields: ${responseData.invalidFields.map(f => f.name || f).join(", ")}`;
+          msg = `Invalid fields: ${responseData.invalidFields.map(f => f.name || JSON.stringify(f)).join(", ")}`;
+        } else if (responseData?.errorType) {
+          msg = `${responseData.errorType}: ${responseData.message || "Unknown error"}`;
         }
         throw new Error(msg);
       }
