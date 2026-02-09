@@ -6,6 +6,7 @@ import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
 import SuccessDialog from "../ContactUs/SuccessDialog";
+import franchiseHeroImage from "@/assets/images/franchise/franchise_hero/frame_2147227240.webp";
 
 const HUBSPOT_FORM_GUID = "071de1c4-c247-4787-aefc-e4cc90138c78";
 const HUBSPOT_PORTAL_ID = "244794377";
@@ -130,7 +131,21 @@ export default function TakeFirstStep() {
       
       console.log("HubSpot submission successful:", responseData);
       
-      reset();
+      // Reset form with empty values to clear all fields including phone input
+      reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        franchiseModel: "Shop-in-Shop (Licensed Operator)",
+        message: "",
+      }, {
+        keepErrors: false,
+        keepDirty: false,
+        keepIsSubmitted: false,
+        keepTouched: false,
+        keepIsValid: false,
+        keepSubmitCount: false,
+      });
       
       setIsDialogOpen(true);
     } catch (error) {
@@ -225,7 +240,7 @@ export default function TakeFirstStep() {
                 render={({ field }) => (
                   <PhoneInput
                     {...field}
-                    defaultCountry="us"
+                    defaultCountry="ca"
                     forceDialCode={true}
                     className={`w-full  ${
                       errors.phone ? "error" : ""
@@ -293,8 +308,9 @@ export default function TakeFirstStep() {
       <SuccessDialog
         open={isDialogOpen}
         onOpenChange={setIsDialogOpen}
+        image={franchiseHeroImage}
         title="Thank you for your insterest in Franchising with us!"
-        description="Our team will review your submission and contact you within 1-2 businessdays"
+        description="Our team will review your submission and contact you within 1-2 business days"
       />
     </section>
   );
