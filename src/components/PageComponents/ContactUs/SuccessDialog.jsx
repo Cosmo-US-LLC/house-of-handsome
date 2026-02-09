@@ -36,34 +36,35 @@ function SuccessDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
-        className={`overflow-hidden gap-0 p-0 w-full max-w-[974px] h-[600px] sm:rounded-lg ${className}`}
+        className={`overflow-hidden gap-0 p-0 md:w-full w-[90%] mx-auto max-w-[974px] min-h-[400px]
+           h-auto md:h-[600px] sm:rounded-lg ${className}`}
         hideCloseButton={true}
       >
-        {/* Close button - positioned absolutely on the image side */}
-        <DialogClose className="absolute top-4 right-4 z-50 rounded-sm opacity-70 transition-opacity ring-offset-background hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-          <X className="w-8 h-8 text-white" />
+        {/* Close button - positioned absolutely */}
+        <DialogClose className="absolute max-md:bg-[#fff] top-4 right-4 z-50 rounded-sm opacity-70 transition-opacity ring-offset-background hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+          <X className="w-6 h-6 md:w-8 md:h-8 text-black md:text-white" />
           <span className="sr-only">Close</span>
         </DialogClose>
 
-        {/* Two-column layout */}
-        <div className="flex h-full">
-          {/* Left section - Content */}
-          <div className="bg-white flex flex-col gap-6 h-full items-start justify-center overflow-hidden px-10 py-20 shrink-0 w-[487px]">
-            <div className="flex flex-col gap-4 items-start text-[#181818] w-full">
-              <h2 className="capitalize font-['Cairo'] font-bold leading-[55px] text-[48px] text-left">
+        {/* Responsive layout: column on mobile, row on desktop */}
+        <div className="flex flex-col md:flex-row h-full min-h-[400px] md:min-h-0">
+          {/* Content section */}
+          <div className="bg-white flex flex-col gap-4 md:gap-6 h-auto md:h-full items-start justify-center overflow-hidden px-6 py-8 md:px-10 md:py-20 shrink-0 w-full md:w-[487px] order-2 md:order-1">
+            <div className="flex flex-col gap-3 md:gap-4 items-start text-[#181818] w-full">
+              <h2 className="capitalize font-['Cairo'] font-bold leading-[1.2] md:leading-[55px] text-[32px] md:text-[48px] text-left">
                 {title}
               </h2>
-              <p className="font-['Urbanist'] font-medium leading-[26px] text-[16px] w-[341px]">
+              <p className="font-['Urbanist'] font-medium leading-[24px] md:leading-[26px] text-[14px] md:text-[16px] w-full md:w-[341px]">
                 {description}
               </p>
             </div>
-            <PrimaryCTA onClick={handleButtonClick} className="!px-6 !py-4">
+            <PrimaryCTA onClick={handleButtonClick} className="!px-6 !py-4 w-full md:w-auto">
               {buttonText}
             </PrimaryCTA>
           </div>
 
-          {/* Right section - Image */}
-          <div className="relative flex flex-col h-full items-start overflow-hidden shrink-0 w-[487px]">
+          {/* Image section */}
+          <div className="relative flex flex-col h-[250px] md:h-full items-start overflow-hidden shrink-0 w-full md:w-[487px] order-1 md:order-2">
             <img
               alt={imageAlt}
               className="object-cover absolute inset-0 max-w-none pointer-events-none size-full"
