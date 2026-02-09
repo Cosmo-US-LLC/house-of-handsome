@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import ContactUsLocations from "./ContactUsLocations";
 import SuccessDialog from "./SuccessDialog";
 
@@ -22,8 +24,11 @@ const schema = yup.object().shape({
 
   email: yup
     .string()
-    .email("Please enter a valid email")
-    .required("Email is required"),
+    .required("Email is required")
+    .matches(
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      "Please enter a valid email address"
+    ),
 
   // phone: yup
   //   .string()
@@ -34,8 +39,12 @@ const schema = yup.object().shape({
   phone: yup
     .string()
     .required("Enter phone number")
-    .matches(/^[0-9+\-() ]+$/, "Invalid phone number")
-    .min(7, "Phone number is too short"),
+    .test("is-valid-phone", "Please enter a valid phone number", (value) => {
+      if (!value) return false;
+      // Remove all non-digit characters except + for validation
+      const digits = value.replace(/\D/g, "");
+      return digits.length >= 7;
+    }),
 
   message: yup
     .string()
@@ -50,6 +59,7 @@ const TakeFirstStepContactUs = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
     reset,
   } = useForm({
@@ -217,15 +227,28 @@ const TakeFirstStepContactUs = () => {
                 <label className="block font-['Urbanist'] font-medium text-[16px] mb-2">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register("phone")}
-                  placeholder="Enter phone number"
-                  className={`w-full px-4 py-3 border rounded-lg text-[16px] focus:outline-none transition-all
-                    ${
+                <Controller
+                  name="phone"
+                  control={control}
+                  render={({ field }) => (
+                  <PhoneInput
+                    {...field}
+                    defaultCountry="us"
+                    forceDialCode={true}
+                    className={`w-full focus:ring-[#d82028] ${
+                      errors.phone ? "error" : ""
+                    }`}
+                    inputClassName={`w-full !h-[51px] !px-4 !py-3 border rounded-lg 
+                      text-[16px] focus:outline-none transition-all ${
                       errors.phone
                         ? "border-red-500"
                         : "border-gray-200 focus:ring-2 focus:ring-[#d82028]"
                     }`}
+                    countrySelectorStyleProps={{
+                      buttonClassName: "!px-2 !h-[51px] !py-3 border-r border-gray-200 rounded-l-lg",
+                    }}
+                  />
+                  )}
                 />
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-500">

@@ -36,13 +36,13 @@ function SuccessDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
-        className={`overflow-hidden gap-0 p-0 md:w-full w-[90%] mx-auto max-w-[974px] min-h-[400px]
+        className={`overflow-hidden gap-0 p-0 border-0 md:w-full w-[90%] mx-auto max-w-[974px] min-h-[400px]
            h-auto md:h-[600px] sm:rounded-lg ${className}`}
         hideCloseButton={true}
       >
         {/* Close button - positioned absolutely */}
-        <DialogClose className="absolute max-md:bg-[#fff] top-4 right-4 z-50 rounded-sm opacity-70 transition-opacity ring-offset-background hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-          <X className="w-6 h-6 md:w-8 md:h-8 text-black md:text-white" />
+        <DialogClose className="absolute top-4 right-4 z-50 rounded-sm opacity-70 transition-opacity ring-offset-background hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+          <X className="w-6 h-6 md:w-8 md:h-8 text-white " />
           <span className="sr-only">Close</span>
         </DialogClose>
 
