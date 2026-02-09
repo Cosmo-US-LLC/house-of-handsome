@@ -60,6 +60,17 @@ const TakeFirstStepContactUs = () => {
     try {
       setSubmitError("");
 
+      const hutk = getCookie("hubspotutk");
+      const context = {
+        pageUri: window.location.href,
+        pageName: document.title,
+      };
+      
+      // Only include hutk if it exists and is not empty
+      if (hutk && hutk.trim() !== "") {
+        context.hutk = hutk;
+      }
+
       const payload = {
         fields: [
           { name: "lastname", value: data.fullName },
@@ -67,11 +78,7 @@ const TakeFirstStepContactUs = () => {
           { name: "mobilephone", value: data.phone },
           { name: "message", value: data.message },
         ],
-        context: {
-          pageUri: window.location.href,
-          pageName: document.title,
-          hutk: getCookie("hubspotutk"),
-        },
+        context,
       };
 
       const res = await fetch(
