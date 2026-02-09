@@ -62,9 +62,32 @@ export default function TakeFirstStep() {
     control,
     formState: { errors, isSubmitting },
     reset,
+    clearErrors,
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const handleDialogClose = (open) => {
+    setIsDialogOpen(open);
+    if (!open) {
+      // Clear all errors and reset form when dialog closes
+      clearErrors();
+      reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        franchiseModel: "Shop-in-Shop (Licensed Operator)",
+        message: "",
+      }, {
+        keepErrors: false,
+        keepDirty: false,
+        keepIsSubmitted: false,
+        keepTouched: false,
+        keepIsValid: false,
+        keepSubmitCount: false,
+      });
+    }
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -131,11 +154,15 @@ export default function TakeFirstStep() {
       
       console.log("HubSpot submission successful:", responseData);
       
+      // Clear all errors first
+      clearErrors();
+      
       // Reset form with empty values to clear all fields including phone input
+      // Use undefined for phone to ensure PhoneInput component resets properly
       reset({
         fullName: "",
         email: "",
-        phone: "",
+        phone: undefined,
         franchiseModel: "Shop-in-Shop (Licensed Operator)",
         message: "",
       }, {
@@ -307,10 +334,10 @@ export default function TakeFirstStep() {
       {/* Success Dialog */}
       <SuccessDialog
         open={isDialogOpen}
-        onOpenChange={setIsDialogOpen}
+        onOpenChange={handleDialogClose}
         image={franchiseHeroImage}
         title="Thank you for your insterest in Franchising with us!"
-        description="Our team will review your submission and contact you within 1-2 business days"
+        description="Our team will review your submission and contact you within 1-2 business days."
       />
     </section>
   );
