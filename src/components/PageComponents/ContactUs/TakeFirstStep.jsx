@@ -130,7 +130,20 @@ const TakeFirstStepContactUs = () => {
       
       console.log("HubSpot submission successful:", responseData);
       
-      reset();
+      // Reset form with empty values to clear all fields including phone input
+      reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        message: "",
+      }, {
+        keepErrors: false,
+        keepDirty: false,
+        keepIsSubmitted: false,
+        keepTouched: false,
+        keepIsValid: false,
+        keepSubmitCount: false,
+      });
       
       setIsDialogOpen(true);
     } catch (error) {
@@ -233,7 +246,7 @@ const TakeFirstStepContactUs = () => {
                   render={({ field }) => (
                   <PhoneInput
                     {...field}
-                    defaultCountry="us"
+                    defaultCountry="ca"
                     forceDialCode={true}
                     className={`w-full focus:ring-[#d82028] ${
                       errors.phone ? "error" : ""
