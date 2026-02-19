@@ -26,6 +26,8 @@ const LOCATIONS = [
     rating: "4.9 from 771 reviews",
     image: shopImage1,
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
+    mobileMapQuery:
+      "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4703008,-113.6313164,17z/data=!3m1!4b1!4m6!3m5!1s0x539ff567818cac61:0x571a642a27e25d85!8m2!3d53.4703008!4d-113.6313164!16s%2Fg%2F11tmwkgpwh?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     link: "https://www.phorest.com/salon/houseofhandsomebarbershop2",
     hours: {
       monday: "9 am – 8 pm",
@@ -45,6 +47,8 @@ const LOCATIONS = [
     rating: "5.0 from 47 reviews",
     image: shopImage2,
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
+    mobileMapQuery:
+      "https://www.google.com/maps/search/?api=1&query=House%20Of%20Handsome%20Downtown%2C%2012328%20102%20Ave%20NW%20unit%20301%2C%20Edmonton%2C%20Alberta%2C%20T5N%200L9%2C%20Canada%20",
     link: "https://www.phorest.com/salon/houseofhandsomedowntown",
     hours: {
       monday: "9 am – 8 pm",
@@ -64,6 +68,8 @@ const LOCATIONS = [
     rating: "4.9 from 1,055 reviews",
     image: shopImage3,
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
+    mobileMapQuery:
+      "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.511404,-113.331886,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01796db51b319:0x10e5ade866edf0cc!8m2!3d53.511404!4d-113.331886!16s%2Fg%2F11c70cd4hj?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     link: "https://www.phorest.com/salon/houseofhandsomebarbershop",
     hours: {
       monday: "9 am – 8 pm",
@@ -83,6 +89,8 @@ const LOCATIONS = [
     rating: "4.9 from 162 reviews",
     image: shopImage4,
     mapQuery: "1923 98 St NW Edmonton Alberta",
+    mobileMapQuery:
+      "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4485897,-113.4835165,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01fd7924b02d9:0xa3fcf0da373fc3b9!8m2!3d53.4485897!4d-113.4835165!16s%2Fg%2F11wfk1bwgx?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     link: "https://www.phorest.com/salon/houseofhandsomebarbershopsouth",
     hours: {
       monday: "9 am – 8 pm",
@@ -102,6 +110,8 @@ const LOCATIONS = [
     rating: "4.9 from 599 reviews",
     image: shopImage4,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
+    mobileMapQuery:
+      "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5495675,-113.9358162,17z/data=!3m1!4b1!4m6!3m5!1s0x539f8f10cbbbb901:0x2095738757446f00!8m2!3d53.5495675!4d-113.9358162!16s%2Fg%2F11nxswp8p5?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     link: "https://www.phorest.com/salon/houseofhandsomebarbershop1",
     hours: {
       monday: "9 am – 8 pm",
@@ -121,6 +131,8 @@ const LOCATIONS = [
     rating: "4.9 from 444 reviews",
     image: shopImage4,
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
+    mobileMapQuery:
+      "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5139298,-113.496912,17z/data=!3m1!4b1!4m6!3m5!1s0x53a023da737d6f13:0x86e6796deefbe987!8m2!3d53.5139298!4d-113.496912!16s%2Fg%2F11krs6ktn2?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     link: "https://www.phorest.com/salon/houseofhandsomebarbershopwhyte",
     hours: {
       monday: "9 am – 8 pm",
@@ -352,34 +364,36 @@ const Location = () => {
             </p>
           </div>
           {/* Mobile: location cards (Figma 1898-5415) */}
-          <div className="space-y-4 mt-4 pb-8">
+          <div className="space-y-4 mt-4">
             {LOCATIONS.map((location, index) => (
               <div
                 key={index}
                 ref={(el) => (locationRefs.current[index] = el)}
-                className="bg-[#F6F6F6] rounded-[12px] overflow-hidden"
+                className="bg-[#F6F6F6] rounded-[12px] p-4 overflow-hidden"
               >
                 {/* Image: full width, rounded top corners only (Figma) */}
-                <div className="relative w-full h-[280px]">
+                <div className="relative mb-6 rounded-[8px] overflow-hidden">
                   <img
                     src={location.image}
                     alt={location.name}
-                    className="w-full h-full object-cover object-top rounded-t-[12px]"
+                    className="w-full h-[240px] object-fill object-top rounded-[8px]"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10 text-white">
-                    <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] leading-[26px]">
+                  <div className="absolute h-[100px] flex flex-col justify-center bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4  text-white">
+                    <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] tracking-[0.552px] leading-[26px]">
                       {getLocationShortName(location.name)}
                     </h2>
-                    <p className="font-['Urbanist'] text-[#FFFFFF] text-[14px] font-[400] leading-[20px] flex items-center gap-1.5 mt-1 [&_svg]:stroke-amber-400 [&_svg]:fill-[#FBBC05] [&_svg_path]:stroke-amber-400 [&_svg_path]:fill-amber-400">
+                    <p className="font-['Urbanist'] text-[#FFFFFF] text-[14px] font-[500] leading-[20px] flex items-center gap-1.5 mt-1 [&_svg]:stroke-amber-400 [&_svg]:fill-[#FBBC05] [&_svg_path]:stroke-amber-400 [&_svg_path]:fill-amber-400">
                       <RatingSvg />
                       <span>{location.rating}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="px-4 py-4 space-y-4 bg-[#F8F8F8]">
+                <div className="space-y-4">
                   <p className="font-['Urbanist'] text-[#000000] text-[14px] font-[400] leading-[20px] flex items-start gap-2">
-                    <LocationSvg className="shrink-0 mt-0.5" />
+                    <div className="w-[28px] h-[28px]">
+                      <LocationSvg className="shrink-0 mt-0.5" />
+                    </div>
                     <span>{location.address}</span>
                   </p>
                   <p className="font-['Urbanist'] text-[#181818] text-[14px] font-[400] leading-[20px] flex items-center gap-2">
@@ -427,9 +441,7 @@ const Location = () => {
                       Book Now
                     </a>
                     <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                        location.mapQuery,
-                      )}`}
+                      href={location.mobileMapQuery}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-white border border-[#181818] text-[#181818] font-['Urbanist'] text-[14px] font-[500] leading-[20px] uppercase py-3 px-4 rounded-[10px] text-center flex items-center justify-center gap-2 hover:bg-[#F8F8F8] transition"
