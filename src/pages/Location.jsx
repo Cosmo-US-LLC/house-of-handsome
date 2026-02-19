@@ -189,39 +189,35 @@ const Location = () => {
         description="Locate the nearest House of Handsome barber shop and book your appointment. Our convenient locations ensure you can access top-notch grooming services no matter where you are."
       />
 
-      <section className="pb-20 bg-[#F1F1F1] md:pt-16 pt-[20px]">
-        <div className="max-w-[1280px] mx-auto px-4 ">
+      {/* ==================== DESKTOP ONLY ==================== */}
+      <section className="hidden md:block pb-20 pt-16 bg-[#F1F1F1]">
+        <div className="max-w-[1280px] mx-auto px-4">
           <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
-            <h1 className="font-['Cairo'] md:text-[48px] text-[32px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold max-md:uppercase">
+            <h1 className="font-['Cairo'] text-[48px] leading-[55px] tracking-[-0.752px] text-[#181818] font-bold">
               Our Locations
             </h1>
-            <p className="font-['Urbanist'] md:h-10 text-base font-medium leading-[26px] text-[#181818] max-md:max-h-none max-md:hidden md:block">
+            <p className="font-['Urbanist'] h-10 text-base font-medium leading-[26px] text-[#181818]">
               Discover our vibrant locations where style meets comfort. Each
               shop is designed to provide a relaxing atmosphere, complete with
               expert barbers ready to craft your perfect look.
             </p>
-            <p className="font-['Urbanist'] text-base font-medium leading-[26px] text-[#181818] md:hidden">
-              Discover our vibrant locations where style means comfort. Each
-              shop is designed to provide an inviting atmosphere, complete with
-              expert barbers ready to craft your perfect look.
-            </p>
           </div>
-          <div className="max-md:hidden md:grid md:grid-cols-2 md:py-6 py-2 md:px-4 px-3 bg-white rounded-2xl md:mt-12 mt-8 max-md:space-y-2">
+          <div className="grid grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12">
             <div
               id="Map"
-              className=" mapdiv rounded-xl overflow-hidden h-[300px] md:h-[800px] md:min-h-[500px] max-md:max-h-[400px]"
+              className="mapdiv rounded-xl overflow-hidden h-[800px] min-h-[500px]"
             >
               <iframe
                 key={selectedLocation.mapQuery}
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
                   selectedLocation.mapQuery,
                 )}&output=embed`}
-                className="w-full h-full max-md:max-h-[400px] border-0"
+                className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-            <div className="space-y-4 md:max-h-[800px] max-h-[500px] overflow-y-auto md:px-2 max-md:hidden">
+            <div className="space-y-4 max-h-[800px] overflow-y-auto px-2">
               {LOCATIONS.map((location, index) => (
                 <div
                   key={index}
@@ -305,7 +301,7 @@ const Location = () => {
                             href={location.link}
                             target=""
                             rel="noopener noreferrer"
-                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white max-md:hidden px-2 py-2 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
+                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-2 rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center"
                           >
                             Book An Appointment
                           </a>
@@ -332,16 +328,6 @@ const Location = () => {
                             )}
                           </div>
                         </div>
-                        <div>
-                          <a
-                            href={location.link}
-                            target=""
-                            rel="noopener noreferrer"
-                            className="bg-none border-2 border-[#d82028] text-[#d82028] hover:bg-[#d82028] hover:text-white px-2 py-2 block rounded-md font-['Urbanist'] text-[14px] font-semibold transition text-center md:hidden"
-                          >
-                            Book An Appointment
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -349,13 +335,29 @@ const Location = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ==================== MOBILE ONLY ==================== */}
+      <section className="md:hidden pb-20 pt-[20px] bg-[#FFF]">
+        <div className="max-w-[1280px] mx-auto px-4">
+          <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
+            <h1 className="font-['Cairo'] text-[18px] leading-[22px] font-[700] text-[#181818] uppercase">
+              Our Locations
+            </h1>
+            <p className="font-['Urbanist'] text-[12px] font-[500] leading-[16px] text-[#404040]">
+              Discover our vibrant locations where style means comfort. Each
+              shop is designed to provide an inviting atmosphere, complete with
+              expert barbers ready to craft your perfect look.
+            </p>
+          </div>
           {/* Mobile: location cards (Figma 1898-5415) */}
-          <div className="md:hidden space-y-4 mt-4 pb-8">
+          <div className="space-y-4 mt-4 pb-8">
             {LOCATIONS.map((location, index) => (
               <div
                 key={index}
                 ref={(el) => (locationRefs.current[index] = el)}
-                className="bg-[#F8F8F8] rounded-[12px] overflow-hidden"
+                className="bg-[#F6F6F6] rounded-[12px] overflow-hidden"
               >
                 {/* Image: full width, rounded top corners only (Figma) */}
                 <div className="relative w-full h-[280px]">
@@ -365,7 +367,7 @@ const Location = () => {
                     className="w-full h-full object-cover object-top rounded-t-[12px]"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10 text-white">
-                    <h2 className="font-['Urbanist'] text-[16px] font-bold leading-[26px]">
+                    <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] leading-[26px]">
                       {getLocationShortName(location.name)}
                     </h2>
                     <p className="font-['Urbanist'] text-[#FFFFFF] text-[14px] font-[400] leading-[20px] flex items-center gap-1.5 mt-1 [&_svg]:stroke-amber-400 [&_svg]:fill-[#FBBC05] [&_svg_path]:stroke-amber-400 [&_svg_path]:fill-amber-400">
@@ -387,7 +389,7 @@ const Location = () => {
 
                   {/* Working Hours: label + expandable list (day left, time right) */}
                   <div className="font-['Urbanist'] text-[#181818] text-sm">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-[#000000] text-[14px] font-[400] leading-[20px]">
                       <TimeSvg className="shrink-0" />
                       <span>Working Hours</span>
                     </div>
@@ -398,10 +400,13 @@ const Location = () => {
                           : "max-h-0 opacity-0"
                       }`}
                     >
-                      <div className="pt-2 pl-6 space-y-1.5">
+                      <div className="pt-4 pb-2 space-y-1.5">
                         {Object.entries(location.hours).map(([day, time]) => (
-                          <p key={day} className="flex justify-between gap-2">
-                            <span className="capitalize font-medium">
+                          <p
+                            key={day}
+                            className="flex gap-10 text-[#000000] text-[14px] font-[400] leading-[20px]"
+                          >
+                            <span className="capitalize font-medium w-[60px]">
                               {day}:
                             </span>
                             <span>{time}</span>
@@ -417,7 +422,7 @@ const Location = () => {
                       href={location.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#DD2731] text-white font-['Urbanist'] font-bold text-sm uppercase py-3 px-4 rounded-lg text-center hover:opacity-90 transition"
+                      className="flex-1 bg-[#D82028] text-white font-['Urbanist'] text-[14px] font-[500] leading-[19px] uppercase py-3 px-4 rounded-[10px] text-center hover:opacity-90 transition"
                     >
                       Book Now
                     </a>
@@ -427,7 +432,7 @@ const Location = () => {
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-white border border-[#181818] text-[#181818] font-['Urbanist'] font-bold text-sm uppercase py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 hover:bg-[#F8F8F8] transition"
+                      className="flex-1 bg-white border border-[#181818] text-[#181818] font-['Urbanist'] text-[14px] font-[500] leading-[20px] uppercase py-3 px-4 rounded-[10px] text-center flex items-center justify-center gap-2 hover:bg-[#F8F8F8] transition"
                     >
                       <DirectionSvg />
                       Direction
@@ -443,7 +448,7 @@ const Location = () => {
                           openHoursIndexMobile === index ? null : index,
                         )
                       }
-                      className="text-[#C03C41] font-semibold text-sm hover:underline"
+                      className="text-[#D82028] font-[400] text-[14px] leading-[19px] uppercase hover:underline"
                     >
                       {openHoursIndexMobile === index ? "SEE LESS" : "SEE MORE"}
                     </button>
