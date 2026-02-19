@@ -444,7 +444,7 @@ const Location = () => {
                   <div className="flex gap-3">
                     <a
                       href={location.link}
-                      target="_blank"
+                      target="_self"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#D82028] text-white font-['Urbanist'] text-[14px] font-[500] leading-[19px] uppercase py-3 px-4 rounded-[10px] text-center hover:opacity-90 transition"
                     >
