@@ -7,6 +7,10 @@ import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
 import shopImage3 from "@/assets/images/location/shop_image/shop_image3.webp";
 import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
+import mobileShopImage1 from "@/assets/images/location/shop_image/mobile_shop_image1.webp";
+import mobileShopImage2 from "@/assets/images/location/shop_image/mobile_shop_image2.webp";
+import mobileShopImage3 from "@/assets/images/location/shop_image/mobile_shop_image3.webp";
+import mobileShopImage4 from "@/assets/images/location/shop_image/mobile_shop_image4.webp";
 import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
 import RatingSvg from "@/assets/images/location/Svgs/RatingSvg";
 import DownArrowSvg from "@/assets/images/location/Svgs/DownArrowSvg";
@@ -25,6 +29,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 771 reviews",
     image: shopImage1,
+    mobileImage: mobileShopImage1,
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4703008,-113.6313164,17z/data=!3m1!4b1!4m6!3m5!1s0x539ff567818cac61:0x571a642a27e25d85!8m2!3d53.4703008!4d-113.6313164!16s%2Fg%2F11tmwkgpwh?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -46,6 +51,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "5.0 from 47 reviews",
     image: shopImage2,
+    mobileImage: mobileShopImage2,
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/search/?api=1&query=House%20Of%20Handsome%20Downtown%2C%2012328%20102%20Ave%20NW%20unit%20301%2C%20Edmonton%2C%20Alberta%2C%20T5N%200L9%2C%20Canada%20",
@@ -67,6 +73,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 1,055 reviews",
     image: shopImage3,
+    mobileImage: mobileShopImage3,
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.511404,-113.331886,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01796db51b319:0x10e5ade866edf0cc!8m2!3d53.511404!4d-113.331886!16s%2Fg%2F11c70cd4hj?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -88,6 +95,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 162 reviews",
     image: shopImage4,
+    mobileImage: mobileShopImage4,
     mapQuery: "1923 98 St NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4485897,-113.4835165,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01fd7924b02d9:0xa3fcf0da373fc3b9!8m2!3d53.4485897!4d-113.4835165!16s%2Fg%2F11wfk1bwgx?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -109,6 +117,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 599 reviews",
     image: shopImage4,
+    mobileImage: mobileShopImage4,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5495675,-113.9358162,17z/data=!3m1!4b1!4m6!3m5!1s0x539f8f10cbbbb901:0x2095738757446f00!8m2!3d53.5495675!4d-113.9358162!16s%2Fg%2F11nxswp8p5?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -130,6 +139,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 444 reviews",
     image: shopImage4,
+    mobileImage: mobileShopImage4,
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5139298,-113.496912,17z/data=!3m1!4b1!4m6!3m5!1s0x53a023da737d6f13:0x86e6796deefbe987!8m2!3d53.5139298!4d-113.496912!16s%2Fg%2F11krs6ktn2?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -374,11 +384,11 @@ const Location = () => {
                 {/* Image: full width, rounded top corners only (Figma) */}
                 <div className="relative mb-6 rounded-[8px] overflow-hidden">
                   <img
-                    src={location.image}
+                    src={location.mobileImage}
                     alt={location.name}
-                    className="w-full h-[240px] object-fill object-top rounded-[8px]"
+                    className="w-full h-[220px] object-fill object-top rounded-[8px]"
                   />
-                  <div className="absolute h-[100px] flex flex-col justify-center bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4  text-white">
+                  <div className="absolute h-[100px] flex flex-col justify-center bottom-0 left-0 right-0 p-4  text-white">
                     <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] tracking-[0.552px] leading-[26px]">
                       {getLocationShortName(location.name)}
                     </h2>
