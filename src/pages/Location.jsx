@@ -1,7 +1,9 @@
 import LocationSvg from "@/assets/images/location/Svgs/Location";
 import PhoneSvg from "@/assets/images/location/Svgs/PhoneSvg";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
+import useGeolocation from "@/hooks/useGeolocation";
+import { getDistanceKm } from "@/lib/utils";
 
 import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
@@ -24,6 +26,8 @@ const getLocationShortName = (name) =>
 const LOCATIONS = [
   {
     name: "House Of Handsome Cameron Heights",
+    lat: 53.4703008,
+    lng: -113.6313164,
     address: "625 Cameron Heights Dr NW, Edmonton, Alberta, T6M 0J2, Canada",
     phone: "(780) 489-0329",
     email: "info@houseofhandsome.ca",
@@ -46,6 +50,8 @@ const LOCATIONS = [
   },
   {
     name: "House Of Handsome Downtown",
+    lat: 53.5475,
+    lng: -113.5207,
     address: "12328 102 Ave NW, Edmonton, Alberta, T5N 0L9, Canada",
     phone: "(825) 480-2461",
     email: "info@houseofhandsome.ca",
@@ -68,6 +74,8 @@ const LOCATIONS = [
   },
   {
     name: "House Of Handsome Sherwood Park",
+    lat: 53.511404,
+    lng: -113.331886,
     address: "99 Wye Rd, Sherwood Park, Alberta, T8B 1C9, Canada",
     phone: "(587) 269-1037",
     email: "info@houseofhandsome.ca",
@@ -90,6 +98,8 @@ const LOCATIONS = [
   },
   {
     name: "House Of Handsome South Common",
+    lat: 53.4485897,
+    lng: -113.4835165,
     address: "1923 98 St NW, Edmonton, Alberta, T6N 1L5, Canada",
     phone: "(825) 401-5517",
     email: "info@houseofhandsome.ca",
@@ -112,6 +122,8 @@ const LOCATIONS = [
   },
   {
     name: "House Of Handsome Spruce Grove",
+    lat: 53.5495675,
+    lng: -113.9358162,
     address: "205 Jennifer Heil Way, Spruce Grove, Alberta, T7X 0T3, Canada",
     phone: "(877) 572-0148",
     email: "info@houseofhandsome.ca",
@@ -134,6 +146,8 @@ const LOCATIONS = [
   },
   {
     name: "House Of Handsome Whyte Ave",
+    lat: 53.5139298,
+    lng: -113.496912,
     address: "10369 78 Ave NW, Edmonton, Alberta, T6E 6T3, Canada",
     phone: "(587) 415-9581",
     email: "info@houseofhandsome.ca",
@@ -169,6 +183,16 @@ const LOCATION_ID_MAP = {
 const Location = () => {
   const [searchParams] = useSearchParams();
   const locationId = searchParams.get("location");
+  const { coords, loading: geoLoading } = useGeolocation();
+
+  const sortedLocations = useMemo(() => {
+    if (!coords) return LOCATIONS;
+    return [...LOCATIONS].sort(
+      (a, b) =>
+        getDistanceKm(coords.lat, coords.lng, a.lat, a.lng) -
+        getDistanceKm(coords.lat, coords.lng, b.lat, b.lng)
+    );
+  }, [coords]);
 
   // Get initial location from URL parameter or default to first
   const getInitialLocation = () => {
@@ -240,9 +264,24 @@ const Location = () => {
               />
             </div>
             <div className="space-y-4 max-h-[800px] overflow-y-auto px-2">
-              {LOCATIONS.map((location, index) => (
+              {geoLoading ? (
+                <div className="space-y-4">
+                  {[0, 1, 2].map((i) => (
+                    <div key={i} className="flex gap-4 px-4 py-4 rounded-xl animate-pulse">
+                      <div className="w-[130px] h-[90px] bg-gray-200 rounded-lg shrink-0" />
+                      <div className="flex-1 space-y-3 py-1">
+                        <div className="h-4 bg-gray-200 rounded w-3/4" />
+                        <div className="h-3 bg-gray-200 rounded w-full" />
+                        <div className="h-3 bg-gray-200 rounded w-1/2" />
+                        <div className="h-3 bg-gray-200 rounded w-2/3" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+              sortedLocations.map((location, index) => (
                 <div
-                  key={index}
+                  key={location.name}
                   ref={(el) => (locationRefs.current[index] = el)}
                 >
                   <div
@@ -264,9 +303,16 @@ const Location = () => {
 
                     {/* Content */}
                     <div className="space-y-2 flex-1">
-                      <h2 className="font-['Urbanist'] text-[18px] font-bold leading-[26px] tracking-[-0.752px] text-[#000000]">
-                        {location.name}
-                      </h2>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h2 className="font-['Urbanist'] text-[18px] font-bold leading-[26px] tracking-[-0.752px] text-[#000000]">
+                          {location.name}
+                        </h2>
+                        {coords && index === 0 && (
+                          <span className="bg-[#d82028] text-white font-['Urbanist'] text-[11px] font-semibold px-2 py-0.5 rounded-full leading-none">
+                            Nearest to you
+                          </span>
+                        )}
+                      </div>
 
                       <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                         <LocationSvg />{" "}
@@ -354,7 +400,8 @@ const Location = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
           </div>
         </div>
@@ -375,9 +422,39 @@ const Location = () => {
           </div>
           {/* Mobile: location cards (Figma 1898-5415) */}
           <div className="space-y-4 mt-4">
-            {LOCATIONS.map((location, index) => (
+            {geoLoading ? (
+              <div className="space-y-4 mt-4">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="bg-[#F6F6F6] rounded-[12px] p-4 animate-pulse">
+                    <div className="w-full h-[220px] bg-gray-200 rounded-[8px] mb-6" />
+                    <div className="space-y-3">
+                      <div className="flex gap-2">
+                        <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
+                        <div className="flex-1 space-y-2">
+                          <div className="h-3 bg-gray-200 rounded w-full" />
+                          <div className="h-3 bg-gray-200 rounded w-3/4" />
+                        </div>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
+                        <div className="h-3 bg-gray-200 rounded w-1/2" />
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
+                        <div className="h-3 bg-gray-200 rounded w-1/3" />
+                      </div>
+                      <div className="flex gap-3 mt-2">
+                        <div className="flex-1 h-11 bg-gray-300 rounded-[10px]" />
+                        <div className="flex-1 h-11 bg-gray-200 rounded-[10px]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+            sortedLocations.map((location, index) => (
               <div
-                key={index}
+                key={location.name}
                 ref={(el) => (locationRefs.current[index] = el)}
                 className="bg-[#F6F6F6] rounded-[12px] p-4 overflow-hidden"
               >
@@ -389,9 +466,16 @@ const Location = () => {
                     className="w-full h-[220px] object-fill object-top rounded-[8px]"
                   />
                   <div className="absolute h-[100px] flex flex-col justify-center bottom-0 left-0 right-0 p-4  text-white">
-                    <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] tracking-[0.552px] leading-[26px]">
-                      {getLocationShortName(location.name)}
-                    </h2>
+                    <div className="flex items-center gap-2">
+                      <h2 className="font-['Urbanist'] text-[#fff] text-[16px] font-[700] tracking-[0.552px] leading-[26px]">
+                        {getLocationShortName(location.name)}
+                      </h2>
+                      {coords && index === 0 && (
+                        <span className="bg-[#d82028] text-white font-['Urbanist'] text-[10px] font-semibold px-2 py-0.5 rounded-full leading-none border border-white/40">
+                          Nearest
+                        </span>
+                      )}
+                    </div>
                     <p className="font-['Urbanist'] text-[#FFFFFF] text-[14px] font-[500] leading-[20px] flex items-center gap-1.5 mt-1 [&_svg]:stroke-amber-400 [&_svg]:fill-[#FBBC05] [&_svg_path]:stroke-amber-400 [&_svg_path]:fill-amber-400">
                       <RatingSvg />
                       <span>{location.rating}</span>
@@ -477,7 +561,8 @@ const Location = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+            )}
           </div>
         </div>
       </section>
