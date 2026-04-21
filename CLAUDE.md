@@ -71,3 +71,23 @@ Each page in `pages/` imports its section components from `PageComponents/<PageN
 ### Netlify
 
 `netlify.toml` redirects all paths to `index.html` (SPA routing). Build output is `dist/`.
+
+---
+
+## Reverting a Bad Merge
+
+If a merged PR breaks `main`, use both layers:
+
+**1. Netlify — immediate production rollback (fastest)**
+Netlify → Deploys → select the last known-good deploy → "Publish deploy". Live site reverts in seconds, no code changes needed.
+
+**2. GitHub — revert the merge commit (fixes the code)**
+Every merged PR has a "Revert" button on its GitHub page. Click it to auto-generate a revert PR that undoes all changes. Merge that revert PR and the code is clean again.
+
+From the CLI:
+```bash
+git revert -m 1 <merge-commit-hash>
+git push origin main
+```
+
+Use Netlify to stop the bleeding immediately, then use the GitHub revert to fix the codebase properly.
