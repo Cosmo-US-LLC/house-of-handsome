@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import image1 from "../../../assets/images/services/services_c1.webp";
 import image2 from "../../../assets/images/services/services_c2.webp";
 import image3 from "../../../assets/images/services/services_c3.webp";
@@ -12,7 +12,6 @@ import innerimage7 from "../../../assets/images/services/srv_cards_img (3).webp"
 import innerimage8 from "../../../assets/images/services/srv_cards_img (2).webp";
 import innerimage9 from "../../../assets/images/services/srv_cards_img (1).webp";
 import PrimaryCTA from "../../ui/PrimaryCTA";
-
 
 const slugify = (text) => {
   return text
@@ -32,18 +31,19 @@ const services = [
     cards: [
       {
         title: "Precision Fades",
-        description: "Custom fades that blend seamlessly for a sharp, clean finish.",
-        image: innerimage1, 
+        description:
+          "Custom fades that blend seamlessly for a sharp, clean finish.",
+        image: innerimage1,
       },
       {
         title: "Classic Cuts",
         description: "Timeless styles that never go out of fashion.",
-        image: innerimage2, 
+        image: innerimage2,
       },
       {
         title: "Modern Styles",
         description: "Trendy, edgy looks for those who want to stand out.",
-        image: innerimage3, 
+        image: innerimage3,
       },
     ],
   },
@@ -55,18 +55,20 @@ const services = [
     cards: [
       {
         title: "Custom Styling",
-        description: "From natural to bold, we create the perfect look for you.",
-        image: innerimage4, 
+        description:
+          "From natural to bold, we create the perfect look for you.",
+        image: innerimage4,
       },
       {
         title: "Texturizing & Volume",
-        description: "Add life to your hair with volume or texture for a fuller look",
-        image: innerimage5, 
+        description:
+          "Add life to your hair with volume or texture for a fuller look",
+        image: innerimage5,
       },
       {
-        title: "Updos and Special Event Styling",
+        title: "Special Event Styling",
         description: "Perfect for those special occasions unique night out.",
-        image: innerimage6, 
+        image: innerimage6,
       },
     ],
   },
@@ -78,18 +80,20 @@ const services = [
     cards: [
       {
         title: "Scalp Treatments",
-        description: "Address scalp issues like dryness, dandruff, or irritation with our targeted treatments.",
-        image: innerimage7, 
+        description:
+          "Address scalp issues like dryness, dandruff, or irritation with our targeted treatments.",
+        image: innerimage7,
       },
       {
         title: "Deep Conditioning ",
         description: "Restore moisture, shine, and softness to your hair.",
-        image: innerimage8, 
+        image: innerimage8,
       },
       {
         title: "Shampoo & Blowout",
-        description: "Get a quick refresh with a deep clean and professional blowout.",
-        image: innerimage9, 
+        description:
+          "Get a quick refresh with a deep clean and professional blowout.",
+        image: innerimage9,
       },
     ],
   },
@@ -98,23 +102,24 @@ const services = [
 export default function ServicesTypes() {
   useEffect(() => {
     const hash = window.location.hash;
-    
-    if (hash && hash !== '#') {
+
+    if (hash && hash !== "#") {
       const timeout = setTimeout(() => {
         const element = document.getElementById(hash.substring(1));
-        
+
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-      }, 100); 
+      }, 100);
       return () => clearTimeout(timeout);
     }
-  }, []); 
+  }, []);
 
-    const handleOnClick = () => {
-  const url = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
-  window.location.href = url; 
-};
+  const handleOnClick = () => {
+    const url =
+      "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
+    window.location.href = url;
+  };
 
   return (
     <section className="bg-white md:py-16">
@@ -142,14 +147,14 @@ export default function ServicesTypes() {
               <p className="text-[#181818] text-[16px] font-[500] font-[Urbanist] leading-[162.5%]">
                 {service.description}
               </p>
-                <div className="w-full md:w-[100%] block md:hidden  h-full relative">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="object-cover w-full h-[328px] rounded-lg"
-              />
-            </div>
-              
+              <div className="w-full md:w-[100%] block md:hidden  h-full relative">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="object-cover w-full h-[328px] rounded-lg"
+                />
+              </div>
+
               {/* Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
                 {service.cards.map((card, i) => (
@@ -176,7 +181,7 @@ export default function ServicesTypes() {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-4">
                 <PrimaryCTA onClick={handleOnClick} />
               </div>

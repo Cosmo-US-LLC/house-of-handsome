@@ -15,9 +15,7 @@ function Footer() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
         <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
-          <Link
-            to="/locations"
-          >
+          <Link to="/locations">
             <div className="flex gap-6 items-center max-md:mb-8">
               <img
                 src={findLocationIcon}
@@ -74,8 +72,8 @@ function Footer() {
             <p className="font-['Urbanist'] text-base font-medium leading-[26px] text-black">
               At House of Handsome, we aim to revive this sense of camaraderie
               and make it fashionable once again. Welcome to a space where
-              tradition meets style, and where every customer becomes part of
-              our community.
+              tradition meets style, and where every client becomes part of our
+              community.
             </p>
             <div className="flex gap-2 items-center">
               <a
@@ -106,7 +104,7 @@ function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-               <div>
+            <div>
               <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
                 Download Our App
               </h3>
@@ -208,8 +206,7 @@ function Footer() {
                 Quick Links
               </h3>
               <ul className="flex flex-col gap-4 font-['Urbanist'] text-base font-normal leading-[22px] text-black">
-                
-                 <li>
+                <li>
                   <Link
                     to="/franchise"
                     className="transition-colors hover:text-[#d82028]"
@@ -217,7 +214,7 @@ function Footer() {
                     Franchise
                   </Link>
                 </li>
-                  <li>
+                <li>
                   <Link
                     to="/contactUs"
                     className="transition-colors hover:text-[#d82028]"

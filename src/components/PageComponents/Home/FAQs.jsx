@@ -19,7 +19,7 @@ const faqsData = [
     id: "item-2",
     question: "How can I book a service?",
     answer:
-      "You can book a service through our website, by calling any of our six locations, or by visiting us in person. We also offer online booking for your convenience.",
+      "You can book a service through our website, app or by calling any of our six locations, or by visiting us in person. We also offer online booking for your convenience.",
   },
   {
     id: "item-3",
@@ -31,7 +31,7 @@ const faqsData = [
     id: "item-4",
     question: "What services do you offer?",
     answer:
-      "We offer a full range of men's grooming services including precision haircuts, beard styling and trimming, hot towel shaves, skin care treatments, and grooming consultations. Each service is tailored to your individual style and needs.",
+      "We offer a full range of men's grooming services including precision haircuts, beard styling and trimming, hot towel shaves, skin care treatments, and grooming consultations.\nWe also offer highlights, perms and colour.\nEach service is tailored to your individual style and needs.",
   },
 ];
 
@@ -56,8 +56,10 @@ function FAQs() {
                   value={faq.id}
                   className="rounded-[8px] cursor-pointer border border-gray-200 bg-white px-[24px] py-[34px] data-[state=open]:border-gray-200"
                 >
-                  <AccordionTrigger className="flex w-full items-center gap-[16px] text-left hover:no-underline outline-none [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden [&[data-state=open]_.plus-icon]:hidden   
-    [&[data-state=open]_.minus-icon]:block">
+                  <AccordionTrigger
+                    className="flex w-full items-center gap-[16px] text-left hover:no-underline outline-none [&[data-state=open]>p]:text-[#d82028] [&>svg]:hidden [&[data-state=open]_.plus-icon]:hidden   
+    [&[data-state=open]_.minus-icon]:block"
+                  >
                     <p className="flex-1 font-['Urbanist'] text-[24px] font-bold cursor-pointer leading-[32px] text-black transition-colors">
                       {faq.question}
                     </p>
@@ -69,10 +71,10 @@ function FAQs() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="absolute h-8 w-8 plus-icon"
-                        data-state="closed" 
+                        data-state="closed"
                       >
                         <path
-                          d="M16 8V24M8 16H24" 
+                          d="M16 8V24M8 16H24"
                           stroke="black"
                           strokeWidth="2"
                           strokeLinecap="round"
@@ -87,7 +89,7 @@ function FAQs() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="absolute minus-icon h-8 w-8 "
-                        data-state="open" 
+                        data-state="open"
                       >
                         <path
                           d="M8 16H24"
@@ -99,7 +101,7 @@ function FAQs() {
                       </svg>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pt-[12px] font-['Urbanist'] text-[18px] font-normal leading-[26px] text-[#0b0f19]">
+                  <AccordionContent className="pt-[12px] font-['Urbanist'] text-[18px] font-normal leading-[26px] text-[#0b0f19] whitespace-pre-line">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

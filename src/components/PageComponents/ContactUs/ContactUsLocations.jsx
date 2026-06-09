@@ -19,7 +19,7 @@ const ContactUsLocations = ({ classname = "" }) => {
   const openingHours = [
     { day: "Mon - Fri", time: "09:00 AM - 08:00 PM" },
     { day: "Sat", time: "09:00 AM - 07:00 PM" },
-    { day: "Sun", time: "09:00 AM - 06:00 PM" },
+    { day: "Sun", time: "10:00 AM - 06:00 PM" },
   ];
 
   const locations = [
@@ -112,11 +112,11 @@ const ContactUsLocations = ({ classname = "" }) => {
 
         <div className="mt-4 space-y-4 text-center flex flex-col">
           <a href="mailto:info@houseofhandsome.ca" className={contactText}>
-            <PhoneSvg className={"invert"} /> info@houseofhandsome.ca
+            <MailSvg className={"invert"} /> info@houseofhandsome.ca
           </a>
 
           <a href="tel:8774182541" className={contactText}>
-            <MailSvg className={"invert"} /> (877) 418-2541
+            <PhoneSvg className={"invert"} /> (877) 418-2541
           </a>
         </div>
       </div>
