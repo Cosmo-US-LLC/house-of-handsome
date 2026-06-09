@@ -7,7 +7,7 @@ import whyParentsImage4 from "../../../assets/images/kids/whyParentsChoose/kids_
 const reasons = [
   {
     id: 1,
-    title: "Kid-friendly, patient barbers",
+    title: "Kid-friendly, \n patient barbers",
     image: whyParentsImage1,
   },
   {
@@ -55,7 +55,7 @@ function WhyParentsChoose() {
 
               {/* Text Content */}
               <div className="absolute right-4 bottom-4 left-4">
-                <h3 className="font-['Urbanist'] font-bold text-[20px] leading-[28px] text-white">
+                <h3 className="font-['Urbanist'] font-bold text-[20px] leading-[28px] text-white whitespace-pre-line">
                   {reason.title}
                 </h3>
               </div>

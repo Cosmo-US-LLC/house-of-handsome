@@ -17,7 +17,7 @@ const reasons = [
   },
   {
     id: 3,
-    title: "Personalized style guidance",
+    title: "Personalized style\n guidance",
     image: whyTeensImage3,
   },
   {
@@ -55,7 +55,7 @@ function WhyTeensChoose() {
 
               {/* Text Content */}
               <div className="absolute right-4 bottom-4 left-4">
-                <h3 className="font-['Urbanist'] font-bold text-[20px] leading-[28px] text-white">
+                <h3 className="font-['Urbanist'] font-bold text-[20px] leading-[28px] text-white whitespace-pre-line">
                   {reason.title}
                 </h3>
               </div>

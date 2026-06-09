@@ -7,6 +7,8 @@ import barber1 from "../../../assets/images/about/meetOurBarbers/barber_c1.webp"
 import barber2 from "../../../assets/images/about/meetOurBarbers/barber_c2.webp";
 import barber3 from "../../../assets/images/about/meetOurBarbers/barber_c3.webp";
 import barber4 from "../../../assets/images/about/meetOurBarbers/barber_c4.webp";
+import SecondaryCTA from "@/components/ui/SecondaryCTA";
+import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
 
 const barbers = [
   { id: 1, name: "Alex", role: "Owner", image: barber1 },
@@ -32,7 +34,7 @@ export default function MeetOurBarbers() {
         delay: 3000,
         stopOnInteraction: false,
       }),
-    ]
+    ],
   );
 
   const scrollPrev = useCallback(() => {
@@ -62,11 +64,26 @@ export default function MeetOurBarbers() {
                 onClick={scrollPrev}
                 className="w-12 h-12 group rounded-full cursor-pointer border border-black flex items-center justify-center hover:bg-gray-300/20 hover:text-white transition"
               >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
-                <path d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z" fill="black" />
-                <path d="M2.83439 10.3167L3.74763 11.2287L9.21934 5.7557L8.30739 4.84375L2.83439 10.3167Z" fill="black" />
-                <path d="M18.2428 10.9618V9.67188H4.05401V10.9618H18.2428Z" fill="black" />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="21"
+                  viewBox="0 0 24 21"
+                  fill="none"
+                >
+                  <path
+                    d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M2.83439 10.3167L3.74763 11.2287L9.21934 5.7557L8.30739 4.84375L2.83439 10.3167Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M18.2428 10.9618V9.67188H4.05401V10.9618H18.2428Z"
+                    fill="black"
+                  />
+                </svg>
               </button>
 
               <button
@@ -74,11 +91,26 @@ export default function MeetOurBarbers() {
                 className="w-12 h-12 group rounded-full cursor-pointer border border-black flex items-center justify-center hover:bg-gray-300/20 hover:text-white transition"
               >
                 {/* <ArrowRight /> */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
-                <path d="M19.8402 9.40625L20.7521 10.3182L15.2791 15.7912L14.3672 14.8792L19.8402 9.40625Z" fill="black" />
-                <path d="M20.7521 10.3167L19.8389 11.2287L14.3672 5.7557L15.2791 4.84375L20.7521 10.3167Z" fill="black" />
-                <path d="M5.34375 10.9618V9.67188H19.5325V10.9618H5.34375Z" fill="black" />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="21"
+                  viewBox="0 0 24 21"
+                  fill="none"
+                >
+                  <path
+                    d="M19.8402 9.40625L20.7521 10.3182L15.2791 15.7912L14.3672 14.8792L19.8402 9.40625Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M20.7521 10.3167L19.8389 11.2287L14.3672 5.7557L15.2791 4.84375L20.7521 10.3167Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M5.34375 10.9618V9.67188H19.5325V10.9618H5.34375Z"
+                    fill="black"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -99,10 +131,25 @@ export default function MeetOurBarbers() {
               onClick={scrollPrev}
               className="w-12 h-12 rounded-full border cursor-pointer border-black flex items-center justify-center hover:bg-black hover:text-white transition"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
-                <path d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z" fill="black" />
-                <path d="M2.83439 10.3167L3.74763 11.2287L9.21934 5.7557L8.30739 4.84375L2.83439 10.3167Z" fill="black" />
-                <path d="M18.2428 10.9618V9.67188H4.05401V10.9618H18.2428Z" fill="black" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="21"
+                viewBox="0 0 24 21"
+                fill="none"
+              >
+                <path
+                  d="M3.74634 9.40625L2.83439 10.3182L8.30739 15.7912L9.21934 14.8792L3.74634 9.40625Z"
+                  fill="black"
+                />
+                <path
+                  d="M2.83439 10.3167L3.74763 11.2287L9.21934 5.7557L8.30739 4.84375L2.83439 10.3167Z"
+                  fill="black"
+                />
+                <path
+                  d="M18.2428 10.9618V9.67188H4.05401V10.9618H18.2428Z"
+                  fill="black"
+                />
               </svg>
             </button>
 
@@ -110,21 +157,41 @@ export default function MeetOurBarbers() {
               onClick={scrollNext}
               className="w-12 h-12 rounded-full border cursor-pointer border-black flex items-center justify-center hover:bg-black hover:text-white transition"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
-                <path d="M19.8402 9.40625L20.7521 10.3182L15.2791 15.7912L14.3672 14.8792L19.8402 9.40625Z" fill="black" />
-                <path d="M20.7521 10.3167L19.8389 11.2287L14.3672 5.7557L15.2791 4.84375L20.7521 10.3167Z" fill="black" />
-                <path d="M5.34375 10.9618V9.67188H19.5325V10.9618H5.34375Z" fill="black" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="21"
+                viewBox="0 0 24 21"
+                fill="none"
+              >
+                <path
+                  d="M19.8402 9.40625L20.7521 10.3182L15.2791 15.7912L14.3672 14.8792L19.8402 9.40625Z"
+                  fill="black"
+                />
+                <path
+                  d="M20.7521 10.3167L19.8389 11.2287L14.3672 5.7557L15.2791 4.84375L20.7521 10.3167Z"
+                  fill="black"
+                />
+                <path
+                  d="M5.34375 10.9618V9.67188H19.5325V10.9618H5.34375Z"
+                  fill="black"
+                />
               </svg>
             </button>
-
           </div>
         </div>
 
         {/* CAROUSEL */}
-        <div className="overflow-hidden rounded-lg md:ml-[-10px]" ref={emblaRef}>
+        <div
+          className="overflow-hidden rounded-lg md:ml-[-10px]"
+          ref={emblaRef}
+        >
           <div className="flex">
             {barbers.map((barber) => (
-              <div key={barber.id} className="md:basis-[399px] basis-[100%] flex-shrink-0 md:px-2">
+              <div
+                key={barber.id}
+                className="md:basis-[399px] basis-[100%] flex-shrink-0 md:px-2"
+              >
                 <div
                   className="h-[440px] md:h-[507px] bg-cover bg-center rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
                   style={{ backgroundImage: `url(${barber.image})` }}
@@ -139,6 +206,14 @@ export default function MeetOurBarbers() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-center mt-10">
+          <SecondaryCTA
+            onClick={handleRedirectOfBookAppontment}
+            className={`rounded-[6px] px-6 py-3 text-[18px] font-medium! !text-[#D82028] border !border-[#D82028] hover:!bg-[#D82028] hover:!text-white transition-all duration-300`}
+          >
+            Book An Appointments
+          </SecondaryCTA>
         </div>
       </div>
     </section>
