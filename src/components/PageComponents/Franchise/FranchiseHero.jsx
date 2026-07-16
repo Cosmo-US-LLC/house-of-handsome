@@ -1,7 +1,7 @@
 import React from "react";
 import { Download } from "lucide-react";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
-import franchiseImage from "../../../assets/images/franchise/franchise_hero/franchise_hero.webp";
+import franchiseImage from "../../../assets/images/franchise/franchise_hero/franchise_hero_new.png";
 import { ScrolldownToFranchiseForm, ScrolldownTostrategicExpansion } from "@/utils/BookAnAppontemtREdirection";
 
 export default function FranchiseHero({
