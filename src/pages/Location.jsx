@@ -10,11 +10,12 @@ import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
 import shopImage3 from "@/assets/images/location/shop_image/shop_image3.webp";
 import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
 import shopImage5 from "@/assets/images/location/shop_image/shop_image5.webp";
-import shopImage6 from "@/assets/images/location/shop_image/shop_image6.webp";
 import mobileShopImage1 from "@/assets/images/location/shop_image/mobile_shop_image1.webp";
 import mobileShopImage2 from "@/assets/images/location/shop_image/mobile_shop_image2.webp";
 import mobileShopImage3 from "@/assets/images/location/shop_image/mobile_shop_image3.webp";
 import mobileShopImage4 from "@/assets/images/location/shop_image/mobile_shop_image4.webp";
+import shopImageSpruceGrove from "@/assets/images/location/shop_image/shop_image_sprucegrove.png";
+import shopImageSouthCommon from "@/assets/images/location/shop_image/shop_image_southcommon.png";
 import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
 import RatingSvg from "@/assets/images/location/Svgs/RatingSvg";
 import DownArrowSvg from "@/assets/images/location/Svgs/DownArrowSvg";
@@ -106,8 +107,8 @@ const LOCATIONS = [
     phone: "(825) 401-5517",
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 162 reviews",
-    image: shopImage4,
-    mobileImage: mobileShopImage4,
+    image: shopImageSouthCommon,
+    mobileImage: shopImageSouthCommon,
     mapQuery: "1923 98 St NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4485897,-113.4835165,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01fd7924b02d9:0xa3fcf0da373fc3b9!8m2!3d53.4485897!4d-113.4835165!16s%2Fg%2F11wfk1bwgx?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -155,8 +156,8 @@ const LOCATIONS = [
     phone: "(877) 572-0148",
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 599 reviews",
-    image: shopImage6,
-    mobileImage: mobileShopImage4,
+    image: shopImageSpruceGrove,
+    mobileImage: shopImageSpruceGrove,
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5495675,-113.9358162,17z/data=!3m1!4b1!4m6!3m5!1s0x539f8f10cbbbb901:0x2095738757446f00!8m2!3d53.5495675!4d-113.9358162!16s%2Fg%2F11nxswp8p5?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
