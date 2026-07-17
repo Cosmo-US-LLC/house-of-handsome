@@ -1,14 +1,30 @@
 {
   "redirects": [
     {
+      "source": "/team/:slug*/",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
       "source": "/team/:slug*",
       "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/author/:slug*",
       "destination": "/",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
