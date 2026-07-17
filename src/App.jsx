@@ -14,6 +14,9 @@ import Location from "./pages/Location";
 import ContactUs from "./pages/ContactUs";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RedDeerFoundingMembership from "./pages/RedDeerFoundingMembership";
+import RedDeerGiveaway from "./pages/RedDeerGiveaway";
+import RedDeerGiveawayRules from "./pages/RedDeerGiveawayRules";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -60,6 +63,15 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route
+            path="/red-deer-founding-membership"
+            element={<RedDeerFoundingMembership />}
+          />
+          <Route path="/red-deer-giveaway" element={<RedDeerGiveaway />} />
+          <Route
+            path="/red-deer-giveaway-rules"
+            element={<RedDeerGiveawayRules />}
+          />
         </Route>
       </Routes>
     </>
