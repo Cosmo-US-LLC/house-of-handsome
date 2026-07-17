@@ -1,0 +1,9 @@
+name = "house-of-handsome-router"
+main = "index.js"
+compatibility_date = "2026-07-01"
+workers_dev = true
+
+routes = [
+  { pattern = "houseofhandsome.ca/*", zone_name = "houseofhandsome.ca" },
+  { pattern = "www.houseofhandsome.ca/*", zone_name = "houseofhandsome.ca" }
+]
