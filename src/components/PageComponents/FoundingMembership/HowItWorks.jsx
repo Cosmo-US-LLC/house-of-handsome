@@ -23,7 +23,7 @@ function HowItWorks() {
     <section className="w-full bg-white py-14 md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="mb-10">
-          <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+          <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
             How It Works
           </p>
           <h2 className="font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-[#111111] md:text-[38px]">
@@ -40,10 +40,10 @@ function HowItWorks() {
               <span className="absolute right-5.5 top-4.5 font-['Cairo'] text-[30px] font-extrabold text-[#d82028] opacity-25">
                 {step.num}
               </span>
-              <h3 className="mb-2 font-['Cairo'] text-[19px] font-bold text-[#111111]">
+              <h3 className="mb-2 font-['Cairo'] text-[20px] font-bold text-[#111111]">
                 {step.title}
               </h3>
-              <p className="font-['Urbanist'] text-[15.5px] text-[#6b6b6b]">
+              <p className="font-['Urbanist'] text-[16px] text-[#6b6b6b]">
                 {step.body}
               </p>
             </div>
@@ -57,7 +57,7 @@ function HowItWorks() {
           >
             Claim My Spot for $50
           </a>
-          <p className="mt-3 font-['Urbanist'] text-[13.5px] text-[#6b6b6b]">
+          <p className="mt-3 font-['Urbanist'] text-[14px] text-[#6b6b6b]">
             Secure checkout &middot; Instant confirmation
           </p>
         </div>

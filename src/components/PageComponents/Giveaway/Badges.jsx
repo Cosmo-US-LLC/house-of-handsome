@@ -8,7 +8,7 @@ function Badges() {
           <span className="font-['Urbanist'] text-[12px] font-semibold uppercase tracking-[0.14em] text-[#6b6b6b]">
             CommunityVotes Sherwood Park
           </span>
-          <span className="font-['Cairo'] text-[19px] font-extrabold text-[#b9862e]">
+          <span className="font-['Cairo'] text-[20px] font-extrabold text-[#b9862e]">
             2023 Silver Winner
           </span>
           <span className="font-['Urbanist'] text-[12.5px] text-[#6b6b6b]">
@@ -19,7 +19,7 @@ function Badges() {
           <span className="font-['Urbanist'] text-[12px] font-semibold uppercase tracking-[0.14em] text-[#6b6b6b]">
             Quality Business Awards
           </span>
-          <span className="font-['Cairo'] text-[19px] font-extrabold text-[#b9862e]">
+          <span className="font-['Cairo'] text-[20px] font-extrabold text-[#b9862e]">
             2024 Winner
           </span>
           <span className="font-['Urbanist'] text-[12.5px] text-[#6b6b6b]">

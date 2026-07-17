@@ -23,7 +23,7 @@ function FinalCTA() {
     >
       <div className="absolute inset-0 bg-black/85" />
       <div className="relative z-10 mx-auto max-w-[1080px] px-4 md:px-6">
-        <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+        <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
           The Founding 150 &middot; Red Deer
         </p>
         <h2 className="mb-4 font-['Cairo'] text-[30px] font-bold text-white md:text-[46px]">
@@ -36,12 +36,12 @@ function FinalCTA() {
           href={MEMBERSHIP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[17px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[18px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
         >
           Claim My Spot for $50
         </a>
-        <p className="mt-4 font-['Urbanist'] text-[13.5px] text-white/55">
-          Secure checkout &middot; Opening [Summer 2026, date TBC]
+        <p className="mt-4 font-['Urbanist'] text-[14px] text-white/55">
+          Secure checkout &middot; Opening End of August
         </p>
       </div>
     </section>

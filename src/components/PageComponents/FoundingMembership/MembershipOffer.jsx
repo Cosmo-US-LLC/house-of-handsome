@@ -34,7 +34,7 @@ function MembershipOffer() {
     <section className="w-full bg-[#f5f5f5] py-14 md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="mb-10">
-          <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+          <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
             The Membership
           </p>
           <h2 className="font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-[#111111] md:text-[38px]">
@@ -47,10 +47,10 @@ function MembershipOffer() {
             <thead>
               <tr>
                 <th className="w-[44%]"></th>
-                <th className="border-b border-[#ececec] px-3.5 py-4 text-left font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#6b6b6b] md:px-4">
+                <th className="border-b border-[#ececec] px-3.5 py-4 text-left font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.08em] text-[#6b6b6b] md:px-4">
                   Regular Client
                 </th>
-                <th className="border-b border-[#ececec] bg-[#fdf3f3] px-3.5 py-4 text-left font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#6b6b6b] md:px-4">
+                <th className="border-b border-[#ececec] bg-[#fdf3f3] px-3.5 py-4 text-left font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.08em] text-[#6b6b6b] md:px-4">
                   Founding Member
                 </th>
               </tr>
@@ -66,19 +66,19 @@ function MembershipOffer() {
                     <strong className="block font-['Cairo'] text-[16px] font-bold text-[#111111]">
                       {row.title}
                     </strong>
-                    <small className="mt-0.5 block font-['Urbanist'] text-[13.5px] font-normal text-[#6b6b6b]">
+                    <small className="mt-0.5 block font-['Urbanist'] text-[14px] font-normal text-[#6b6b6b]">
                       {row.detail}
                     </small>
                   </td>
                   <td
-                    className={`px-3.5 py-4 align-top font-['Urbanist'] text-[15.5px] text-[#333333] md:px-4 ${
+                    className={`px-3.5 py-4 align-top font-['Urbanist'] text-[16px] text-[#333333] md:px-4 ${
                       i !== ROWS.length - 1 ? "border-b border-[#ececec]" : ""
                     }`}
                   >
                     {row.regular}
                   </td>
                   <td
-                    className={`bg-[#fdf3f3] px-3.5 py-4 align-top font-['Urbanist'] text-[15.5px] font-semibold text-[#d82028] md:px-4 ${
+                    className={`bg-[#fdf3f3] px-3.5 py-4 align-top font-['Urbanist'] text-[16px] font-semibold text-[#d82028] md:px-4 ${
                       i !== ROWS.length - 1 ? "border-b border-[#ececec]" : ""
                     }`}
                   >

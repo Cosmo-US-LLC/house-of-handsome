@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import heroBg from "@/assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
 
-// TODO: wire this form to Klaviyo (embed form or API) before launch.
-// It currently only validates client-side and swaps to the success panel.
+const HUBSPOT_FORM_GUID = "2c6a0b62-abf4-4915-8b53-3404a5a28094";
+const HUBSPOT_PORTAL_ID = "244794377";
+
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : "";
+};
+
 const schema = yup.object().shape({
   name: yup.string().min(2, "Enter your full name").required("Name is required"),
   phone: yup
@@ -20,21 +28,71 @@ const schema = yup.object().shape({
     .string()
     .required("Email is required")
     .matches(
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/,
       "Please enter a valid email address",
     ),
 });
 
 function HeroEntry() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = async () => {
-    setSubmitted(true);
+  const onSubmit = async (data) => {
+    try {
+      setSubmitError("");
+
+      const hutk = getCookie("hubspotutk");
+      const context = {
+        pageUri: window.location.href,
+        pageName: document.title,
+      };
+
+      if (hutk && hutk.trim() !== "") {
+        context.hutk = hutk;
+      }
+
+      const payload = {
+        fields: [
+          { name: "firstname", value: data.name },
+          { name: "phone", value: data.phone },
+          { name: "email", value: data.email },
+        ],
+        context,
+      };
+
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      const responseData = await res.json();
+
+      if (!res.ok) {
+        let msg = "Something went wrong. Please try again.";
+        if (responseData?.message) {
+          msg = responseData.message;
+        } else if (responseData?.errors && Array.isArray(responseData.errors)) {
+          msg = responseData.errors.map((e) => e.message || JSON.stringify(e)).join(", ");
+        }
+        throw new Error(msg);
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error?.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -47,10 +105,10 @@ function HeroEntry() {
 
       <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-11 px-4 md:grid-cols-[1.05fr_0.95fr] md:gap-14 md:px-8">
         <div>
-          <p className="mb-4 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.22em] text-[#f2b8ba]">
+          <p className="mb-4 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.22em] text-[#f2b8ba]">
             Red Deer &middot; Opening Soon
           </p>
-          <span className="mb-5 inline-block rounded-md bg-[#d82028] px-3.5 py-1.5 font-['Urbanist'] text-[13px] font-bold uppercase tracking-[0.1em] text-white">
+          <span className="mb-5 inline-block rounded-md bg-[#d82028] px-3.5 py-1.5 font-['Urbanist'] text-[14px] font-bold uppercase tracking-[0.1em] text-white">
             Free To Enter &middot; No Purchase Necessary
           </span>
           <h1 className="mb-4.5 font-['Cairo'] text-[38px] font-bold leading-[1.15] text-white md:text-[60px]">
@@ -68,7 +126,7 @@ function HeroEntry() {
             ].map((item) => (
               <li
                 key={item}
-                className="relative py-1.5 pl-[30px] font-['Urbanist'] text-[15.5px] text-white/85"
+                className="relative py-1.5 pl-[30px] font-['Urbanist'] text-[16px] text-white/85"
               >
                 <span className="absolute left-0 font-bold text-[#d82028]">
                   &#10003;
@@ -89,15 +147,20 @@ function HeroEntry() {
                 <h3 className="mb-1.5 font-['Cairo'] text-[22px] font-bold text-[#111111]">
                   Throw Your Name In.
                 </h3>
-                <p className="mb-6 font-['Urbanist'] text-[14.5px] text-[#6b6b6b]">
+                <p className="mb-6 font-['Urbanist'] text-[14px] text-[#6b6b6b]">
                   Free entry. We'll email you if you win. That's it.
                 </p>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                  {submitError && (
+                    <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      {submitError}
+                    </div>
+                  )}
                   <div>
                     <label
                       htmlFor="giveaway-name"
-                      className="mb-1.5 block font-['Cairo'] text-[13.5px] font-semibold text-[#111111]"
+                      className="mb-1.5 block font-['Cairo'] text-[14px] font-semibold text-[#111111]"
                     >
                       Name
                     </label>
@@ -107,7 +170,7 @@ function HeroEntry() {
                       placeholder="Your name"
                       autoComplete="name"
                       {...register("name")}
-                      className={`w-full rounded-lg border-[1.5px] bg-[#f5f5f5] px-3.5 py-3.5 font-['Urbanist'] text-[15.5px] text-[#333333] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
+                      className={`w-full rounded-lg border-[1.5px] bg-[#f5f5f5] px-3.5 py-3.5 font-['Urbanist'] text-[16px] text-[#333333] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
                         errors.name ? "border-red-500" : "border-[#ececec]"
                       }`}
                     />
@@ -121,19 +184,28 @@ function HeroEntry() {
                   <div>
                     <label
                       htmlFor="giveaway-phone"
-                      className="mb-1.5 block font-['Cairo'] text-[13.5px] font-semibold text-[#111111]"
+                      className="mb-1.5 block font-['Cairo'] text-[14px] font-semibold text-[#111111]"
                     >
                       Phone
                     </label>
-                    <input
-                      id="giveaway-phone"
-                      type="tel"
-                      placeholder="(403) 000-0000"
-                      autoComplete="tel"
-                      {...register("phone")}
-                      className={`w-full rounded-lg border-[1.5px] bg-[#f5f5f5] px-3.5 py-3.5 font-['Urbanist'] text-[15.5px] text-[#333333] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
-                        errors.phone ? "border-red-500" : "border-[#ececec]"
-                      }`}
+                    <Controller
+                      name="phone"
+                      control={control}
+                      render={({ field }) => (
+                        <PhoneInput
+                          {...field}
+                          defaultCountry="ca"
+                          forceDialCode={true}
+                          className={`w-full ${errors.phone ? "error" : ""}`}
+                          inputClassName={`w-full !h-auto !bg-[#f5f5f5] !px-3.5 !py-3.5 !font-['Urbanist'] !text-[16px] !text-[#333333] transition-colors focus:!bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
+                            errors.phone ? "!border-red-500" : "!border-[#ececec]"
+                          }`}
+                          countrySelectorStyleProps={{
+                            buttonClassName:
+                              "!bg-[#f5f5f5] !border-[1.5px] !px-2.5 !h-auto !py-3.5 border-r border-gray-200 rounded-l-lg",
+                          }}
+                        />
+                      )}
                     />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-red-500">
@@ -145,7 +217,7 @@ function HeroEntry() {
                   <div>
                     <label
                       htmlFor="giveaway-email"
-                      className="mb-1.5 block font-['Cairo'] text-[13.5px] font-semibold text-[#111111]"
+                      className="mb-1.5 block font-['Cairo'] text-[14px] font-semibold text-[#111111]"
                     >
                       Email
                     </label>
@@ -155,7 +227,7 @@ function HeroEntry() {
                       placeholder="you@email.com"
                       autoComplete="email"
                       {...register("email")}
-                      className={`w-full rounded-lg border-[1.5px] bg-[#f5f5f5] px-3.5 py-3.5 font-['Urbanist'] text-[15.5px] text-[#333333] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
+                      className={`w-full rounded-lg border-[1.5px] bg-[#f5f5f5] px-3.5 py-3.5 font-['Urbanist'] text-[16px] text-[#333333] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d82028] ${
                         errors.email ? "border-red-500" : "border-[#ececec]"
                       }`}
                     />
@@ -195,9 +267,9 @@ function HeroEntry() {
                 <h3 className="mb-2 font-['Cairo'] text-[22px] font-bold text-[#111111]">
                   You're In.
                 </h3>
-                <p className="font-['Urbanist'] text-[15px] text-[#6b6b6b]">
+                <p className="font-['Urbanist'] text-[16px] text-[#6b6b6b]">
                   Your entry is confirmed. Here's what happens next: entries
-                  close [DATE TBC], winners are drawn live at our opening
+                  close End of August, winners are drawn live at our opening
                   event, and if your name comes up we email you within 48
                   hours. Good luck.
                 </p>

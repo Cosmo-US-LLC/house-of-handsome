@@ -9,9 +9,9 @@ const Tbc = ({ children }) => (
 );
 
 const sectionHeading =
-  "mt-9 mb-2.5 font-['Cairo'] text-[19px] font-bold text-[#111111]";
-const paragraph = "font-['Urbanist'] text-[15.5px] text-[#333333]";
-const list = "my-2 list-disc space-y-1.5 pl-[22px] font-['Urbanist'] text-[15.5px] text-[#333333]";
+  "mt-9 mb-2.5 font-['Cairo'] text-[20px] font-bold text-[#111111]";
+const paragraph = "font-['Urbanist'] text-[16px] text-[#333333]";
+const list = "my-2 list-disc space-y-1.5 pl-[22px] font-['Urbanist'] text-[16px] text-[#333333]";
 
 function RulesContent() {
   return (
@@ -22,14 +22,14 @@ function RulesContent() {
       >
         <div className="absolute inset-0 bg-black/85" />
         <div className="relative z-10 mx-auto max-w-[820px] px-4 md:px-6">
-          <p className="mb-3.5 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.22em] text-[#f2b8ba]">
+          <p className="mb-3.5 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.22em] text-[#f2b8ba]">
             Win Free Haircuts For A Year
           </p>
           <h1 className="font-['Cairo'] text-[28px] font-extrabold leading-[1.15] text-white md:text-[42px]">
             Official Contest Rules
           </h1>
-          <p className="mt-3.5 font-['Urbanist'] text-[15px] text-white/70">
-            House of Handsome Red Deer Opening Draw. Last updated: <Tbc>[DATE]</Tbc>
+          <p className="mt-3.5 font-['Urbanist'] text-[16px] text-white/70">
+            House of Handsome Red Deer Opening Draw. Last updated: July 17, 2026
           </p>
         </div>
       </header>
@@ -55,8 +55,8 @@ function RulesContent() {
           </h2>
           <p className={paragraph}>
             This contest (the "Contest") is sponsored by House of Handsome
-            Barbershop Ltd. (the "Sponsor"),{" "}
-            <Tbc>[REGISTERED ADDRESS TBC]</Tbc>, Alberta, Canada.
+            Barbershop Ltd. (the "Sponsor"), House Of Handsome Red Deer, 408
+            Lantern Street, Unit 103, Red Deer, Alberta T4E 0A5, Canada.
           </p>
 
           <h2 className={sectionHeading}>
@@ -64,7 +64,7 @@ function RulesContent() {
           </h2>
           <p className={paragraph}>
             The Contest begins on <Tbc>[START DATE, TIME MT]</Tbc> and closes
-            on <Tbc>[END DATE, TIME MT]</Tbc> (the "Contest Period"). Entries
+            at the end of August 2026 (the "Contest Period"). Entries
             received after the close of the Contest Period will not be
             eligible.
           </p>
@@ -103,7 +103,10 @@ function RulesContent() {
             <li>
               <strong>Alternate free entry:</strong> send a direct message
               with your full name, phone number, and email address to the
-              House of Handsome Instagram account <Tbc>[@HANDLE TBC]</Tbc>{" "}
+              House of Handsome Instagram account{" "}
+              <span className="font-semibold">
+                @house.of.handsome.barbershop
+              </span>{" "}
               with the words "Red Deer Draw" during the Contest Period.
             </li>
           </ul>
@@ -142,8 +145,8 @@ function RulesContent() {
           </h2>
           <p className={paragraph}>
             Winners will be selected by random draw from all eligible
-            entries at the House of Handsome Red Deer opening event on{" "}
-            <Tbc>[DRAW DATE]</Tbc>. Entrants do not need to be present at the
+            entries at the House of Handsome Red Deer opening event, taking
+            place end of August 2026. Entrants do not need to be present at the
             draw to win. Odds of winning depend on the total number of
             eligible entries received. Before being declared a winner, each
             selected entrant must correctly answer, unaided, a time-limited
@@ -232,7 +235,13 @@ function RulesContent() {
           </h2>
           <p className={paragraph}>
             Questions about the Contest or these rules can be directed to{" "}
-            <Tbc>[CONTACT EMAIL TBC]</Tbc>.
+            <a
+              href="mailto:info@houseofhandsome.ca"
+              className="font-semibold text-[#d82028] hover:underline"
+            >
+              info@houseofhandsome.ca
+            </a>
+            .
           </p>
 
           <Link

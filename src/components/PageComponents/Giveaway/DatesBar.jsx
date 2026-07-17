@@ -1,8 +1,8 @@
 import React from "react";
 
 const DATES = [
-  { label: "Entries Close", value: "[DATE TBC]" },
-  { label: "Draw", value: "Live at our opening event, [DATE TBC]" },
+  { label: "Entries Close", value: "End of August" },
+  { label: "Draw", value: "Live at our opening event, End of August" },
   { label: "Winners Notified", value: "By email within 48 hours of the draw" },
 ];
 
@@ -15,7 +15,7 @@ function DatesBar() {
             <span className="font-['Cairo'] text-[12px] font-bold uppercase tracking-[0.12em] text-[#d82028]">
               {d.label}
             </span>
-            <span className="font-['Urbanist'] text-[14.5px] font-medium text-[#333333]">
+            <span className="font-['Urbanist'] text-[14px] font-medium text-[#333333]">
               {d.value}
             </span>
           </div>

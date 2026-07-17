@@ -13,18 +13,18 @@ function Hero() {
       <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:gap-14 md:px-8 md:py-20">
         <div>
           <p className="mb-3 font-['Urbanist'] text-[12.5px] font-semibold uppercase tracking-[0.2em] text-[#f2b8ba]">
-            Opening In Red Deer &middot; [Summer 2026]
+            Opening In Red Deer &middot; End of August
           </p>
           <h1 className="mb-3 font-['Cairo'] text-[34px] font-bold leading-[1.15] text-white md:text-[56px]">
             Become A <span className="text-[#d82028]">Founding Member.</span>
           </h1>
-          <p className="mb-6 max-w-[48ch] font-['Urbanist'] text-[15.5px] font-medium text-white/85 md:text-[17px]">
+          <p className="mb-6 max-w-[48ch] font-['Urbanist'] text-[16px] font-medium text-white/85 md:text-[18px]">
             House of Handsome is Alberta's award-winning barbershop, now
             bringing its seventh location to Red Deer.
           </p>
 
           <div className="mb-6 max-w-[520px] rounded-2xl border border-white/15 bg-white/[0.06] p-5 md:p-6">
-            <p className="mb-2 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.14em] text-white/65">
+            <p className="mb-2 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.14em] text-white/65">
               Lifetime Membership
             </p>
             <div className="mb-3 flex items-baseline gap-3">
@@ -46,7 +46,7 @@ function Hero() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="relative py-1 pl-[26px] font-['Urbanist'] text-[15.5px] text-white/90"
+                  className="relative py-1 pl-[26px] font-['Urbanist'] text-[16px] text-white/90"
                 >
                   <span className="absolute left-0 font-bold text-[#d82028]">
                     &#10003;
@@ -55,14 +55,14 @@ function Hero() {
                 </li>
               ))}
             </ul>
-            <p className="mt-3.5 border-t border-white/10 pt-3 font-['Urbanist'] text-[13px] font-semibold text-[#f2b8ba]">
+            <p className="mt-3.5 border-t border-white/10 pt-3 font-['Urbanist'] text-[14px] font-semibold text-[#f2b8ba]">
               Only 150 ever. First come, first served.
             </p>
           </div>
 
           <a
             href="#claim"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[17px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[18px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
           >
             Claim My Spot for $50
           </a>
@@ -78,7 +78,7 @@ function Hero() {
             style={{ transform: "rotate(-3deg)" }}
           >
             <div className="flex items-start justify-between">
-              <span className="font-['Urbanist'] text-[13px] font-bold uppercase tracking-[0.16em] text-white">
+              <span className="font-['Urbanist'] text-[14px] font-bold uppercase tracking-[0.16em] text-white">
                 House of <em className="not-italic text-[#d82028]">Handsome</em>
               </span>
               <span className="font-['Cairo'] text-[12px] tracking-[0.14em] text-white/55">
@@ -88,7 +88,7 @@ function Hero() {
             <h3 className="mt-8 mb-1 font-['Cairo'] text-[26px] font-bold text-white">
               Founding Member
             </h3>
-            <p className="font-['Urbanist'] text-[13.5px] text-white/60">
+            <p className="font-['Urbanist'] text-[14px] text-white/60">
               Red Deer &middot; Charter Class
             </p>
             <div className="mt-6 flex justify-between border-t border-[#d82028]/40 pt-4 font-['Urbanist'] text-[11.5px] font-semibold uppercase tracking-[0.12em] text-[#d82028]">

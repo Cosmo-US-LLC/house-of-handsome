@@ -18,7 +18,7 @@ function AchievementsBand() {
               <span className="font-['Cairo'] text-[30px] font-bold leading-none text-[#111111]">
                 4.9
               </span>
-              <span className="tracking-[2px] text-[15px] text-[#FBBC05]">
+              <span className="tracking-[2px] text-[16px] text-[#FBBC05]">
                 &#9733;&#9733;&#9733;&#9733;&#9733;
               </span>
             </div>
@@ -31,23 +31,23 @@ function AchievementsBand() {
         <div className="flex flex-col gap-3.5">
           <div className="flex flex-wrap gap-3">
             <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5">
-              <span className="font-['Urbanist'] text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
+              <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
                 CommunityVotes Sherwood Park
               </span>
-              <span className="font-['Cairo'] text-[15px] font-bold text-[#b9862e]">
+              <span className="font-['Cairo'] text-[16px] font-bold text-[#b9862e]">
                 2023 Silver Winner &middot; Best Barber Shops
               </span>
             </div>
             <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5">
-              <span className="font-['Urbanist'] text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
+              <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
                 Quality Business Awards
               </span>
-              <span className="font-['Cairo'] text-[15px] font-bold text-[#b9862e]">
+              <span className="font-['Cairo'] text-[16px] font-bold text-[#b9862e]">
                 2024 Winner
               </span>
             </div>
           </div>
-          <p className="font-['Urbanist'] text-[13px] text-[#6b6b6b]">
+          <p className="font-['Urbanist'] text-[14px] text-[#6b6b6b]">
             <strong className="mr-2 font-['Cairo'] font-bold text-[#111111]">
               6 shops across Alberta:
             </strong>

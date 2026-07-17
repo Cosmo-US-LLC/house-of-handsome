@@ -14,13 +14,13 @@ function Services() {
     <section className="w-full bg-black py-14 md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="mb-10">
-          <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+          <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
             Built For Men's Grooming
           </p>
           <h2 className="mb-3 font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-white md:text-[38px]">
             Everything A Working Man Needs. <span className="text-[#d82028]">Nothing He Doesn't.</span>
           </h2>
-          <p className="max-w-[58ch] font-['Urbanist'] text-[15.5px] text-white/65">
+          <p className="max-w-[58ch] font-['Urbanist'] text-[16px] text-white/65">
             Hot towels, pre-shave oils, proper aftershave. A full routine
             done right. In and out looking sharp, whether you're coming off
             a shift or heading to one.
@@ -31,7 +31,7 @@ function Services() {
           {SERVICES.map((svc) => (
             <div
               key={svc}
-              className="flex items-center gap-3 rounded-xl border border-[#2b2b2b] bg-[#1a1a1a] p-5 font-['Cairo'] text-[15.5px] font-semibold text-white"
+              className="flex items-center gap-3 rounded-xl border border-[#2b2b2b] bg-[#1a1a1a] p-5 font-['Cairo'] text-[16px] font-semibold text-white"
             >
               <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#d82028]" />
               {svc}

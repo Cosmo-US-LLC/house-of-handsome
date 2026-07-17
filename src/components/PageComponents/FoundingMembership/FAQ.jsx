@@ -52,7 +52,7 @@ function FAQ() {
     <section className="w-full bg-white py-14 md:py-[72px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <div className="mb-10">
-          <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+          <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
             Fair Questions
           </p>
           <h2 className="font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-[#111111] md:text-[38px]">
@@ -67,7 +67,7 @@ function FAQ() {
               value={faq.id}
               className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1"
             >
-              <AccordionTrigger className="py-5 font-['Cairo'] text-[17px] font-semibold text-[#111111] hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
+              <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
                 {faq.question}
                 <span className="relative ml-5 flex h-6 w-6 shrink-0 items-center justify-center">
                   <span className="plus font-['Cairo'] text-[26px] font-normal leading-none text-[#d82028]">
@@ -78,7 +78,7 @@ function FAQ() {
                   </span>
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="max-w-[72ch] pb-5 font-['Urbanist'] text-[15.5px] text-[#6b6b6b]">
+              <AccordionContent className="max-w-[72ch] pb-5 font-['Urbanist'] text-[18px] font-normal leading-[26px] text-[#0b0f19]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

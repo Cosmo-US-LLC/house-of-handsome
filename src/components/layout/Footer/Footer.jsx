@@ -14,9 +14,9 @@ function Footer() {
     <footer className="w-full bg-[#f7f7f7] md:py-10 py-8 rounded-tl-[10px] rounded-tr-[10px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Top Action Items */}
-        <div className="md:gap-x-20  pb-10 mb-10 border-b border-black/50 block md:flex justify-center">
+        <div className="justify-center block pb-10 mb-10 border-b md:gap-x-20 border-black/50 md:flex">
           <Link to="/locations">
-            <div className="flex gap-6 items-center max-md:mb-8">
+            <div className="flex items-center gap-6 max-md:mb-8">
               <img
                 src={findLocationIcon}
                 alt="Find Location Icon"
@@ -31,7 +31,7 @@ function Footer() {
             to="https://www.phorest.com/salon/houseofhandsomebarbershop2/locations?_gl=1*12yeoq4*_gcl_au*MTI1MDk3MTA0Ny4xNzU5NDg0MzA3*_ga*OTM1MjMyNDI4LjE3NTE1MzkzNjk.*_ga_2NK6J237BJ*czE3NjQ4MzU2NjYkbzM0JGcxJHQxNzY0ODM1NzYwJGo1OSRsMCRoNDQzODg1MTY"
             target="_blank"
           >
-            <div className="flex gap-6 items-center max-md:mb-8">
+            <div className="flex items-center gap-6 max-md:mb-8">
               <img
                 src={bookReservationIcon}
                 alt="Book Reservation Icon"
@@ -43,8 +43,8 @@ function Footer() {
             </div>
           </Link>
 
-          {/* <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
-          <div className="flex gap-6 items-center max-md:mb-0">
+          <Link to="https://gift-cards.phorest.com/salons/houseofhandsomebarbershop?_gl=1*1fnanae*_gcl_au*MT[…]4MzU2NjYkbzM0JGcwJHQxNzY0ODM1NjY2JGo2MCRsMCRoNDQzODg1MTY." target="_blank">
+          <div className="flex items-center gap-6 max-md:mb-0">
             <img
               src={giftCardIcon}
               alt="Gift Card Icon"
@@ -54,7 +54,7 @@ function Footer() {
               Buy a Gift card
             </span>
           </div>
-          </Link> */}
+          </Link>
         </div>
 
         {/* Main Footer Content */}
@@ -62,7 +62,7 @@ function Footer() {
           {/* Column 1 - Brand */}
           <div className="flex flex-col md:max-w-[440px] gap-6">
             {/* Logo */}
-            <Link to="/" className="flex gap-2 items-center">
+            <Link to="/" className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="House of Handsome Logo"
@@ -75,7 +75,7 @@ function Footer() {
               tradition meets style, and where every client becomes part of our
               community.
             </p>
-            <div className="flex gap-2 items-center">
+            <div className="flex items-center gap-2">
               <a
                 href="mailto:info@houseofhandsome.ca"
                 target="_blank"
@@ -200,7 +200,7 @@ function Footer() {
           </div> */}
 
           {/* Column 4 - Our Locations */}
-          <div className="flex md:flex-row flex-col md:gap-20 gap-8">
+          <div className="flex flex-col gap-8 md:flex-row md:gap-20">
             <div className="flex flex-col gap-6">
               <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">
                 Quick Links
@@ -293,13 +293,25 @@ function Footer() {
                     South Common Edmonton
                   </Link>
                 </li>
+                <li className="flex items-center gap-2">
+                  <span>Red Deer</span>
+                  <span className="rounded-full bg-[#d82028] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-white">
+                    New
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span>Windermere</span>
+                  <span className="rounded-full bg-[#d82028] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-white">
+                    New
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col gap-4 justify-between items-center pt-8 border-t border-black/50 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 pt-8 border-t border-black/50 md:flex-row">
           <p className="font-['Urbanist'] text-sm font-normal leading-[22px] text-black">
             Copyright © 2026 House of handsome
           </p>

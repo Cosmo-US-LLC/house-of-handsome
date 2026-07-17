@@ -9,13 +9,13 @@ function AboutStrip() {
     >
       <div className="absolute inset-0 bg-black/88" />
       <div className="relative z-10 mx-auto max-w-[1280px] px-4 md:px-8">
-        <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+        <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
           Who's Behind This?
         </p>
         <h2 className="mb-3 font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-white md:text-[40px]">
           Started In Edmonton. <span className="text-[#d82028]">Opening In Red Deer.</span>
         </h2>
-        <p className="max-w-[58ch] font-['Urbanist'] text-[15.5px] text-white/65">
+        <p className="max-w-[58ch] font-['Urbanist'] text-[16px] text-white/65">
           House of Handsome grew one chair at a time into six barbershops
           across Alberta: precision cuts, hot towel shaves, and a grooming
           standard thousands of clients rate at 4.9 stars. Red Deer is shop

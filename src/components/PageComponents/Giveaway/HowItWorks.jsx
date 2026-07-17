@@ -23,7 +23,7 @@ function HowItWorks() {
     <section className="w-full bg-white py-14 md:py-[84px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="mb-11">
-          <p className="mb-3 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
+          <p className="mb-3 font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.2em] text-[#d82028]">
             How It Works
           </p>
           <h2 className="font-['Cairo'] text-[28px] font-bold tracking-[-0.01em] text-[#111111] md:text-[40px]">
@@ -37,13 +37,13 @@ function HowItWorks() {
               key={step.num}
               className="rounded-xl border border-[#ececec] p-7.5"
             >
-              <span className="font-['Cairo'] text-[15px] font-extrabold text-[#d82028]">
+              <span className="font-['Cairo'] text-[16px] font-extrabold text-[#d82028]">
                 {step.num}
               </span>
-              <h3 className="my-2.5 font-['Cairo'] text-[19px] font-bold text-[#111111]">
+              <h3 className="my-2.5 font-['Cairo'] text-[20px] font-bold text-[#111111]">
                 {step.title}
               </h3>
-              <p className="font-['Urbanist'] text-[15.5px] text-[#6b6b6b]">
+              <p className="font-['Urbanist'] text-[16px] text-[#6b6b6b]">
                 {step.body}
               </p>
             </div>

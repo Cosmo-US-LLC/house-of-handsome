@@ -8,7 +8,7 @@ function TrustBar() {
           6 Shops Across Alberta.{" "}
           <em className="not-italic text-[#ffd7d9]">Red Deer Makes 7.</em>
         </span>
-        <span className="font-['Urbanist'] text-[13px] tracking-[0.02em] text-white/85">
+        <span className="font-['Urbanist'] text-[14px] tracking-[0.02em] text-white/85">
           Sherwood Park &middot; Spruce Grove &middot; Whyte Avenue &middot;
           Edmonton Downtown &middot; South Common &middot; Cameron Heights
         </span>
