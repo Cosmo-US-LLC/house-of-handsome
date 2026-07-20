@@ -13,12 +13,12 @@ function DatesBar() {
         {DATES.map((d, i) => (
           <div
             key={d.label}
-            className={`flex flex-col ${
+            className={`flex flex-col items-center text-center ${
               i === 0
-                ? "items-start text-left"
+                ? "md:items-start md:text-left"
                 : i === 1
-                ? "items-center text-center"
-                : "items-end text-right"
+                ? "md:items-center md:text-center"
+                : "md:items-end md:text-right"
             }`}
           >
             <span className="font-['Cairo'] text-[15px] font-bold uppercase tracking-[0.12em] text-[#d82028]">
