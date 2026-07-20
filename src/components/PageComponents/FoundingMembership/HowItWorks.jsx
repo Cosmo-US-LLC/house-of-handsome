@@ -35,7 +35,7 @@ function HowItWorks() {
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className="relative rounded-xl border border-[#ececec] p-7"
+              className="relative rounded-xl border border-[#ececec] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#d82028]/40 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
             >
               <span className="absolute right-5.5 top-4.5 font-['Cairo'] text-[30px] font-extrabold text-[#d82028] opacity-25">
                 {step.num}
@@ -52,7 +52,9 @@ function HowItWorks() {
 
         <div className="text-center">
           <a
-            href="#claim"
+            href="https://phore.st/gnFjk"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[16px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
           >
             Claim My Spot for $50

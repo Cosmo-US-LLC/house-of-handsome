@@ -296,13 +296,13 @@ function Footer() {
                 <li className="flex items-center gap-2">
                   <span>Red Deer</span>
                   <span className="rounded-full bg-[#d82028] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-white">
-                    New
+                    Coming Soon
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>Windermere</span>
                   <span className="rounded-full bg-[#d82028] px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.04em] text-white">
-                    New
+                    Coming Soon
                   </span>
                 </li>
               </ul>

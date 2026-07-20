@@ -2,10 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import headerBg from "@/assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
 
-const Tbc = ({ children }) => (
-  <span className="rounded bg-[#fdecec] px-1.5 py-0.5 font-semibold text-[#c01218]">
-    {children}
-  </span>
+const Hl = ({ children }) => (
+  <strong className="font-semibold text-[#d82028]">{children}</strong>
 );
 
 const sectionHeading =
@@ -43,30 +41,26 @@ function RulesContent() {
             &larr; Back to the Draw
           </Link>
 
-          <div className="mb-10 rounded-[10px] border border-[#f0d9a8] bg-[#fff6e6] px-4.5 py-3.5 font-['Urbanist'] text-[14px] text-[#7a5c14]">
-            DRAFT: for internal and legal review before publishing. All{" "}
-            <strong>[TBC]</strong> items must be confirmed, and these rules
-            should be reviewed for compliance with Alberta and federal
-            contest law before the campaign goes live.
-          </div>
-
           <h2 className={sectionHeading}>
             <span className="mr-2 text-[#d82028]">1.</span>Sponsor
           </h2>
           <p className={paragraph}>
             This contest (the "Contest") is sponsored by House of Handsome
-            Barbershop Ltd. (the "Sponsor"), House Of Handsome Red Deer, 408
-            Lantern Street, Unit 103, Red Deer, Alberta T4E 0A5, Canada.
+            Barbershop Ltd. (the "Sponsor"), House Of Handsome Red Deer,{" "}
+            <Hl>
+              408 Lantern Street, Unit 103, Red Deer, Alberta T4E 0A5, Canada
+            </Hl>
+            .
           </p>
 
           <h2 className={sectionHeading}>
             <span className="mr-2 text-[#d82028]">2.</span>Contest Period
           </h2>
           <p className={paragraph}>
-            The Contest begins on <Tbc>[START DATE, TIME MT]</Tbc> and closes
-            at the end of August 2026 (the "Contest Period"). Entries
-            received after the close of the Contest Period will not be
-            eligible.
+            The Contest begins <Hl>end of August 2026</Hl> and closes{" "}
+            <Hl>shortly after the House of Handsome Red Deer opening event</Hl>{" "}
+            (the "Contest Period"). Entries received after the close of the
+            Contest Period will not be eligible.
           </p>
 
           <h2 className={sectionHeading}>
@@ -75,15 +69,15 @@ function RulesContent() {
           <ul className={list}>
             <li>
               Open to legal residents of Alberta, Canada who have reached the
-              age of majority (18+) at the time of entry.
+              age of majority (<Hl>18+</Hl>) at the time of entry.
             </li>
             <li>
               Employees of the Sponsor, its marketing agencies, and members
               of their immediate households are not eligible.
             </li>
             <li>
-              Limit of one (1) entry per person for the duration of the
-              Contest Period. Duplicate entries will be removed.
+              Limit of <Hl>one (1) entry per person</Hl> for the duration of
+              the Contest Period. Duplicate entries will be removed.
             </li>
           </ul>
 
@@ -91,22 +85,33 @@ function RulesContent() {
             <span className="mr-2 text-[#d82028]">4.</span>How to Enter
           </h2>
           <p className={paragraph}>
-            No purchase is necessary to enter or win. Enter by either method
-            below:
+            <Hl>No purchase is necessary</Hl> to enter or win. Enter by either
+            method below:
           </p>
           <ul className={list}>
             <li>
               <strong>Online:</strong> complete the entry form at{" "}
-              <Tbc>[GIVEAWAY PAGE URL]</Tbc> with your name, phone number,
-              and email address during the Contest Period.
+              <Link
+                to="/red-deer-giveaway"
+                className="font-semibold text-[#d82028] hover:underline"
+              >
+                red-deer-giveaway
+              </Link>{" "}
+              with your name, phone number, and email address during the
+              Contest Period.
             </li>
             <li>
               <strong>Alternate free entry:</strong> send a direct message
               with your full name, phone number, and email address to the
               House of Handsome Instagram account{" "}
-              <span className="font-semibold">
+              <a
+                href="https://www.instagram.com/house.of.handsome.barbershop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#d82028] hover:underline"
+              >
                 @house.of.handsome.barbershop
-              </span>{" "}
+              </a>{" "}
               with the words "Red Deer Draw" during the Contest Period.
             </li>
           </ul>
@@ -123,15 +128,14 @@ function RulesContent() {
               <strong>Grand Prize (1 winner):</strong> twelve (12) haircuts
               at House of Handsome Red Deer, redeemable at a rate of one (1)
               haircut per calendar month for twelve (12) months from the
-              shop's opening date. Approximate retail value:{" "}
-              <Tbc>[$ TBC]</Tbc>.
+              shop's opening date. Approximate retail value: <Hl>$400+</Hl>.
             </li>
             <li>
               <strong>Secondary Prizes (10 winners):</strong> one (1) first
               visit at House of Handsome Red Deer, consisting of a haircut
               and hot towel shave, redeemable within three (3) months of the
-              shop's opening date. Approximate retail value:{" "}
-              <Tbc>[$ TBC]</Tbc> each.
+              shop's opening date. Approximate retail value: <Hl>$60+</Hl>{" "}
+              each.
             </li>
           </ul>
           <p className={paragraph}>
@@ -161,11 +165,12 @@ function RulesContent() {
           <ul className={list}>
             <li>
               Selected entrants will be notified by email at the address
-              provided at entry, within forty-eight (48) hours of the draw.
+              provided at entry, within <Hl>forty-eight (48) hours</Hl> of
+              the draw.
             </li>
             <li>
               Selected entrants must respond and complete the skill-testing
-              question within <Tbc>[X DAYS TBC]</Tbc> of notification,
+              question <Hl>before the close of the Contest Period</Hl>,
               failing which the prize will be forfeited and may be
               re-drawn.
             </li>

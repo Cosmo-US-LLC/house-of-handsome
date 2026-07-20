@@ -71,14 +71,14 @@ function MembershipOffer() {
                     </small>
                   </td>
                   <td
-                    className={`px-3.5 py-4 align-top font-['Urbanist'] text-[16px] text-[#333333] md:px-4 ${
+                    className={`px-3.5 py-4 align-middle font-['Urbanist'] text-[16px] text-[#333333] md:px-4 ${
                       i !== ROWS.length - 1 ? "border-b border-[#ececec]" : ""
                     }`}
                   >
                     {row.regular}
                   </td>
                   <td
-                    className={`bg-[#fdf3f3] px-3.5 py-4 align-top font-['Urbanist'] text-[16px] font-semibold text-[#d82028] md:px-4 ${
+                    className={`bg-[#fdf3f3] px-3.5 py-4 align-middle font-['Urbanist'] text-[16px] font-semibold text-[#d82028] md:px-4 ${
                       i !== ROWS.length - 1 ? "border-b border-[#ececec]" : ""
                     }`}
                   >

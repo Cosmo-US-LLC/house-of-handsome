@@ -30,7 +30,7 @@ function AchievementsBand() {
 
         <div className="flex flex-col gap-3.5">
           <div className="flex flex-wrap gap-3">
-            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5">
+            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
               <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
                 CommunityVotes Sherwood Park
               </span>
@@ -38,7 +38,7 @@ function AchievementsBand() {
                 2023 Silver Winner &middot; Best Barber Shops
               </span>
             </div>
-            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5">
+            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
               <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
                 Quality Business Awards
               </span>

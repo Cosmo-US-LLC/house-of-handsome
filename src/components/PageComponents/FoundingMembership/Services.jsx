@@ -31,7 +31,7 @@ function Services() {
           {SERVICES.map((svc) => (
             <div
               key={svc}
-              className="flex items-center gap-3 rounded-xl border border-[#2b2b2b] bg-[#1a1a1a] p-5 font-['Cairo'] text-[16px] font-semibold text-white"
+              className="flex items-center gap-3 rounded-xl border border-[#2b2b2b] bg-[#1a1a1a] p-5 font-['Cairo'] text-[16px] font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#d82028]/60 hover:bg-[#212121]"
             >
               <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#d82028]" />
               {svc}

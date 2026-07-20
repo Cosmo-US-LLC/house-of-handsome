@@ -32,7 +32,7 @@ function FAQ() {
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-3.5">
-          <AccordionItem value="item-1" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1">
+          <AccordionItem value="item-1" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1 transition-colors duration-300 hover:bg-[#efefef]">
             <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
               Is it really free to enter?
               <span className="relative ml-5 flex h-6 w-6 shrink-0 items-center justify-center">
@@ -48,7 +48,7 @@ function FAQ() {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-2" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1">
+          <AccordionItem value="item-2" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1 transition-colors duration-300 hover:bg-[#efefef]">
             <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
               How and when are winners picked?
               <span className="relative ml-5 flex h-6 w-6 shrink-0 items-center justify-center">
@@ -64,7 +64,7 @@ function FAQ() {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-3" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1">
+          <AccordionItem value="item-3" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1 transition-colors duration-300 hover:bg-[#efefef]">
             <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
               How does the grand prize work?
               <span className="relative ml-5 flex h-6 w-6 shrink-0 items-center justify-center">
@@ -79,7 +79,7 @@ function FAQ() {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-4" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1">
+          <AccordionItem value="item-4" className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1 transition-colors duration-300 hover:bg-[#efefef]">
             <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
               Who can enter?
               <span className="relative ml-5 flex h-6 w-6 shrink-0 items-center justify-center">

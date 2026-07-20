@@ -32,7 +32,7 @@ function Gallery() {
           {GALLERY_IMAGES.map((image) => (
             <div
               key={image.src}
-              className="group aspect-[4/5] overflow-hidden rounded-xl"
+              className="group aspect-[4/5] overflow-hidden rounded-xl transition-shadow duration-500 hover:shadow-[0_16px_32px_rgba(0,0,0,0.18)]"
             >
               <img
                 src={image.src}
