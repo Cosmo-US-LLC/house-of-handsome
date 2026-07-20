@@ -14,7 +14,7 @@ function Prizes() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-xl border-2 border-[#d82028] bg-white p-8">
+          <div className="rounded-xl border-2 border-[#d82028] bg-white p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(216,32,40,0.18)]">
             <span className="mb-4 inline-block rounded-md bg-[#d82028] px-3 py-1.5 font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.12em] text-white">
               Grand Prize
             </span>
@@ -30,7 +30,7 @@ function Prizes() {
             </p>
           </div>
 
-          <div className="rounded-xl bg-white p-8 shadow-[0_6px_24px_rgba(0,0,0,0.05)]">
+          <div className="rounded-xl bg-white p-8 shadow-[0_6px_24px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(0,0,0,0.12)]">
             <span className="mb-4 inline-block rounded-md bg-[#f5f5f5] px-3 py-1.5 font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.12em] text-[#111111]">
               10 Runners-Up
             </span>

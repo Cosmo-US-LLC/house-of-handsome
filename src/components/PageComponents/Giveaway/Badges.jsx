@@ -4,7 +4,7 @@ function Badges() {
   return (
     <div className="w-full border-b border-[#ececec] bg-white py-5.5">
       <div className="mx-auto flex max-w-[1280px] flex-wrap justify-center gap-4.5 px-4 md:px-8">
-        <div className="flex min-w-[280px] flex-col items-center gap-1 rounded-xl border border-[#ececec] px-7 py-4 text-center">
+        <div className="flex min-w-[280px] flex-col items-center gap-1 rounded-xl border border-[#ececec] px-7 py-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#d82028]/40 hover:shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
           <span className="font-['Urbanist'] text-[12px] font-semibold uppercase tracking-[0.14em] text-[#6b6b6b]">
             CommunityVotes Sherwood Park
           </span>
@@ -15,7 +15,7 @@ function Badges() {
             Voted Best in Barber Shops and Men's Hairdressers
           </span>
         </div>
-        <div className="flex min-w-[280px] flex-col items-center gap-1 rounded-xl border border-[#ececec] px-7 py-4 text-center">
+        <div className="flex min-w-[280px] flex-col items-center gap-1 rounded-xl border border-[#ececec] px-7 py-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#d82028]/40 hover:shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
           <span className="font-['Urbanist'] text-[12px] font-semibold uppercase tracking-[0.14em] text-[#6b6b6b]">
             Quality Business Awards
           </span>

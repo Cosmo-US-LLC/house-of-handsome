@@ -65,7 +65,7 @@ function FAQ() {
             <AccordionItem
               key={faq.id}
               value={faq.id}
-              className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1"
+              className="rounded-xl border-0 bg-[#f5f5f5] px-6 py-1 transition-colors duration-300 hover:bg-[#efefef]"
             >
               <AccordionTrigger className="py-5 font-['Urbanist'] text-[24px] font-bold leading-[32px] text-black hover:no-underline [&>svg]:hidden [&[data-state=open]_.plus]:hidden [&[data-state=open]_.minus]:block">
                 {faq.question}

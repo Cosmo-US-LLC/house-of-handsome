@@ -61,7 +61,9 @@ function Hero() {
           </div>
 
           <a
-            href="#claim"
+            href="https://phore.st/gnFjk"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[18px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
           >
             Claim My Spot for $50
@@ -72,26 +74,26 @@ function Hero() {
           </p>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex md:h-full md:items-center md:justify-center">
           <div
-            className="ml-auto max-w-[400px] rounded-2xl border border-[#d82028]/50 bg-gradient-to-br from-[#181818] via-[#242424] to-[#131313] p-7 shadow-[0_28px_56px_rgba(0,0,0,0.55)]"
+            className="mx-auto w-full max-w-[500px] rounded-2xl border border-[#d82028]/50 bg-gradient-to-br from-[#181818] via-[#242424] to-[#131313] p-9 shadow-[0_28px_56px_rgba(0,0,0,0.55)]"
             style={{ transform: "rotate(-3deg)" }}
           >
             <div className="flex items-start justify-between">
-              <span className="font-['Urbanist'] text-[14px] font-bold uppercase tracking-[0.16em] text-white">
+              <span className="font-['Urbanist'] text-[16px] font-bold uppercase tracking-[0.16em] text-white">
                 House of <em className="not-italic text-[#d82028]">Handsome</em>
               </span>
-              <span className="font-['Cairo'] text-[12px] tracking-[0.14em] text-white/55">
+              <span className="font-['Cairo'] text-[13px] tracking-[0.14em] text-white/55">
                 No. __ / 150
               </span>
             </div>
-            <h3 className="mt-8 mb-1 font-['Cairo'] text-[26px] font-bold text-white">
+            <h3 className="mt-10 mb-1 font-['Cairo'] text-[32px] font-bold text-white">
               Founding Member
             </h3>
-            <p className="font-['Urbanist'] text-[14px] text-white/60">
+            <p className="font-['Urbanist'] text-[16px] text-white/60">
               Red Deer &middot; Charter Class
             </p>
-            <div className="mt-6 flex justify-between border-t border-[#d82028]/40 pt-4 font-['Urbanist'] text-[11.5px] font-semibold uppercase tracking-[0.12em] text-[#d82028]">
+            <div className="mt-8 flex justify-between border-t border-[#d82028]/40 pt-5 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.12em] text-[#d82028]">
               <span>Lifetime</span>
               <span>Est. 2026</span>
             </div>

@@ -4,8 +4,7 @@ import finalBg from "@/assets/images/location/shop_image/shop_image1.webp";
 // Update as memberships sell, or leave null for the default scarcity line.
 const SPOTS_REMAINING = null;
 
-// TODO: swap in the live Phorest membership purchase link once it exists.
-const MEMBERSHIP_LINK = "https://PHOREST-MEMBERSHIP-LINK-HERE";
+const MEMBERSHIP_LINK = "https://phore.st/gnFjk";
 
 function FinalCTA() {
   const scarcityLabel =

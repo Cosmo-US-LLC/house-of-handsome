@@ -9,7 +9,6 @@ import HowItWorks from "@/components/PageComponents/Giveaway/HowItWorks";
 import AboutStrip from "@/components/PageComponents/Giveaway/AboutStrip";
 import Testimonials from "@/components/PageComponents/Home/Testimonials";
 import FAQ from "@/components/PageComponents/Giveaway/FAQ";
-import LegalNote from "@/components/PageComponents/Giveaway/LegalNote";
 
 function RedDeerGiveaway() {
   return (
@@ -29,7 +28,6 @@ function RedDeerGiveaway() {
         <AboutStrip />
         <Testimonials />
         <FAQ />
-        <LegalNote />
       </div>
     </>
   );

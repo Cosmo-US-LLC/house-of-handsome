@@ -35,7 +35,7 @@ function HowItWorks() {
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className="rounded-xl border border-[#ececec] p-7.5"
+              className="rounded-xl border border-[#ececec] p-7.5 transition-all duration-300 hover:-translate-y-1 hover:border-[#d82028]/40 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
             >
               <span className="font-['Cairo'] text-[16px] font-extrabold text-[#d82028]">
                 {step.num}
