@@ -1,4 +1,6 @@
 import React from "react";
+import communityVotesAward from "@/assets/images/awards/communityvotes-sherwood-park-2025-platinum.webp";
+import qualityBusinessAward from "@/assets/images/awards/quality-business-award-2024.webp";
 
 function AchievementsBand() {
   return (
@@ -29,22 +31,20 @@ function AchievementsBand() {
         </div>
 
         <div className="flex flex-col gap-3.5">
-          <div className="flex flex-wrap gap-3">
-            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
-              <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                CommunityVotes Sherwood Park
-              </span>
-              <span className="font-['Cairo'] text-[16px] font-bold text-[#b9862e]">
-                2023 Silver Winner &middot; Best Barber Shops
-              </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex h-28 items-center justify-center rounded-[10px] border border-[#ececec] bg-white px-3 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
+              <img
+                src={communityVotesAward}
+                alt="CommunityVotes Sherwood Park 2025 Platinum Winner - Voted Best in Barber Shops and Men's Hairdressers"
+                className="h-full w-auto object-contain"
+              />
             </div>
-            <div className="flex flex-col gap-0.5 rounded-[10px] border border-[#ececec] bg-white px-4.5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
-              <span className="font-['Urbanist'] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6b6b6b]">
-                Quality Business Awards
-              </span>
-              <span className="font-['Cairo'] text-[16px] font-bold text-[#b9862e]">
-                2024 Winner
-              </span>
+            <div className="flex h-28 items-center justify-center rounded-[10px] border border-[#ececec] bg-white px-3 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d82028]/40 hover:shadow-[0_8px_18px_rgba(0,0,0,0.08)]">
+              <img
+                src={qualityBusinessAward}
+                alt="Quality Business Awards 2024 Winner - House of Handsome Barbershop Ltd."
+                className="h-full w-auto object-contain"
+              />
             </div>
           </div>
           <p className="font-['Urbanist'] text-[14px] text-[#6b6b6b]">
