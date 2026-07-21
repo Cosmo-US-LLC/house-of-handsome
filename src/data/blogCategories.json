@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "barber-shop",
+    "name": "Barber Shop",
+    "count": 142
+  },
+  {
+    "slug": "beard-grooming",
+    "name": "Beard Grooming",
+    "count": 28
+  },
+  {
+    "slug": "hairdresser",
+    "name": "Hairdresser",
+    "count": 26
+  },
+  {
+    "slug": "facial-spa",
+    "name": "Facial Spa",
+    "count": 2
+  },
+  {
+    "slug": "loreal",
+    "name": "Loreal",
+    "count": 1
+  }
+]

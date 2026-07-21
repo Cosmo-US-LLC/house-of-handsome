@@ -17,6 +17,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RedDeerFoundingMembership from "./pages/RedDeerFoundingMembership";
 import RedDeerGiveaway from "./pages/RedDeerGiveaway";
 import RedDeerGiveawayRules from "./pages/RedDeerGiveawayRules";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import BlogTag from "./pages/BlogTag";
+import BlogCategory from "./pages/BlogCategory";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -72,6 +76,10 @@ function App() {
             path="/red-deer-giveaway-rules"
             element={<RedDeerGiveawayRules />}
           />
+          <Route path="/our-edmonton-barbershop-blog" element={<Blog />} />
+          <Route path="/tag/:tagSlug" element={<BlogTag />} />
+          <Route path="/category/:categorySlug" element={<BlogCategory />} />
+          <Route path="/:slug" element={<BlogPost />} />
         </Route>
       </Routes>
     </>
