@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 
 const PAGE_SIZE = 9;
 
-function PostGrid({ posts }) {
-  const [page, setPage] = useState(1);
+function PostGrid({ posts, basePath, initialPage = 1 }) {
+  const navigate = useNavigate();
+  const [page, setPage] = useState(initialPage);
   const totalPages = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
   const start = (page - 1) * PAGE_SIZE;
   const visible = posts.slice(start, start + PAGE_SIZE);
@@ -12,6 +14,9 @@ function PostGrid({ posts }) {
   const goToPage = (p) => {
     setPage(p);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    if (basePath) {
+      navigate(p === 1 ? basePath : `${basePath}/page/${p}`);
+    }
   };
 
   return (

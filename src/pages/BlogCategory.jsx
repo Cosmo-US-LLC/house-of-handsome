@@ -7,11 +7,12 @@ import posts from "@/data/blogPosts.json";
 import categories from "@/data/blogCategories.json";
 
 function BlogCategory() {
-  const { categorySlug } = useParams();
+  const { categorySlug, pageNum } = useParams();
   const category = categories.find((c) => c.slug === categorySlug);
   const filtered = posts.filter((p) =>
     p.categories.some((c) => c.slug === categorySlug)
   );
+  const page = Number(pageNum) || 1;
 
   if (!category || filtered.length === 0) {
     return <Navigate to="/our-edmonton-barbershop-blog" replace />;
@@ -29,7 +30,11 @@ function BlogCategory() {
           name={category.name}
           count={filtered.length}
         />
-        <PostGrid posts={filtered} />
+        <PostGrid
+          posts={filtered}
+          basePath={`/category/${categorySlug}`}
+          initialPage={page}
+        />
       </div>
     </>
   );

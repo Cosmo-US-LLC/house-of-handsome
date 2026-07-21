@@ -7,11 +7,12 @@ import posts from "@/data/blogPosts.json";
 import tags from "@/data/blogTags.json";
 
 function BlogTag() {
-  const { tagSlug } = useParams();
+  const { tagSlug, pageNum } = useParams();
   const tag = tags.find((t) => t.slug === tagSlug);
   const filtered = posts.filter((p) =>
     p.tags.some((t) => t.slug === tagSlug)
   );
+  const page = Number(pageNum) || 1;
 
   if (!tag || filtered.length === 0) {
     return <Navigate to="/our-edmonton-barbershop-blog" replace />;
@@ -25,7 +26,11 @@ function BlogTag() {
       />
       <div>
         <ArchiveHero kicker="Tag" name={tag.name} count={filtered.length} />
-        <PostGrid posts={filtered} />
+        <PostGrid
+          posts={filtered}
+          basePath={`/tag/${tagSlug}`}
+          initialPage={page}
+        />
       </div>
     </>
   );

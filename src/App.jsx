@@ -77,8 +77,25 @@ function App() {
             element={<RedDeerGiveawayRules />}
           />
           <Route path="/our-edmonton-barbershop-blog" element={<Blog />} />
+          <Route
+            path="/our-edmonton-barbershop-blog/page/:pageNum"
+            element={<Blog />}
+          />
           <Route path="/tag/:tagSlug" element={<BlogTag />} />
+          <Route path="/tag/:tagSlug/page/:pageNum" element={<BlogTag />} />
           <Route path="/category/:categorySlug" element={<BlogCategory />} />
+          <Route
+            path="/category/:categorySlug/page/:pageNum"
+            element={<BlogCategory />}
+          />
+          <Route
+            path="/category/uncategorized/:categorySlug"
+            element={<BlogCategory />}
+          />
+          <Route
+            path="/category/uncategorized/:categorySlug/page/:pageNum"
+            element={<BlogCategory />}
+          />
           <Route path="/:slug" element={<BlogPost />} />
         </Route>
       </Routes>
