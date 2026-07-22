@@ -23,6 +23,7 @@ const NAV_ITEMS = [
   { label: "Services", href: "/services", slug: "/services" },
   // { label: "Franchise", href: "/franchise", slug: "/franchise" },
   { label: "Locations", href: "/locations", slug: "/locations" },
+  { label: "Blog", href: "/our-edmonton-barbershop-blog", slug: "/our-edmonton-barbershop-blog" },
 ];
 
 // Brand red color from Figma design
