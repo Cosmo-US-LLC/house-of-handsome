@@ -47,7 +47,6 @@ const services = [
     items: [
       "Eyebrows (incl. forehead)",
       "Upper Cheeks / Nostrils / Ears",
-      "Hot Stone Massage (60 mins)",
     ],
   },
   {
@@ -69,7 +68,7 @@ function ServicesWeOffering() {
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         {/* Section Heading */}
         <h2 className="font-['Cairo'] font-bold text-[#181818] md:text-[48px] text-[28px] leading-[55px] capitalize md:mb-12 mb:8">
-          Services We Offering
+          Services We Offer
         </h2>
         <p className="mb-4 md:hidden text-[14px] font-['Urbanist'] leading-[26px] font-medium text-[#181818] max-w-[500px]">
             No matter where you are, you'll experience the same premium service at each of our six locations. Consistency, quality, and excellence, every time.

@@ -5,15 +5,18 @@ import { useSearchParams } from "react-router-dom";
 import useGeolocation from "@/hooks/useGeolocation";
 import { getDistanceKm } from "@/lib/utils";
 
+import mobshop1 from "@/assets/images/location/shop_image/mob-newimage1.webp"
+import mobshop2 from "@/assets/images/location/shop_image/mob-newimage2.webp"
+import mobshop3 from "@/assets/images/location/shop_image/mob-newimage3.webp"
+import mobshop4 from "@/assets/images/location/shop_image/mob-newimage4.webp"
+import mobshop5 from "@/assets/images/location/shop_image/mob-newimage5.webp"
+import mobshop6 from "@/assets/images/location/shop_image/mob-newimage6.webp"
+
 import shopImage1 from "@/assets/images/location/shop_image/shop_image1.webp";
 import shopImage2 from "@/assets/images/location/shop_image/shop_image2.webp";
 import shopImage3 from "@/assets/images/location/shop_image/shop_image3.webp";
 import shopImage4 from "@/assets/images/location/shop_image/shop_image4.webp";
 import shopImage5 from "@/assets/images/location/shop_image/shop_image5.webp";
-import mobileShopImage1 from "@/assets/images/location/shop_image/mobile_shop_image1.webp";
-import mobileShopImage2 from "@/assets/images/location/shop_image/mobile_shop_image2.webp";
-import mobileShopImage3 from "@/assets/images/location/shop_image/mobile_shop_image3.webp";
-import mobileShopImage4 from "@/assets/images/location/shop_image/mobile_shop_image4.webp";
 import shopImageSpruceGrove from "@/assets/images/location/shop_image/shop_image_sprucegrove.png";
 import shopImageSouthCommon from "@/assets/images/location/shop_image/shop_image_southcommon.png";
 import TimeSvg from "@/assets/images/location/Svgs/TimeSvg";
@@ -36,7 +39,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 1,055 reviews",
     image: shopImage1,
-    mobileImage: mobileShopImage3,
+    mobileImage: mobshop1, // TODO: replace with mobile-specific image
     mapQuery: "99 Wye Rd Sherwood Park Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.511404,-113.331886,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01796db51b319:0x10e5ade866edf0cc!8m2!3d53.511404!4d-113.331886!16s%2Fg%2F11c70cd4hj?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -60,7 +63,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 444 reviews",
     image: shopImage2,
-    mobileImage: mobileShopImage4,
+    mobileImage: mobshop2, // TODO: replace with mobile-specific image
     mapQuery: "10369 78 Ave NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5139298,-113.496912,17z/data=!3m1!4b1!4m6!3m5!1s0x53a023da737d6f13:0x86e6796deefbe987!8m2!3d53.5139298!4d-113.496912!16s%2Fg%2F11krs6ktn2?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -84,7 +87,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 771 reviews",
     image: shopImage3,
-    mobileImage: mobileShopImage1,
+    mobileImage: mobshop3, // TODO: replace with mobile-specific image
     mapQuery: "625 Cameron Heights Dr NW, Edmonton, Alberta, Canada",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4703008,-113.6313164,17z/data=!3m1!4b1!4m6!3m5!1s0x539ff567818cac61:0x571a642a27e25d85!8m2!3d53.4703008!4d-113.6313164!16s%2Fg%2F11tmwkgpwh?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -108,7 +111,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 162 reviews",
     image: shopImageSouthCommon,
-    mobileImage: shopImageSouthCommon,
+    mobileImage: mobshop4, // TODO: replace with mobile-specific image
     mapQuery: "1923 98 St NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.4485897,-113.4835165,17z/data=!3m1!4b1!4m6!3m5!1s0x53a01fd7924b02d9:0xa3fcf0da373fc3b9!8m2!3d53.4485897!4d-113.4835165!16s%2Fg%2F11wfk1bwgx?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -132,7 +135,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "5.0 from 47 reviews",
     image: shopImage5,
-    mobileImage: mobileShopImage2,
+    mobileImage: mobshop5, // TODO: replace with mobile-specific image
     mapQuery: "12328 102 Ave NW Edmonton Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/search/?api=1&query=House%20Of%20Handsome%20Downtown%2C%2012328%20102%20Ave%20NW%20unit%20301%2C%20Edmonton%2C%20Alberta%2C%20T5N%200L9%2C%20Canada%20",
@@ -157,7 +160,7 @@ const LOCATIONS = [
     email: "info@houseofhandsome.ca",
     rating: "4.9 from 599 reviews",
     image: shopImageSpruceGrove,
-    mobileImage: shopImageSpruceGrove,
+    mobileImage: mobshop6, // TODO: replace with mobile-specific image
     mapQuery: "205 Jennifer Heil Way Spruce Grove Alberta",
     mobileMapQuery:
       "https://www.google.com/maps/place/House+of+Handsome+Barbershop/@53.5495675,-113.9358162,17z/data=!3m1!4b1!4m6!3m5!1s0x539f8f10cbbbb901:0x2095738757446f00!8m2!3d53.5495675!4d-113.9358162!16s%2Fg%2F11nxswp8p5?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
@@ -252,7 +255,7 @@ const Location = () => {
               expert barbers ready to craft your perfect look.
             </p>
           </div>
-          <div className="grid grid-cols-2 py-6 px-4 bg-white rounded-2xl mt-12">
+          <div className="grid grid-cols-2 px-4 py-6 mt-12 bg-white rounded-2xl">
             <div
               id="Map"
               className="mapdiv rounded-xl overflow-hidden h-[800px] min-h-[500px]"
@@ -276,11 +279,11 @@ const Location = () => {
                       className="flex gap-4 px-4 py-4 rounded-xl animate-pulse"
                     >
                       <div className="w-[130px] h-[90px] bg-gray-200 rounded-lg shrink-0" />
-                      <div className="flex-1 space-y-3 py-1">
-                        <div className="h-4 bg-gray-200 rounded w-3/4" />
-                        <div className="h-3 bg-gray-200 rounded w-full" />
-                        <div className="h-3 bg-gray-200 rounded w-1/2" />
-                        <div className="h-3 bg-gray-200 rounded w-2/3" />
+                      <div className="flex-1 py-1 space-y-3">
+                        <div className="w-3/4 h-4 bg-gray-200 rounded" />
+                        <div className="w-full h-3 bg-gray-200 rounded" />
+                        <div className="w-1/2 h-3 bg-gray-200 rounded" />
+                        <div className="w-2/3 h-3 bg-gray-200 rounded" />
                       </div>
                     </div>
                   ))}
@@ -309,8 +312,8 @@ const Location = () => {
                       </div>
 
                       {/* Content */}
-                      <div className="space-y-2 flex-1">
-                        <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex-1 space-y-2">
+                        <div className="flex flex-wrap items-center gap-2">
                           <h2 className="font-['Urbanist'] text-[18px] font-bold leading-[26px] tracking-[-0.752px] text-[#000000]">
                             {location.name}
                           </h2>
@@ -354,7 +357,7 @@ const Location = () => {
                       </div>
                     </div> */}
                         <div className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] space-y-2">
-                          <div className="flex md:flex-row flex-col gap-2 md:items-center">
+                          <div className="flex flex-col gap-2 md:flex-row md:items-center">
                             <button
                               onClick={(e) => {
                                 e.stopPropagation(); // prevent selecting card
@@ -362,7 +365,7 @@ const Location = () => {
                                   openHoursIndex === index ? null : index,
                                 );
                               }}
-                              className="flex items-center gap-2 w-full text-left flex-1"
+                              className="flex items-center flex-1 w-full gap-2 text-left"
                             >
                               <TimeSvg className="" />
                               <span className="">Working Hours</span>
@@ -418,19 +421,19 @@ const Location = () => {
       <section className="md:hidden pb-20 pt-[20px] bg-[#FFF]">
         <div className="max-w-[1280px] mx-auto px-4">
           <div className="flex flex-col gap-[7px] max-w-[800px] mx-auto text-center">
-            <h1 className="font-['Cairo'] text-[18px] leading-[22px] font-[700] text-[#181818] uppercase">
+            <h1 className="font-['Cairo'] text-[36px] leading-[48px] font-[700] text-[#181818] uppercase">
               Our Locations
             </h1>
-            <p className="font-['Urbanist'] text-[12px] font-[500] leading-[16px] text-[#404040]">
+            <p className="font-['Urbanist'] text-[16px] leading-[26px] text-[#181818]">
               Discover our vibrant locations where style means comfort. Each
               shop is designed to provide an inviting atmosphere, complete with
               expert barbers ready to craft your perfect look.
             </p>
           </div>
           {/* Mobile: location cards (Figma 1898-5415) */}
-          <div className="space-y-4 mt-4">
+          <div className="mt-4 space-y-4">
             {geoLoading ? (
-              <div className="space-y-4 mt-4">
+              <div className="mt-4 space-y-4">
                 {[0, 1, 2].map((i) => (
                   <div
                     key={i}
@@ -441,17 +444,17 @@ const Location = () => {
                       <div className="flex gap-2">
                         <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
                         <div className="flex-1 space-y-2">
-                          <div className="h-3 bg-gray-200 rounded w-full" />
-                          <div className="h-3 bg-gray-200 rounded w-3/4" />
+                          <div className="w-full h-3 bg-gray-200 rounded" />
+                          <div className="w-3/4 h-3 bg-gray-200 rounded" />
                         </div>
                       </div>
-                      <div className="flex gap-2 items-center">
+                      <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
-                        <div className="h-3 bg-gray-200 rounded w-1/2" />
+                        <div className="w-1/2 h-3 bg-gray-200 rounded" />
                       </div>
-                      <div className="flex gap-2 items-center">
+                      <div className="flex items-center gap-2">
                         <div className="w-6 h-6 bg-gray-200 rounded shrink-0" />
-                        <div className="h-3 bg-gray-200 rounded w-1/3" />
+                        <div className="w-1/3 h-3 bg-gray-200 rounded" />
                       </div>
                       <div className="flex gap-3 mt-2">
                         <div className="flex-1 h-11 bg-gray-300 rounded-[10px]" />
@@ -473,7 +476,7 @@ const Location = () => {
                     <img
                       src={location.mobileImage}
                       alt={location.name}
-                      className="w-full h-[220px] object-fill object-top rounded-[8px]"
+                      className="w-full h-[220px] object-center object-cover rounded-[8px]"
                     />
                     <div className="absolute h-[100px] flex flex-col justify-center bottom-0 left-0 right-0 p-4  text-white">
                       <div className="flex items-center gap-2">
