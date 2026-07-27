@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
+import { getPageItems } from "@/lib/pagination";
 
 const PAGE_SIZE = 9;
 
@@ -29,7 +30,7 @@ function PostGrid({ posts, basePath, initialPage = 1 }) {
         </div>
 
         {totalPages > 1 && (
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
+          <div className="mt-12 flex flex-wrap items-center justify-end gap-2">
             <button
               type="button"
               onClick={() => goToPage(Math.max(1, page - 1))}
@@ -39,20 +40,26 @@ function PostGrid({ posts, basePath, initialPage = 1 }) {
               Prev
             </button>
 
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => goToPage(p)}
-                className={`min-w-9 rounded-md px-3.5 py-2 font-['Urbanist'] text-[14px] font-semibold transition-colors ${
-                  p === page
-                    ? "bg-[#d82028] text-white"
-                    : "border border-[#ececec] text-[#111111] hover:border-[#d82028] hover:text-[#d82028]"
-                }`}
-              >
-                {p}
-              </button>
-            ))}
+            {getPageItems(page, totalPages).map((item, i) =>
+              item === "ellipsis" ? (
+                <span key={`ellipsis-${i}`} className="px-1.5 font-['Urbanist'] text-[14px] text-[#999999]">
+                  …
+                </span>
+              ) : (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => goToPage(item)}
+                  className={`min-w-9 rounded-md px-3.5 py-2 font-['Urbanist'] text-[14px] font-semibold transition-colors ${
+                    item === page
+                      ? "bg-[#d82028] text-white"
+                      : "border border-[#ececec] text-[#111111] hover:border-[#d82028] hover:text-[#d82028]"
+                  }`}
+                >
+                  {item}
+                </button>
+              )
+            )}
 
             <button
               type="button"
