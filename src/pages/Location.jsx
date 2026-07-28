@@ -326,12 +326,28 @@ const Location = () => {
 
                         <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                           <LocationSvg />{" "}
-                          <span className="flex-1">{location.address}</span>
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                              location.mapQuery,
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex-1 hover:text-[#d82028] hover:underline"
+                          >
+                            {location.address}
+                          </a>
                         </p>
 
                         <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">
                           <PhoneSvg />{" "}
-                          <span className="flex-1">{location.phone}</span>
+                          <a
+                            href={`tel:${location.phone.replace(/[^\d+]/g, "")}`}
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex-1 hover:text-[#d82028] hover:underline"
+                          >
+                            {location.phone}
+                          </a>
                         </p>
 
                         {/* <p className="font-['Urbanist'] text-[16px] leading-[22px] text-[#000000] flex items-center gap-2">

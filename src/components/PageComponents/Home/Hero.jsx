@@ -2,6 +2,8 @@ import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
 import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_styling_hair_client.webp";
 import mobileheroImage from "../../../assets/images/home/hero/mobile_hero.webp"
+import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
+import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
 
 function Hero() {
   const handleOnClick = () => {
@@ -11,7 +13,7 @@ function Hero() {
   return (
     <section className="relative w-full pt-4">
       <div className="mx-auto max-w-[1280px]  px-4 md:px-8 ">
-        <div className="flex flex-col gap-6 items-center max-md:justify-center min-h-[620px] w-full md:flex-row md:gap-8">
+        <div className="flex flex-col gap-6 items-center max-md:justify-center min-h-[720px] w-full md:flex-row md:gap-8">
           <div className="pt-4 pb-4 w-full md:w-[60%] space-y-4 text-left md:space-y-6 md:pt-0">
             <h1
               className="font-['Cairo'] font-[700] text-neutral-900 leading-[114.583%] md:leading-[114.583%] text-[36px] md:text-[48px] !text-[#fff] max-w-[531px]"
@@ -84,10 +86,39 @@ function Hero() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-6 w-full max-w-[420px] border-t border-white/20 md:mt-8" />
+
+            <div className="mt-4 space-y-3 md:mt-6">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-['Urbanist'] text-sm font-semibold !text-[#fff] hover:text-[#d82028]"
+              >
+                Book faster on the app
+              </a>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.phorest.houseofhandsomebarbershop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow1} alt="Get it on Google Play" className="h-10 w-auto md:h-12" />
+                </a>
+                <a
+                  href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={app_dow2} alt="Download on the App Store" className="h-10 w-auto md:h-12" />
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex w-full md:min-h-[725px] min-h-[725px] h-full object-cover md:top-0 z-[-1] absolute md:right-0 ">
+          <div className="flex w-full md:min-h-[825px] min-h-[825px] h-full object-cover md:top-0 z-[-1] absolute md:right-0 ">
             {/* <img
               src={heroImage}
               alt="Two well-groomed male models  in black clothing"
