@@ -9,7 +9,7 @@ function Hero() {
   window.location.href = url; 
 };
   return (
-    <section className="pt-4 w-full  relative">
+    <section className="relative w-full pt-4">
       <div className="mx-auto max-w-[1280px]  px-4 md:px-8 ">
         <div className="flex flex-col gap-6 items-center max-md:justify-center min-h-[620px] w-full md:flex-row md:gap-8">
           <div className="pt-4 pb-4 w-full md:w-[60%] space-y-4 text-left md:space-y-6 md:pt-0">
@@ -35,7 +35,7 @@ function Hero() {
                 <PrimaryCTA onClick={handleOnClick} />
               </div>
 
-              <div className="flex gap-2 items-center mt-2 md:gap-4 md:mt-3">
+              <div className="flex items-center gap-2 mt-2 md:gap-4 md:mt-3">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ function Hero() {
             <img
               src={heroImage}
               alt="Two well-groomed male models in black clothing"
-              className="hidden md:block w-full h-full object-cover bg-center"
+              className="hidden object-cover w-full h-full bg-center md:block"
             />
             <div
               className="absolute inset-0 z-10 block md:hidden"
@@ -108,7 +108,7 @@ function Hero() {
             <img
               src={mobileheroImage}
               alt="Two well-groomed male models in black clothing"
-              className="block md:hidden w-full h-full object-cover bg-center pt-20"
+              className="block object-cover w-full h-full pt-20 bg-center md:hidden"
             />
           </div>
         </div>
