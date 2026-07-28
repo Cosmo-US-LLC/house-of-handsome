@@ -8,7 +8,7 @@ function Layout() {
   return (
     <>
       <AnnouncementBar />
-      <div className="h-10" />
+      <div className="h-16 sm:h-10" />
       <Header />
 
       <Outlet />

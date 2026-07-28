@@ -517,11 +517,25 @@ const Location = () => {
                       <div className="w-[28px] h-[28px]">
                         <LocationSvg className="shrink-0 mt-0.5" />
                       </div>
-                      <span>{location.address}</span>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          location.mapQuery,
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#d82028] hover:underline"
+                      >
+                        {location.address}
+                      </a>
                     </p>
                     <p className="font-['Urbanist'] text-[#181818] text-[14px] font-[400] leading-[20px] flex items-center gap-2">
                       <PhoneSvg />
-                      <span>{location.phone}</span>
+                      <a
+                        href={`tel:${location.phone.replace(/[^\d+]/g, "")}`}
+                        className="hover:text-[#d82028] hover:underline"
+                      >
+                        {location.phone}
+                      </a>
                     </p>
 
                     {/* Working Hours: label + expandable list (day left, time right) */}
