@@ -21,8 +21,8 @@ const NAV_ITEMS = [
   { label: "Teens", href: "/teens", slug: "/teens" },
   { label: "Kids", href: "/kids", slug: "/kids" },
   { label: "Services", href: "/services", slug: "/services" },
-  // { label: "Franchise", href: "/franchise", slug: "/franchise" },
   { label: "Locations", href: "/locations", slug: "/locations" },
+  { label: "Franchise", href: "/franchise", slug: "/franchise" },
   { label: "Blog", href: "/our-edmonton-barbershop-blog", slug: "/our-edmonton-barbershop-blog" },
 ];
 
@@ -46,7 +46,7 @@ function Header() {
 
   return (
     <header
-      className={`${isHome ? "fixed" : "sticky"} w-full top-0 z-50 transition-shadow duration-200  ${
+      className={`${isHome ? "fixed" : "sticky"} w-full top-10 z-50 transition-shadow duration-200  ${
         !isHome
           ? "bg-white/90  supports-backdrop-filter:bg-white/70 border-b border-neutral-200 backdrop-blur"
           : scrolled ? "bg-transparent supports-backdrop-filter:bg-[#F2F2F2]/70 backdrop-blur" : "bg-transparent"
@@ -69,7 +69,7 @@ function Header() {
           </Link>
 
           {/* Center: Desktop Navigation */}
-          <nav className="hidden gap-6 items-center lg:flex" aria-label="Main">
+          <nav className="items-center hidden gap-6 lg:flex" aria-label="Main">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.slug}

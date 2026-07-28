@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceUsImage from "../../../assets/images/services/ServicesHero/home_img.webp";
 import PrimaryCTA from "../../../components/ui/PrimaryCTA";
-import { handleRedirectOfBookAppontment } from "@/utils/BookAnAppontemtREdirection";
+import { ScrolldownToCuts } from "@/utils/BookAnAppontemtREdirection";
 
 export default function ServicesHero({
   image = ServiceUsImage,
@@ -9,7 +9,7 @@ export default function ServicesHero({
     "At House of Handsome, we believe in more than just a haircut – we offer a complete grooming experience. Whether you're preparing for a big event or just want to look and feel your best, our professional team is here to provide the highest quality service.",
     "Explore our core services designed to meet your unique needs.",
   ],
-  buttonText = "Book An Appointment",
+  buttonText = "View Our Services",
 }) {
   return (
     <section className="max-md:pt-8 max-md:pb-20 bg-[#F2F2F2] sm:px-8 overflow-hidden">
@@ -30,7 +30,7 @@ export default function ServicesHero({
                 {text}
               </p>
             ))}
-            <PrimaryCTA onClick={handleRedirectOfBookAppontment} children={buttonText} className="mt-4" />
+            <PrimaryCTA onClick={ScrolldownToCuts} children={buttonText} className="mt-4" />
           </div>
           <div className="md:max-w-[769px] w-full md:bottom-0  md:absolute md:-right-20">
             <img
