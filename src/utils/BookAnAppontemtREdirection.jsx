@@ -2,6 +2,9 @@ export const handleRedirectOfBookAppontment = () => {
   window.location.href = "https://www.phorest.com/salon/houseofhandsomebarbershop2/locations";
 };
 
+export const WHYTE_AVE_BOOKING_URL =
+  "https://www.phorest.com/salon/houseofhandsomebarbershopwhyte";
+
 // export const ScrolldownToFranchiseForm = () => {
 //   const franchiseForm = document.getElementById("franchiseForm");
 //   if (franchiseForm) {

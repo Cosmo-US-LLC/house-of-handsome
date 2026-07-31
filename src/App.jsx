@@ -21,6 +21,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogTag from "./pages/BlogTag";
 import BlogCategory from "./pages/BlogCategory";
+import WhyteAvenue from "./pages/WhyteAvenue";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -98,6 +99,9 @@ function App() {
           />
           <Route path="/:slug" element={<BlogPost />} />
         </Route>
+
+        {/* Standalone landing page — bypasses Layout (own nav/footer) */}
+        <Route path="/whyte-avenue" element={<WhyteAvenue />} />
       </Routes>
     </>
   );
