@@ -3,14 +3,14 @@ import Eyebrow from "./Eyebrow";
 import { OFFERS } from "./data";
 import { WHYTE_AVE_BOOKING_URL } from "@/utils/BookAnAppontemtREdirection";
 
-function OfferCard({ offer }) {
+function OfferCard({ offer, className = "" }) {
   const bookingHref = `${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent(offer.serviceParam)}`;
 
   return (
     <div
-      className={`relative flex flex-col rounded-[10px] border p-6 transition-transform duration-200 hover:-translate-y-1 ${
+      className={`relative flex flex-col rounded-[10px] border p-5 transition-transform duration-200 hover:-translate-y-1 ${
         offer.featured ? "border-[#d82028] bg-[#fff5f5]" : "border-neutral-200 bg-white"
-      }`}
+      } ${className}`}
     >
       <span
         className={`self-start rounded-full px-3 py-1 mb-3 font-['Urbanist'] text-[11px] font-bold uppercase tracking-[0.04em] text-white ${
@@ -20,18 +20,18 @@ function OfferCard({ offer }) {
         {offer.tag}
       </span>
 
-      <h3 className="font-['Cairo'] font-bold text-[22px] mb-1.5 text-[#181818]">{offer.title}</h3>
-      <p className="font-['Urbanist'] text-[14px] text-neutral-600 mb-5 flex-grow">{offer.desc}</p>
+      <h3 className="font-['Cairo'] font-bold text-[19px] mb-1.5 text-[#181818]">{offer.title}</h3>
+      <p className="font-['Urbanist'] text-[13.5px] text-neutral-600 mb-5 flex-grow">{offer.desc}</p>
 
-      <div className="flex items-baseline gap-2.5 mb-1">
-        <span className="font-['Cairo'] text-[28px] font-bold text-[#d82028]">{offer.now}</span>
+      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 mb-1">
+        <span className="font-['Cairo'] text-[24px] font-bold text-[#d82028]">{offer.now}</span>
         {offer.was && <span className="font-['Urbanist'] text-[15px] text-neutral-400 line-through">{offer.was}</span>}
         {offer.priceLabel && (
           <span className="font-['Urbanist'] text-[13px] text-neutral-500">{offer.priceLabel}</span>
         )}
       </div>
       {offer.secondaryPrice && (
-        <div className="flex items-baseline gap-2.5 mb-1">
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 mb-1">
           <span className="font-['Cairo'] text-[20px] font-bold text-[#d82028]">{offer.secondaryPrice.now}</span>
           <span className="font-['Urbanist'] text-[13px] text-neutral-500">{offer.secondaryPrice.priceLabel}</span>
         </div>
@@ -72,7 +72,7 @@ function Offers() {
           <div>
             <Eyebrow>View The Offers</Eyebrow>
             <h2 className="font-['Cairo'] text-[36px] md:text-[48px] font-bold leading-tight text-[#181818] max-w-[560px]">
-              Five ways to leave looking like you mean it.
+              Four ways to leave looking like you mean it.
             </h2>
           </div>
           <p className="font-['Urbanist'] max-w-[360px] text-neutral-600 text-[15px]">
@@ -80,7 +80,7 @@ function Offers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
           {OFFERS.map((offer) => (
             <OfferCard key={offer.id} offer={offer} />
           ))}

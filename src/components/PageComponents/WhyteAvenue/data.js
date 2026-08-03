@@ -49,39 +49,12 @@ export const OFFERS = [
     desc: "A clean, precise fade for the client who knows exactly what they want and does not want to wait for it.",
     now: "$25",
     priceLabel: "Buzz Fade Haircut",
-    secondaryPrice: { now: "$29", priceLabel: "Skin Fade Haircut" },
     benefits: [
       "Razor sharp blend line",
       "No appointment padding, in and out",
       "Elite barber, every chair",
     ],
     serviceParam: "Buzz & Skin Fade",
-  },
-  {
-    id: "textured-crop-fade",
-    tag: "Most Requested",
-    title: "Textured Crop + Fade",
-    desc: "Edmonton's most booked cut this year: soft textured top, tight fade, styled to move.",
-    now: "$65",
-    benefits: [
-      "Consultation before the first cut",
-      "Matte or gloss finish styling",
-      "Free touch up guidance",
-    ],
-    serviceParam: "Textured Crop + Fade",
-  },
-  {
-    id: "beard-facial",
-    tag: "Save $30",
-    title: "Beard + Signature Facial",
-    desc: "She notices your shoes, your watch, and definitely your skin. This bundle upgrades your first impression.",
-    now: "Save $30",
-    benefits: [
-      "Precision beard sculpt",
-      "Hot towel and signature facial",
-      "Friday and Saturday slots available",
-    ],
-    serviceParam: "Beard + Signature Facial",
   },
   {
     id: "groomsmen-package",
@@ -102,7 +75,6 @@ export const OFFERS = [
     title: "Men's Cut, Style & Facial",
     desc: "Cut and style, 30 minute hot steam facial, black mask treatment, and a 10 minute scalp massage.",
     now: "20% Off",
-    was: "$150",
     benefits: [
       "30 minute facial, hot steam and scrub",
       "Black mask facial treatment",
