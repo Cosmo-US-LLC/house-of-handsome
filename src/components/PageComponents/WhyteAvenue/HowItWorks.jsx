@@ -11,7 +11,7 @@ const ICONS = {
 function StepIcon({ step, index }) {
   const Icon = ICONS[step.icon];
   return (
-    <div className="relative z-10 w-24 h-24 shrink-0 flex items-center justify-center">
+    <div className="relative z-10 flex items-center justify-center w-24 h-24 shrink-0">
       {/* Soft glow */}
       <div
         className="absolute inset-1 rounded-full bg-[#d82028]/15 blur-xl opacity-70 transition-opacity duration-300 group-hover:opacity-100"
@@ -51,12 +51,12 @@ function HowItWorks() {
           {/* Mobile: left-aligned timeline (icon column + text beside it) */}
           <div className="relative sm:hidden">
             <div
-              className="absolute left-12 top-12 bottom-12 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-neutral-300 to-transparent"
+              className="absolute w-px -translate-x-1/2 left-12 top-12 bottom-12 bg-gradient-to-b from-transparent via-neutral-300 to-transparent"
               aria-hidden="true"
             />
             <div className="flex flex-col gap-8">
               {HOW_IT_WORKS_STEPS.map((step, i) => (
-                <div key={step.num} className="group flex items-start gap-5 text-left">
+                <div key={step.num} className="flex items-start gap-5 text-left group">
                   <StepIcon step={step} index={i} />
                   <div className="pt-3">
                     <h3 className="font-['Cairo'] font-semibold text-[20px] mb-2 text-[#181818]">{step.title}</h3>
@@ -75,7 +75,7 @@ function HowItWorks() {
             />
             <div className="grid grid-cols-3 gap-6 md:gap-8">
               {HOW_IT_WORKS_STEPS.map((step, i) => (
-                <div key={step.num} className="group relative flex flex-col items-center text-center px-2">
+                <div key={step.num} className="relative flex flex-col items-center px-2 text-center group">
                   <div className="mb-5">
                     <StepIcon step={step} index={i} />
                   </div>
@@ -87,10 +87,6 @@ function HowItWorks() {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="text-center mt-12 md:mt-14 font-['Urbanist'] text-[13px] font-semibold uppercase tracking-[0.04em] text-neutral-500">
-          Online booking powered by <span className="text-[#d82028]">Phorest</span>
         </div>
       </div>
     </section>

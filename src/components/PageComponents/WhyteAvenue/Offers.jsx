@@ -4,7 +4,8 @@ import { OFFERS } from "./data";
 import { WHYTE_AVE_BOOKING_URL } from "@/utils/BookAnAppontemtREdirection";
 
 function OfferCard({ offer, className = "" }) {
-  const bookingHref = `${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent(offer.serviceParam)}`;
+  const bookingHref =
+    offer.bookingUrl ?? `${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent(offer.serviceParam)}`;
 
   return (
     <div

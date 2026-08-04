@@ -1,4 +1,11 @@
-import curtainFringeImage from "@/assets/images/home/gallery/gallery_m6.webp";
+import beforeTexturedCrop from "@/assets/images/whyteAvenueProofs/before_textured_crop_fade.webp"
+import afterTexturedCrop from "@/assets/images/whyteAvenueProofs/after_textured_crop_fade.webp"
+import beforeCurtainFringe from "@/assets/images/whyteAvenueProofs/before_curtain_fringe.webp"
+import afterCurtainFringe from "@/assets/images/whyteAvenueProofs/after_curtain_fringe.webp"
+import beforeWarriorCut from "@/assets/images/whyteAvenueProofs/before_warrior_cut_skin_fade.webp"
+import afterWarriorCut from "@/assets/images/whyteAvenueProofs/after_warrior_cut_skin_fade.webp"
+
+
 
 export const NAV_LINKS = [
   { label: "Offers", href: "#offers" },
@@ -16,7 +23,7 @@ export const HOW_IT_WORKS_STEPS = [
     num: "Step 02",
     icon: "scissors",
     title: "Choose the Service",
-    body: "Tap your package and confirm exactly what is included before you commit.",
+    body: "Tap your package and confirm what is included. Booking prices may show at regular rate, your discount is applied at checkout.",
   },
   {
     num: "Step 03",
@@ -41,13 +48,14 @@ export const OFFERS = [
       "Premium product to take home",
     ],
     serviceParam: "The Gentleman Package",
+    bookingUrl: "http://phore.st/MDvuc",
   },
   {
     id: "buzz-skin-fade",
     tag: "From $25",
     title: "Buzz & Skin Fade",
     desc: "A clean, precise fade for the client who knows exactly what they want and does not want to wait for it.",
-    now: "$25",
+    now: "$31.99",
     priceLabel: "Buzz Fade Haircut",
     benefits: [
       "Razor sharp blend line",
@@ -55,6 +63,7 @@ export const OFFERS = [
       "Elite barber, every chair",
     ],
     serviceParam: "Buzz & Skin Fade",
+    bookingUrl: "http://phore.st/9jDMY",
   },
   {
     id: "groomsmen-package",
@@ -112,41 +121,26 @@ export const WHY_US_ITEMS = [
   },
 ];
 
+// TODO: `before` currently reuses the `after` shot as a placeholder. Swap in
+// the real before-cut photo for each transformation once available.
 export const TRANSFORMATIONS = [
   {
     title: "Textured Crop + Fade",
     body: "Shaggy grow out to a tight, styled crop in one sitting.",
-    image: "/blog-images/9651-layered-waves.jpg",
+    before: beforeTexturedCrop,
+    after: afterTexturedCrop,
   },
   {
     title: "Curtain Fringe",
     body: "The premium standard for modern gentlemen, done right.",
-    image: curtainFringeImage,
+    before: beforeCurtainFringe,
+    after: afterCurtainFringe,
   },
   {
     title: "Warrior Cut + Skin Fade",
     body: "Our award winning barbers' current signature build.",
-    image: "/blog-images/9276-House-of-Handsome-Blog-Images-25.png",
+    before: beforeWarriorCut,
+    after: afterWarriorCut,
   },
 ];
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Booked the Gentleman Package on a whim before a work trip and walked out looking like a different guy. Worth every dollar.",
-    name: "J. Okafor",
-    role: "Whyte Ave regular",
-  },
-  {
-    quote:
-      "Took my three groomsmen in together before the wedding. Fast, sharp, and the group discount made it an easy yes.",
-    name: "R. Sandhu",
-    role: "Groomsmen booking",
-  },
-  {
-    quote:
-      "My go to for the skin fade. Never had a barber this consistent, same clean line every single visit.",
-    name: "M. Tran",
-    role: "Whyte Ave regular",
-  },
-];
