@@ -23,15 +23,18 @@ export const HOW_IT_WORKS_STEPS = [
     num: "Step 02",
     icon: "scissors",
     title: "Choose the Service",
-    body: "Tap your package and confirm what is included. Booking prices may show at regular rate, your discount is applied at checkout.",
+    body: "Tap your package and confirm what's included. Offer pricing won't show online, it's applied when you visit us in shop.",
   },
   {
     num: "Step 03",
     icon: "calendar",
     title: "Book Appointment",
-    body: "Pick your barber and time slot and secure your chair, instantly.",
+    body: "Choose your offer and book your appointment.",
   },
 ];
+
+export const HOW_IT_WORKS_NOTE =
+  "Offers are applied in shop, not at online checkout. Only one offer can be used per visit.";
 
 export const OFFERS = [
   {

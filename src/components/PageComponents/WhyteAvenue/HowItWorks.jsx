@@ -1,6 +1,6 @@
 import { Tag, Scissors, CalendarCheck } from "lucide-react";
 import Eyebrow from "./Eyebrow";
-import { HOW_IT_WORKS_STEPS } from "./data";
+import { HOW_IT_WORKS_STEPS, HOW_IT_WORKS_NOTE } from "./data";
 
 const ICONS = {
   tag: Tag,
@@ -87,6 +87,10 @@ function HowItWorks() {
               ))}
             </div>
           </div>
+
+          <p className="mt-10 md:mt-14 text-center font-['Urbanist'] text-[13px] text-neutral-500">
+            {HOW_IT_WORKS_NOTE}
+          </p>
         </div>
       </div>
     </section>
