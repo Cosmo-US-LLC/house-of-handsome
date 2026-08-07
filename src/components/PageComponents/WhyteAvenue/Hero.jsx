@@ -7,7 +7,7 @@ const HERO_IMAGE = "/blog-images/9426-Untitled-design-9.png";
 
 function Hero() {
   const handleBook = () => {
-    window.open(`${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent("General Booking")}`, "_blank");
+    window.location.href = `${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent("General Booking")}`;
   };
 
   return (

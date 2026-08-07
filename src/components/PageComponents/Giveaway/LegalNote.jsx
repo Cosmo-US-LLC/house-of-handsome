@@ -9,8 +9,6 @@ function LegalNote() {
         <span>
           <Link
             to="/red-deer-giveaway-rules"
-            target="_blank"
-            rel="noopener"
             className="text-white/70 hover:underline"
           >
             Official Contest Rules

@@ -51,8 +51,6 @@ function OfferCard({ offer, className = "" }) {
 
       <a
         href={bookingHref}
-        target="_blank"
-        rel="noopener noreferrer"
         className={`w-full block text-center rounded-[10px] py-3 px-4 font-['Urbanist'] text-[14px] font-bold capitalize transition-colors duration-300 ${
           offer.featured
             ? "bg-[#d82028] text-white hover:bg-[#b91219]"

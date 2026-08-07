@@ -79,8 +79,6 @@ const ContactUsLocations = ({ classname = "" }) => {
             <div key={i}>
               <a
                 href={loc.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`${locationName} inline-flex items-center justify-center gap-2`}
               >
                 {loc.name}

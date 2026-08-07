@@ -53,8 +53,6 @@ function HowItWorks() {
         <div className="text-center">
           <a
             href="https://phore.st/gnFjk"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-[8px] bg-[#d82028] px-9 py-4 font-['Urbanist'] text-[16px] font-bold text-white transition-colors duration-300 hover:bg-[#b91219]"
           >
             Claim My Spot for $50

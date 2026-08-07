@@ -12,8 +12,6 @@ function AnnouncementBar() {
         <span className="hidden sm:inline"> </span>
         <a
           href={GIFT_CARD_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="font-bold underline underline-offset-2 hover:text-white/80"
         >
           Buy one now

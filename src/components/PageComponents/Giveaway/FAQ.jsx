@@ -10,8 +10,6 @@ import {
 const RulesLink = () => (
   <Link
     to="/red-deer-giveaway-rules"
-    target="_blank"
-    rel="noopener"
     className="font-semibold text-[#d82028] hover:underline"
   >
     official contest rules

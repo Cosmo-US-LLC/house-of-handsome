@@ -53,8 +53,6 @@ function FinalCTA() {
 
             <a
               href={bookingHref}
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex items-center justify-center w-full whitespace-nowrap rounded-[10px] bg-[#d82028] px-8 py-4 font-['Urbanist'] text-[16px] font-bold capitalize text-white transition-colors duration-300 hover:bg-[#b91219]"
             >
               Book Your Appointment Today

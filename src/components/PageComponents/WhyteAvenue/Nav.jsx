@@ -43,8 +43,6 @@ function Nav() {
             ))}
             <a
               href={`${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent("General Booking")}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-[10px] bg-[#d82028] px-5 py-2.5 font-['Urbanist'] text-[14px] font-bold capitalize text-white transition-colors duration-300 hover:bg-[#b91219]"
             >
               Book Now

@@ -61,8 +61,6 @@ function Footer() {
               <li>
                 <a
                   href={`${WHYTE_AVE_BOOKING_URL}?service=${encodeURIComponent("General Booking")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="transition-colors hover:text-[#d82028]"
                 >
                   Book Now
