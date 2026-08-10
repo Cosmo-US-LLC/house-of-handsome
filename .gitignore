@@ -26,6 +26,7 @@ dist-ssr
 *.sln
 *.sw?
 .env*
+!.env.example
 
 # WordPress export / blog recovery source data
 wp-export/

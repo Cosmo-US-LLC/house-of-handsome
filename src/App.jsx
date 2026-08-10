@@ -17,6 +17,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RedDeerFoundingMembership from "./pages/RedDeerFoundingMembership";
 import RedDeerGiveaway from "./pages/RedDeerGiveaway";
 import RedDeerGiveawayRules from "./pages/RedDeerGiveawayRules";
+import RedDeerBarberApplication from "./pages/RedDeerBarberApplication";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogTag from "./pages/BlogTag";
@@ -102,6 +103,11 @@ function App() {
 
         {/* Standalone landing page — bypasses Layout (own nav/footer) */}
         <Route path="/whyte-avenue" element={<WhyteAvenue />} />
+        {/* Standalone landing page — bypasses Layout (logo-only nav, no footer) */}
+        <Route
+          path="/red-deer-barber-application"
+          element={<RedDeerBarberApplication />}
+        />
       </Routes>
     </>
   );
