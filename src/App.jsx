@@ -18,6 +18,7 @@ import RedDeerFoundingMembership from "./pages/RedDeerFoundingMembership";
 import RedDeerGiveaway from "./pages/RedDeerGiveaway";
 import RedDeerGiveawayRules from "./pages/RedDeerGiveawayRules";
 import RedDeerBarberApplication from "./pages/RedDeerBarberApplication";
+import SpruceGroveBarberApplication from "./pages/SpruceGroveBarberApplication";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogTag from "./pages/BlogTag";
@@ -107,6 +108,10 @@ function App() {
         <Route
           path="/red-deer-barber-application"
           element={<RedDeerBarberApplication />}
+        />
+        <Route
+          path="/spruce-grove-barber-application"
+          element={<SpruceGroveBarberApplication />}
         />
       </Routes>
     </>
