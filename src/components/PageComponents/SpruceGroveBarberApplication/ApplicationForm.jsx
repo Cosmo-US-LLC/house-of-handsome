@@ -120,13 +120,11 @@ function ApplicationForm() {
             Barber / <span className="text-[#d82028]">Hairstylist</span>, Spruce Grove.
           </h1>
           <p className="mb-6.5 max-w-[50ch] font-['Urbanist'] text-[16px] text-white/82">
-            House of Handsome is opening its newest Alberta location in
-            Spruce Grove, and we're building the team. If you take pride in
+            House of Handsome is expanding its team in Spruce Grove. If you take pride in
             your craft, we'd like to hear from you.
           </p>
           <ul className="flex flex-col gap-1">
             {[
-              "A brand new shop opening in Spruce Grove",
               "Part of an award-winning, established Alberta brand",
               "Ongoing training and support as you grow with us",
             ].map((item) => (
