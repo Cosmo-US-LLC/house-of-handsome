@@ -38,7 +38,7 @@ function FinalCTA() {
           Claim My Spot for $50
         </a>
         <p className="mt-4 font-['Urbanist'] text-[14px] text-white/55">
-          Secure checkout &middot; Opening End of August
+          Secure checkout &middot; Opening in Fall 2026
         </p>
       </div>
     </section>

@@ -31,13 +31,13 @@ const FAQ_DATA = [
     id: "item-4",
     question: "What if I move away from Red Deer?",
     answer:
-      "[CONFIRM WITH ALEX] Your membership is honoured at any House of Handsome location in Alberta, so a move to Edmonton or the surrounding area changes nothing. If you leave the province entirely, contact us and we will sort out a fair resolution.",
+      "Your membership is honoured at any House of Handsome location in Alberta, so a move to Edmonton or the surrounding area changes nothing. If you leave the province entirely, contact us and we will sort out a fair resolution.",
   },
   {
     id: "item-5",
     question: "Can I get a refund if I change my mind?",
     answer:
-      "[CONFIRM WITH ALEX] Yes. Any time before opening day, you can cancel for a full refund of your $50. After we open and your perks are active, the membership is non-refundable.",
+      "Yes. Any time before opening day, you can cancel for a full refund of your $50. After we open and your perks are active, the membership is non-refundable.",
   },
   {
     id: "item-6",

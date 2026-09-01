@@ -1,8 +1,8 @@
 import React from "react";
 
 const DATES = [
-  { label: "Entries Close", value: "End of August" },
-  { label: "Draw", value: "Live at our opening event, End of August" },
+  { label: "Entries Close", value: "Start of Fall 2026" },
+  { label: "Draw", value: "Live at our opening event" },
   { label: "Winners Notified", value: "By email within 48 hours of the draw" },
 ];
 

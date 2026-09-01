@@ -13,7 +13,7 @@ function Hero() {
       <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:gap-14 md:px-8 md:py-20">
         <div>
           <p className="mb-3 font-['Urbanist'] text-[12.5px] font-semibold uppercase tracking-[0.2em] text-[#f2b8ba]">
-            Opening In Red Deer &middot; End of August
+            Coming to Red Deer in Fall 2026
           </p>
           <h1 className="mb-3 font-['Cairo'] text-[34px] font-bold leading-[1.15] text-white md:text-[56px]">
             Become A <span className="text-[#d82028]">Founding Member.</span>

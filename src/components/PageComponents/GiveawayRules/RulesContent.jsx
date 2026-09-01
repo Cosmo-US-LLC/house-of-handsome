@@ -57,7 +57,7 @@ function RulesContent() {
             <span className="mr-2 text-[#d82028]">2.</span>Contest Period
           </h2>
           <p className={paragraph}>
-            The Contest begins <Hl>end of August 2026</Hl> and closes{" "}
+            The Contest begins <Hl>Start of Fall 2026</Hl> and closes{" "}
             <Hl>shortly after the House of Handsome Red Deer opening event</Hl>{" "}
             (the "Contest Period"). Entries received after the close of the
             Contest Period will not be eligible.
@@ -150,7 +150,7 @@ function RulesContent() {
           <p className={paragraph}>
             Winners will be selected by random draw from all eligible
             entries at the House of Handsome Red Deer opening event, taking
-            place end of August 2026. Entrants do not need to be present at the
+            place start of Fall 2026. Entrants do not need to be present at the
             draw to win. Odds of winning depend on the total number of
             eligible entries received. Before being declared a winner, each
             selected entrant must correctly answer, unaided, a time-limited
