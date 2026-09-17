@@ -106,7 +106,7 @@ function Footer() {
               <img
                 src={phorestAward}
                 alt="Phorest Client Experience Award 2026"
-                className="h-[110px] md:h-[150px] w-auto absolute right-4 md:-right-2 top-[55%]"
+                className="h-[100px] md:h-[120px] w-auto absolute right-4 md:-right-[115%] top-[60%]"
               />
             </div>
             <div>
