@@ -8,6 +8,7 @@ import downloadAppIcon from "../../../assets/images/footer/download-the-app.svg"
 import giftCardIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
 import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
 import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
+import phorestAward from "../../../assets/images/awards/phorest_client_experience_award_2026.png";
 
 function Footer() {
   return (
@@ -57,7 +58,7 @@ function Footer() {
         {/* Main Footer Content */}
         <div className="flex justify-between pb-8 max-md:gap-10 wrap max-md:grid max-md:grid-cols-1">
           {/* Column 1 - Brand */}
-          <div className="flex flex-col md:max-w-[440px] gap-6">
+          <div className="relative flex flex-col md:max-w-[440px] gap-6">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
               <img
@@ -72,34 +73,41 @@ function Footer() {
               tradition meets style, and where every client becomes part of our
               community.
             </p>
-            <div className="flex items-center gap-2">
-              <a
-                href="mailto:info@houseofhandsome.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.facebook.com/HouseofHandsomeCanada"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/house.of.handsome.barbershop?igsh=dXBrZWV4eTlnNHp0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
+            <div className="flex items-center gap-8">
+              <div className="flex items-center gap-2">
+                <a
+                  href="mailto:info@houseofhandsome.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/HouseofHandsomeCanada"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/house.of.handsome.barbershop?igsh=dXBrZWV4eTlnNHp0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-black text-black transition-colors hover:bg-black hover:text-white"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+              <img
+                src={phorestAward}
+                alt="Phorest Client Experience Award 2026"
+                className="h-[110px] md:h-[150px] w-auto absolute right-4 md:-right-2 top-[55%]"
+              />
             </div>
             <div>
               <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">

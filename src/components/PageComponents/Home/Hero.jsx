@@ -4,6 +4,7 @@ import heroImage from "../../../assets/images/home/hero/hairdresser_barber_shop_
 import mobileheroImage from "../../../assets/images/home/hero/mobile_hero.webp"
 import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
 import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
+import phorestAward from "../../../assets/images/awards/phorest_client_experience_award_2026.png";
 
 function Hero() {
   const handleOnClick = () => {
@@ -32,7 +33,7 @@ function Hero() {
               boost your confidence. Step in, stand out.
             </p>
 
-            <div className="flex flex-row gap-4 md:gap-8 md:flex-row">
+            <div className="relative flex flex-row gap-4 md:gap-8 md:flex-row">
               <div className="mt-4 md:mt-4">
                 <PrimaryCTA onClick={handleOnClick} />
               </div>
@@ -85,6 +86,12 @@ function Hero() {
                   </span>
                 </div>
               </div>
+
+              <img
+                src={phorestAward}
+                alt="Phorest Client Experience Award 2026"
+                className="h-[100px] w-auto md:h-[150px] absolute right-2 md:right-[15%] -top-[410%] md:top-[20%]"
+              />
             </div>
 
             <div className="mt-6 w-full max-w-[420px] border-t border-white/20 md:mt-8" />
@@ -104,14 +111,14 @@ function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={app_dow1} alt="Get it on Google Play" className="h-10 w-auto md:h-12" />
+                  <img src={app_dow1} alt="Get it on Google Play" className="w-auto h-10 md:h-12" />
                 </a>
                 <a
                   href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={app_dow2} alt="Download on the App Store" className="h-10 w-auto md:h-12" />
+                  <img src={app_dow2} alt="Download on the App Store" className="w-auto h-10 md:h-12" />
                 </a>
               </div>
             </div>

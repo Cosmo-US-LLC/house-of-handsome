@@ -14,6 +14,7 @@ import testimonialsImage5 from "../../../assets/images/home/testimonials/home_re
 import googleIcon from "../../../assets/images/home/testimonials/icons (2).webp";
 import StarsIcon from "../../../assets/images/home/testimonials/icons (1).webp";
 import verIcon from "../../../assets/images/home/testimonials/icons (3).webp";
+import phorestAward from "../../../assets/images/awards/phorest_client_experience_award_2026.png";
 
 const testimonials = [
   {
@@ -95,10 +96,15 @@ function Testimonials() {
   return (
     <section className="py-8 w-full bg-white md:py-[45px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <div className="mb-12">
+        <div className="relative flex flex-wrap items-center justify-between gap-4 mb-12">
           <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-[48px] lg:leading-[55px]">
             Testimonials
           </h2>
+          <img
+            src={phorestAward}
+            alt="Phorest Client Experience Award 2026"
+            className="md:h-[100px] h-[90px] w-auto absolute left-[60%] md:left-[25%] -top-[70%] md:-top-[30%]"
+          />
         </div>
 
         <Carousel
@@ -114,13 +120,13 @@ function Testimonials() {
             {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.id}
-                className="pl-4 md:basis-1/3 py-6  lg:basis-1/3"
+                className="py-6 pl-4 md:basis-1/3 lg:basis-1/3"
               >
-                <div className="flex flex-col justify-between mt-5 gap-[20px] min-h-[390px] rounded-[20px] bg-white  px-[26px] pt-[48px]"
+                <div className="flex flex-col justify-between  gap-[20px] min-h-[390px] rounded-[20px] bg-white  px-[26px] pt-[48px]"
                 style={{border: "1px solid rgba(222, 222, 222, 0.50)", boxShadow: "0 15px 30px 0 rgba(0, 0, 0, 0.08)"}}>
                   <div className="flex flex-col gap-[24px]">
                     {/* Title */}
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <img
                           src={testimonial.avatar}
@@ -161,7 +167,7 @@ function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex gap-2 justify-center mt-6">
+          <div className="flex justify-center gap-2 mt-6">
             {Array.from({ length: dotsToShow }).map((_, index) => {
               // On desktop, each dot represents a page (3 cards per page)
               // On mobile, each dot represents a single card
@@ -182,7 +188,7 @@ function Testimonials() {
               );
             })}
           </div>
-          <CarouselPrevious className="md:left-[91%] left-[74%] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-50px] translate-x-0 translate-y-0">
+          <CarouselPrevious className="md:left-[91%] left-[74%] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] md:top-[-80px] top-[-40px] translate-x-0 translate-y-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -205,7 +211,7 @@ function Testimonials() {
             </svg>
           </CarouselPrevious>
 
-          <CarouselNext className="right-0 md:top-[-80px] top-[-50px] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0">
+          <CarouselNext className="right-0 md:top-[-80px] top-[-40px] cursor-pointer md:h-[50px] h-[40px] md:w-[50px] w-[40px] translate-x-0 translate-y-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
