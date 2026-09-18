@@ -34,23 +34,26 @@ function Hero() {
             </p>
 
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+              <div className="w-full mt-4 md:w-auto max-md:hidden">
+                <PrimaryCTA onClick={handleOnClick} className="w-full md:w-auto" />
+              </div>
               <div className="flex items-center gap-4 mt-2 md:mt-3 md:gap-6">
                 <div className="flex items-center gap-3">
                   <img
                     src={phorestAward}
                     alt="Phorest Client Experience Award 2026"
-                    className="h-[70px] w-auto md:h-[60px]"
+                    className="h-[46px] w-auto md:h-[47px]"
                   />
-                  <div className="flex flex-col leading-tight">
+                  <div className="flex flex-col pb-1 leading-tight">
                     <div className="flex items-baseline">
-                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[36px] text-[26px] font-bold ">
+                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[30px] text-[22px] font-bold ">
                         5
                       </span>
                       <span className="font-['Roboto_Slab'] text-[16px] font-bold !text-[#fff]">
                         /5
                       </span>
                     </div>
-                    <span className="font-['Onest'] text-[12px] font-normal !text-[#fff]">
+                    <span className="font-['Onest'] text-[10px] font-normal !text-[#fff]">
                       ⭐⭐⭐⭐⭐
                     </span>
                   </div>
@@ -90,23 +93,23 @@ function Hero() {
                       </defs>
                     </svg>
                   </div>
-                  <div className="flex flex-col leading-tight">
+                  <div className="flex flex-col pb-1 leading-tight">
                     <div className="flex items-baseline">
-                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[36px] text-[26px] font-bold ">
+                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[30px] text-[22px] font-bold ">
                         4.9
                       </span>
                       <span className="font-['Roboto_Slab'] text-[16px] font-bold !text-[#fff]">
                         /5
                       </span>
                     </div>
-                    <span className="font-['Onest'] text-[12px] font-normal !text-[#fff]">
+                    <span className="font-['Onest'] text-[10px] font-normal !text-[#fff]">
                       Out of 3,000 Reviews
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="w-full mt-4 md:mt-0 md:w-auto">
+              <div className="w-full mt-4 md:mt-0 md:w-auto md:hidden">
                 <PrimaryCTA onClick={handleOnClick} className="w-full md:w-auto" />
               </div>
             </div>

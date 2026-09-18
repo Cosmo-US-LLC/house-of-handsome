@@ -8,7 +8,6 @@ import downloadAppIcon from "../../../assets/images/footer/download-the-app.svg"
 import giftCardIcon from "../../../assets/images/footer/buy-a-gift-card.svg";
 import app_dow1 from "../../../assets/images/footer/app_dwn (2).svg";
 import app_dow2 from "../../../assets/images/footer/app_dwn (1).svg";
-import phorestAward from "../../../assets/images/awards/phorest_client_experience_award_2026.png";
 
 function Footer() {
   return (
@@ -103,11 +102,6 @@ function Footer() {
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
-              <img
-                src={phorestAward}
-                alt="Phorest Client Experience Award 2026"
-                className="h-[100px] md:h-[120px] w-auto absolute right-4 md:-right-[115%] top-[60%]"
-              />
             </div>
             <div>
               <h3 className="font-['Urbanist'] text-xl font-extrabold leading-none text-black">

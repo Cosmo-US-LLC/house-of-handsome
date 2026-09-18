@@ -96,11 +96,11 @@ function Testimonials() {
   return (
     <section className="py-8 w-full bg-white md:py-[45px]">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <div className="flex flex-wrap items-center gap-4 mb-12">
+        <div className="flex flex-wrap items-center gap-2 mb-12 md:gap-3">
           <img
             src={phorestAward}
             alt="Phorest Client Experience Award 2026"
-            className="h-[50px] w-auto md:h-[60px]"
+            className="h-[30px] w-auto md:h-[40px]"
           />
           <h2 className="font-['Cairo'] text-[36px] font-bold text-[#181818] md:text-[48px] lg:leading-[55px]">
             Testimonials
