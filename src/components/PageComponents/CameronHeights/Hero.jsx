@@ -1,10 +1,4 @@
-// import PrimaryCTA from "@/components/ui/PrimaryCTA";
-// import heroImage from "@/assets/images/cameronHeights/hero-desktop.webp";
-// import mobileheroImage from "@/assets/images/cameronHeights/hero-mobile.webp";
-// import app_dow1 from "@/assets/images/footer/app_dwn (2).svg";
-// import app_dow2 from "@/assets/images/footer/app_dwn (1).svg";
-// import phorestAward from "@/assets/images/awards/phorest_client_experience_award_2026.png";
-// import { CAMERON_HEIGHTS_BOOKING_URL } from "@/utils/BookAnAppontemtREdirection";
+
 import React from "react";
 import PrimaryCTA from "../../ui/PrimaryCTA";
 import heroImage from "@/assets/images/cameronHeights/hero-desktop.webp";
