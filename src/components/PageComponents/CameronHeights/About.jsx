@@ -1,4 +1,5 @@
 import aboutImage from "@/assets/images/cameronHeights/about-desktop.webp";
+import founderImage from "@/assets/images/cameronHeights/founder.webp";
 import { PILLARS } from "./data";
 
 function About() {
@@ -37,17 +38,26 @@ function About() {
           ))}
         </div>
 
-        <div className="mt-7 rounded-[6px] border border-white/10 bg-[#221c19] p-8 md:p-9">
-          <h3 className="font-['Cairo'] text-[24px] font-bold text-white">Founders Note</h3>
-          <p className="mt-4 max-w-[70ch] font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">
-            House of Handsome was born from a love for the craft and a desire to create something lasting. A place
-            where individuals feel valued, confident, and truly part of a community. Every chair, every barber, and
-            every client's story is a reflection of that vision. We believe a barbershop is more than just a place
-            to get a haircut, it's a culture of care, creativity, and confidence.
-          </p>
-          <p className="mt-3 font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">
-            Thank you for being a part of our journey!
-          </p>
+        <div className="mt-7 grid grid-cols-1 items-center gap-8 rounded-[6px] border border-white/10 bg-[#221c19] p-8 md:grid-cols-2 md:p-9">
+          <div>
+            <h3 className="font-['Cairo'] text-[24px] font-bold text-white">Founders Note</h3>
+            <p className="mt-4 max-w-[70ch] font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">
+              House of Handsome was born from a love for the craft and a desire to create something lasting. A place
+              where individuals feel valued, confident, and truly part of a community. Every chair, every barber,
+              and every client's story is a reflection of that vision. We believe a barbershop is more than just a
+              place to get a haircut, it's a culture of care, creativity, and confidence.
+            </p>
+            <p className="mt-3 font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">
+              Thank you for being a part of our journey!
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-[6px]">
+            <img
+              src={founderImage}
+              alt="House of Handsome Cameron Heights founder"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
