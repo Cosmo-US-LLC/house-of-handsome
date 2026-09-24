@@ -5,6 +5,9 @@ export const handleRedirectOfBookAppontment = () => {
 export const WHYTE_AVE_BOOKING_URL =
   "https://www.phorest.com/salon/houseofhandsomebarbershopwhyte";
 
+export const CAMERON_HEIGHTS_BOOKING_URL =
+  "https://www.phorest.com/salon/houseofhandsomebarbershop2";
+
 // export const ScrolldownToFranchiseForm = () => {
 //   const franchiseForm = document.getElementById("franchiseForm");
 //   if (franchiseForm) {
