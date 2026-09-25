@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
 import { ADDRESS, PHONE, MAPS_URL, OPENING_HOURS } from "./data";
+import cameronHeightsImage from "../../../assets/images/home/location/location_c3.webp";
 
 function FindUs() {
   return (
@@ -10,6 +11,20 @@ function FindUs() {
         <h2 className="font-['Cairo'] text-[32px] font-bold text-white md:text-[40px]">Find Us</h2>
 
         <div className="mt-8 grid grid-cols-1 gap-9 md:grid-cols-2">
+
+          <div className="relative flex min-h-[220px] flex-col items-center justify-center gap-3 overflow-hidden rounded-[6px] border border-white/10 p-6 text-center">
+            <img
+              src={cameronHeightsImage}
+              alt="Cameron Heights Edmonton location"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+            <MapPin className="relative z-10 h-7 w-7 text-[#d82028]" />
+            <div className="relative z-10 font-['Urbanist'] text-[15px] font-bold text-[#d82028]">{ADDRESS}</div>
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="relative z-10">
+              <PrimaryCTA>Get Directions</PrimaryCTA>
+            </a>
+          </div>
           <div>
             <h4 className="font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.06em] text-[#d82028]">
               Address
@@ -34,14 +49,6 @@ function FindUs() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-[6px] border border-white/10 bg-[#221c19] p-6 text-center">
-            <MapPin className="h-7 w-7 text-[#d82028]" />
-            <div className="font-['Urbanist'] text-[15px] font-bold text-[#d82028]">{ADDRESS}</div>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-              <PrimaryCTA>Get Directions</PrimaryCTA>
-            </a>
           </div>
         </div>
       </div>
