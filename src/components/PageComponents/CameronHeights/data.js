@@ -160,9 +160,9 @@ export const FAQS = [
 ];
 
 export const OPENING_HOURS = [
-  { day: "Monday – Friday", time: "9:00am – 8:00pm" },
-  { day: "Saturday", time: "9:00am – 7:00pm" },
-  { day: "Sunday", time: "10:00am – 6:00pm" },
+  { day: "Monday – Friday", time: "9:00 am – 8:00 pm" },
+  { day: "Saturday", time: "9:00 am – 7:00 pm" },
+  { day: "Sunday", time: "10:00 am – 6:00 pm" },
 ];
 
 export const ADDRESS = "6215 Cameron Dr NW, Edmonton, AB T6M 0J2";
