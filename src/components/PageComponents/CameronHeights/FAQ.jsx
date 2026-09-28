@@ -4,7 +4,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS } from "./data";
+import { FAQS, PHONE, PHONE_HREF } from "./data";
+
+const renderAnswer = (answer) =>
+  answer.split(PHONE).flatMap((part, i, parts) =>
+    i < parts.length - 1
+      ? [
+          part,
+          <a
+            key={i}
+            href={PHONE_HREF}
+            className="font-semibold text-[#d82028] underline underline-offset-2 hover:text-white"
+          >
+            {PHONE}
+          </a>,
+        ]
+      : [part],
+  );
 
 function FAQ() {
   return (
@@ -20,7 +36,7 @@ function FAQ() {
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="font-['Urbanist'] text-[14.5px] leading-[1.6] text-white/60">
-                {faq.answer}
+                {renderAnswer(faq.answer)}
               </AccordionContent>
             </AccordionItem>
           ))}

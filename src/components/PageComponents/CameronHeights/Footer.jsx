@@ -13,8 +13,8 @@ function Footer() {
               <img src={logoWhite} alt="House of Handsome Logo" className="h-full w-[80%] max-w-[240px] shrink-0" />
             </a>
             <p className="font-['Urbanist'] text-[15px] font-medium leading-[24px] text-white/60">
-              A modern barbershop built for men who take their look seriously. Haircuts, beard work, and grooming
-              done with precision, right here in Cameron Heights.
+              A modern barbershop built for anyone who takes their look seriously. Haircuts, beard work, and
+              grooming done well, right here in Cameron Heights.
             </p>
             <div className="flex items-center gap-2">
               <a
@@ -92,7 +92,7 @@ function Footer() {
 
         <div className="border-t border-white/10 pt-6">
           <p className="text-center font-['Urbanist'] text-[13px] text-white/45">
-            © House of Handsome. All rights reserved.
+            © 2026 House of Handsome. All rights reserved.
           </p>
         </div>
       </div>

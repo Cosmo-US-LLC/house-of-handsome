@@ -48,23 +48,30 @@ function Hero() {
 
     <header className="relative w-full pt-4">
       <div className="mx-auto max-w-[1280px]  px-4 md:px-8 ">
-        <div className="flex flex-col gap-6 items-center max-md:justify-center min-h-[720px] w-full md:flex-row md:gap-8">
-          <div className="relative z-10 pt-16 pb-4 w-full md:w-[65%] space-y-4 text-left md:space-y- md:pt-0">
+        <div className="flex flex-col gap-6 items-center max-md:justify-end min-h-[900px] w-full md:min-h-[809px] md:flex-row md:gap-8">
+          <div className="relative z-10 pb-8 w-full md:w-[65%] md:pb-4 space-y-4 text-left md:space-y- md:pt-0">
+            <p className="font-['Urbanist'] text-[14px] font-semibold uppercase tracking-[0.22em] !text-[#fff]">
+              Skill. Detail. <span className="text-[#d82028]">Confidence.</span>
+            </p>
+
             <h1
               className="font-['Cairo'] font-[700] text-neutral-900 leading-[114.583%] md:leading-[114.583%] text-[36px] md:text-[48px] !text-[#fff] max-w-[631px]"
             >
-              Redefine Your Everyday Look.
+              Cameron Heights' Barbershop
             </h1>
 
             <h2 className="font-['Cairo'] !text-[#fff] text-xl font-semibold md:text-2xl lg:text-[38px] lg:leading-[41.36px] lg:tracking-[-0.752px]">
-              Skill. Detail.{" "}
-              <span className="text-[#d82028]">Confidence.</span>
+              Redefine Your Everyday Look
             </h2>
 
-            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px]  md:mt-6 !text-[#fff]">
-              At House of Handsome Cameron Heights, we don't just cut hair, we craft a look that holds up all week.
-              Every visit pairs sharp technique with genuine care, so you leave the chair sharper than you walked
-              in.
+            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px] md:hidden !text-[#fff]">
+              Get a fade that stays fresh for weeks, from barbers who listen first and cut second. Same great result
+              every visit.
+            </p>
+            <p className="mt-4 hidden max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px] md:mt-6 md:block !text-[#fff]">
+              At House of Handsome Cameron Heights, we don't just cut hair; we craft a look that stays fresh for
+              weeks. Every visit pairs skilled technique with genuine care, so you leave the chair sharper than when
+              you walked in.
             </p>
 
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
@@ -76,29 +83,15 @@ function Hero() {
                   <img
                     src={phorestAward}
                     alt="Phorest Client Experience Award 2026"
-                    className="h-[46px] w-auto md:h-[47px]"
+                    className="h-[56px] w-auto md:h-[72px]"
                   />
-                  <div className="flex flex-col pb-1 leading-tight">
-                    <div className="flex items-baseline">
-                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[30px] text-[22px] font-bold ">
-                        4.8
-                      </span>
-                      <span className="font-['Roboto_Slab'] text-[16px] font-bold !text-[#fff]">
-                        /5
-                      </span>
-                    </div>
-                    <span className="font-['Onest'] text-[10px] font-normal !text-[#fff]">
-                      Clients Love Us
-                    </span>
-                  </div>
                 </div>
 
                 <div className="flex items-center gap-2 md:gap-4">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="41"
-                      height="42"
+                      className="h-12 w-auto md:h-16"
                       viewBox="0 0 41 42"
                       fill="none"
                     >
@@ -129,15 +122,15 @@ function Hero() {
                   </div>
                   <div className="flex flex-col pb-1 leading-tight">
                     <div className="flex items-baseline">
-                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[30px] text-[22px] font-bold ">
+                      <span className="font-['Roboto_Slab'] !text-[#fff] md:text-[40px] text-[28px] font-bold ">
                         4.9
                       </span>
-                      <span className="font-['Roboto_Slab'] text-[16px] font-bold !text-[#fff]">
+                      <span className="font-['Roboto_Slab'] text-[18px] md:text-[24px] font-bold !text-[#fff]">
                         /5
                       </span>
                     </div>
-                    <span className="font-['Onest'] text-[10px] font-normal !text-[#fff]">
-                      Google Rating
+                    <span className="font-['Onest'] text-[11px] md:text-[13px] font-normal !text-[#fff]">
+                      856+ Google reviews
                     </span>
                   </div>
                 </div>
@@ -168,7 +161,7 @@ function Hero() {
                   <img src={app_dow1} alt="Get it on Google Play" className="w-auto h-10 md:h-12" />
                 </a>
                 <a
-                  href="https://apps.apple.com/gb/app/house-of-handsome-barbershop/id1588244951"
+                  href="https://apps.apple.com/ca/app/house-of-handsome-barbershop/id1588244951"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -179,7 +172,7 @@ function Hero() {
           </div>
 
           {/* Right Column - Image of Two Male Models */}
-          <div className="flex w-full md:min-h-[825px] min-h-[825px] h-full object-cover md:top-0 z-0 absolute md:right-0 ">
+          <div className="flex w-full md:min-h-[825px] min-h-[825px] h-full object-cover top-0 z-0 absolute md:right-0 ">
             {/* <img
               src={heroImage}
               alt="Two well-groomed male models  in black clothing"
@@ -187,20 +180,20 @@ function Hero() {
             /> */}
             <img
               src={heroImage}
-              alt="House of Handsome Cameron Heights barber trimming a client's beard"
+              alt="Barber giving a client a haircut at House of Handsome Cameron Heights"
               className="hidden object-cover w-full h-full bg-center md:block"
             />
             <div
               className="absolute inset-0 z-10 block md:hidden"
               style={{
                 background:
-                  "linear-gradient(180deg, #000 11.41%, rgba(0, 0, 0, 0.22) 75.54%, rgba(0, 0, 0, 0.20) 100%)",
+                  "linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 64%, #000 60%)",
               }}
             />
             <img
               src={mobileheroImage}
-              alt="House of Handsome Cameron Heights barber trimming a client's beard"
-              className="block object-cover w-full h-full pt-20 bg-center md:hidden"
+              alt="Cameron Heights barber cutting a client's hair with scissors"
+              className="block object-cover object-top w-full h-full md:hidden"
             />
           </div>
         </div>

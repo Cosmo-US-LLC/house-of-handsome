@@ -9,7 +9,7 @@ function MidCTA() {
   return (
     <section className="w-full bg-[#1a1512] py-14 text-center text-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
-        <h2 className="font-['Cairo'] text-[28px] font-bold text-white">Ready For Your Next Cut?</h2>
+        <h2 className="font-['Cairo'] text-[28px] font-bold text-white">Ready for Your Next Cut?</h2>
         <p className="mx-auto mt-3 max-w-[50ch] font-['Urbanist'] text-[15px] text-white/60">
           Book online in under a minute, or walk in and we'll get you in the chair.
         </p>

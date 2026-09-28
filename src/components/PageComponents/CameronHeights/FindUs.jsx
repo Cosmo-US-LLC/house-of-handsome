@@ -1,7 +1,7 @@
 import { MapPin } from "lucide-react";
 import PrimaryCTA from "@/components/ui/PrimaryCTA";
-import { ADDRESS, PHONE, MAPS_URL, OPENING_HOURS } from "./data";
-import cameronHeightsImage from "../../../assets/images/home/location/location_c3.webp";
+import { ADDRESS, PHONE, PHONE_HREF, MAPS_URL, OPENING_HOURS } from "./data";
+import cameronHeightsImage from "../../../assets/images/cameronHeights/Find_us.webp";
 
 function FindUs() {
   return (
@@ -10,13 +10,13 @@ function FindUs() {
         <div className="mb-2 h-[3px] w-9 bg-[#d82028]" aria-hidden="true" />
         <h2 className="font-['Cairo'] text-[32px] font-bold text-white md:text-[40px]">Find Us</h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-9 md:grid-cols-2">
+        <div className="grid grid-cols-1 mt-8 gap-9 md:grid-cols-2">
 
           <div className="relative flex min-h-[220px] flex-col items-center justify-center gap-3 overflow-hidden rounded-[6px] border border-white/10 p-6 text-center">
             <img
               src={cameronHeightsImage}
               alt="Cameron Heights Edmonton location"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
             <MapPin className="relative z-10 h-7 w-7 text-[#d82028]" />
@@ -29,10 +29,15 @@ function FindUs() {
             <h4 className="font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.06em] text-[#d82028]">
               Address
             </h4>
+            <p className="mt-2 font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">{ADDRESS}</p>
+
+            <h4 className="mt-5 font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.06em] text-[#d82028]">
+              Phone
+            </h4>
             <p className="mt-2 font-['Urbanist'] text-[15px] leading-[1.7] text-white/60">
-              {ADDRESS}
-              <br />
-              {PHONE}
+              <a href={PHONE_HREF} className="transition-colors hover:text-[#d82028]">
+                {PHONE}
+              </a>
             </p>
 
             <h4 className="mt-5 font-['Urbanist'] text-[12px] font-bold uppercase tracking-[0.06em] text-[#d82028]">

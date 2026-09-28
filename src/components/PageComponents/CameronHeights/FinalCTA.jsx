@@ -16,10 +16,10 @@ function FinalCTA() {
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-8">
         <div>
           <h2 className="font-['Cairo'] text-[36px] font-bold leading-[1.05] text-white md:text-[48px]">
-            Your Chair Is Waiting.
+            Your Chair Is Waiting
           </h2>
           <p className="mt-3 max-w-[50ch] font-['Urbanist'] text-[15px] text-white/60">
-            Walk-ins welcome, or book ahead to guarantee your barber and your time.
+            Your barber is ready when you are. Pick a time that works for you, or stop by the shop.
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-5">
             <PrimaryCTA onClick={handleBook}>Book Your Appointment</PrimaryCTA>

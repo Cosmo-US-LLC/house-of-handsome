@@ -1,4 +1,9 @@
+import { useHead } from "@unhead/react";
 import SEO from "@/components/layout/SEO";
+import {
+  ADDRESS_PARTS,
+  SCHEMA_OPENING_HOURS,
+} from "@/components/PageComponents/CameronHeights/data";
 import TopBar from "@/components/PageComponents/CameronHeights/TopBar";
 import Nav from "@/components/PageComponents/CameronHeights/Nav";
 import Hero from "@/components/PageComponents/CameronHeights/Hero";
@@ -11,7 +16,32 @@ import FindUs from "@/components/PageComponents/CameronHeights/FindUs";
 import FinalCTA from "@/components/PageComponents/CameronHeights/FinalCTA";
 import Footer from "@/components/PageComponents/CameronHeights/Footer";
 
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HairSalon"],
+  name: "House of Handsome Barbershop - Cameron Heights",
+  url: "https://www.houseofhandsome.ca/cameron-heights",
+  telephone: "+1-780-489-0329",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: ADDRESS_PARTS.street,
+    addressLocality: ADDRESS_PARTS.city,
+    addressRegion: ADDRESS_PARTS.region,
+    postalCode: ADDRESS_PARTS.postalCode,
+    addressCountry: "CA",
+  },
+  openingHoursSpecification: SCHEMA_OPENING_HOURS,
+  sameAs: [
+    "https://www.facebook.com/HouseofHandsomeCanada",
+    "https://www.instagram.com/house.of.handsome.barbershop",
+  ],
+};
+
 function CameronHeights() {
+  useHead({
+    script: [{ type: "application/ld+json", innerHTML: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }],
+  });
+
   return (
     <>
       <SEO
