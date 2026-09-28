@@ -64,11 +64,7 @@ function Hero() {
               Redefine Your Everyday Look
             </h2>
 
-            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px] md:hidden !text-[#fff]">
-              Get a fade that stays fresh for weeks, from barbers who listen first and cut second. Same great result
-              every visit.
-            </p>
-            <p className="mt-4 hidden max-w-[531px] font-['Urbanist'] text-[18px] font-medium leading-[26px] md:mt-6 md:block !text-[#fff]">
+            <p className="mt-4 max-w-[531px] font-['Urbanist'] text-[16px] md:text-[18px] font-medium leading-[26px] md:mt-6 !text-[#fff]">
               At House of Handsome Cameron Heights, we don't just cut hair; we craft a look that stays fresh for
               weeks. Every visit pairs skilled technique with genuine care, so you leave the chair sharper than when
               you walked in.
@@ -83,7 +79,7 @@ function Hero() {
                   <img
                     src={phorestAward}
                     alt="Phorest Client Experience Award 2026"
-                    className="h-[56px] w-auto md:h-[72px]"
+                    className="h-[44px] w-auto md:h-[56px]"
                   />
                 </div>
 
@@ -91,7 +87,7 @@ function Hero() {
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-12 w-auto md:h-16"
+                      className="w-auto h-10 md:h-12"
                       viewBox="0 0 41 42"
                       fill="none"
                     >
