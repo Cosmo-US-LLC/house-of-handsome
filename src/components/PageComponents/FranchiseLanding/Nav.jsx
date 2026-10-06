@@ -1,3 +1,4 @@
+import logo from "@/assets/images/navbar/HOH_Logo.svg";
 import { NAV_LINKS } from "./data";
 
 function Nav() {
@@ -8,9 +9,9 @@ function Nav() {
           <a
             href="#top"
             aria-label="House of Handsome Franchising - Top"
-            className="whitespace-nowrap font-['Cairo'] text-[16px] font-bold uppercase leading-none tracking-[0.02em] text-[#111111] sm:text-[22px] lg:text-[26px]"
+            className="flex max-h-[31px] max-w-[150px] items-center sm:max-w-[178px]"
           >
-            House of Handsome <span className="text-[#d82028]">Franchising</span>
+            <img src={logo} alt="House of Handsome Logo" className="h-full w-full object-contain" />
           </a>
           <div className="flex items-center gap-6 lg:gap-8">
             {NAV_LINKS.map((link) => (

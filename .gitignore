@@ -31,3 +31,4 @@ dist-ssr
 # WordPress export / blog recovery source data
 wp-export/
 *.WordPress.*.xml
+.vercel

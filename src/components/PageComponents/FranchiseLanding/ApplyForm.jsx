@@ -198,6 +198,8 @@ function ApplyForm() {
         open={open}
         onOpenChange={setOpen}
         image={franchiseHeroImage}
+        buttonText="Back To Franchising"
+        onButtonClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         title="Thank you for your interest in franchising with us!"
         description="Our team will review your submission and contact you within 1 business day."
       />
