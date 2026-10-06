@@ -142,13 +142,16 @@ function ApplyForm() {
                     {...field}
                     defaultCountry="ca"
                     forceDialCode
-                    className={`w-full !gap-0 overflow-hidden rounded-lg border bg-white focus-within:ring-2 focus-within:ring-[#d82028] ${
+                    className={`w-full !gap-0 rounded-lg border bg-white focus-within:ring-2 focus-within:ring-[#d82028] ${
                       errors.phone ? "!border-red-500" : "border-[#c9c5bf]"
                     }`}
-                    inputClassName="!h-[50px] !flex-1 !min-w-0 !border-0 !rounded-none !bg-transparent !pl-3 !pr-3.5 !font-['Urbanist'] !text-[16px] !text-[#181818] !outline-none"
+                    inputClassName="!h-[50px] !flex-1 !min-w-0 !border-0 !rounded-r-lg !bg-transparent !pl-3 !pr-3.5 !font-['Urbanist'] !text-[16px] !text-[#181818] !outline-none"
                     countrySelectorStyleProps={{
                       buttonClassName:
-                        "!h-[50px] !border-0 !border-r !border-[#c9c5bf] !rounded-none !bg-transparent !px-3",
+                        "!h-[50px] !border-0 !border-r !border-[#c9c5bf] !rounded-l-lg !rounded-r-none !bg-transparent !px-3",
+                      dropdownStyleProps: {
+                        className: "!font-['Urbanist'] !text-[15px] !rounded-lg !shadow-lg",
+                      },
                     }}
                   />
                 )}

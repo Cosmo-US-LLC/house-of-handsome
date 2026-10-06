@@ -2,7 +2,7 @@ import { NAV_LINKS } from "./data";
 
 function Nav() {
   return (
-    <nav className="sticky top-0 z-[200] w-full border-b border-[#e6e3de] bg-white">
+    <nav className="sticky top-0 z-40 w-full border-b border-[#e6e3de] bg-white">
       <div className="mx-auto max-w-[1280px] px-4 md:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <a
