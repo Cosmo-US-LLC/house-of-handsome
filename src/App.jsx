@@ -25,6 +25,7 @@ import BlogTag from "./pages/BlogTag";
 import BlogCategory from "./pages/BlogCategory";
 import WhyteAvenue from "./pages/WhyteAvenue";
 import CameronHeights from "./pages/CameronHeights";
+import FranchiseLanding from "./pages/FranchiseLanding";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -107,6 +108,8 @@ function App() {
         <Route path="/whyte-avenue" element={<WhyteAvenue />} />
         {/* Standalone landing page — bypasses Layout (own nav/footer) */}
         <Route path="/cameron-heights" element={<CameronHeights />} />
+        {/* Standalone franchise landing page — bypasses Layout (own nav/footer) */}
+        <Route path="/franchising" element={<FranchiseLanding />} />
         {/* Standalone landing page — bypasses Layout (logo-only nav, no footer) */}
         <Route
           path="/red-deer-barber-application"
