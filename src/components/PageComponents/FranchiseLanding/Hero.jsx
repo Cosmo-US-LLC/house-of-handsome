@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/franchise/franchise_hero/franchise_hero.webp";
+import heroImage from "@/assets/images/franchise/franchise_hero/franchise_landing_hero.webp";
 import { HERO_STATS } from "./data";
 
 function Hero() {
@@ -32,7 +32,7 @@ function Hero() {
         </div>
         <img
           src={heroImage}
-          alt="The House of Handsome team in front of the shop"
+          alt="House of Handsome barbers cutting hair inside the shop"
           className="h-[280px] w-full rounded-[10px] object-cover sm:h-[380px] lg:h-[460px]"
         />
       </div>

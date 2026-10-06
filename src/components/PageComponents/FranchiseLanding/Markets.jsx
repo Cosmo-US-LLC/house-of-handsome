@@ -1,4 +1,4 @@
-import mapImage from "@/assets/images/franchise/strategicExpansion/strategic_expansion_img.webp";
+import mapImage from "@/assets/images/franchise/strategicExpansion/franchise_landing_alberta_map.webp";
 import { MARKETS_OPEN, MARKETS_SOON } from "./data";
 // import { MARKETS_WANTED } from "./data"; // used by the commented-out "Looking for operators" block
 
@@ -15,7 +15,7 @@ function Markets() {
           <p className="font-['Urbanist'] text-[16px] font-medium leading-[26px] text-[#4a4744] md:text-[18px]">
             We are focused on Alberta so every operator gets close support. These are the markets we want to fill next.
           </p>
-          <img src={mapImage} alt="House of Handsome Alberta expansion" className="h-[240px] w-full rounded-[10px] object-cover sm:h-[300px]" />
+          <img src={mapImage} alt="House of Handsome Alberta expansion" className="h-auto w-full rounded-[10px]" />
         </div>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2.5">
