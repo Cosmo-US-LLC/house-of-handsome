@@ -8,9 +8,15 @@ import SuccessDialog from "../ContactUs/SuccessDialog";
 import franchiseHeroImage from "@/assets/images/franchise/franchise_hero/frame_2147227240.webp";
 import { TIMELINE_OPTIONS, EXPERIENCE_OPTIONS } from "./data";
 
-// Same HubSpot franchise form as the existing /franchise page
-const HUBSPOT_FORM_GUID = "071de1c4-c247-4787-aefc-e4cc90138c78";
+// HubSpot "Franchise Standalone form" (landing page only)
+const HUBSPOT_FORM_GUID = "4dd0392c-7cb4-4c9c-b979-369a855491cf";
 const HUBSPOT_PORTAL_ID = "244794377";
+
+// HubSpot dropdown values that differ from the labels shown on our page
+const EXPERIENCE_HUBSPOT_VALUES = {
+  "I am a barber": "i am a barber",
+  "I own or manage a shop": "i own or manage a shop",
+};
 
 const getCookie = (name) => {
   const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
@@ -28,9 +34,9 @@ const schema = yup.object().shape({
     .required("Email is required")
     .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Enter a valid email address"),
   city: yup.string().required("City or area is required"),
-  timeline: yup.string().nullable(),
-  experience: yup.string().nullable(),
-  consent: yup.boolean(),
+  timeline: yup.string().nullable().required("Please select when you would like to open"),
+  experience: yup.string().nullable().required("Please select your experience"),
+  message: yup.string().trim().required("Message is required"),
 });
 
 const inputClass = (err) =>
@@ -73,14 +79,6 @@ function ApplyForm() {
       const context = { pageUri: window.location.href, pageName: document.title };
       if (hutk) context.hutk = hutk;
 
-      // The HubSpot form has no city/timeline/experience fields, so they travel in the message.
-      const message = [
-        `City or area of interest: ${data.city}`,
-        `Preferred opening timeline: ${data.timeline || "Not specified"}`,
-        `Barbering or salon experience: ${data.experience || "Not specified"}`,
-        `Email consent: ${data.consent ? "Yes" : "No"}`,
-      ].join("\n");
-
       const res = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
         {
@@ -91,8 +89,10 @@ function ApplyForm() {
               { name: "lastname", value: data.fullName },
               { name: "email", value: data.email },
               { name: "mobilephone", value: data.phone },
-              { name: "preffered_franchise_model", value: "Shop-in-Shop (Licensed Operator)" },
-              { name: "message", value: message },
+              { name: "city_or_area_of_interest", value: data.city },
+              { name: "when_would_you_like_to_open_", value: data.timeline },
+              { name: "barbering_or_salon_experience", value: EXPERIENCE_HUBSPOT_VALUES[data.experience] || data.experience },
+              { name: "message", value: data.message },
             ],
             context,
           }),
@@ -101,7 +101,7 @@ function ApplyForm() {
       const body = await res.json();
       if (!res.ok) throw new Error(body?.message || "Something went wrong. Please try again.");
 
-      reset({ fullName: "", email: "", phone: undefined, city: "", timeline: null, experience: null, consent: false });
+      reset({ fullName: "", email: "", phone: undefined, city: "", timeline: null, experience: null, message: "" });
       setOpen(true);
     } catch (error) {
       setSubmitError(error?.message || "Something went wrong. Please try again.");
@@ -173,16 +173,24 @@ function ApplyForm() {
           <fieldset>
             <legend className={labelClass}>When would you like to open?</legend>
             <Pills name="timeline" options={TIMELINE_OPTIONS} register={register} />
+            {errors.timeline && <p className={errClass}>{errors.timeline.message}</p>}
           </fieldset>
           <fieldset>
             <legend className={labelClass}>Barbering or salon experience</legend>
             <Pills name="experience" options={EXPERIENCE_OPTIONS} register={register} />
+            {errors.experience && <p className={errClass}>{errors.experience.message}</p>}
           </fieldset>
+          <div>
+            <label className={labelClass}>Message</label>
+            <textarea
+              {...register("message")}
+              rows={4}
+              placeholder="Tell us about your interest in franchising..."
+              className={inputClass(errors.message)}
+            />
+            {errors.message && <p className={errClass}>{errors.message.message}</p>}
+          </div>
 
-          <label className="flex items-start gap-2.5 font-['Urbanist'] text-[13px] leading-[20px] text-[#4a4744]">
-            <input type="checkbox" {...register("consent")} className="mt-0.5 h-[18px] w-[18px] shrink-0 accent-[#d82028]" />
-            <span>I agree to receive emails about House of Handsome franchise opportunities. I can unsubscribe at any time.</span>
-          </label>
           <button
             type="submit"
             disabled={isSubmitting}

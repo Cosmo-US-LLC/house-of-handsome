@@ -5,7 +5,7 @@ import WhoFor from "@/components/PageComponents/FranchiseLanding/WhoFor";
 import Model from "@/components/PageComponents/FranchiseLanding/Model";
 import Proof from "@/components/PageComponents/FranchiseLanding/Proof";
 import Support from "@/components/PageComponents/FranchiseLanding/Support";
-import Process from "@/components/PageComponents/FranchiseLanding/Process";
+// import Process from "@/components/PageComponents/FranchiseLanding/Process";
 import Markets from "@/components/PageComponents/FranchiseLanding/Markets";
 import FAQ from "@/components/PageComponents/FranchiseLanding/FAQ";
 import ApplyForm from "@/components/PageComponents/FranchiseLanding/ApplyForm";
@@ -25,7 +25,7 @@ function FranchiseLanding() {
         <Model />
         <Proof />
         <Support />
-        <Process />
+        {/* <Process /> */}
         <Markets />
         <FAQ />
         <ApplyForm />

@@ -3,7 +3,7 @@ import { HERO_STATS } from "./data";
 
 function Hero() {
   return (
-    <section id="top" className="bg-[#111111] text-white py-14 md:py-[72px]">
+    <section id="top" className="bg-[#111111] text-white pb-14 pt-[calc(64px+3.5rem)] md:pb-[72px] md:pt-[calc(64px+72px)]">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-4 md:px-8 lg:grid-cols-2 lg:gap-12">
         <div className="flex flex-col gap-6">
           <h1 className="font-['Cairo'] text-[38px] font-bold leading-[1.1] sm:text-[48px] lg:text-[60px]">
